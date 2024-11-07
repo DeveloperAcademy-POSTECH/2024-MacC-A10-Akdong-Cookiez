@@ -1,5 +1,5 @@
 ## 악동쿠키들의 놀이터 🍪
 
-// Git Convention
+<!-- Git Convention -->
 
-// Code Convention
+ <!-- Code Convention -->
