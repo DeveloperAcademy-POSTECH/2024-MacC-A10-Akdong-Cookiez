@@ -1,0 +1,6 @@
+
+xcuserdata/
+Package.resolved
+*.xcconfig
+*.xcprivacy
+.DS_Store
