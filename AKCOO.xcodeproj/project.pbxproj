@@ -8,16 +8,63 @@
 
 /* Begin PBXBuildFile section */
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
-		F3EB76042CDD14B00054D4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76032CDD14B00054D4E1 /* AppDelegate.swift */; };
-		F3EB76062CDD14B00054D4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76052CDD14B00054D4E1 /* SceneDelegate.swift */; };
-		F3EB76082CDD14B00054D4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76072CDD14B00054D4E1 /* ViewController.swift */; };
-		F3EB760B2CDD14B00054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760A2CDD14B00054D4E1 /* Base */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
 		F3EB76272CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76262CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift */; };
 		F3EB76352CDD14F60054D4E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76342CDD14F60054D4E1 /* .gitignore */; };
+		F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76372CDDDC990054D4E1 /* AppDelegate.swift */; };
+		F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76382CDDDC990054D4E1 /* SceneDelegate.swift */; };
+		F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB763D2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift */; };
+		F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76442CDDDDFF0054D4E1 /* Coordinator.swift */; };
+		F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76452CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift */; };
+		F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */; };
+		F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */; };
+		F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */; };
+		F3EB765D2CDDE30B0054D4E1 /* TravelListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */; };
+		F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */; };
+		F3EB765F2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */; };
+		F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */; };
+		F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */; };
+		F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */; };
+		F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */; };
+		F3EB76692CDDE39A0054D4E1 /* TravelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */; };
+		F3EB766D2CDDE3C20054D4E1 /* ExpenseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */; };
+		F3EB766E2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */; };
+		F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */; };
+		F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */; };
+		F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */; };
+		F3EB76772CDDE5720054D4E1 /* ExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */; };
+		F3EB76782CDDE5720054D4E1 /* TravelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */; };
+		F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76792CDDE5790054D4E1 /* Expense.swift */; };
+		F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767A2CDDE5790054D4E1 /* Currency.swift */; };
+		F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767B2CDDE5790054D4E1 /* Travel.swift */; };
+		F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767C2CDDE5790054D4E1 /* Budget.swift */; };
+		F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */; };
+		F3EB769C2CDDED700054D4E1 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */; };
+		F3EB769D2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */; };
+		F3EB769E2CDDED700054D4E1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */; };
+		F3EB769F2CDDED740054D4E1 /* SFMonoLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */; };
+		F3EB76A02CDDED740054D4E1 /* SFMonoLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */; };
+		F3EB76A12CDDED740054D4E1 /* SFMonoRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */; };
+		F3EB76A22CDDED740054D4E1 /* SFMonoRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */; };
+		F3EB76A32CDDED740054D4E1 /* SFMonoSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */; };
+		F3EB76A42CDDED740054D4E1 /* SFMonoSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */; };
+		F3EB76A52CDDED740054D4E1 /* SFMonoHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */; };
+		F3EB76A62CDDED740054D4E1 /* SFMonoMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */; };
+		F3EB76A72CDDED740054D4E1 /* SFMonoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */; };
+		F3EB76A82CDDED740054D4E1 /* SFMonoBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */; };
+		F3EB76A92CDDED740054D4E1 /* SFMonoHeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */; };
+		F3EB76AA2CDDED740054D4E1 /* SFMonoMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */; };
+		F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */; };
+		F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */; };
+		F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */; };
+		F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B22CDDFD850054D4E1 /* UIColor+Hex.swift */; };
+		F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */; };
+		F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */; };
+		F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */; };
+		F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +87,6 @@
 /* Begin PBXFileReference section */
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3EB76032CDD14B00054D4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3EB76052CDD14B00054D4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3EB76072CDD14B00054D4E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F3EB760A2CDD14B00054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3EB76112CDD14B20054D4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +96,57 @@
 		F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCOOUITests.swift; sourceTree = "<group>"; };
 		F3EB76262CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCOOUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3EB76342CDD14F60054D4E1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F3EB76372CDDDC990054D4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3EB76382CDDDC990054D4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3EB763D2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3EB76442CDDDDFF0054D4E1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F3EB76452CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
+		F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinator.swift; sourceTree = "<group>"; };
+		F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListSceneController.swift; sourceTree = "<group>"; };
+		F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewSceneController.swift; sourceTree = "<group>"; };
+		F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableView.swift; sourceTree = "<group>"; };
+		F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
+		F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelTableViewCell.xib; sourceTree = "<group>"; };
+		F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCoordinator.swift; sourceTree = "<group>"; };
+		F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseSceneController.swift; sourceTree = "<group>"; };
+		F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseStatsViewController.swift; sourceTree = "<group>"; };
+		F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseRecordViewController.swift; sourceTree = "<group>"; };
+		F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseUseCase.swift; sourceTree = "<group>"; };
+		F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelUseCase.swift; sourceTree = "<group>"; };
+		F3EB76792CDDE5790054D4E1 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		F3EB767A2CDDE5790054D4E1 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		F3EB767B2CDDE5790054D4E1 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		F3EB767C2CDDE5790054D4E1 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AKFont.swift"; sourceTree = "<group>"; };
+		F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoSemiboldItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoSemiboldItalic.otf"; sourceTree = "<group>"; };
+		F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoRegular.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoRegular.otf"; sourceTree = "<group>"; };
+		F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoBoldItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoBoldItalic.otf"; sourceTree = "<group>"; };
+		F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoMedium.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoMedium.otf"; sourceTree = "<group>"; };
+		F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoSemibold.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoSemibold.otf"; sourceTree = "<group>"; };
+		F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoRegularItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoRegularItalic.otf"; sourceTree = "<group>"; };
+		F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoHeavyItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoHeavyItalic.otf"; sourceTree = "<group>"; };
+		F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoLightItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoLightItalic.otf"; sourceTree = "<group>"; };
+		F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoLight.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoLight.otf"; sourceTree = "<group>"; };
+		F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoBold.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoBold.otf"; sourceTree = "<group>"; };
+		F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoHeavy.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoHeavy.otf"; sourceTree = "<group>"; };
+		F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoMediumItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoMediumItalic.otf"; sourceTree = "<group>"; };
+		F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFLight.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFLight.ttf"; sourceTree = "<group>"; };
+		F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFMedium.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFMedium.ttf"; sourceTree = "<group>"; };
+		F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFBold.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFBold.ttf"; sourceTree = "<group>"; };
+		F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFontType.swift; sourceTree = "<group>"; };
+		F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AKColor.swift"; sourceTree = "<group>"; };
+		F3EB76B22CDDFD850054D4E1 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWindowBackground.swift; sourceTree = "<group>"; };
+		F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+AkSpacing.swift"; sourceTree = "<group>"; };
+		F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +199,11 @@
 		F3EB76022CDD14B00054D4E1 /* AKCOO */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB76032CDD14B00054D4E1 /* AppDelegate.swift */,
-				F3EB76052CDD14B00054D4E1 /* SceneDelegate.swift */,
-				F3EB76072CDD14B00054D4E1 /* ViewController.swift */,
-				F3EB76092CDD14B00054D4E1 /* Main.storyboard */,
-				F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */,
-				F3EB760E2CDD14B20054D4E1 /* LaunchScreen.storyboard */,
-				F3EB76112CDD14B20054D4E1 /* Info.plist */,
+				F3EB76892CDDEC2F0054D4E1 /* Resources */,
+				F3EB76392CDDDC990054D4E1 /* App */,
+				F3EB763F2CDDDDAD0054D4E1 /* Scene */,
+				F3EB76842CDDE65A0054D4E1 /* DesignSystem */,
+				F3EB764E2CDDDFE30054D4E1 /* Model */,
 			);
 			path = AKCOO;
 			sourceTree = "<group>";
@@ -131,6 +223,255 @@
 				F3EB76262CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift */,
 			);
 			path = AKCOOUITests;
+			sourceTree = "<group>";
+		};
+		F3EB76392CDDDC990054D4E1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76832CDDE64B0054D4E1 /* Coordinator */,
+				F3EB76372CDDDC990054D4E1 /* AppDelegate.swift */,
+				F3EB76382CDDDC990054D4E1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F3EB763F2CDDDDAD0054D4E1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB764C2CDDDF520054D4E1 /* TravelScene */,
+				F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */,
+				F3EB76422CDDDDD10054D4E1 /* Common */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		F3EB76422CDDDDD10054D4E1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76432CDDDDED0054D4E1 /* Coordinator */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3EB76432CDDDDED0054D4E1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76442CDDDDFF0054D4E1 /* Coordinator.swift */,
+				F3EB76452CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift */,
+				F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3EB764C2CDDDF520054D4E1 /* TravelScene */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB764F2CDDDFEC0054D4E1 /* View */,
+				F3EB76502CDDDFF20054D4E1 /* Controller */,
+				F3EB76532CDDE0280054D4E1 /* Coordinator */,
+			);
+			path = TravelScene;
+			sourceTree = "<group>";
+		};
+		F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76512CDDDFF90054D4E1 /* View */,
+				F3EB76522CDDDFFC0054D4E1 /* Controller */,
+				F3EB76542CDDE0300054D4E1 /* Coordinator */,
+			);
+			path = ExpenseScene;
+			sourceTree = "<group>";
+		};
+		F3EB764E2CDDDFE30054D4E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76552CDDE0970054D4E1 /* UseCase */,
+				F3EB76562CDDE09E0054D4E1 /* Entity */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3EB764F2CDDDFEC0054D4E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */,
+				F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */,
+				F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3EB76502CDDDFF20054D4E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */,
+				F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3EB76512CDDDFF90054D4E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3EB76522CDDDFFC0054D4E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */,
+				F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */,
+				F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3EB76532CDDE0280054D4E1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76822CDDE5E20054D4E1 /* Protocol */,
+				F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */,
+				F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3EB76542CDDE0300054D4E1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76812CDDE5D70054D4E1 /* Protocol */,
+				F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3EB76552CDDE0970054D4E1 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */,
+				F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F3EB76562CDDE09E0054D4E1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB767C2CDDE5790054D4E1 /* Budget.swift */,
+				F3EB767A2CDDE5790054D4E1 /* Currency.swift */,
+				F3EB76792CDDE5790054D4E1 /* Expense.swift */,
+				F3EB767B2CDDE5790054D4E1 /* Travel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F3EB76812CDDE5D70054D4E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3EB76822CDDE5E20054D4E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */,
+				F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3EB76832CDDE64B0054D4E1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB763D2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift */,
+				F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3EB76842CDDE65A0054D4E1 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76B92CDE1A100054D4E1 /* Spacing */,
+				F3EB76AF2CDDFCD50054D4E1 /* Color */,
+				F3EB76872CDDE6990054D4E1 /* Font */,
+				F3EB76852CDDE6880054D4E1 /* Extensions */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		F3EB76852CDDE6880054D4E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76B22CDDFD850054D4E1 /* UIColor+Hex.swift */,
+				F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */,
+				F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3EB76872CDDE6990054D4E1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */,
+				F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */,
+				F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F3EB76892CDDEC2F0054D4E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB768A2CDDEC510054D4E1 /* Fonts */,
+				F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */,
+				F3EB760E2CDD14B20054D4E1 /* LaunchScreen.storyboard */,
+				F3EB76112CDD14B20054D4E1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3EB768A2CDDEC510054D4E1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */,
+				F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */,
+				F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */,
+				F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */,
+				F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */,
+				F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */,
+				F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */,
+				F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */,
+				F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */,
+				F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */,
+				F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */,
+				F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */,
+				F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */,
+				F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */,
+				F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F3EB76AF2CDDFCD50054D4E1 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		F3EB76B92CDE1A100054D4E1 /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */,
+			);
+			path = Spacing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,11 +579,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EB769F2CDDED740054D4E1 /* SFMonoLight.otf in Resources */,
+				F3EB76A02CDDED740054D4E1 /* SFMonoLightItalic.otf in Resources */,
+				F3EB76A12CDDED740054D4E1 /* SFMonoRegular.otf in Resources */,
+				F3EB76A22CDDED740054D4E1 /* SFMonoRegularItalic.otf in Resources */,
+				F3EB76A32CDDED740054D4E1 /* SFMonoSemibold.otf in Resources */,
+				F3EB76A42CDDED740054D4E1 /* SFMonoSemiboldItalic.otf in Resources */,
+				F3EB76A52CDDED740054D4E1 /* SFMonoHeavy.otf in Resources */,
+				F3EB76A62CDDED740054D4E1 /* SFMonoMediumItalic.otf in Resources */,
+				F3EB76A72CDDED740054D4E1 /* SFMonoBold.otf in Resources */,
+				F3EB76A82CDDED740054D4E1 /* SFMonoBoldItalic.otf in Resources */,
+				F3EB76A92CDDED740054D4E1 /* SFMonoHeavyItalic.otf in Resources */,
+				F3EB76AA2CDDED740054D4E1 /* SFMonoMedium.otf in Resources */,
 				512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */,
+				F3EB769E2CDDED700054D4E1 /* GmarketSansTTFBold.ttf in Resources */,
 				F3EB76352CDD14F60054D4E1 /* .gitignore in Resources */,
+				F3EB769D2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf in Resources */,
 				F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */,
+				F3EB769C2CDDED700054D4E1 /* GmarketSansTTFLight.ttf in Resources */,
 				F3EB76102CDD14B20054D4E1 /* Base in Resources */,
-				F3EB760B2CDD14B00054D4E1 /* Base in Resources */,
+				F3EB76692CDDE39A0054D4E1 /* TravelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +645,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EB76082CDD14B00054D4E1 /* ViewController.swift in Sources */,
-				F3EB76042CDD14B00054D4E1 /* AppDelegate.swift in Sources */,
-				F3EB76062CDD14B00054D4E1 /* SceneDelegate.swift in Sources */,
+				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
+				F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */,
+				F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */,
+				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
+				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
+				F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */,
+				F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */,
+				F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */,
+				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
+				F3EB76772CDDE5720054D4E1 /* ExpenseUseCase.swift in Sources */,
+				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
+				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
+				F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */,
+				F3EB765F2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift in Sources */,
+				F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */,
+				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
+				F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */,
+				F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */,
+				F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */,
+				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
+				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
+				F3EB766D2CDDE3C20054D4E1 /* ExpenseCoordinator.swift in Sources */,
+				F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */,
+				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
+				F3EB765D2CDDE30B0054D4E1 /* TravelListCoordinator.swift in Sources */,
+				F3EB766E2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift in Sources */,
+				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
+				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
+				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
+				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
+				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
+				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
+				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
+				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
+				F3EB76782CDDE5720054D4E1 /* TravelUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,14 +716,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3EB76092CDD14B00054D4E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3EB760A2CDD14B00054D4E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F3EB760E2CDD14B20054D4E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -475,13 +855,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99KH3TLG9V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AKCOO/Info.plist;
+				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = LIGHT;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,13 +888,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99KH3TLG9V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AKCOO/Info.plist;
+				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = LIGHT;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
