@@ -27,6 +27,6 @@ opt_in_rules: # Default Rules에서 활성화할 규칙
 indentation_width:
   indentation_width: 2
 
-type_body_length:
+type_body_length: 
   warning: 500
   error: 600
