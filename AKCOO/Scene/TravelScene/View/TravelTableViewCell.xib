@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="W7O-xw-cVc" customClass="TravelTableViewCell" customModule="AkCooAppp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W7O-xw-cVc" id="7uX-WV-VU7">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇸🇦국가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dca-Rc-xXb">
+                        <rect key="frame" x="30.999999999999996" y="22" width="52.666666666666657" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRc-DU-quC">
+                        <rect key="frame" x="20" y="22" width="11" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="2025.01.01 - 2025.01.30." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMf-em-KMP">
+                        <rect key="frame" x="30" y="52.333333333333336" width="188" height="14.666666666666664"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZRc-DU-quC" firstAttribute="leading" secondItem="7uX-WV-VU7" secondAttribute="leading" constant="20" id="5QA-62-yPM"/>
+                    <constraint firstItem="ZRc-DU-quC" firstAttribute="top" secondItem="7uX-WV-VU7" secondAttribute="top" constant="22" id="8gl-FD-r04"/>
+                    <constraint firstItem="dca-Rc-xXb" firstAttribute="leading" secondItem="ZRc-DU-quC" secondAttribute="trailing" id="F7Q-CP-DjX"/>
+                    <constraint firstItem="dca-Rc-xXb" firstAttribute="centerY" secondItem="ZRc-DU-quC" secondAttribute="centerY" id="K2s-HW-i4v"/>
+                    <constraint firstItem="NMf-em-KMP" firstAttribute="top" secondItem="dca-Rc-xXb" secondAttribute="bottom" constant="10" id="asz-l7-jl2"/>
+                    <constraint firstItem="dca-Rc-xXb" firstAttribute="top" secondItem="7uX-WV-VU7" secondAttribute="top" constant="22" id="jN0-KP-bys"/>
+                    <constraint firstItem="NMf-em-KMP" firstAttribute="leading" secondItem="ZRc-DU-quC" secondAttribute="leading" constant="10" id="niN-iY-5rI"/>
+                    <constraint firstAttribute="bottom" secondItem="NMf-em-KMP" secondAttribute="bottom" constant="22" id="sD2-Hq-6bu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="NMf-em-KMP" id="aAU-BY-0ra"/>
+                <outlet property="titleLabel" destination="dca-Rc-xXb" id="6Qx-kr-ZuH"/>
+            </connections>
+            <point key="canvasLocation" x="-558.01526717557249" y="-146.83098591549296"/>
+        </tableViewCell>
+    </objects>
+</document>
