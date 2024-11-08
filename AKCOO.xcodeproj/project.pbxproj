@@ -42,21 +42,6 @@
 		F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767B2CDDE5790054D4E1 /* Travel.swift */; };
 		F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767C2CDDE5790054D4E1 /* Budget.swift */; };
 		F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */; };
-		F3EB769C2CDDED700054D4E1 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */; };
-		F3EB769D2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */; };
-		F3EB769E2CDDED700054D4E1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */; };
-		F3EB769F2CDDED740054D4E1 /* SFMonoLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */; };
-		F3EB76A02CDDED740054D4E1 /* SFMonoLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */; };
-		F3EB76A12CDDED740054D4E1 /* SFMonoRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */; };
-		F3EB76A22CDDED740054D4E1 /* SFMonoRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */; };
-		F3EB76A32CDDED740054D4E1 /* SFMonoSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */; };
-		F3EB76A42CDDED740054D4E1 /* SFMonoSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */; };
-		F3EB76A52CDDED740054D4E1 /* SFMonoHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */; };
-		F3EB76A62CDDED740054D4E1 /* SFMonoMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */; };
-		F3EB76A72CDDED740054D4E1 /* SFMonoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */; };
-		F3EB76A82CDDED740054D4E1 /* SFMonoBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */; };
-		F3EB76A92CDDED740054D4E1 /* SFMonoHeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */; };
-		F3EB76AA2CDDED740054D4E1 /* SFMonoMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */; };
 		F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */; };
 		F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */; };
 		F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */; };
@@ -65,6 +50,21 @@
 		F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */; };
 		F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */; };
 		F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */; };
+		F3EB76CD2CDE406D0054D4E1 /* SFMonoBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76BE2CDE406C0054D4E1 /* SFMonoBoldItalic.otf */; };
+		F3EB76CE2CDE406D0054D4E1 /* SFMonoMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76BF2CDE406D0054D4E1 /* SFMonoMedium.otf */; };
+		F3EB76CF2CDE406D0054D4E1 /* SFMonoSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C02CDE406D0054D4E1 /* SFMonoSemibold.otf */; };
+		F3EB76D02CDE406D0054D4E1 /* SFMonoLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C12CDE406D0054D4E1 /* SFMonoLightItalic.otf */; };
+		F3EB76D12CDE406D0054D4E1 /* SFMonoLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C22CDE406D0054D4E1 /* SFMonoLight.otf */; };
+		F3EB76D22CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C32CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf */; };
+		F3EB76D32CDE406D0054D4E1 /* SFMonoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C42CDE406D0054D4E1 /* SFMonoBold.otf */; };
+		F3EB76D42CDE406D0054D4E1 /* SFMonoHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C52CDE406D0054D4E1 /* SFMonoHeavy.otf */; };
+		F3EB76D52CDE406D0054D4E1 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C62CDE406D0054D4E1 /* GmarketSansTTFLight.ttf */; };
+		F3EB76D62CDE406D0054D4E1 /* SFMonoMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C72CDE406D0054D4E1 /* SFMonoMediumItalic.otf */; };
+		F3EB76D72CDE406D0054D4E1 /* SFMonoRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C82CDE406D0054D4E1 /* SFMonoRegular.otf */; };
+		F3EB76D82CDE406D0054D4E1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C92CDE406D0054D4E1 /* GmarketSansTTFBold.ttf */; };
+		F3EB76D92CDE406D0054D4E1 /* SFMonoRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */; };
+		F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */; };
+		F3EB76DB2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,21 +124,6 @@
 		F3EB767B2CDDE5790054D4E1 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		F3EB767C2CDDE5790054D4E1 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AKFont.swift"; sourceTree = "<group>"; };
-		F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoSemiboldItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoSemiboldItalic.otf"; sourceTree = "<group>"; };
-		F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoRegular.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoRegular.otf"; sourceTree = "<group>"; };
-		F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoBoldItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoBoldItalic.otf"; sourceTree = "<group>"; };
-		F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoMedium.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoMedium.otf"; sourceTree = "<group>"; };
-		F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoSemibold.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoSemibold.otf"; sourceTree = "<group>"; };
-		F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoRegularItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoRegularItalic.otf"; sourceTree = "<group>"; };
-		F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoHeavyItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoHeavyItalic.otf"; sourceTree = "<group>"; };
-		F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoLightItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoLightItalic.otf"; sourceTree = "<group>"; };
-		F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoLight.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoLight.otf"; sourceTree = "<group>"; };
-		F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoBold.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoBold.otf"; sourceTree = "<group>"; };
-		F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoHeavy.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoHeavy.otf"; sourceTree = "<group>"; };
-		F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFMonoMediumItalic.otf; path = "../../../../../Academy/MacC/악쿠폰트/sf-mono/SFMonoMediumItalic.otf"; sourceTree = "<group>"; };
-		F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFLight.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFLight.ttf"; sourceTree = "<group>"; };
-		F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFMedium.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFMedium.ttf"; sourceTree = "<group>"; };
-		F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GmarketSansTTFBold.ttf; path = "../../../../../Academy/MacC/악쿠폰트/GmarketSansTTF/GmarketSansTTFBold.ttf"; sourceTree = "<group>"; };
 		F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFontType.swift; sourceTree = "<group>"; };
 		F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AKColor.swift"; sourceTree = "<group>"; };
@@ -147,6 +132,21 @@
 		F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWindowBackground.swift; sourceTree = "<group>"; };
 		F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+AkSpacing.swift"; sourceTree = "<group>"; };
 		F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		F3EB76BE2CDE406C0054D4E1 /* SFMonoBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoBoldItalic.otf; sourceTree = "<group>"; };
+		F3EB76BF2CDE406D0054D4E1 /* SFMonoMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoMedium.otf; sourceTree = "<group>"; };
+		F3EB76C02CDE406D0054D4E1 /* SFMonoSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoSemibold.otf; sourceTree = "<group>"; };
+		F3EB76C12CDE406D0054D4E1 /* SFMonoLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoLightItalic.otf; sourceTree = "<group>"; };
+		F3EB76C22CDE406D0054D4E1 /* SFMonoLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoLight.otf; sourceTree = "<group>"; };
+		F3EB76C32CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		F3EB76C42CDE406D0054D4E1 /* SFMonoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoBold.otf; sourceTree = "<group>"; };
+		F3EB76C52CDE406D0054D4E1 /* SFMonoHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoHeavy.otf; sourceTree = "<group>"; };
+		F3EB76C62CDE406D0054D4E1 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		F3EB76C72CDE406D0054D4E1 /* SFMonoMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoMediumItalic.otf; sourceTree = "<group>"; };
+		F3EB76C82CDE406D0054D4E1 /* SFMonoRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoRegular.otf; sourceTree = "<group>"; };
+		F3EB76C92CDE406D0054D4E1 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoRegularItalic.otf; sourceTree = "<group>"; };
+		F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoHeavyItalic.otf; sourceTree = "<group>"; };
+		F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoSemiboldItalic.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,21 +439,21 @@
 		F3EB768A2CDDEC510054D4E1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB769B2CDDED700054D4E1 /* GmarketSansTTFBold.ttf */,
-				F3EB76992CDDED700054D4E1 /* GmarketSansTTFLight.ttf */,
-				F3EB769A2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf */,
-				F3EB76962CDDED5A0054D4E1 /* SFMonoBold.otf */,
-				F3EB768F2CDDED5A0054D4E1 /* SFMonoBoldItalic.otf */,
-				F3EB76972CDDED5A0054D4E1 /* SFMonoHeavy.otf */,
-				F3EB76932CDDED5A0054D4E1 /* SFMonoHeavyItalic.otf */,
-				F3EB76952CDDED5A0054D4E1 /* SFMonoLight.otf */,
-				F3EB76942CDDED5A0054D4E1 /* SFMonoLightItalic.otf */,
-				F3EB76902CDDED5A0054D4E1 /* SFMonoMedium.otf */,
-				F3EB76982CDDED5A0054D4E1 /* SFMonoMediumItalic.otf */,
-				F3EB768E2CDDED5A0054D4E1 /* SFMonoRegular.otf */,
-				F3EB76922CDDED5A0054D4E1 /* SFMonoRegularItalic.otf */,
-				F3EB76912CDDED5A0054D4E1 /* SFMonoSemibold.otf */,
-				F3EB768D2CDDED5A0054D4E1 /* SFMonoSemiboldItalic.otf */,
+				F3EB76C92CDE406D0054D4E1 /* GmarketSansTTFBold.ttf */,
+				F3EB76C62CDE406D0054D4E1 /* GmarketSansTTFLight.ttf */,
+				F3EB76C32CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf */,
+				F3EB76C42CDE406D0054D4E1 /* SFMonoBold.otf */,
+				F3EB76BE2CDE406C0054D4E1 /* SFMonoBoldItalic.otf */,
+				F3EB76C52CDE406D0054D4E1 /* SFMonoHeavy.otf */,
+				F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */,
+				F3EB76C22CDE406D0054D4E1 /* SFMonoLight.otf */,
+				F3EB76C12CDE406D0054D4E1 /* SFMonoLightItalic.otf */,
+				F3EB76BF2CDE406D0054D4E1 /* SFMonoMedium.otf */,
+				F3EB76C72CDE406D0054D4E1 /* SFMonoMediumItalic.otf */,
+				F3EB76C82CDE406D0054D4E1 /* SFMonoRegular.otf */,
+				F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */,
+				F3EB76C02CDE406D0054D4E1 /* SFMonoSemibold.otf */,
+				F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -579,26 +579,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EB769F2CDDED740054D4E1 /* SFMonoLight.otf in Resources */,
-				F3EB76A02CDDED740054D4E1 /* SFMonoLightItalic.otf in Resources */,
-				F3EB76A12CDDED740054D4E1 /* SFMonoRegular.otf in Resources */,
-				F3EB76A22CDDED740054D4E1 /* SFMonoRegularItalic.otf in Resources */,
-				F3EB76A32CDDED740054D4E1 /* SFMonoSemibold.otf in Resources */,
-				F3EB76A42CDDED740054D4E1 /* SFMonoSemiboldItalic.otf in Resources */,
-				F3EB76A52CDDED740054D4E1 /* SFMonoHeavy.otf in Resources */,
-				F3EB76A62CDDED740054D4E1 /* SFMonoMediumItalic.otf in Resources */,
-				F3EB76A72CDDED740054D4E1 /* SFMonoBold.otf in Resources */,
-				F3EB76A82CDDED740054D4E1 /* SFMonoBoldItalic.otf in Resources */,
-				F3EB76A92CDDED740054D4E1 /* SFMonoHeavyItalic.otf in Resources */,
-				F3EB76AA2CDDED740054D4E1 /* SFMonoMedium.otf in Resources */,
+				F3EB76D82CDE406D0054D4E1 /* GmarketSansTTFBold.ttf in Resources */,
+				F3EB76D52CDE406D0054D4E1 /* GmarketSansTTFLight.ttf in Resources */,
+				F3EB76D62CDE406D0054D4E1 /* SFMonoMediumItalic.otf in Resources */,
+				F3EB76D92CDE406D0054D4E1 /* SFMonoRegularItalic.otf in Resources */,
+				F3EB76D42CDE406D0054D4E1 /* SFMonoHeavy.otf in Resources */,
+				F3EB76CF2CDE406D0054D4E1 /* SFMonoSemibold.otf in Resources */,
+				F3EB76CE2CDE406D0054D4E1 /* SFMonoMedium.otf in Resources */,
+				F3EB76CD2CDE406D0054D4E1 /* SFMonoBoldItalic.otf in Resources */,
+				F3EB76D32CDE406D0054D4E1 /* SFMonoBold.otf in Resources */,
+				F3EB76D72CDE406D0054D4E1 /* SFMonoRegular.otf in Resources */,
+				F3EB76D12CDE406D0054D4E1 /* SFMonoLight.otf in Resources */,
+				F3EB76DB2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf in Resources */,
 				512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */,
-				F3EB769E2CDDED700054D4E1 /* GmarketSansTTFBold.ttf in Resources */,
 				F3EB76352CDD14F60054D4E1 /* .gitignore in Resources */,
-				F3EB769D2CDDED700054D4E1 /* GmarketSansTTFMedium.ttf in Resources */,
 				F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */,
-				F3EB769C2CDDED700054D4E1 /* GmarketSansTTFLight.ttf in Resources */,
+				F3EB76D02CDE406D0054D4E1 /* SFMonoLightItalic.otf in Resources */,
+				F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */,
 				F3EB76102CDD14B20054D4E1 /* Base in Resources */,
 				F3EB76692CDDE39A0054D4E1 /* TravelTableViewCell.xib in Resources */,
+				F3EB76D22CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
