@@ -16,23 +16,29 @@ class BudgetCategorySettingView: UIViewController {
     $0.font = UIFont.akFont(.gmarketMedium16)
     $0.textColor = UIColor.akColor(.gray3)
   }
+  
   private let buttonStackView = UIStackView().set {
     $0.axis = .horizontal
     $0.distribution = .equalSpacing
     $0.alignment = .center
   }
+  
   private let separatorLine =  UIView().set {
     $0.backgroundColor = UIColor.akColor(.black)
   }
   
-  private let buttons: [UIButton] = (0..<5).map { index in
+  private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
+  
+  private var selectedButtons: [Bool] = Array(repeating: false, count: 5)
+  
+  private lazy var buttons: [UIButton] = (0..<5).map { index in
     UIButton().set {
       $0.backgroundColor = UIColor.akColor(.gray1)
       $0.titleLabel?.font = UIFont.akFont(.gmarketMedium14)
       $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
       $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
       
-      $0.heightAnchor.constraint(greaterThanOrEqualToConstant: 26).isActive = true
+      $0.heightAnchor.constraint(equalToConstant: 26).isActive = true
       $0.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
       
       $0.layer.masksToBounds = true
@@ -42,12 +48,21 @@ class BudgetCategorySettingView: UIViewController {
       let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
       $0.setTitle(buttonTitles[index], for: .normal)
       $0.setTitleColor(.black, for: .normal)
+      
+      $0.tag = index
+      $0.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    
+    // 초기 상태 설정
+    for (index, button) in buttons.enumerated() {
+      button.isSelected = selectedButtons[index]
+      button.backgroundColor = selectedButtons[index] ? buttonColors[index] : UIColor.akColor(.gray1)
+    }
   }
   
   // MARK: - Setup Methods
@@ -78,7 +93,20 @@ class BudgetCategorySettingView: UIViewController {
   // 레이아웃 변경 시 버튼의 코너 반경을 업데이트하는 메서드
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    buttons.forEach { $0.layer.cornerRadius = $0.bounds.height / 2}
+    buttons.forEach { $0.layer.cornerRadius = $0.bounds.height / 2 }
+  }
+  
+  @objc private func buttonTapped(_ sender: UIButton) {
+    let index = sender.tag
+    selectedButtons[index].toggle()
+    
+    sender.isSelected = selectedButtons[index]
+    
+    if selectedButtons[index] {
+      sender.backgroundColor = buttonColors[index]
+    } else {
+      sender.backgroundColor = UIColor.akColor(.gray1)
+    }
   }
 }
 

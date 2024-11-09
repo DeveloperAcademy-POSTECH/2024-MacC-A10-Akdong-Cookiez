@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     let navigationController = UINavigationController()
     self.window = UIWindow(windowScene: windowScene)
-    self.window?.rootViewController = navigationController
+    self.window?.rootViewController = BudgetCategorySettingView()
     self.window?.makeKeyAndVisible()
     self.appCoordinator = AppCoordinatorImp(navigationController)
     self.appCoordinator?.start()
