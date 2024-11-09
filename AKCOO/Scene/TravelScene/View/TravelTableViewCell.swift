@@ -14,6 +14,10 @@ class TravelTableViewCell: UITableViewCell {
     
     // MARK: - Views
     
+    private let listContainerView = UIView().set {
+        $0.backgroundColor = UIColor.yellow
+    }
+    
     private let stackView = UIStackView().set {
     $0.spacing = 0
     $0.axis = .horizontal
@@ -23,7 +27,8 @@ class TravelTableViewCell: UITableViewCell {
     
     private let titleView = UIView().set {
     $0.backgroundColor = UIColor.akColor(.white)
-        $0.layer.borderWidth = 0.3
+    $0.layer.borderWidth = 0.3
+    $0.layer.cornerRadius = 25
     $0.layer.borderColor = UIColor.akColor(.black).cgColor
     }
     
@@ -43,6 +48,7 @@ class TravelTableViewCell: UITableViewCell {
     
     private let travelProcessCircle = UIView().set {
     $0.backgroundColor = UIColor.akColor(.akGreen)
+    
     }
     
     private let travelDateLabel = UILabel().set {
@@ -68,18 +74,27 @@ class TravelTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    // 동그라미
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.width / 2
+    }
+    
     private func setupView() {
         
-        contentView.addSubview(stackView)
+        
+        
+//        contentView.addSubview(stackView)
+        contentView.addSubview(travelDateLabel)
+        contentView.addSubview(listContainerView)
+        
+        listContainerView.addSubview(stackView)
         
         stackView.addArrangedSubview(travelProcessCircle)
         stackView.addArrangedSubview(titleView)
         
         titleView.addSubview(countryFlagLabel)
         titleView.addSubview(countryNameLabel)
-  
-    contentView.addSubview(travelDateLabel)
-    contentView.addSubview(stackView)
         
         // Set content hugging for titleView
             titleView.setContentHuggingPriority(.required, for: .horizontal)
@@ -90,9 +105,10 @@ class TravelTableViewCell: UITableViewCell {
     private func setupConstrains() {
         NSLayoutConstraint.activate([
             
+          
+            
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  // Added trailing constraint
-
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
             
             travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
@@ -100,13 +116,13 @@ class TravelTableViewCell: UITableViewCell {
             
             titleView.heightAnchor.constraint(equalToConstant: 50),
         
-
             countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+            countryFlagLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
             
             countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 0),
             countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+         
       
-            
             // 여행기간 레이블
             travelDateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 82),
             travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
@@ -134,6 +150,8 @@ extension UIView {
     return self
   }
 }
+
+
 
 // Preview 화면
 @available(iOS 17.0, *)
