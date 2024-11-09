@@ -21,11 +21,16 @@ class TravelTableViewCell: UITableViewCell {
     $0.alignment = .fill
     }
     
+    private let titleView = UIView().set {
+    $0.backgroundColor = UIColor.akColor(.white)
+        $0.layer.borderWidth = 0.3
+    $0.layer.borderColor = UIColor.akColor(.black).cgColor
+    }
+    
     private let countryFlagLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium24)
     $0.text = "국기"
     $0.backgroundColor = UIColor.akColor(.akBlue)
-
     }
     
     private let countryNameLabel = UILabel().set {
@@ -65,26 +70,41 @@ class TravelTableViewCell: UITableViewCell {
     
     private func setupView() {
         
+        contentView.addSubview(stackView)
+        
         stackView.addArrangedSubview(travelProcessCircle)
-        stackView.addArrangedSubview(countryFlagLabel)
-        stackView.addArrangedSubview(countryNameLabel)
-      
+        stackView.addArrangedSubview(titleView)
+        
+        titleView.addSubview(countryFlagLabel)
+        titleView.addSubview(countryNameLabel)
   
     contentView.addSubview(travelDateLabel)
     contentView.addSubview(stackView)
+        
+        // Set content hugging for titleView
+            titleView.setContentHuggingPriority(.required, for: .horizontal)
+            countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
+            countryNameLabel.setContentHuggingPriority(.required, for: .horizontal)
     }
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
             
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  // Added trailing constraint
+
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
             
-            
-
             travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
             travelProcessCircle.widthAnchor.constraint(equalToConstant: 50), 
             
+            titleView.heightAnchor.constraint(equalToConstant: 50),
+        
+
+            countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+            
+            countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 0),
+            countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
       
             
             // 여행기간 레이블
