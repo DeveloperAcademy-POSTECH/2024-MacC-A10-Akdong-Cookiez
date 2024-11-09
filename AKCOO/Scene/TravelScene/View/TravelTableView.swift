@@ -75,3 +75,10 @@ extension TravelTableView: UITableViewDelegate {
     travelDelegate?.selectedCell(at: indexPath)
   }
 }
+
+// Preview 화면
+@available(iOS 17.0, *)
+#Preview {
+  let vc = TravelTableView()
+  return vc
+}
