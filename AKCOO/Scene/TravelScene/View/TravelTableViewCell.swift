@@ -54,15 +54,14 @@ class TravelTableViewCell: UITableViewCell {
     stackContainerView.addArrangedSubview(travelProcessCircle)
     stackContainerView.addArrangedSubview(countryFlagLabel)
     stackContainerView.addArrangedSubview(countryNameLabel)
+    contentView.addSubview(stackContainerView)
     contentView.addSubview(travelDateLabel)
     }
     
     private func setupConstrains() {
-        NSLayoutConstraint.activate([
-            travelProcessCircle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            travelProcessCircle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            countryFlagLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            countryNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+    NSLayoutConstraint.activate([
+        stackContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+        stackContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             travelDateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 22),
             travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30)
         ])
