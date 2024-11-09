@@ -113,5 +113,6 @@ extension TravelListSceneController: TravelTableViewDelegate {
   func selectedCell(at indexPath: IndexPath) {
     let travel = travels[indexPath.row]
     self.selectedTravelCellIndexPath = indexPath
+    coordinator?.presentExpense(travelId: travel.id, cellIndexPath: indexPath, form: self)
   }
 }
