@@ -9,7 +9,7 @@ import UIKit
 
 class ExpenseRecordViewController: UIViewController {
   private let expenseUseCase: ExpenseUseCase
-  weak var coordinator: ExpenseCoordinator?
+  weak var coordinator: ExpenseRecordCoordinator?
   
   // MARK: - Properties
   private let id: Int
