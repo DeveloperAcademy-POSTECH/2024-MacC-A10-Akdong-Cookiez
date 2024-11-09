@@ -48,8 +48,8 @@ class ExpenseRecordViewController: UIViewController {
   private func setupConstraints() {
     button.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
       button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
       button.heightAnchor.constraint(equalToConstant: 50),
       button.widthAnchor.constraint(equalToConstant: 200)
     ])

@@ -42,8 +42,10 @@ class ExpenseSceneController: UIViewController {
     recordViewController.view.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      recordViewController.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      recordViewController.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      recordViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+      recordViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      recordViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      recordViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
   }
 }
