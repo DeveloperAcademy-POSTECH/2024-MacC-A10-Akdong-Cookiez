@@ -8,13 +8,13 @@
 import UIKit
 
 class ExpenseSceneController: UIViewController {
-  private let recordViewController: ExpenseRecordViewController
-  private let statsViewController: ExpenseStatsViewController
+  private let recordViewController: UIViewController
+  private let statsViewController: UIViewController
 
   // MARK: - Views
   
   // MARK: - Initializers
-  init(recordViewController: ExpenseRecordViewController, statsViewController: ExpenseStatsViewController) {
+  init(recordViewController: UIViewController, statsViewController: UIViewController) {
     self.recordViewController = recordViewController
     self.statsViewController = statsViewController
     super.init(nibName: nil, bundle: nil)
