@@ -99,8 +99,8 @@ class TravelListSceneController: UIViewController {
 // MARK: - Public Methods
 extension TravelListSceneController {
   
-  public func submitNewTravel(_ travel: Travel) {
-    print("VC가 추가 된 사실 받음")
+  public func configureNewTravel(_ travel: Travel) {
+    print("여행 추가된 사실을 TravelListScene이 받음")
   }
   
   public func getSelectedCellIndexPath() -> IndexPath? {
