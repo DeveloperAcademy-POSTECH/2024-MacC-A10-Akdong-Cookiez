@@ -15,13 +15,11 @@ class TravelListSceneController: UIViewController {
   private var travels = [Travel]()
   
   // MARK: - Views
-  let titleLabel: UILabel = {
-    let label = UILabel()
-    label.font = .akFont(.gmarketMedium30)
-    label.textColor = .akColor(.black)
-    label.adjustsFontForContentSizeCategory = true
-    return label
-  }()
+    let titleLabel = UILabel().set {
+        $0.font = .akFont(.gmarketMedium30)
+        $0.textColor = .akColor(.black)
+        $0.text = "여행리스트"
+  }
   
   let travelTableView: TravelTableView = TravelTableView()
   
@@ -71,13 +69,13 @@ class TravelListSceneController: UIViewController {
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      travelTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+        travelTableView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 20),
       travelTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal),
       travelTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonHorizontal),
       travelTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       
-      titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 38),
-      titleLabel.leadingAnchor.constraint(equalTo: travelTableView.leadingAnchor, constant: 5)
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 136),
+      titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
     ])
   }
   
