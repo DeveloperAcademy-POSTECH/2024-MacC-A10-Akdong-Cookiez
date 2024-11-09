@@ -13,37 +13,29 @@ class TravelTableViewCell: UITableViewCell {
     static let identifier = "TravelTableViewCell"
     
     // MARK: - Views
-    
-//    private let listContainerView = UIView().set {
-//    $0.backgroundColor = UIColor.akColor(.gray1)
-//    }
-    
-    private let travelTitleView = UIView().set {
-    $0.backgroundColor = .akColor(.akOrange)
-    }
-    
-    
-    
-    
     private let countryFlagLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium24)
     $0.text = "국기"
+    $0.backgroundColor = UIColor.akColor(.akBlue)
+
     }
     
     private let countryNameLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium24)
     $0.textColor = UIColor.akColor(.black)
     $0.text = "국가명"
+    $0.backgroundColor = UIColor.akColor(.akYellow)
+
     }
     
     private let travelProcessCircle = UIView().set {
-    $0.backgroundColor = UIColor.akColor(.akGreen)
-    $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = UIColor.akColor(.akGreen)
     }
     
     private let travelDateLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium14)
     $0.textColor = UIColor.akColor(.black)
+    $0.backgroundColor = UIColor.akColor(.akYellow)
     $0.text = "여행날짜"
     }
     
@@ -66,52 +58,39 @@ class TravelTableViewCell: UITableViewCell {
     private func setupView() {
         
 //        contentView.addSubview(listContainerView)
-    contentView.addSubview(travelTitleView)
+  
     contentView.addSubview(travelDateLabel)
     contentView.addSubview(travelProcessCircle)
-      
-        
-//        listContainerView.addSubview(travelTitleView)
-    travelTitleView.addSubview(countryFlagLabel)
-    travelTitleView.addSubview(countryNameLabel)
-        
-//
-//        listContainerView.addSubview(travelDateLabel)
-//        listContainerView.addSubview(travelProcessCircle)
+    contentView.addSubview(countryFlagLabel)
+    contentView.addSubview(countryNameLabel)
     }
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
             
-            // 컨테이너뷰
-//            listContainerView.topAnchor.constraint(equalTo: contentView.topAnchor),
-//                        listContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//                        listContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//                        listContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
             // travelProcessCircle
             travelProcessCircle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
             travelProcessCircle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            travelProcessCircle.trailingAnchor.constraint(equalTo: travelTitleView.leadingAnchor, constant: 0),
             travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
+            travelProcessCircle.widthAnchor.constraint(equalToConstant: 50), 
             
             // 타이틀뷰 레이블
-            travelTitleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            travelTitleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 70),
-            travelTitleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -46),
-       
-            
+           
+    
             // 국기 레이블
-            countryFlagLabel.leadingAnchor.constraint(equalTo: travelTitleView.leadingAnchor, constant: 10),
-            countryFlagLabel.topAnchor.constraint(equalTo: travelTitleView.topAnchor, constant: 13),
+            countryFlagLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
+            countryFlagLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 80),
             
             // 국가명 레이블
             countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 10),
-            countryNameLabel.topAnchor.constraint(equalTo: travelTitleView.topAnchor, constant: 13),
+            countryNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
             
             // 여행기간 레이블
-            travelDateLabel.topAnchor.constraint(equalTo: travelTitleView.bottomAnchor, constant: 10),
+            travelDateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 82),
             travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+         
+
         
         ])
         
