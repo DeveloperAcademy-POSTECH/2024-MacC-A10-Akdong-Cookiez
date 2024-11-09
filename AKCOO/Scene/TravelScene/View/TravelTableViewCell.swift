@@ -13,6 +13,14 @@ class TravelTableViewCell: UITableViewCell {
     static let identifier = "TravelTableViewCell"
     
     // MARK: - Views
+    
+    private let stackView = UIStackView().set {
+    $0.spacing = 0
+    $0.axis = .horizontal
+    $0.distribution = .fill
+    $0.alignment = .fill
+    }
+    
     private let countryFlagLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium24)
     $0.text = "국기"
@@ -29,7 +37,7 @@ class TravelTableViewCell: UITableViewCell {
     }
     
     private let travelProcessCircle = UIView().set {
-        $0.backgroundColor = UIColor.akColor(.akGreen)
+    $0.backgroundColor = UIColor.akColor(.akGreen)
     }
     
     private let travelDateLabel = UILabel().set {
@@ -57,34 +65,27 @@ class TravelTableViewCell: UITableViewCell {
     
     private func setupView() {
         
-//        contentView.addSubview(listContainerView)
+        stackView.addArrangedSubview(travelProcessCircle)
+        stackView.addArrangedSubview(countryFlagLabel)
+        stackView.addArrangedSubview(countryNameLabel)
+      
   
     contentView.addSubview(travelDateLabel)
-    contentView.addSubview(travelProcessCircle)
-    contentView.addSubview(countryFlagLabel)
-    contentView.addSubview(countryNameLabel)
+    contentView.addSubview(stackView)
     }
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
             
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+            
+            
 
-            // travelProcessCircle
-            travelProcessCircle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            travelProcessCircle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
             travelProcessCircle.widthAnchor.constraint(equalToConstant: 50), 
             
-            // 타이틀뷰 레이블
-           
-    
-            // 국기 레이블
-            countryFlagLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
-            countryFlagLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 80),
-            
-            // 국가명 레이블
-            countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 10),
-            countryNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
+      
             
             // 여행기간 레이블
             travelDateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 82),
