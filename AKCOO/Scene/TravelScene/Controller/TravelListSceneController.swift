@@ -84,7 +84,7 @@ class TravelListSceneController: UIViewController {
   // MARK: - Private Methods
   private func initConfigure() {
     // useCase에서 데이터 가져와서 초기 세팅
-    self.travels.append(.init(country: "태국", currency: .init(unitTitle: "바트", unit: 4), startDate: .now, endDate: .now.addingTimeInterval(3), budget: .init(total: 3000000)))
+      self.travels.append(.init(country: "캐나다", currency: .init(unitTitle: "바트", unit: 4), startDate: .now, endDate: .now.addingTimeInterval(3), budget: .init(total: 3000000)))
     let info: [TravelCellInfo] = travels.map { ($0.country, "어쩌구기간") }
     travelTableView.setConfigure(info: info)
   }

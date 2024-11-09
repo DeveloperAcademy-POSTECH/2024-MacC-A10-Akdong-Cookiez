@@ -34,8 +34,11 @@ class TravelTableView: UITableView {
   
   // MARK: - Setup Methods
   private func setupView() {
-    let travelCell = UINib(nibName: TravelTableViewCell.identifier, bundle: nil)
-    register(travelCell, forCellReuseIdentifier: TravelTableViewCell.identifier)
+//    let travelCell = UINib(nibName: TravelTableViewCell.identifier, bundle: nil)
+//    register(travelCell, forCellReuseIdentifier: TravelTableViewCell.identifier)
+//      
+   register(TravelTableViewCell.self, forCellReuseIdentifier: TravelTableViewCell.identifier)
+
     self.backgroundColor = .clear
     self.dataSource = self
     self.delegate = self

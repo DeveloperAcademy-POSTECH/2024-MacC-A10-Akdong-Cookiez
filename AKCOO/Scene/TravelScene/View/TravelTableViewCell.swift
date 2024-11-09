@@ -13,9 +13,6 @@ class TravelTableViewCell: UITableViewCell {
   static let identifier = "TravelTableViewCell"
 
   // MARK: - Views
-//  @IBOutlet private weak var titleLabel: UILabel!
-//  @IBOutlet private weak var dateLabel: UILabel!
-    
     private let travelProcessCircle = UIView().set {
     $0.layer.backgroundColor = UIColor.akColor(.akGreen).cgColor
     $0.layer.cornerRadius = $0.frame.width / 2
@@ -44,11 +41,21 @@ class TravelTableViewCell: UITableViewCell {
     }
   
   // MARK: - Lifecycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-      setupView()
-      setupConstrains()
-  }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+        setupConstrains()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Nib 파일로부터 객체가 초기화된 후 호출되는 메서드
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
     
     private func setupView() {
     stackContainerView.addArrangedSubview(travelProcessCircle)
@@ -60,24 +67,20 @@ class TravelTableViewCell: UITableViewCell {
     
     private func setupConstrains() {
     NSLayoutConstraint.activate([
-        stackContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-        stackContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            travelDateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 22),
-            travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30)
+    stackContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+    stackContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+    travelDateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 22),
+    travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30)
         ])
     }
 }
 
 // MARK: - Public Methods
 extension TravelTableViewCell {
-    public func setConfigure(info: TravelCellInfo) {
-//        
-//    let (mainTitle, dateTitle) = info
-//    titleLabel.text = mainTitle
-//    dateLabel.text = dateTitle
-        countryFlagLabel.text = info.title
-        countryNameLabel.text = info.title
-        travelDateLabel.text = info.durationInfoTitle
+public func setConfigure(info: TravelCellInfo) {
+//        countryFlagLabel.text = info.title
+countryNameLabel.text = info.title
+travelDateLabel.text = info.durationInfoTitle
         
     }
 }
