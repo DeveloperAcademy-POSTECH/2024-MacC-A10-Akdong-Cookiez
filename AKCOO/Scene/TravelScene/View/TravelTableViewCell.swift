@@ -30,3 +30,10 @@ extension TravelTableViewCell {
     dateLabel.text = dateTitle
   }
 }
+
+// Preview 화면
+@available(iOS 17.0, *)
+#Preview {
+  let vc = TravelTableViewCell()
+  return vc
+}

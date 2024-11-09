@@ -126,3 +126,10 @@ extension TravelListSceneController: TravelTableViewDelegate {
     return cell
   }
 }
+
+// Preview 화면
+@available(iOS 17.0, *)
+#Preview {
+    let vc = TravelListSceneController(useCase: TravelUseCase())
+  return vc
+}
