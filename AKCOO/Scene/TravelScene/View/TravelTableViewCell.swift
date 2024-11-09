@@ -13,11 +13,6 @@ class TravelTableViewCell: UITableViewCell {
     static let identifier = "TravelTableViewCell"
     
     // MARK: - Views
-    
-    private let listContainerView = UIView().set {
-        $0.backgroundColor = UIColor.yellow
-    }
-    
     private let stackView = UIStackView().set {
     $0.spacing = 0
     $0.axis = .horizontal
@@ -82,14 +77,12 @@ class TravelTableViewCell: UITableViewCell {
         
         // cell 간격 주기
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0))
-        
     }
     
     private func setupView() {
         contentView.addSubview(stackView)
         contentView.addSubview(travelDateLabel)
      
-        
 //        listContainerView.addSubview(stackView)
         stackView.addArrangedSubview(travelProcessCircle)
         stackView.addArrangedSubview(titleView)
@@ -101,6 +94,8 @@ class TravelTableViewCell: UITableViewCell {
             titleView.setContentHuggingPriority(.required, for: .horizontal)
             countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
             countryNameLabel.setContentHuggingPriority(.required, for: .horizontal)
+        
+
     }
     
     private func setupConstrains() {

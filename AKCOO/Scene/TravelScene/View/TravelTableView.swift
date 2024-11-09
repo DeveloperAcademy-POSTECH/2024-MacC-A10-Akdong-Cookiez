@@ -43,6 +43,8 @@ class TravelTableView: UITableView {
     self.backgroundColor = .clear
     self.dataSource = self
     self.delegate = self
+      
+      
   }
   
   private func setupConstraints() {}
