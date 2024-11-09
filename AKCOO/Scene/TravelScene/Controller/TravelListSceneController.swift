@@ -113,6 +113,5 @@ extension TravelListSceneController: TravelTableViewDelegate {
   func selectedCell(at indexPath: IndexPath) {
     let travel = travels[indexPath.row]
     self.selectedTravelCellIndexPath = indexPath
-    coordinator?.tappedCell(id: travel.id)
   }
 }

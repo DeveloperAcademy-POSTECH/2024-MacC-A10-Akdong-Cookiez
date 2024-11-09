@@ -12,10 +12,10 @@ class ExpenseStatsViewController: UIViewController {
   weak var coordinator: ExpenseStatsCoordinator?
   
   // MARK: - Properties
-  private let id: Int
+  private let id: String
   
   // MARK: - Initializers
-  init(countryId id: Int, expenseUseCase: ExpenseUseCase) {
+  init(travelId id: String, expenseUseCase: ExpenseUseCase) {
     self.id = id
     self.expenseUseCase = expenseUseCase
     super.init(nibName: nil, bundle: nil)
