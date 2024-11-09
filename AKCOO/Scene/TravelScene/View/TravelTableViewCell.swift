@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias TravelCellInfo = (title: String, durationInfoTitle: String)
+typealias TravelCellInfo = (flagTitle: String, countryTitle: String, durationInfoTitle: String)
 
 class TravelTableViewCell: UITableViewCell {
     static let identifier = "TravelTableViewCell"
@@ -137,7 +137,8 @@ class TravelTableViewCell: UITableViewCell {
 // MARK: - Public Methods
 extension TravelTableViewCell {
     public func setConfigure(info: TravelCellInfo) {
-    countryNameLabel.text = info.title
+    countryFlagLabel.text = info.flagTitle
+    countryNameLabel.text = info.countryTitle
     travelDateLabel.text = info.durationInfoTitle
         
     }

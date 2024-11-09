@@ -9,7 +9,8 @@ import Foundation
 
 struct Travel: Identifiable {
   let id: String = UUID.init().uuidString
-  var country: String 
+    var flag: String
+  var country: String
   var currency: Currency
   var startDate: Date
   var endDate: Date
