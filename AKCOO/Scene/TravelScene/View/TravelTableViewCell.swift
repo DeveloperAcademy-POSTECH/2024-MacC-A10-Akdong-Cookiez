@@ -73,11 +73,16 @@ class TravelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    // 동그라미
+   
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        // view를 원으로 만들기
         travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.width / 2
+        
+        // cell 간격 주기
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0))
+        
     }
     
     private func setupView() {
