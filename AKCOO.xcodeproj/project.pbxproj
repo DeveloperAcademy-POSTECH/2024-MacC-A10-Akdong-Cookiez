@@ -10,6 +10,8 @@
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
 		6D59B8312CDE77890018E1A2 /* budgetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59B8302CDE77890018E1A2 /* budgetTextFieldView.swift */; };
+		6D59B8332CDF02650018E1A2 /* budgetCategorySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59B8322CDF02650018E1A2 /* budgetCategorySettingView.swift */; };
+		6D59B8352CDF1FCE0018E1A2 /* budgetNameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59B8342CDF1FCE0018E1A2 /* budgetNameSettingView.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
@@ -90,6 +92,8 @@
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
 		6D59B8302CDE77890018E1A2 /* budgetTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetTextFieldView.swift; sourceTree = "<group>"; };
+		6D59B8322CDF02650018E1A2 /* budgetCategorySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetCategorySettingView.swift; sourceTree = "<group>"; };
+		6D59B8342CDF1FCE0018E1A2 /* budgetNameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetNameSettingView.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */,
+				6D59B8322CDF02650018E1A2 /* budgetCategorySettingView.swift */,
+				6D59B8342CDF1FCE0018E1A2 /* budgetNameSettingView.swift */,
 				6D59B8302CDE77890018E1A2 /* budgetTextFieldView.swift */,
 			);
 			path = View;
@@ -681,11 +687,13 @@
 				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
 				6D59B8312CDE77890018E1A2 /* budgetTextFieldView.swift in Sources */,
 				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
+				6D59B8332CDF02650018E1A2 /* budgetCategorySettingView.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
+				6D59B8352CDF1FCE0018E1A2 /* budgetNameSettingView.swift in Sources */,
 				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
 				F3EB76782CDDE5720054D4E1 /* TravelUseCase.swift in Sources */,
 			);

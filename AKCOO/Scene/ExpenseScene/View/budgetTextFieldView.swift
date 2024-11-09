@@ -7,43 +7,31 @@
 
 import UIKit
 
-// MARK: - UIView Extension for 'set' Method
-extension UIView {
-  func set(_ configure: (UIView) -> Void) -> UIView {
-    configure(self)
-    return self
-  }
-}
-
-class ViewController: UIViewController {
+class BudgetTextfieldView: UIViewController {
   
   // MARK: - UI Components
   private let containerView = UIView().set {
     $0.backgroundColor = .akColor(.gray1)
     $0.layer.borderWidth = 0.3
     $0.layer.borderColor = UIColor.akColor(.black).cgColor
-    $0.translatesAutoresizingMaskIntoConstraints = false
   }
   
   private let leftLabel = UILabel().set {
     $0.text = "태국(바트)"
     $0.font = UIFont.akFont(.gmarketMedium16)
     $0.textColor = UIColor.akColor(.gray3)
-    $0.translatesAutoresizingMaskIntoConstraints = false
   }
   
   private let rightLabel = UILabel().set {
     $0.text = "1바트 = 41원"
     $0.font = UIFont.akFont(.gmarketLight12)
     $0.textColor = UIColor.akColor(.gray3)
-    $0.translatesAutoresizingMaskIntoConstraints = false
   }
   
   private let bottomLabel = UILabel().set {
     $0.text = "약 36만4,567원"
     $0.font = UIFont.akFont(.gmarketMedium16)
     $0.textColor = UIColor.akColor(.gray3)
-    $0.translatesAutoresizingMaskIntoConstraints = false
   }
   
   private let textField = UITextField().set {
@@ -51,7 +39,6 @@ class ViewController: UIViewController {
     $0.borderStyle = .none
     $0.textAlignment = .left
     $0.font = UIFont.akFont(.gmarketLight16)
-    $0.translatesAutoresizingMaskIntoConstraints = false
   }
   
   // MARK: - Lifecycle Methods
@@ -113,6 +100,6 @@ class ViewController: UIViewController {
 // Xcode 프리뷰 설정
 @available(iOS 17.0, *)
 #Preview {
-  let vc = ViewController()
+  let vc = BudgetTextfieldView()
   return vc
 }
