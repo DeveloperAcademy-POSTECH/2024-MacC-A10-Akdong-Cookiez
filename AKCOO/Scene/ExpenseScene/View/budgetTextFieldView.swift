@@ -7,28 +7,28 @@
 
 import UIKit
 
-class BudgetTextfieldView: UIViewController {
+class BudgetTextFieldView: UIView {
   
-  // MARK: - UI Components
+  // MARK: Views
   private let containerView = UIView().set {
     $0.backgroundColor = .akColor(.gray1)
     $0.layer.borderWidth = 0.3
     $0.layer.borderColor = UIColor.akColor(.black).cgColor
   }
   
-  private let leftLabel = UILabel().set {
+  private let countryLabel = UILabel().set {
     $0.text = "태국(바트)"
     $0.font = UIFont.akFont(.gmarketMedium16)
     $0.textColor = UIColor.akColor(.gray3)
   }
   
-  private let rightLabel = UILabel().set {
+  private let countryRateLabel = UILabel().set {
     $0.text = "1바트 = 41원"
     $0.font = UIFont.akFont(.gmarketLight12)
     $0.textColor = UIColor.akColor(.gray3)
   }
   
-  private let bottomLabel = UILabel().set {
+  private let koreaWonLabel = UILabel().set {
     $0.text = "약 36만4,567원"
     $0.font = UIFont.akFont(.gmarketMedium16)
     $0.textColor = UIColor.akColor(.gray3)
@@ -41,65 +41,72 @@ class BudgetTextfieldView: UIViewController {
     $0.font = UIFont.akFont(.gmarketLight16)
   }
   
-  // MARK: - Lifecycle Methods
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+  // MARK: Initializers
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     setupView()
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setupView()
+  }
+  
+  // MARK: Setup
+  private func setupView() {
+    addSubview(containerView)
+    containerView.addSubview(textField)
+    
+    addSubview(countryLabel)
+    addSubview(countryRateLabel)
+    addSubview(koreaWonLabel)
+    
     setupConstraints()
   }
   
-  // MARK: - Setup Methods
-  private func setupView() {
-    view.addSubview(containerView)
-    containerView.addSubview(textField)
-    
-    view.addSubview(leftLabel)
-    view.addSubview(rightLabel)
-    view.addSubview(bottomLabel)
-  }
-  
   private func setupConstraints() {
+    containerView.translatesAutoresizingMaskIntoConstraints = false
+    textField.translatesAutoresizingMaskIntoConstraints = false
+    countryLabel.translatesAutoresizingMaskIntoConstraints = false
+    countryRateLabel.translatesAutoresizingMaskIntoConstraints = false
+    koreaWonLabel.translatesAutoresizingMaskIntoConstraints = false
     
-    // Auto Layout
     NSLayoutConstraint.activate([
       // 컨테이너 뷰
-      containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-      containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-      containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
+      containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
       
       // 텍스트 필드
-      textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-      textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
-      textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 17),
-      textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -17),
+      textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+      textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+      textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
+      textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
       
       // 국가 레이블
-      leftLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      leftLabel.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -6),
+      countryLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+      countryLabel.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -6),
       
       // 환율 레이블
-      rightLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      rightLabel.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -6),
+      countryRateLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+      countryRateLabel.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -6),
       
       // 한국(원) 레이블
-      bottomLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10),
-      bottomLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+      koreaWonLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10),
+      koreaWonLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
     ])
+    
+    // 텍스트 필드의 고유 크기 설정
+    textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
   }
-  // MARK: - Layout Updates for Dynamic Corner Radius
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+  
+  // MARK: Layout
+  override func layoutSubviews() {
+    super.layoutSubviews()
     
     // 높이의 절반으로 cornerRadius 설정
     containerView.layer.cornerRadius = containerView.frame.height / 2
   }
-}
-
-// Xcode 프리뷰 설정
-@available(iOS 17.0, *)
-#Preview {
-  let vc = BudgetTextfieldView()
-  return vc
 }

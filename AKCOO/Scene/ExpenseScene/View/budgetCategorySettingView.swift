@@ -7,9 +7,10 @@
 
 import UIKit
 
-class BudgetCategorySettingView: UIViewController {
+class BudgetCategorySettingView: UIView {
+  let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
   
-  // MARK: - UI Components
+  // MARK: Views
   
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
@@ -29,7 +30,7 @@ class BudgetCategorySettingView: UIViewController {
   
   private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
   
-  private var selectedButtons: [Bool] = Array(repeating: false, count: 5)
+  private var selectedButtonIndex: Int? = nil
   
   private lazy var buttons: [UIButton] = (0..<5).map { index in
     UIButton().set {
@@ -43,75 +44,75 @@ class BudgetCategorySettingView: UIViewController {
       
       $0.layer.masksToBounds = true
       $0.layer.cornerCurve = .continuous
-      $0.layer.cornerRadius = 13
       
-      let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
       $0.setTitle(buttonTitles[index], for: .normal)
       $0.setTitleColor(.black, for: .normal)
-      
       $0.tag = index
       $0.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupUI()
-    
-    // 초기 상태 설정
-    for (index, button) in buttons.enumerated() {
-      button.isSelected = selectedButtons[index]
-      button.backgroundColor = selectedButtons[index] ? buttonColors[index] : UIColor.akColor(.gray1)
-    }
+  // MARK: Initializers
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupView()
   }
   
-  // MARK: - Setup Methods
-  private func setupUI() {
-    view.backgroundColor = .white
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setupView()
+  }
+  
+  // MARK: Setup
+  private func setupView() {
+    backgroundColor = .white
     
-    view.addSubview(separatorLine)
-    view.addSubview(categoryLabel)
-    view.addSubview(buttonStackView)
+    addSubview(separatorLine)
+    addSubview(categoryLabel)
+    addSubview(buttonStackView)
     
     buttons.forEach { buttonStackView.addArrangedSubview($0) }
     
+    categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+    buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+    separatorLine.translatesAutoresizingMaskIntoConstraints = false
+    
     NSLayoutConstraint.activate([
-      categoryLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      categoryLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55),
+      categoryLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+      categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
       
       buttonStackView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 10),
-      buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 54),
-      buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -53),
+      buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
       
       separatorLine.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 13),
-      separatorLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-      separatorLine.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+      separatorLine.leadingAnchor.constraint(equalTo: leadingAnchor),
+      separatorLine.trailingAnchor.constraint(equalTo: trailingAnchor),
       separatorLine.heightAnchor.constraint(equalToConstant: 0.3)
     ])
   }
   
-  // 레이아웃 변경 시 버튼의 코너 반경을 업데이트하는 메서드
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    buttons.forEach { $0.layer.cornerRadius = $0.bounds.height / 2 }
-  }
-  
-  @objc private func buttonTapped(_ sender: UIButton) {
-    let index = sender.tag
-    selectedButtons[index].toggle()
-    
-    sender.isSelected = selectedButtons[index]
-    
-    if selectedButtons[index] {
-      sender.backgroundColor = buttonColors[index]
-    } else {
-      sender.backgroundColor = UIColor.akColor(.gray1)
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    buttons.forEach { button in
+      let cornerRadius = max(13, button.bounds.height / 2)
+      button.layer.cornerRadius = cornerRadius
     }
   }
-}
-
-@available(iOS 17.0, *)
-#Preview {
-  let vc = BudgetCategorySettingView()
-  return vc
+  
+  // MARK: Actions
+  @objc private func buttonTapped(_ sender: UIButton) {
+    let index = sender.tag
+    
+    if selectedButtonIndex == index {
+      sender.backgroundColor = UIColor.akColor(.gray1)
+      selectedButtonIndex = nil
+    } else {
+      if let previousIndex = selectedButtonIndex {
+        buttons[previousIndex].backgroundColor = UIColor.akColor(.gray1)
+      }
+      sender.backgroundColor = buttonColors[index]
+      selectedButtonIndex = index
+    }
+  }
 }

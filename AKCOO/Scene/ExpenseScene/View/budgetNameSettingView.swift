@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BudgetNameSettingView: UIViewController {
+class BudgetNameSettingView: UIView {
   
-  // MARK: - UI Components
+  // MARK: Views
   private let nameLabel = UILabel().set {
     $0.text = "이름"
     $0.font = UIFont.akFont(.gmarketMedium16)
@@ -23,42 +23,45 @@ class BudgetNameSettingView: UIViewController {
     $0.textAlignment = .right
   }
   
-  private let separatorLine =  UIView().set {
+  private let separatorLine = UIView().set {
     $0.backgroundColor = UIColor.akColor(.black)
-    
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupUI()
+  // MARK: Initializers
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupView()
   }
   
-  // MARK: - Setup Methods
-  private func setupUI() {
-    view.backgroundColor = .white
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setupView()
+  }
+  
+  // MARK: Setup
+  private func setupView() {
+    backgroundColor = .white
     
-    view.addSubview(nameLabel)
-    view.addSubview(textField)
-    view.addSubview(separatorLine)
+    addSubview(nameLabel)
+    addSubview(textField)
+    addSubview(separatorLine)
+    
+    nameLabel.translatesAutoresizingMaskIntoConstraints = false
+    textField.translatesAutoresizingMaskIntoConstraints = false
+    separatorLine.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55),
+      nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+      nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
       
       textField.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
       textField.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 10),
-      textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+      textField.trailingAnchor.constraint(equalTo: trailingAnchor),
       
       separatorLine.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 13),
-      separatorLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-      separatorLine.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+      separatorLine.leadingAnchor.constraint(equalTo: leadingAnchor),
+      separatorLine.trailingAnchor.constraint(equalTo: trailingAnchor),
       separatorLine.heightAnchor.constraint(equalToConstant: 0.3)
     ])
   }
-}
-
-@available(iOS 17.0, *)
-#Preview {
-  let vc = BudgetNameSettingView()
-  return vc
 }
