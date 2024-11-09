@@ -39,6 +39,8 @@ class TravelListSceneController: UIViewController {
     setupView()
     setupConstraints()
     initConfigure()
+      
+   
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +54,9 @@ class TravelListSceneController: UIViewController {
     setupNavigationBar()
 
     travelTableView.travelDelegate = self
+    travelTableView.rowHeight = 118 // cell 높이 고정
+
+  
   }
   
   private func setupNavigationBar() {

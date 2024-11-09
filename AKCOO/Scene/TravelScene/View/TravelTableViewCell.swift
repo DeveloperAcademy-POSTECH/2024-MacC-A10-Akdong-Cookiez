@@ -48,8 +48,8 @@ class TravelTableViewCell: UITableViewCell {
     
     private let travelProcessCircle = UIView().set {
     $0.backgroundColor = UIColor.akColor(.akGreen)
-    
     }
+  
     
     private let travelDateLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium14)
@@ -81,15 +81,11 @@ class TravelTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        
-        
-        
-//        contentView.addSubview(stackView)
+        contentView.addSubview(stackView)
         contentView.addSubview(travelDateLabel)
-        contentView.addSubview(listContainerView)
+     
         
-        listContainerView.addSubview(stackView)
-        
+//        listContainerView.addSubview(stackView)
         stackView.addArrangedSubview(travelProcessCircle)
         stackView.addArrangedSubview(titleView)
         
@@ -104,8 +100,6 @@ class TravelTableViewCell: UITableViewCell {
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
-            
-          
             
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  
