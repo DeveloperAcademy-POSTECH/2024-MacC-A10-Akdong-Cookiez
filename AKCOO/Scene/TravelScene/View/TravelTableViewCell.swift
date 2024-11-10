@@ -2,7 +2,7 @@
 //  TravelCellTableViewCell.swift
 //  AKCOO
 //
-//  Created by 박혜운 on 11/4/24.
+//  Created by 티나 on 11/10/24.
 //
 
 import UIKit
@@ -30,12 +30,15 @@ class TravelTableViewCell: UITableViewCell {
     private let countryFlagLabel = UILabel().set {
       $0.font = .akFont(.gmarketMedium24)
       $0.text = "국기"
+      $0.adjustsFontForContentSizeCategory = true
+
     }
     
     private let countryNameLabel = UILabel().set {
       $0.font = .akFont(.gmarketMedium24)
       $0.textColor = UIColor.akColor(.black)
       $0.text = "국가명국가명"
+      $0.adjustsFontForContentSizeCategory = true
     }
     
     private let travelProcessCircle = UIView().set {
@@ -51,6 +54,7 @@ class TravelTableViewCell: UITableViewCell {
       $0.font = .akFont(.gmarketMedium14)
       $0.textColor = UIColor.akColor(.black)
       $0.text = "여행날짜"
+      $0.adjustsFontForContentSizeCategory = true
     }
     
     // MARK: - Lifecycle
@@ -91,17 +95,25 @@ class TravelTableViewCell: UITableViewCell {
       titleView.addSubview(countryNameLabel)
         
       travelProcessCircle.addSubview(arrowImage)
+      
+      // 콘텐츠 허깅 우선순위 설정
+      countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
+      countryFlagLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+      countryNameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+       countryNameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     private func setupConstrains() {
       NSLayoutConstraint.activate([
-     
-      stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+        
       stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+      stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+      stackView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -20),
             
       // 동그라미
-      travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
-      travelProcessCircle.widthAnchor.constraint(equalToConstant: 50),
+      travelProcessCircle.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
+      travelProcessCircle.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
+     
         
       // 화살표 이미지
       arrowImage.centerYAnchor.constraint(equalTo: travelProcessCircle.centerYAnchor),
@@ -109,17 +121,18 @@ class TravelTableViewCell: UITableViewCell {
           
       // 타이틀뷰 (국기+국가명)
       titleView.centerYAnchor.constraint(equalTo: stackView.centerYAnchor),
+      titleView.leadingAnchor.constraint(equalTo: countryFlagLabel.leadingAnchor, constant: -10),
       titleView.trailingAnchor.constraint(equalTo: countryNameLabel.trailingAnchor, constant: 10),
+     
         
       // 국기
-      countryFlagLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-      countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
-      countryFlagLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
+      countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 10),
+      countryFlagLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -10),
+      countryFlagLabel.trailingAnchor.constraint(equalTo: countryNameLabel.leadingAnchor, constant: 0),
            
       // 국가명
-      countryNameLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-      countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 0),
-      countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+      countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 10),
+      countryNameLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -10),
       
       // 여행날짜
       travelDateLabel.topAnchor.constraint(equalTo:  stackView.bottomAnchor, constant: 10),

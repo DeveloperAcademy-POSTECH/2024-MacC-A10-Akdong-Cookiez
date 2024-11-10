@@ -53,6 +53,10 @@ class TravelListSceneController: UIViewController {
 
     travelTableView.travelDelegate = self
     travelTableView.backgroundColor = UIColor.akColor(.white) // tableView 색상지정
+    
+    travelTableView.rowHeight = UITableView.automaticDimension
+    travelTableView.estimatedRowHeight = 118
+    
     travelTableView.separatorStyle = UITableViewCell.SeparatorStyle.none // 선 삭제
   }
   
