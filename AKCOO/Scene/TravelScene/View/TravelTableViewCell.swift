@@ -23,7 +23,7 @@ class TravelTableViewCell: UITableViewCell {
     private let titleView = UIView().set {
       $0.backgroundColor = UIColor.akColor(.white)
       $0.layer.borderWidth = 0.3
-      $0.layer.cornerRadius = 25
+      $0.layer.cornerRadius = 20
       $0.layer.borderColor = UIColor.akColor(.black).cgColor
     }
     
@@ -40,13 +40,10 @@ class TravelTableViewCell: UITableViewCell {
       $0.text = "국가명국가명"
       $0.adjustsFontForContentSizeCategory = true
     }
-    
-    private let travelProcessCircle = UIView().set {
-      $0.backgroundColor = UIColor.akColor(.akGreen)
-      $0.layer.masksToBounds = true
-    }
-    
-    private let arrowImage = UIImageView().set {
+
+  private let travelProcessCircle = CircleView().set()
+  
+  private let arrowImage = UIImageView().set {
       $0.contentMode = .scaleAspectFill
       $0.image = UIImage(named: "arrowRight")
     }
@@ -73,14 +70,7 @@ class TravelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
       super.awakeFromNib()
     }
-   
-    override func layoutSubviews() {
-      super.layoutSubviews()
-        
-    // view를 원으로 만들기
-    travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.height / 2
-    }
-    
+
     private func setupView() {
       contentView.backgroundColor = UIColor.akColor(.gray1)
       contentView.layer.cornerRadius = 25
@@ -124,7 +114,6 @@ class TravelTableViewCell: UITableViewCell {
       titleView.leadingAnchor.constraint(equalTo: countryFlagLabel.leadingAnchor, constant: -10),
       titleView.trailingAnchor.constraint(equalTo: countryNameLabel.trailingAnchor, constant: 10),
      
-        
       // 국기
       countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 10),
       countryFlagLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -10),
@@ -146,7 +135,7 @@ class TravelTableViewCell: UITableViewCell {
 
 // MARK: - Public Methods
 extension TravelTableViewCell {
-    public func setConfigure(info: TravelCellInfo) {
+  public func setConfigure(info: TravelCellInfo) {
     countryFlagLabel.text = info.flagTitle
     countryNameLabel.text = info.countryTitle
     travelDateLabel.text = info.durationInfoTitle
@@ -163,6 +152,6 @@ extension UIView {
 
 // Preview 화면
 #Preview {
-let vc = TravelTableViewCell()
-return vc
+  let vc = TravelTableViewCell()
+  return vc
 }
