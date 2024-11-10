@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AKCOO
 //
-//  Created by 박혜운 on 11/4/24.
+//  Created by 김티나 on 11/4/24.
 //
 
 import UIKit
@@ -21,7 +21,10 @@ class TravelListSceneController: UIViewController {
     $0.text = "여행리스트"
   }
   
-  let travelTableView: TravelTableView = TravelTableView().set()
+  let travelTableView: TravelTableView = TravelTableView().set {
+    $0.backgroundColor = UIColor.akColor(.white)
+    $0.separatorStyle = UITableViewCell.SeparatorStyle.none
+  }
   
   // MARK: - Initializers
   init(useCase: TravelUseCase) {
@@ -53,8 +56,6 @@ class TravelListSceneController: UIViewController {
     setupNavigationBar()
 
     travelTableView.travelDelegate = self
-    travelTableView.backgroundColor = UIColor.akColor(.white) // tableView 색상지정
-    travelTableView.separatorStyle = UITableViewCell.SeparatorStyle.none // 선 삭제
   }
   
   private func setupNavigationBar() {
@@ -70,14 +71,11 @@ class TravelListSceneController: UIViewController {
   private func setupConstraints() {
     
     NSLayoutConstraint.activate([
-      
-      // 테이블뷰
-      travelTableView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 20),
+      travelTableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
       travelTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal),
       travelTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonHorizontal),
       travelTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       
-      // 타이틀레이블
       titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 38),
       titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal + 5)
     ])
@@ -130,11 +128,11 @@ extension TravelListSceneController: TravelTableViewDelegate {
   
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
-   }
+    }
 }
 
 // Preview 화면
 #Preview {
-  let vc = TravelListSceneController(useCase: TravelUseCase())
-  return vc
+  let preview = TravelListSceneController(useCase: TravelUseCase())
+  return preview
 }

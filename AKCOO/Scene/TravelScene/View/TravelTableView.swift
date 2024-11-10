@@ -2,7 +2,7 @@
 //  TravelTableView.swift
 //  AKCOO
 //
-//  Created by 박혜운 on 11/4/24.
+//  Created by 김티나 on 11/4/24.
 //
 
 import UIKit
@@ -34,18 +34,15 @@ class TravelTableView: UITableView {
   
   // MARK: - Setup Methods
   private func setupView() {
-   register(TravelTableViewCell.self, forCellReuseIdentifier: TravelTableViewCell.identifier)
-
-    self.backgroundColor = .clear
-    self.dataSource = self
-    self.delegate = self
+  register(TravelTableViewCell.self, forCellReuseIdentifier: TravelTableViewCell.identifier)
+  self.backgroundColor = .clear
+  self.dataSource = self
+  self.delegate = self
   }
   
   private func setupConstraints() {}
-}
-
-// MARK: - Input
-extension TravelTableView {
+  
+  // MARK: - Input
   public func setConfigure(info travelInfos: [TravelCellInfo]) {
     self.travelInfos = travelInfos
   }
@@ -74,10 +71,4 @@ extension TravelTableView: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     travelDelegate?.selectedCell(at: indexPath)
   }
-}
-
-// Preview 화면
-#Preview {
-  let vc = TravelTableView()
-  return vc
 }

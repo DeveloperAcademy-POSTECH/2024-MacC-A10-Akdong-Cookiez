@@ -38,7 +38,7 @@ class TravelNewCoordinatorImp: NSObject, TravelNewCoordinator, UINavigationContr
   func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
     // 스택의 변경사항을 확인하여 뷰 컨트롤러가 pop되었는지 감지
     guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-          !navigationController.viewControllers.contains(fromViewController) else { return }
+    !navigationController.viewControllers.contains(fromViewController) else { return }
     
     guard fromViewController is TravelNewSceneController else { return }
     // Controller 타입 감추고 정확한 CoordinatorType에 따른 분기 필요

@@ -2,7 +2,7 @@
 //  CircleView.swift
 //  AKCOO
 //
-//  Created by KIM SEOWOO on 11/10/24.
+//  Created by 김티나 on 11/10/24.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ required init?(coder: NSCoder) {
   }
   
 override func draw(_ rect: CGRect) {
-  guard let context = UIGraphicsGetCurrentContext() else { return }
+  guard UIGraphicsGetCurrentContext() != nil else { return }
   let circlePath = UIBezierPath(ovalIn: bounds)
   UIColor.akColor(.akGreen).setFill()
   circlePath.fill()
