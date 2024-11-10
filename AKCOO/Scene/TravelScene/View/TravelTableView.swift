@@ -44,7 +44,7 @@ class TravelTableView: UITableView {
   private func setupConstraints() {}
 }
 
-// MARK: - Public Methods
+// MARK: - Input
 extension TravelTableView {
   public func setConfigure(info travelInfos: [TravelCellInfo]) {
     self.travelInfos = travelInfos
@@ -69,7 +69,7 @@ extension TravelTableView: UITableViewDataSource {
   }
 }
 
-// MARK: - Delegate (Output)
+// MARK: - Delegate
 extension TravelTableView: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     travelDelegate?.selectedCell(at: indexPath)

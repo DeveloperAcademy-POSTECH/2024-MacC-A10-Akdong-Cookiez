@@ -133,7 +133,7 @@ class TravelTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - Public Methods
+// MARK: - Input
 extension TravelTableViewCell {
   public func setConfigure(info: TravelCellInfo) {
     countryFlagLabel.text = info.flagTitle
