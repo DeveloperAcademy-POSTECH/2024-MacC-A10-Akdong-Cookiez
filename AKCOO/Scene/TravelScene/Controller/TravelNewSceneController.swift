@@ -65,7 +65,7 @@ class TravelNewSceneController: UIViewController {
   // MARK: - Actions
   @objc private func didTapAddButton() {
     coordinator?.tappedSaveButton(new: .init(
-        flag: "🇹🇭",
+      flag: "🇹🇭",
       country: "태국",
       currency: .init(unitTitle: "바트", unit: 4),
       startDate: .now,

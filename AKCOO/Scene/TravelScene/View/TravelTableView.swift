@@ -34,10 +34,6 @@ class TravelTableView: UITableView {
   
   // MARK: - Setup Methods
   private func setupView() {
-//    let travelCell = UINib(nibName: TravelTableViewCell.identifier, bundle: nil)
-//    register(travelCell, forCellReuseIdentifier: TravelTableViewCell.identifier)
-//
-   // 셀의 등록과정⭐️⭐️⭐️ 
    register(TravelTableViewCell.self, forCellReuseIdentifier: TravelTableViewCell.identifier)
 
     self.backgroundColor = .clear

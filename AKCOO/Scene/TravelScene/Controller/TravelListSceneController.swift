@@ -39,6 +39,11 @@ class TravelListSceneController: UIViewController {
     setupView()
     setupConstraints()
     initConfigure()
+    
+    // cell 동적높이
+    travelTableView.estimatedRowHeight = 118
+    travelTableView.rowHeight = UITableView.automaticDimension
+    travelTableView.backgroundColor = .cyan
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +57,6 @@ class TravelListSceneController: UIViewController {
     setupNavigationBar()
 
     travelTableView.travelDelegate = self
-    travelTableView.rowHeight = 118 // cell 높이 고정
   }
   
   private func setupNavigationBar() {
@@ -120,15 +124,19 @@ extension TravelListSceneController: TravelTableViewDelegate {
     }
 
     // "어쩌구기간"은 travels [indexPath.row]의 starDate와 dueDate를 통해 도출되는 String
-      let travelInfo = (travels[indexPath.row].flag, travels[indexPath.row].country, "어쩌구기간")
+    let travelInfo = (travels[indexPath.row].flag, travels[indexPath.row].country, "어쩌구기간")
     cell.setConfigure(info: travelInfo)
     
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+       return UITableView.automaticDimension
+   }
 }
 
 // Preview 화면
 #Preview {
-    let vc = TravelListSceneController(useCase: TravelUseCase())
+  let vc = TravelListSceneController(useCase: TravelUseCase())
   return vc
 }
