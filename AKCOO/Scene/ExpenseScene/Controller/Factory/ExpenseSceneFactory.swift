@@ -8,6 +8,6 @@
 import UIKit
 
 protocol ExpenseSceneFactory {
-  func create(travelId id: String, coordinator: TravelCoordinator, useCase: ExpenseUseCase, recordViewController: UIViewController, statsViewController: UIViewController) -> UIViewController
+  func create(travelId id: String, recordViewController: UIViewController, statsViewController: UIViewController) -> UIViewController
   func dismisser(productViewController viewController: UIViewController)
 }

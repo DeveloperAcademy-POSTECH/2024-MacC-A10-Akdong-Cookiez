@@ -37,7 +37,7 @@ class TravelCoordinatorImp: TravelCoordinator {
   }
   
   func start() {
-    let viewController = travelListSceneFactory.create(coordinator: self, useCase: TravelUseCase())
+    let viewController = travelListSceneFactory.create(coordinator: self)
     self.navigationController.viewControllers = [viewController]
     if true { // 등록된 여행이 있다면
       let id = "실제로는UseCase에서불러오기"
@@ -51,10 +51,9 @@ class TravelCoordinatorImp: TravelCoordinator {
     cellIndexPath: IndexPath?, // transition에 주입해 주기
     form presenting: UIViewController
   ) {
-    let useCase = ExpenseUseCase()
-    let recordViewController = expenseRecordFactory.create(travelId: id, coordinator: self, useCase: useCase)
-    let statsViewController = expenseStatsFactory.create(travelId: id, coordinator: self, useCase: useCase)
-    let expenseSenceController = expenseSceneFactory.create(travelId: id, coordinator: self, useCase: useCase, recordViewController: recordViewController, statsViewController: statsViewController)
+    let recordViewController = expenseRecordFactory.create(travelId: id, coordinator: self)
+    let statsViewController = expenseStatsFactory.create(travelId: id, coordinator: self)
+    let expenseSenceController = expenseSceneFactory.create(travelId: id, recordViewController: recordViewController, statsViewController: statsViewController)
     
     expenseSenceController.modalPresentationStyle = .custom
     

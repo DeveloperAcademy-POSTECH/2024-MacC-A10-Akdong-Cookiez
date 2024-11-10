@@ -20,13 +20,13 @@ final class AppCoordinatorImp: AppCoordinator {
   
   // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
   func start() {
-    let travelUseCase = TravelUseCase()
-    let expenseUseCase = ExpenseUseCase()
-    let travelListSceneFactory = TravelListSceneFactoryImp()
-    let travelNewFactory = TravelNewSceneFactoryImp()
+    let travelUseCase = TravelUseCaseImp()
+    let expenseUseCase = ExpenseUseCaseImp()
+    let travelListSceneFactory = TravelListSceneFactoryImp(useCase: travelUseCase)
+    let travelNewFactory = TravelNewSceneFactoryImp(useCase: travelUseCase)
     let expenseSceneFactory = ExpenseSceneFactoryImp()
-    let expenseRecordFactory = ExpenseRecordFactoryImp()
-    let expenseStatsFactory = ExpenseStatsFactoryImp()
+    let expenseRecordFactory = ExpenseRecordFactoryImp(useCase: expenseUseCase)
+    let expenseStatsFactory = ExpenseStatsFactoryImp(useCase: expenseUseCase)
     
     let travelNewCoordinator = TravelNewCoordinatorImp(
       self.navigationController,
@@ -35,13 +35,15 @@ final class AppCoordinatorImp: AppCoordinator {
     
     let travelCoordinator = TravelCoordinatorImp(
       self.navigationController,
-      travelNewCoordinator: travelNewCoordinator,
+      travelNewCoordinator: travelNewCoordinator, 
+      travelListSceneFactory: travelListSceneFactory,
       expenseSceneFactory: expenseSceneFactory,
       expenseRecordFactory: expenseRecordFactory,
       expenseStatsFactory: expenseStatsFactory
     )
     
     childCoordinators.append(travelCoordinator)
-    navigationController.viewControllers = [travelListSceneFactory.create(coordinator: travelCoordinator, useCase: travelUseCase)]
+    travelCoordinator.start()
+//    navigationController.viewControllers = [travelListSceneFactory.create(coordinator: travelCoordinator)]
   }
 }

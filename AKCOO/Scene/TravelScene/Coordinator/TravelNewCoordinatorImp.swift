@@ -23,8 +23,7 @@ class TravelNewCoordinatorImp: NSObject, TravelNewCoordinator {
   }
   
   func start() {
-    let useCase = TravelUseCase()
-    let newViewController = travelNewfactory.create(coordinator: self, useCase: useCase)
+    let newViewController = travelNewfactory.create(coordinator: self)
     self.navigationController.delegate = self // 스와이프 제스쳐 연결
     self.navigationController.pushViewController(newViewController, animated: true)
   }

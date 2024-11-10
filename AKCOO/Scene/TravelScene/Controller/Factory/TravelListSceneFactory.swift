@@ -8,5 +8,6 @@
 import UIKit
 
 protocol TravelListSceneFactory {
-  func create(coordinator: any TravelCoordinator, useCase: TravelUseCase) -> UIViewController
+  var useCase: TravelUseCase { get set }
+  func create(coordinator: any TravelCoordinator) -> UIViewController
 }

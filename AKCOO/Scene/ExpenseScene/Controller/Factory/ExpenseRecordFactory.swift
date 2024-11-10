@@ -8,5 +8,6 @@
 import UIKit
 
 protocol ExpenseRecordFactory {
-  func create(travelId id: String, coordinator: TravelCoordinator, useCase: ExpenseUseCase) -> UIViewController
+  var useCase: ExpenseUseCase { get set }
+  func create(travelId id: String, coordinator: TravelCoordinator) -> UIViewController
 }

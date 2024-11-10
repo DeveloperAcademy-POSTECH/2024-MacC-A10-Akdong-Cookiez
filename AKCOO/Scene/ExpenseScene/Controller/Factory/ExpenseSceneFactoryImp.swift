@@ -8,7 +8,7 @@
 import UIKit
 
 struct ExpenseSceneFactoryImp: ExpenseSceneFactory {
-  func create(travelId id: String, coordinator: TravelCoordinator, useCase: ExpenseUseCase, recordViewController: UIViewController, statsViewController: UIViewController) -> UIViewController {
+  func create(travelId id: String, recordViewController: UIViewController, statsViewController: UIViewController) -> UIViewController {
     let sceneController = ExpenseSceneController(recordViewController: recordViewController, statsViewController: statsViewController)
     return sceneController
   }
