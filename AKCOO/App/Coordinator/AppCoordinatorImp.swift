@@ -44,6 +44,5 @@ final class AppCoordinatorImp: AppCoordinator {
     
     childCoordinators.append(travelCoordinator)
     travelCoordinator.start()
-//    navigationController.viewControllers = [travelListSceneFactory.create(coordinator: travelCoordinator)]
   }
 }
