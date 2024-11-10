@@ -10,6 +10,7 @@
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
 		955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8B92CE0AC0A009227FA /* CircleView.swift */; };
+		955BF8C02CE0DF91009227FA /* TravelSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8BF2CE0DF91009227FA /* TravelSearchView.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
@@ -102,6 +103,7 @@
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
 		955BF8B92CE0AC0A009227FA /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		955BF8BF2CE0DF91009227FA /* TravelSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelSearchView.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */,
 				F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */,
 				955BF8B92CE0AC0A009227FA /* CircleView.swift */,
+				955BF8BF2CE0DF91009227FA /* TravelSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */,
 				F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
+				955BF8C02CE0DF91009227FA /* TravelSearchView.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
 				F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
