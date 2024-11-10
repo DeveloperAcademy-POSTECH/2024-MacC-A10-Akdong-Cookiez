@@ -18,49 +18,31 @@ final class AppCoordinatorImp: AppCoordinator {
     self.navigationController.view.backgroundColor = .white
   }
   
+  // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
   func start() {
-    if true { // 등록된 화면이 있다면
-      self.showTravelListFlow()
-      self.showExpenseFlow()
-    } else {
-      self.showTravelListFlow()
-    }
-  }
-  
-  func showExpenseFlow() {
-    let expenseCoordinator = ExpenseCoordinatorImp(countryId: 0, self.navigationController)
-    expenseCoordinator.finishDelegate = self
-    expenseCoordinator.start()
-    childCoordinators.append(expenseCoordinator)
-  }
-  
-  func showTravelListFlow() {
-    let tarvelListCoordinator = TravelListCoordinatorImp(self.navigationController)
-    tarvelListCoordinator.finishDelegate = self
-    tarvelListCoordinator.start()
-    childCoordinators.append(tarvelListCoordinator)
-  }
-}
-
-extension AppCoordinatorImp {
-  func tappedCountry(id: Int) {
+    let travelUseCase = TravelUseCaseImp()
+    let expenseUseCase = ExpenseUseCaseImp()
+    let travelListSceneFactory = TravelListSceneFactoryImp(useCase: travelUseCase)
+    let travelNewFactory = TravelNewSceneFactoryImp(useCase: travelUseCase)
+    let expenseSceneFactory = ExpenseSceneFactoryImp()
+    let expenseRecordFactory = ExpenseRecordFactoryImp(useCase: expenseUseCase)
+    let expenseStatsFactory = ExpenseStatsFactoryImp(useCase: expenseUseCase)
     
-  }
-}
-
-extension AppCoordinatorImp: CoordinatorFinishDelegate {
-  func coordinatorDidFinish(childCoordinator: Coordinator) {
-    self.childCoordinators = self.childCoordinators.filter({ $0.type != childCoordinator.type })
+    let travelNewCoordinator = TravelNewCoordinatorImp(
+      self.navigationController,
+      factory: travelNewFactory
+    )
     
-    self.navigationController.viewControllers.removeAll()
+    let travelCoordinator = TravelCoordinatorImp(
+      self.navigationController,
+      travelNewCoordinator: travelNewCoordinator, 
+      travelListSceneFactory: travelListSceneFactory,
+      expenseSceneFactory: expenseSceneFactory,
+      expenseRecordFactory: expenseRecordFactory,
+      expenseStatsFactory: expenseStatsFactory
+    )
     
-    switch childCoordinator.type {
-    case .travelList:
-      self.showExpenseFlow()
-    case .expense:
-      self.showTravelListFlow()
-    default:
-      break
-    }
+    childCoordinators.append(travelCoordinator)
+    travelCoordinator.start()
   }
 }

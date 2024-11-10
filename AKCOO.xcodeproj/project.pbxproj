@@ -24,20 +24,18 @@
 		F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */; };
 		F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */; };
 		F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */; };
-		F3EB765D2CDDE30B0054D4E1 /* TravelListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */; };
+		F3EB765D2CDDE30B0054D4E1 /* TravelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */; };
 		F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */; };
-		F3EB765F2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */; };
+		F3EB765F2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */; };
 		F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */; };
 		F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */; };
 		F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */; };
 		F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */; };
-		F3EB766D2CDDE3C20054D4E1 /* ExpenseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */; };
-		F3EB766E2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */; };
 		F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */; };
 		F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */; };
 		F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */; };
-		F3EB76772CDDE5720054D4E1 /* ExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */; };
-		F3EB76782CDDE5720054D4E1 /* TravelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */; };
+		F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */; };
+		F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */; };
 		F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76792CDDE5790054D4E1 /* Expense.swift */; };
 		F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767A2CDDE5790054D4E1 /* Currency.swift */; };
 		F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767B2CDDE5790054D4E1 /* Travel.swift */; };
@@ -66,6 +64,21 @@
 		F3EB76D92CDE406D0054D4E1 /* SFMonoRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */; };
 		F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */; };
 		F3EB76DB2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */; };
+		F3EB76DE2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */; };
+		F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */; };
+		F3EB76E22CDF97410054D4E1 /* TravelNewSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */; };
+		F3EB76E42CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */; };
+		F3EB76E72CDF990B0054D4E1 /* ExpenseSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */; };
+		F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */; };
+		F3EB76ED2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */; };
+		F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */; };
+		F3EB76F12CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */; };
+		F3EB76F32CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */; };
+		F3EB76F52CDFB95A0054D4E1 /* TravelListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */; };
+		F3EB76F92CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */; };
+		F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */; };
+		F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */; };
+		F3EB77002CE09CE50054D4E1 /* TravelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,20 +120,18 @@
 		F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinatorImp.swift; sourceTree = "<group>"; };
-		F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCoordinator.swift; sourceTree = "<group>"; };
 		F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinator.swift; sourceTree = "<group>"; };
-		F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCoordinatorImp.swift; sourceTree = "<group>"; };
 		F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListSceneController.swift; sourceTree = "<group>"; };
 		F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewSceneController.swift; sourceTree = "<group>"; };
 		F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableView.swift; sourceTree = "<group>"; };
 		F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
-		F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCoordinator.swift; sourceTree = "<group>"; };
-		F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCoordinatorImp.swift; sourceTree = "<group>"; };
 		F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseSceneController.swift; sourceTree = "<group>"; };
 		F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseStatsViewController.swift; sourceTree = "<group>"; };
 		F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseRecordViewController.swift; sourceTree = "<group>"; };
-		F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseUseCase.swift; sourceTree = "<group>"; };
-		F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelUseCase.swift; sourceTree = "<group>"; };
+		F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseUseCaseImp.swift; sourceTree = "<group>"; };
+		F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelUseCaseImp.swift; sourceTree = "<group>"; };
 		F3EB76792CDDE5790054D4E1 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		F3EB767A2CDDE5790054D4E1 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F3EB767B2CDDE5790054D4E1 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
@@ -149,6 +160,21 @@
 		F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoRegularItalic.otf; sourceTree = "<group>"; };
 		F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoHeavyItalic.otf; sourceTree = "<group>"; };
 		F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoSemiboldItalic.otf; sourceTree = "<group>"; };
+		F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListSceneFactoryImp.swift; sourceTree = "<group>"; };
+		F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListSceneFactory.swift; sourceTree = "<group>"; };
+		F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelNewSceneFactory.swift; sourceTree = "<group>"; };
+		F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelNewSceneFactoryImp.swift; sourceTree = "<group>"; };
+		F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneFactory.swift; sourceTree = "<group>"; };
+		F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneFactoryImp.swift; sourceTree = "<group>"; };
+		F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordFactoryImp.swift; sourceTree = "<group>"; };
+		F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordFactory.swift; sourceTree = "<group>"; };
+		F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsFactory.swift; sourceTree = "<group>"; };
+		F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsFactoryImp.swift; sourceTree = "<group>"; };
+		F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordCoordinator.swift; sourceTree = "<group>"; };
+		F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUseCase.swift; sourceTree = "<group>"; };
+		F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,9 +304,9 @@
 		F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB76F62CDFB9FC0054D4E1 /* Coordinator */,
 				F3EB76512CDDDFF90054D4E1 /* View */,
 				F3EB76522CDDDFFC0054D4E1 /* Controller */,
-				F3EB76542CDDE0300054D4E1 /* Coordinator */,
 			);
 			path = ExpenseScene;
 			sourceTree = "<group>";
@@ -307,6 +333,7 @@
 		F3EB76502CDDDFF20054D4E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB76DC2CDF96420054D4E1 /* Factory */,
 				F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */,
 				F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */,
 			);
@@ -324,6 +351,7 @@
 		F3EB76522CDDDFFC0054D4E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB76E52CDF98620054D4E1 /* Factory */,
 				F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */,
 				F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */,
 				F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */,
@@ -335,17 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				F3EB76822CDDE5E20054D4E1 /* Protocol */,
-				F3EB765B2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift */,
+				F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */,
 				F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		F3EB76542CDDE0300054D4E1 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76812CDDE5D70054D4E1 /* Protocol */,
-				F3EB766C2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -353,8 +372,9 @@
 		F3EB76552CDDE0970054D4E1 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB76752CDDE5720054D4E1 /* ExpenseUseCase.swift */,
-				F3EB76762CDDE5720054D4E1 /* TravelUseCase.swift */,
+				F3EB76FC2CE09CB50054D4E1 /* Interface */,
+				F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */,
+				F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -370,19 +390,12 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		F3EB76812CDDE5D70054D4E1 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB766A2CDDE3C20054D4E1 /* ExpenseCoordinator.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		F3EB76822CDDE5E20054D4E1 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB76582CDDE30B0054D4E1 /* TravelListCoordinator.swift */,
+				F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */,
 				F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */,
+				F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -475,6 +488,56 @@
 				F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */,
 			);
 			path = Spacing;
+			sourceTree = "<group>";
+		};
+		F3EB76DC2CDF96420054D4E1 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */,
+				F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */,
+				F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */,
+				F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F3EB76E52CDF98620054D4E1 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */,
+				F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */,
+				F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */,
+				F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */,
+				F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */,
+				F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F3EB76F62CDFB9FC0054D4E1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76F72CDFBA010054D4E1 /* Protocol */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3EB76F72CDFBA010054D4E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */,
+				F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3EB76FC2CE09CB50054D4E1 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */,
+				F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,41 +712,54 @@
 			files = (
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
+				F3EB76E72CDF990B0054D4E1 /* ExpenseSceneFactory.swift in Sources */,
+				F3EB76DE2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift in Sources */,
 				F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */,
+				F3EB77002CE09CE50054D4E1 /* TravelUseCase.swift in Sources */,
 				F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */,
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
 				F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */,
 				F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */,
+				F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */,
 				F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
-				F3EB76772CDDE5720054D4E1 /* ExpenseUseCase.swift in Sources */,
+				F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */,
+				F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
+				F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
 				F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */,
-				F3EB765F2CDDE30B0054D4E1 /* TravelListCoordinatorImp.swift in Sources */,
+				F3EB76E42CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift in Sources */,
+				F3EB76ED2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift in Sources */,
+				F3EB765F2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift in Sources */,
 				F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */,
+				F3EB76F52CDFB95A0054D4E1 /* TravelListCoordinator.swift in Sources */,
+				F3EB76F92CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift in Sources */,
+				F3EB76F12CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift in Sources */,
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
 				F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */,
 				F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */,
 				F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
-				F3EB766D2CDDE3C20054D4E1 /* ExpenseCoordinator.swift in Sources */,
 				F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
-				F3EB765D2CDDE30B0054D4E1 /* TravelListCoordinator.swift in Sources */,
-				F3EB766E2CDDE3C20054D4E1 /* ExpenseCoordinatorImp.swift in Sources */,
+				F3EB765D2CDDE30B0054D4E1 /* TravelCoordinator.swift in Sources */,
+				F3EB76F32CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift in Sources */,
 				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
+				F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */,
 				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
 				955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
+				F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */,
+				F3EB76E22CDF97410054D4E1 /* TravelNewSceneFactory.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
 				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
-				F3EB76782CDDE5720054D4E1 /* TravelUseCase.swift in Sources */,
+				F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

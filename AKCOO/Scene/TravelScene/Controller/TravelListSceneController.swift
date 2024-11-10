@@ -13,6 +13,7 @@ class TravelListSceneController: UIViewController {
   
   // MARK: - Properties
   private var travels = [Travel]()
+  private var selectedTravelCellIndexPath: IndexPath?
   
   // MARK: - Views
   let titleLabel = UILabel().set {
@@ -98,8 +99,12 @@ class TravelListSceneController: UIViewController {
 // MARK: - Public Methods
 extension TravelListSceneController {
   
-  public func submitNewTravel(_ travel: Travel) {
-    print("VC가 추가 된 사실 받음")
+  public func configureNewTravel(_ travel: Travel) {
+    print("여행 추가된 사실을 TravelListScene이 받음")
+  }
+  
+  public func getSelectedCellIndexPath() -> IndexPath? {
+    return self.selectedTravelCellIndexPath
   }
 }
 
@@ -107,7 +112,8 @@ extension TravelListSceneController {
 extension TravelListSceneController: TravelTableViewDelegate {
   func selectedCell(at indexPath: IndexPath) {
     let travel = travels[indexPath.row]
-    coordinator?.tappedCell(id: travel.id)
+    self.selectedTravelCellIndexPath = indexPath
+    coordinator?.presentExpense(travelId: travel.id, cellIndexPath: indexPath, form: self)
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,6 +130,7 @@ extension TravelListSceneController: TravelTableViewDelegate {
     cell.setConfigure(info: travelInfo)
     
     return cell
+
   }
   
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
