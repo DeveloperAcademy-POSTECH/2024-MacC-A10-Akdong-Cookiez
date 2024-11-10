@@ -72,7 +72,7 @@ class TravelTableViewCell: UITableViewCell {
     override func layoutSubviews() {
       super.layoutSubviews()
         
-      // view를 원으로 만들기
+    // view를 원으로 만들기
     travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.width / 2
     }
     
