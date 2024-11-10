@@ -13,6 +13,12 @@ class TravelTableViewCell: UITableViewCell {
     static let identifier = "TravelTableViewCell"
     
     // MARK: - Views
+    
+    private let listContainerView = UIView().set {
+    $0.backgroundColor = UIColor.akColor(.gray1)
+    $0.layer.cornerRadius = 25
+    }
+    
     private let stackView = UIStackView().set {
     $0.spacing = 0
     $0.axis = .horizontal
@@ -44,8 +50,12 @@ class TravelTableViewCell: UITableViewCell {
     private let travelProcessCircle = UIView().set {
     $0.backgroundColor = UIColor.akColor(.akGreen)
     }
-  
     
+    private let arrowImage = UIImageView().set{
+    $0.contentMode = .scaleAspectFill
+    $0.image = UIImage(named: "arrowRight")
+    }
+  
     private let travelDateLabel = UILabel().set {
     $0.font = .akFont(.gmarketMedium14)
     $0.textColor = UIColor.akColor(.black)
@@ -56,7 +66,7 @@ class TravelTableViewCell: UITableViewCell {
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
+      setupView()
         setupConstrains()
     }
     
@@ -80,48 +90,66 @@ class TravelTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        contentView.addSubview(stackView)
-        contentView.addSubview(travelDateLabel)
+//        contentView.addSubview(stackView)
+//        contentView.addSubview(travelDateLabel)
      
-//        listContainerView.addSubview(stackView)
+        contentView.addSubview(listContainerView)
+        listContainerView.addSubview(stackView)
+        listContainerView.addSubview(travelDateLabel)
+        
         stackView.addArrangedSubview(travelProcessCircle)
         stackView.addArrangedSubview(titleView)
         
         titleView.addSubview(countryFlagLabel)
         titleView.addSubview(countryNameLabel)
         
+        travelProcessCircle.addSubview(arrowImage)
+        
         // Set content hugging for titleView
-            titleView.setContentHuggingPriority(.required, for: .horizontal)
-            countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
-            countryNameLabel.setContentHuggingPriority(.required, for: .horizontal)
+        titleView.setContentHuggingPriority(.required, for: .horizontal)
+        countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
+        countryNameLabel.setContentHuggingPriority(.required, for: .horizontal)
         
 
     }
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
+
+          listContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+          listContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+          listContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+          listContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
             
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
             
-            travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
-            travelProcessCircle.widthAnchor.constraint(equalToConstant: 50), 
+          stackView.leadingAnchor.constraint(equalTo:  listContainerView.leadingAnchor, constant: 20),
+          stackView.trailingAnchor.constraint(equalTo:  listContainerView.trailingAnchor, constant: -20),
+          stackView.topAnchor.constraint(equalTo:  listContainerView.topAnchor, constant: 22),
             
-            titleView.heightAnchor.constraint(equalToConstant: 50),
+            
+//            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+//            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),  
+//            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+            
+          travelProcessCircle.heightAnchor.constraint(equalToConstant: 50),
+          travelProcessCircle.widthAnchor.constraint(equalToConstant: 50),
+            
+          titleView.heightAnchor.constraint(equalToConstant: 50),
         
-            countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
-            countryFlagLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
+          countryFlagLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+          countryFlagLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
             
-            countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 0),
-            countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
-         
+          countryNameLabel.leadingAnchor.constraint(equalTo: countryFlagLabel.trailingAnchor, constant: 0),
+          countryNameLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 13),
+            
+          // 화살표 이미지
+          arrowImage.centerYAnchor.constraint(equalTo: travelProcessCircle.centerYAnchor),
+          arrowImage.centerXAnchor.constraint(equalTo: travelProcessCircle.centerXAnchor),
+            
       
             // 여행기간 레이블
-            travelDateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 82),
-            travelDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-         
-
+          travelDateLabel.topAnchor.constraint(equalTo:  listContainerView.topAnchor, constant: 82),
+          travelDateLabel.leadingAnchor.constraint(equalTo:  listContainerView.leadingAnchor, constant: 30),
         
         ])
         
@@ -146,11 +174,9 @@ extension UIView {
   }
 }
 
-
-
 // Preview 화면
 @available(iOS 17.0, *)
 #Preview {
-    let vc = TravelTableViewCell()
-    return vc
+let vc = TravelTableViewCell()
+return vc
 }

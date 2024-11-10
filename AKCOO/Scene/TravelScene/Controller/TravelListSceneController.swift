@@ -74,12 +74,12 @@ class TravelListSceneController: UIViewController {
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-        travelTableView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 20),
+      travelTableView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 20),
       travelTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal),
       travelTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonHorizontal),
       travelTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 136),
+      titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 38),
       titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
     ])
   }
