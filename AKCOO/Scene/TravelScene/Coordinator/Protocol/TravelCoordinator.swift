@@ -7,4 +7,4 @@
 
 import UIKit
 
-protocol TravelCoordinator: TravelListCoordinator, ExpenseStatsCoordinator, ExpenseRecordCoordinator, ExpenseStatsCoordinator { }
+protocol TravelCoordinator: TravelListCoordinator, ExpenseRecordCoordinator, ExpenseStatsCoordinator { }
