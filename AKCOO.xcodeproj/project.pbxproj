@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
-		955BF8BC2CE0C348009227FA /* TravelSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8BB2CE0C348009227FA /* TravelSearchBar.swift */; };
+		955BF8BE2CE0C9F1009227FA /* TravelSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8BD2CE0C9F1009227FA /* TravelSearchBarView.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
@@ -102,7 +102,7 @@
 /* Begin PBXFileReference section */
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
-		955BF8BB2CE0C348009227FA /* TravelSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelSearchBar.swift; sourceTree = "<group>"; };
+		955BF8BD2CE0C9F1009227FA /* TravelSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelSearchBarView.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 				F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */,
 				F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */,
 				F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */,
-				955BF8BB2CE0C348009227FA /* TravelSearchBar.swift */,
+				955BF8BD2CE0C9F1009227FA /* TravelSearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -732,6 +732,7 @@
 				F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
 				F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */,
+				955BF8BE2CE0C9F1009227FA /* TravelSearchBarView.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
 				F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */,
 				F3EB76E42CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift in Sources */,
@@ -749,7 +750,6 @@
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
 				F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
-				955BF8BC2CE0C348009227FA /* TravelSearchBar.swift in Sources */,
 				F3EB765D2CDDE30B0054D4E1 /* TravelCoordinator.swift in Sources */,
 				F3EB76F32CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift in Sources */,
 				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
