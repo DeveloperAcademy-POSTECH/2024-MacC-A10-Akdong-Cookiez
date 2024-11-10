@@ -19,18 +19,21 @@ class BudgetTextFieldView: UIView {
   private let countryLabel = UILabel().set {
     $0.text = "태국(바트)"
     $0.font = UIFont.akFont(.gmarketMedium16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
   }
   
   private let countryRateLabel = UILabel().set {
     $0.text = "1바트 = 41원"
     $0.font = UIFont.akFont(.gmarketLight12)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
   }
   
   private let koreaWonLabel = UILabel().set {
     $0.text = "약 36만4,567원"
     $0.font = UIFont.akFont(.gmarketMedium16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
   }
   
@@ -39,6 +42,7 @@ class BudgetTextFieldView: UIView {
     $0.borderStyle = .none
     $0.textAlignment = .left
     $0.font = UIFont.akFont(.gmarketLight16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.keyboardType = .numberPad
   }
   
@@ -63,18 +67,6 @@ class BudgetTextFieldView: UIView {
     addSubview(koreaWonLabel)
     
     setupConstraints()
-    setupTapGesture()
-  }
-  
-  // 탭 제스처 설정
-  private func setupTapGesture() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-    self.addGestureRecognizer(tapGesture)
-  }
-  
-  // 키보드 내리는 메서드
-  @objc private func dismissKeyboard() {
-    self.endEditing(true)
   }
   
   private func setupConstraints() {
@@ -89,13 +81,12 @@ class BudgetTextFieldView: UIView {
       containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
       containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
       containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
-      containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
       
       // 텍스트 필드
       textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
       textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-      textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
-      textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
+      textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 17),
+      textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -17),
       
       // 국가 레이블
       countryLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
@@ -114,7 +105,7 @@ class BudgetTextFieldView: UIView {
     textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
     textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
   }
-
+  
   // MARK: Layout
   override func layoutSubviews() {
     super.layoutSubviews()

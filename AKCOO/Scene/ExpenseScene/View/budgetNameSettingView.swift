@@ -13,6 +13,7 @@ class BudgetNameSettingView: UIView {
   private let nameLabel = UILabel().set {
     $0.text = "이름"
     $0.font = UIFont.akFont(.gmarketMedium16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
   }
   
@@ -20,6 +21,7 @@ class BudgetNameSettingView: UIView {
     $0.borderStyle = .none
     $0.placeholder = "이름을 입력하세요"
     $0.font = UIFont.akFont(.gmarketLight16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textAlignment = .right
   }
   

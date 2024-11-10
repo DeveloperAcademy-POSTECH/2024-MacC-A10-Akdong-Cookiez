@@ -15,6 +15,7 @@ class BudgetCategorySettingView: UIView {
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
     $0.font = UIFont.akFont(.gmarketMedium16)
+    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
   }
   
@@ -36,11 +37,10 @@ class BudgetCategorySettingView: UIView {
     UIButton().set {
       $0.backgroundColor = UIColor.akColor(.gray1)
       $0.titleLabel?.font = UIFont.akFont(.gmarketMedium14)
+      $0.titleLabel?.adjustsFontForContentSizeCategory = true
       $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
       $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-      
-      $0.heightAnchor.constraint(equalToConstant: 26).isActive = true
-      $0.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+      $0.contentEdgeInsets = UIEdgeInsets(top: 6, left: 11, bottom: 6, right: 11)
       
       $0.layer.masksToBounds = true
       $0.layer.cornerCurve = .continuous
