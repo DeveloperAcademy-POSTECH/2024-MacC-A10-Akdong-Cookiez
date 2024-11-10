@@ -43,8 +43,7 @@ class TravelTableView: UITableView {
     self.backgroundColor = .clear
     self.dataSource = self
     self.delegate = self
-      
-      
+    
   }
   
   private func setupConstraints() {}
@@ -83,7 +82,6 @@ extension TravelTableView: UITableViewDelegate {
 }
 
 // Preview 화면
-@available(iOS 17.0, *)
 #Preview {
   let vc = TravelTableView()
   return vc

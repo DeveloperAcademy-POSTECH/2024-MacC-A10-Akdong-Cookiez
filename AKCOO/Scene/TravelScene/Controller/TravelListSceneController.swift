@@ -16,12 +16,12 @@ class TravelListSceneController: UIViewController {
   
   // MARK: - Views
     let titleLabel = UILabel().set {
-        $0.font = .akFont(.gmarketMedium30)
-        $0.textColor = .akColor(.black)
-        $0.text = "여행리스트"
+      $0.font = .akFont(.gmarketMedium30)
+      $0.textColor = .akColor(.black)
+      $0.text = "여행리스트"
   }
   
-  let travelTableView: TravelTableView = TravelTableView()
+  let travelTableView: TravelTableView = TravelTableView().set()
   
   // MARK: - Initializers
   init(useCase: TravelUseCase) {
@@ -39,8 +39,6 @@ class TravelListSceneController: UIViewController {
     setupView()
     setupConstraints()
     initConfigure()
-      
-   
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -55,8 +53,6 @@ class TravelListSceneController: UIViewController {
 
     travelTableView.travelDelegate = self
     travelTableView.rowHeight = 118 // cell 높이 고정
-
-  
   }
   
   private func setupNavigationBar() {
@@ -70,17 +66,18 @@ class TravelListSceneController: UIViewController {
   }
   
   private func setupConstraints() {
-    travelTableView.translatesAutoresizingMaskIntoConstraints = false
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
+      
+      // 테이블뷰
       travelTableView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 20),
       travelTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal),
       travelTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonHorizontal),
       travelTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       
+      // 타이틀레이블
       titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 38),
-      titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
+      titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonHorizontal + 5)
     ])
   }
   
@@ -131,7 +128,6 @@ extension TravelListSceneController: TravelTableViewDelegate {
 }
 
 // Preview 화면
-@available(iOS 17.0, *)
 #Preview {
     let vc = TravelListSceneController(useCase: TravelUseCase())
   return vc
