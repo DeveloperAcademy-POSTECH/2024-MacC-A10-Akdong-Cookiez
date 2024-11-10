@@ -43,6 +43,7 @@ class TravelTableViewCell: UITableViewCell {
     
     private let travelProcessCircle = UIView().set {
       $0.backgroundColor = UIColor.akColor(.akGreen)
+      $0.layer.masksToBounds = true
     }
     
     private let arrowImage = UIImageView().set {
@@ -77,7 +78,7 @@ class TravelTableViewCell: UITableViewCell {
       super.layoutSubviews()
         
     // view를 원으로 만들기
-    travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.width / 2
+    travelProcessCircle.layer.cornerRadius = travelProcessCircle.frame.height / 2
     }
     
     private func setupView() {
@@ -100,7 +101,7 @@ class TravelTableViewCell: UITableViewCell {
       countryFlagLabel.setContentHuggingPriority(.required, for: .horizontal)
       countryFlagLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
       countryNameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
-       countryNameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+      countryNameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     private func setupConstrains() {
@@ -111,10 +112,9 @@ class TravelTableViewCell: UITableViewCell {
       stackView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -20),
             
       // 동그라미
-      travelProcessCircle.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
-      travelProcessCircle.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
-     
-        
+      travelProcessCircle.heightAnchor.constraint(equalTo: stackView.heightAnchor),
+      travelProcessCircle.widthAnchor.constraint(equalTo: travelProcessCircle.heightAnchor),
+      
       // 화살표 이미지
       arrowImage.centerYAnchor.constraint(equalTo: travelProcessCircle.centerYAnchor),
       arrowImage.centerXAnchor.constraint(equalTo: travelProcessCircle.centerXAnchor),
@@ -138,7 +138,7 @@ class TravelTableViewCell: UITableViewCell {
       travelDateLabel.topAnchor.constraint(equalTo:  stackView.bottomAnchor, constant: 10),
       travelDateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -22),
       travelDateLabel.leadingAnchor.constraint(equalTo:  contentView.leadingAnchor, constant: 30),
-      travelDateLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: -30),
+      travelDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
         ])
         
     }
