@@ -10,10 +10,6 @@ import UIKit
 struct ExpenseRecordFactoryImp: ExpenseRecordFactory {
   var useCase: any ExpenseUseCase
   
-  init(useCase: any ExpenseUseCase) {
-    self.useCase = useCase
-  }
-  
   func create(travelId id: String, coordinator: TravelCoordinator) -> UIViewController {
     let viewController = ExpenseRecordViewController(travelId: id, expenseUseCase: useCase)
     viewController.coordinator = coordinator
