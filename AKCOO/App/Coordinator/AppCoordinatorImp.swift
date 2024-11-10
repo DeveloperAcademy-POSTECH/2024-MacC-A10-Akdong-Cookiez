@@ -18,10 +18,30 @@ final class AppCoordinatorImp: AppCoordinator {
     self.navigationController.view.backgroundColor = .white
   }
   
+  // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
   func start() {
-    let useCase = TravelUseCase()
-    let coordinator = TravelCoordinatorImp(self.navigationController)
-    childCoordinators.append(coordinator)
-    navigationController.viewControllers = [TravelListSceneFactoryImp().create(coordinator: coordinator, useCase: useCase)]
+    let travelUseCase = TravelUseCase()
+    let expenseUseCase = ExpenseUseCase()
+    let travelListSceneFactory = TravelListSceneFactoryImp()
+    let travelNewFactory = TravelNewSceneFactoryImp()
+    let expenseSceneFactory = ExpenseSceneFactoryImp()
+    let expenseRecordFactory = ExpenseRecordFactoryImp()
+    let expenseStatsFactory = ExpenseStatsFactoryImp()
+    
+    let travelNewCoordinator = TravelNewCoordinatorImp(
+      self.navigationController,
+      factory: travelNewFactory
+    )
+    
+    let travelCoordinator = TravelCoordinatorImp(
+      self.navigationController,
+      travelNewCoordinator: travelNewCoordinator,
+      expenseSceneFactory: expenseSceneFactory,
+      expenseRecordFactory: expenseRecordFactory,
+      expenseStatsFactory: expenseStatsFactory
+    )
+    
+    childCoordinators.append(travelCoordinator)
+    navigationController.viewControllers = [travelListSceneFactory.create(coordinator: travelCoordinator, useCase: travelUseCase)]
   }
 }

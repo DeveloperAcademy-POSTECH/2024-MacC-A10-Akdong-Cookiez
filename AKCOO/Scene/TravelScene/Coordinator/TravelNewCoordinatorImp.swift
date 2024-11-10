@@ -15,14 +15,16 @@ class TravelNewCoordinatorImp: NSObject, TravelNewCoordinator {
   var childCoordinators = [Coordinator]()
   var type: CoordinatorType { .travelNew }
   
-  required init(_ navigationController: UINavigationController) {
+  private let travelNewfactory: any TravelNewSceneFactory
+  
+  required init(_ navigationController: UINavigationController, factory: any TravelNewSceneFactory) {
     self.navigationController = navigationController
+    self.travelNewfactory = factory
   }
   
   func start() {
-    let newViewController = TravelNewSceneController(useCase: TravelUseCase())
-    newViewController.coordinator = self
-    newViewController.view.backgroundColor = .white
+    let useCase = TravelUseCase()
+    let newViewController = travelNewfactory.create(coordinator: self, useCase: useCase)
     self.navigationController.delegate = self // 스와이프 제스쳐 연결
     self.navigationController.pushViewController(newViewController, animated: true)
   }

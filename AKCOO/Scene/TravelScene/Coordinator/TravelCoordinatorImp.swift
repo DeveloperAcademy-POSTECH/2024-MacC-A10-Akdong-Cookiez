@@ -14,12 +14,30 @@ class TravelCoordinatorImp: TravelCoordinator {
   var childCoordinators = [Coordinator]()
   var type: CoordinatorType { .travelList }
   
-  required init(_ navigationController: UINavigationController) {
+  private let travelNewCoordinator: any TravelNewCoordinator
+  private let travelListSceneFactory: any TravelListSceneFactory
+  private let expenseSceneFactory: any ExpenseSceneFactory
+  private let expenseRecordFactory: any ExpenseRecordFactory
+  private let expenseStatsFactory: any ExpenseStatsFactory
+  
+  required init(
+    _ navigationController: UINavigationController,
+    travelNewCoordinator: any TravelNewCoordinator,
+    travelListSceneFactory: any TravelListSceneFactory,
+    expenseSceneFactory: any ExpenseSceneFactory,
+    expenseRecordFactory: any ExpenseRecordFactory,
+    expenseStatsFactory: any ExpenseStatsFactory
+  ) {
     self.navigationController = navigationController
+    self.travelNewCoordinator = travelNewCoordinator
+    self.travelListSceneFactory = travelListSceneFactory
+    self.expenseSceneFactory = expenseSceneFactory
+    self.expenseRecordFactory = expenseRecordFactory
+    self.expenseStatsFactory = expenseStatsFactory
   }
   
   func start() {
-    let viewController = TravelListSceneFactoryImp().create(coordinator: self, useCase: TravelUseCase())
+    let viewController = travelListSceneFactory.create(coordinator: self, useCase: TravelUseCase())
     self.navigationController.viewControllers = [viewController]
     if true { // 등록된 여행이 있다면
       let id = "실제로는UseCase에서불러오기"
@@ -34,24 +52,24 @@ class TravelCoordinatorImp: TravelCoordinator {
     form presenting: UIViewController
   ) {
     let useCase = ExpenseUseCase()
-    let recordViewController = ExpenseRecordFactoryImp().create(travelId: id, coordinator: self, useCase: useCase)
-    let statsViewController = ExpenseStatsFactoryImp().create(travelId: id, coordinator: self, useCase: useCase)
-    let expenseSenceController = ExpenseSceneFactoryImp().create(travelId: id, coordinator: self, useCase: useCase, recordViewController: recordViewController, statsViewController: statsViewController)
+    let recordViewController = expenseRecordFactory.create(travelId: id, coordinator: self, useCase: useCase)
+    let statsViewController = expenseStatsFactory.create(travelId: id, coordinator: self, useCase: useCase)
+    let expenseSenceController = expenseSceneFactory.create(travelId: id, coordinator: self, useCase: useCase, recordViewController: recordViewController, statsViewController: statsViewController)
     
     expenseSenceController.modalPresentationStyle = .custom
     
-    //    customTransitionDelegate.indexPath
-    //    expenseSenceController.transitioningDelegate = self.customTransitionDelegate
+    // TODO: - Transition 로직
+    // customTransitionDelegate.indexPath
+    // expenseSenceController.transitioningDelegate = self.customTransitionDelegate
     
     presenting.present(expenseSenceController, animated: true)
   }
   
   func tappedPlusButton() {
-    let newCoordinator = TravelNewCoordinatorImp(self.navigationController)
-    newCoordinator.finishDelegate = self
-    newCoordinator.parents = self
-    newCoordinator.start()
-    self.childCoordinators.append(newCoordinator)
+    travelNewCoordinator.finishDelegate = self
+    travelNewCoordinator.parents = self
+    travelNewCoordinator.start()
+    self.childCoordinators.append(travelNewCoordinator)
   }
   
   func tappedListButton() {
