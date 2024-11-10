@@ -10,6 +10,6 @@ import UIKit
 extension CGFloat {
   struct AK {
     static let commonHorizontal: CGFloat = 25.0
-    static let commonLargeHorigentral: CGFloat = 35.0
+    static let commonLargeHorizontal: CGFloat = 35.0
   }
 }

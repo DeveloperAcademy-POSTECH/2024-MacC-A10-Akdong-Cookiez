@@ -43,22 +43,19 @@ class ExpenseCategoryController: UIViewController {
   }
   
   private func setupConstraints() {
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    budgetDeleteButtonView.translatesAutoresizingMaskIntoConstraints = false
-    
     NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorigentral),
-      stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorigentral),
+      stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorizontal),
+      stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorizontal),
       
-      budgetDeleteButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorigentral),
-      budgetDeleteButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorigentral),
-      budgetDeleteButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -76)
+      budgetDeleteButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorizontal),
+      budgetDeleteButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorizontal),
+      budgetDeleteButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -76),
+      
+      budgetTextFieldView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+      budgetNameSettingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
+      budgetCategorySettingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)
     ])
-    
-    budgetTextFieldView.heightAnchor.constraint(greaterThanOrEqualToConstant: 150).isActive = true
-    budgetNameSettingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
-    budgetCategorySettingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
   }
   
   private func setupTapGesture() {

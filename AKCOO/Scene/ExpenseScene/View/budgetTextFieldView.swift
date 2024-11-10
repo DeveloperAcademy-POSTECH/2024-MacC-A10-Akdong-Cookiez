@@ -10,11 +10,14 @@ import UIKit
 class BudgetTextFieldView: UIView {
   
   // MARK: - Views
-  private let containerView = UIView().set {
-    $0.backgroundColor = .akColor(.gray1)
-    $0.layer.borderWidth = 0.3
-    $0.layer.borderColor = UIColor.akColor(.black).cgColor
-  }
+  private lazy var containerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .akColor(.gray1)
+    view.layer.borderWidth = 0.3
+    view.layer.borderColor = UIColor.akColor(.black).cgColor
+    view.layer.cornerRadius = view.bounds.height / 2
+    return view
+  }()
   
   private let countryLabel = UILabel().set {
     $0.text = "태국(바트)"
@@ -44,6 +47,8 @@ class BudgetTextFieldView: UIView {
     $0.font = UIFont.akFont(.gmarketLight16)
     $0.adjustsFontForContentSizeCategory = true
     $0.keyboardType = .numberPad
+    $0.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    $0.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
   }
   
   // MARK: - Initializers
@@ -56,13 +61,6 @@ class BudgetTextFieldView: UIView {
     super.init(coder: coder)
     setupView()
   }
-  
-  // MARK: - LifeCycle
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    updateContainerViewCornerRadius()
-  }
-  
   
   // MARK: - Setup Methods
   private func setupView() {
@@ -77,10 +75,6 @@ class BudgetTextFieldView: UIView {
   }
   
   private func setupConstraints() {
-    // 텍스트 필드의 고유 크기 설정
-    textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-    
     NSLayoutConstraint.activate([
       // 컨테이너 뷰
       containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -88,8 +82,8 @@ class BudgetTextFieldView: UIView {
       containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
       
       // 텍스트 필드
-      textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-      textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+      textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+      textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
       textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 17),
       textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -17),
       
@@ -105,11 +99,5 @@ class BudgetTextFieldView: UIView {
       koreaWonLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10),
       koreaWonLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
     ])
-  }
-  
-  // MARK: - Private Methods
-  private func updateContainerViewCornerRadius() {
-    // 높이의 절반으로 cornerRadius 설정
-    containerView.layer.cornerRadius = containerView.frame.height / 2
   }
 }

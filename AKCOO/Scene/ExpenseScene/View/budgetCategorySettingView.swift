@@ -13,8 +13,8 @@ class BudgetCategorySettingView: UIView {
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let buttonStackView = UIStackView().set {
@@ -42,7 +42,6 @@ class BudgetCategorySettingView: UIView {
       $0.setTitle(buttonTitles[index], for: .normal)
       $0.setTitleColor(.black, for: .normal)
       $0.tag = index
-      $0.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
   }
   // MARK: - Properties
@@ -62,7 +61,7 @@ class BudgetCategorySettingView: UIView {
     setupView()
   }
   
-  // MARK: - Lifecycle
+  // MARK: - LifeCycle
   override func layoutSubviews() {
     super.layoutSubviews()
     updateButtonCornerRadius()
@@ -70,14 +69,21 @@ class BudgetCategorySettingView: UIView {
   
   // MARK: - Setup Methods
   private func setupView() {
-    backgroundColor = .white
-    
-    addSubview(separatorLine)
-    addSubview(categoryLabel)
-    addSubview(buttonStackView)
-    
-    buttons.forEach { buttonStackView.addArrangedSubview($0) }
-    
+      backgroundColor = .white
+      
+      addSubview(separatorLine)
+      addSubview(categoryLabel)
+      addSubview(buttonStackView)
+      
+      buttons.forEach { button in
+          buttonStackView.addArrangedSubview(button)
+          button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+      }
+      
+      setupConstraints()
+  }
+  
+  private func setupConstraints() {
     NSLayoutConstraint.activate([
       categoryLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
       categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
