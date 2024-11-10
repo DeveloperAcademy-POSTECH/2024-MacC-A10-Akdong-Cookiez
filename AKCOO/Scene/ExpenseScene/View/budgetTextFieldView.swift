@@ -39,6 +39,7 @@ class BudgetTextFieldView: UIView {
     $0.borderStyle = .none
     $0.textAlignment = .left
     $0.font = UIFont.akFont(.gmarketLight16)
+    $0.keyboardType = .numberPad
   }
   
   // MARK: Initializers
@@ -62,6 +63,18 @@ class BudgetTextFieldView: UIView {
     addSubview(koreaWonLabel)
     
     setupConstraints()
+    setupTapGesture()
+  }
+  
+  // 탭 제스처 설정
+  private func setupTapGesture() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+    self.addGestureRecognizer(tapGesture)
+  }
+  
+  // 키보드 내리는 메서드
+  @objc private func dismissKeyboard() {
+    self.endEditing(true)
   }
   
   private func setupConstraints() {
@@ -101,7 +114,7 @@ class BudgetTextFieldView: UIView {
     textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
     textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
   }
-  
+
   // MARK: Layout
   override func layoutSubviews() {
     super.layoutSubviews()
