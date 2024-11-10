@@ -71,6 +71,7 @@ class TravelTableViewCell: UITableViewCell {
       super.awakeFromNib()
     }
 
+   // MARK: - Setup Methods
     private func setupView() {
       contentView.backgroundColor = UIColor.akColor(.gray1)
       contentView.layer.cornerRadius = 25
@@ -129,7 +130,6 @@ class TravelTableViewCell: UITableViewCell {
       travelDateLabel.leadingAnchor.constraint(equalTo:  contentView.leadingAnchor, constant: 30),
       travelDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
         ])
-        
     }
 }
 
@@ -142,7 +142,6 @@ extension TravelTableViewCell {
     }
 }
 
-// MARK: - UIView Extension for 'set' Method
 extension UIView {
   func set(_ configure: (UIView) -> Void) -> UIView {
     configure(self)

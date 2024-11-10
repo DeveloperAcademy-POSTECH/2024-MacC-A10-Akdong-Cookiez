@@ -15,10 +15,10 @@ class TravelListSceneController: UIViewController {
   private var travels = [Travel]()
   
   // MARK: - Views
-    let titleLabel = UILabel().set {
-      $0.font = .akFont(.gmarketMedium30)
-      $0.textColor = .akColor(.black)
-      $0.text = "여행리스트"
+  let titleLabel = UILabel().set {
+    $0.font = .akFont(.gmarketMedium30)
+    $0.textColor = .akColor(.black)
+    $0.text = "여행리스트"
   }
   
   let travelTableView: TravelTableView = TravelTableView().set()
@@ -49,14 +49,11 @@ class TravelListSceneController: UIViewController {
   private func setupView() {
     view.addSubview(titleLabel)
     view.addSubview(travelTableView)
+    
     setupNavigationBar()
 
     travelTableView.travelDelegate = self
     travelTableView.backgroundColor = UIColor.akColor(.white) // tableView 색상지정
-    
-    travelTableView.rowHeight = UITableView.automaticDimension
-    travelTableView.estimatedRowHeight = 118
-    
     travelTableView.separatorStyle = UITableViewCell.SeparatorStyle.none // 선 삭제
   }
   
@@ -89,8 +86,8 @@ class TravelListSceneController: UIViewController {
   // MARK: - Private Methods
   private func initConfigure() {
     // useCase에서 데이터 가져와서 초기 세팅
-      self.travels.append(.init( flag: "🇹🇭", country: "사우디아라비아", currency: .init(unitTitle: "바트", unit: 4), startDate: .now, endDate: .now.addingTimeInterval(3), budget: .init(total: 3000000)))
-      let info: [TravelCellInfo] = travels.map { ($0.flag, $0.country, "2025.01.01 - 2025.01.30.") }
+    self.travels.append(.init( flag: "🇹🇭", country: "사우디아라비아", currency: .init(unitTitle: "바트", unit: 4), startDate: .now, endDate: .now.addingTimeInterval(3), budget: .init(total: 3000000)))
+    let info: [TravelCellInfo] = travels.map { ($0.flag, $0.country, "2025.01.01 - 2025.01.30.") }
     travelTableView.setConfigure(info: info)
   }
   
@@ -132,7 +129,7 @@ extension TravelListSceneController: TravelTableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-       return UITableView.automaticDimension
+    return UITableView.automaticDimension
    }
 }
 
