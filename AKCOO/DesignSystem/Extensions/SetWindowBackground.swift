@@ -8,7 +8,9 @@
 import UIKit
 
 func setWindowBackgroundColor(_ color: UIColor) {
-  guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-        let window = windowScene.windows.first else { return }
+  guard 
+    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+    let window = windowScene.windows.first 
+  else { return }
   window.backgroundColor = color
 }

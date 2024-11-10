@@ -7,6 +7,4 @@
 
 import Foundation
 
-protocol AppCoordinator: Coordinator {
-  func tappedCountry(id: Int)
-}
+protocol AppCoordinator: Coordinator { }

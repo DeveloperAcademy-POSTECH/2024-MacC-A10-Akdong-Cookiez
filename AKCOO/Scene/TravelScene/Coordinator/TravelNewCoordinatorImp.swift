@@ -7,41 +7,38 @@
 
 import UIKit
 
-class TravelNewCoordinatorImp: NSObject, TravelNewCoordinator, UINavigationControllerDelegate {
+class TravelNewCoordinatorImp: NSObject, TravelNewCoordinator {
+  weak var parents: TravelNewCoordinatorDelegate?
   weak var finishDelegate: CoordinatorFinishDelegate?
   var navigationController: UINavigationController
   
   var childCoordinators = [Coordinator]()
   var type: CoordinatorType { .travelNew }
   
-  required init(_ navigationController: UINavigationController) {
+  private let travelNewfactory: any TravelNewSceneFactory
+  
+  required init(_ navigationController: UINavigationController, factory: any TravelNewSceneFactory) {
     self.navigationController = navigationController
+    self.travelNewfactory = factory
   }
   
   func start() {
-    navigationController.delegate = self // swipe 제스쳐 인지
-    let newViewController = TravelNewSceneController(useCase: TravelUseCase())
-    newViewController.coordinator = self
-    newViewController.view.backgroundColor = .white
+    let newViewController = travelNewfactory.create(coordinator: self)
+    self.navigationController.delegate = self // 스와이프 제스쳐 연결
     self.navigationController.pushViewController(newViewController, animated: true)
   }
   
   func tappedSaveButton(new travel: Travel) {
-    guard let travelListViewController = navigationController.viewControllers.first(where: { $0 is TravelListSceneController }) as? TravelListSceneController else { return }
-    // TravelListSceneController 타입의 인스턴스를 찾음
-    // 값을 조정하거나 원하는 작업 수행
-    travelListViewController.submitNewTravel(travel)
-    finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    self.parents?.newTravel(travel)
+    navigationController.popToRootViewController(animated: true)
   }
-  
-  // UINavigationControllerDelegate 메서드
+}
+
+extension TravelNewCoordinatorImp: UINavigationControllerDelegate {
+  // 제스쳐로 뒤로가기 이동 경우를 고려
   func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-    // 스택의 변경사항을 확인하여 뷰 컨트롤러가 pop되었는지 감지
-    guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-          !navigationController.viewControllers.contains(fromViewController) else { return }
-    
-    guard fromViewController is TravelNewSceneController else { return }
-    // Controller 타입 감추고 정확한 CoordinatorType에 따른 분기 필요
-    self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    if navigationController.viewControllers.count == 1 {
+      self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
   }
 }

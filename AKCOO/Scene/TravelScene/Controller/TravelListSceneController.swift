@@ -13,6 +13,7 @@ class TravelListSceneController: UIViewController {
   
   // MARK: - Properties
   private var travels = [Travel]()
+  private var selectedTravelCellIndexPath: IndexPath?
   
   // MARK: - Views
   let titleLabel: UILabel = {
@@ -98,8 +99,12 @@ class TravelListSceneController: UIViewController {
 // MARK: - Public Methods
 extension TravelListSceneController {
   
-  public func submitNewTravel(_ travel: Travel) {
-    print("VC가 추가 된 사실 받음")
+  public func configureNewTravel(_ travel: Travel) {
+    print("여행 추가된 사실을 TravelListScene이 받음")
+  }
+  
+  public func getSelectedCellIndexPath() -> IndexPath? {
+    return self.selectedTravelCellIndexPath
   }
 }
 
@@ -107,22 +112,7 @@ extension TravelListSceneController {
 extension TravelListSceneController: TravelTableViewDelegate {
   func selectedCell(at indexPath: IndexPath) {
     let travel = travels[indexPath.row]
-    coordinator?.tappedCell(id: travel.id)
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.travels.count
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as? TravelTableViewCell else {
-      return UITableViewCell()
-    }
-
-    // "어쩌구기간"은 travels [indexPath.row]의 starDate와 dueDate를 통해 도출되는 String
-    let travelInfo = (travels[indexPath.row].country, "어쩌구기간")
-    cell.setConfigure(info: travelInfo)
-    
-    return cell
+    self.selectedTravelCellIndexPath = indexPath
+    coordinator?.presentExpense(travelId: travel.id, cellIndexPath: indexPath, form: self)
   }
 }
