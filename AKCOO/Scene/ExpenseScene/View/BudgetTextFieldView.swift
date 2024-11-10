@@ -1,5 +1,5 @@
 //
-//  budgetTextFieldView.swift
+//  BudgetTextFieldView.swift
 //  AKCOO
 //
 //  Created by 이연정 on 11/9/24.
@@ -22,22 +22,22 @@ class BudgetTextFieldView: UIView {
   private let countryLabel = UILabel().set {
     $0.text = "태국(바트)"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let countryRateLabel = UILabel().set {
     $0.text = "1바트 = 41원"
     $0.font = UIFont.akFont(.gmarketLight12)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let koreaWonLabel = UILabel().set {
     $0.text = "약 36만4,567원"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let textField = UITextField().set {
@@ -45,10 +45,10 @@ class BudgetTextFieldView: UIView {
     $0.borderStyle = .none
     $0.textAlignment = .left
     $0.font = UIFont.akFont(.gmarketLight16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.keyboardType = .numberPad
     $0.setContentHuggingPriority(.defaultHigh, for: .vertical)
     $0.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   // MARK: - Initializers

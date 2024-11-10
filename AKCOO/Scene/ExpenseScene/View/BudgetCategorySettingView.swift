@@ -1,5 +1,5 @@
 //
-//  budgetCategorySettingView.swift
+//  BudgetCategorySettingView.swift
 //  AKCOO
 //
 //  Created by 이연정 on 11/9/24.
@@ -31,7 +31,6 @@ class BudgetCategorySettingView: UIView {
     UIButton().set {
       $0.backgroundColor = UIColor.akColor(.gray1)
       $0.titleLabel?.font = UIFont.akFont(.gmarketMedium14)
-      $0.titleLabel?.adjustsFontForContentSizeCategory = true
       $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
       $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
       $0.contentEdgeInsets = UIEdgeInsets(top: 6, left: 11, bottom: 6, right: 11)
@@ -42,6 +41,7 @@ class BudgetCategorySettingView: UIView {
       $0.setTitle(buttonTitles[index], for: .normal)
       $0.setTitleColor(.black, for: .normal)
       $0.tag = index
+      $0.titleLabel?.adjustsFontForContentSizeCategory = true
     }
   }
   // MARK: - Properties

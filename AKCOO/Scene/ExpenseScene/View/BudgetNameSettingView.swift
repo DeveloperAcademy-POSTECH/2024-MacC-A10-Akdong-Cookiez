@@ -1,5 +1,5 @@
 //
-//  budgetNameSettingView.swift
+//  BudgetNameSettingView.swift
 //  AKCOO
 //
 //  Created by 이연정 on 11/9/24.

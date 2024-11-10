@@ -1,5 +1,5 @@
 //
-//  budgetDeleteButtonView.swift
+//  BudgetDeleteButtonView.swift
 //  AKCOO
 //
 //  Created by 이연정 on 11/10/24.
