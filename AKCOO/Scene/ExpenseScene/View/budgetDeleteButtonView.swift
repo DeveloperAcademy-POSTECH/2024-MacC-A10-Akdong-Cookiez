@@ -9,6 +9,7 @@ import UIKit
 
 class BudgetDeleteButtonView: UIView {
   
+  // MARK: - Views
   private let deleteButton = UIButton().set {
     $0.setTitle("지출내역 삭제", for: .normal)
     $0.setTitleColor(.akColor(.black), for: .normal)
@@ -19,8 +20,10 @@ class BudgetDeleteButtonView: UIView {
     $0.contentEdgeInsets = UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 0)
   }
   
+  // MARK: - Output
   var onDeleteTapped: (() -> Void)?
   
+  // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -31,6 +34,13 @@ class BudgetDeleteButtonView: UIView {
     setupView()
   }
   
+  // MARK: - LifeCycle
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    deleteButton.layer.cornerRadius = deleteButton.bounds.height / 2
+  }
+  
+  // MARK: - Setup Methods
   private func setupView() {
     addSubview(deleteButton)
     
@@ -44,11 +54,7 @@ class BudgetDeleteButtonView: UIView {
     deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    deleteButton.layer.cornerRadius = deleteButton.bounds.height / 2
-  }
-  
+  // MARK: - Private Methods
   @objc private func deleteButtonTapped() {
     onDeleteTapped?()
   }

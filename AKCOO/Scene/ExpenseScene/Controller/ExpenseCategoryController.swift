@@ -9,13 +9,18 @@ import UIKit
 
 class ExpenseCategoryController: UIViewController {
   
-  // MARK: - Properties
+  // MARK: - Views
   private let budgetTextFieldView = BudgetTextFieldView()
   private let budgetNameSettingView = BudgetNameSettingView()
   private let budgetCategorySettingView = BudgetCategorySettingView()
   private let budgetDeleteButtonView = BudgetDeleteButtonView()
   
-  private let stackView = UIStackView()
+  private let stackView = UIStackView().set {
+    $0.axis = .vertical
+    $0.distribution = .fill
+    $0.alignment = .fill
+    $0.spacing = 20
+  }
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -26,35 +31,28 @@ class ExpenseCategoryController: UIViewController {
     setupDeleteButton()
   }
   
-  // MARK: - UI Setup
+  // MARK: - Setup Methods
   private func setupViews() {
     view.backgroundColor = .white
-    
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    budgetDeleteButtonView.translatesAutoresizingMaskIntoConstraints = false
-    
-    view.addSubview(stackView)
-    view.addSubview(budgetDeleteButtonView)
-    
-    stackView.axis = .vertical
-    stackView.distribution = .fill
-    stackView.alignment = .fill
-    stackView.spacing = 20
     
     stackView.addArrangedSubview(budgetTextFieldView)
     stackView.addArrangedSubview(budgetNameSettingView)
     stackView.addArrangedSubview(budgetCategorySettingView)
+    view.addSubview(stackView)
+    view.addSubview(budgetDeleteButtonView)
   }
   
-  // MARK: - Constraints
   private func setupConstraints() {
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    budgetDeleteButtonView.translatesAutoresizingMaskIntoConstraints = false
+    
     NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-      stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+      stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorigentral),
+      stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorigentral),
       
-      budgetDeleteButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
-      budgetDeleteButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
+      budgetDeleteButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .AK.commonLargeHorigentral),
+      budgetDeleteButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.AK.commonLargeHorigentral),
       budgetDeleteButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -76)
     ])
     
@@ -63,21 +61,19 @@ class ExpenseCategoryController: UIViewController {
     budgetCategorySettingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
   }
   
-  // MARK: - Gesture Recognizers
   private func setupTapGesture() {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     tapGesture.cancelsTouchesInView = false
     view.addGestureRecognizer(tapGesture)
   }
   
-  // MARK: - Button Actions
   private func setupDeleteButton() {
     budgetDeleteButtonView.onDeleteTapped = { [weak self] in
       self?.handleDeleteTapped()
     }
   }
   
-  // MARK: - Helper Methods
+  // MARK: - Private Methods
   @objc private func dismissKeyboard() {
     view.endEditing(true)
   }

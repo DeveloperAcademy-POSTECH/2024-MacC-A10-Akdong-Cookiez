@@ -9,27 +9,27 @@ import UIKit
 
 class BudgetNameSettingView: UIView {
   
-  // MARK: Views
+  // MARK: - Views
   private let nameLabel = UILabel().set {
     $0.text = "이름"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textColor = UIColor.akColor(.gray3)
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let textField = UITextField().set {
     $0.borderStyle = .none
     $0.placeholder = "이름을 입력하세요"
     $0.font = UIFont.akFont(.gmarketLight16)
-    $0.adjustsFontForContentSizeCategory = true
     $0.textAlignment = .right
+    $0.adjustsFontForContentSizeCategory = true
   }
   
   private let separatorLine = UIView().set {
     $0.backgroundColor = UIColor.akColor(.black)
   }
   
-  // MARK: Initializers
+  // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -40,17 +40,13 @@ class BudgetNameSettingView: UIView {
     setupView()
   }
   
-  // MARK: Setup
+  // MARK: - Setup Methods
   private func setupView() {
     backgroundColor = .white
     
     addSubview(nameLabel)
     addSubview(textField)
     addSubview(separatorLine)
-    
-    nameLabel.translatesAutoresizingMaskIntoConstraints = false
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    separatorLine.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50),

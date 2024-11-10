@@ -9,7 +9,7 @@ import UIKit
 
 class BudgetTextFieldView: UIView {
   
-  // MARK: Views
+  // MARK: - Views
   private let containerView = UIView().set {
     $0.backgroundColor = .akColor(.gray1)
     $0.layer.borderWidth = 0.3
@@ -46,7 +46,7 @@ class BudgetTextFieldView: UIView {
     $0.keyboardType = .numberPad
   }
   
-  // MARK: Initializers
+  // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -57,7 +57,14 @@ class BudgetTextFieldView: UIView {
     setupView()
   }
   
-  // MARK: Setup
+  // MARK: - LifeCycle
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    updateContainerViewCornerRadius()
+  }
+  
+  
+  // MARK: - Setup Methods
   private func setupView() {
     addSubview(containerView)
     containerView.addSubview(textField)
@@ -70,11 +77,9 @@ class BudgetTextFieldView: UIView {
   }
   
   private func setupConstraints() {
-    containerView.translatesAutoresizingMaskIntoConstraints = false
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    countryLabel.translatesAutoresizingMaskIntoConstraints = false
-    countryRateLabel.translatesAutoresizingMaskIntoConstraints = false
-    koreaWonLabel.translatesAutoresizingMaskIntoConstraints = false
+    // 텍스트 필드의 고유 크기 설정
+    textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
     
     NSLayoutConstraint.activate([
       // 컨테이너 뷰
@@ -100,16 +105,10 @@ class BudgetTextFieldView: UIView {
       koreaWonLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10),
       koreaWonLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
     ])
-    
-    // 텍스트 필드의 고유 크기 설정
-    textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    textField.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
   }
   
-  // MARK: Layout
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    
+  // MARK: - Private Methods
+  private func updateContainerViewCornerRadius() {
     // 높이의 절반으로 cornerRadius 설정
     containerView.layer.cornerRadius = containerView.frame.height / 2
   }

@@ -8,10 +8,8 @@
 import UIKit
 
 class BudgetCategorySettingView: UIView {
-  let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
   
-  // MARK: Views
-  
+  // MARK: - Views
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
     $0.font = UIFont.akFont(.gmarketMedium16)
@@ -28,10 +26,6 @@ class BudgetCategorySettingView: UIView {
   private let separatorLine =  UIView().set {
     $0.backgroundColor = UIColor.akColor(.black)
   }
-  
-  private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
-  
-  private var selectedButtonIndex: Int? = nil
   
   private lazy var buttons: [UIButton] = (0..<5).map { index in
     UIButton().set {
@@ -51,8 +45,13 @@ class BudgetCategorySettingView: UIView {
       $0.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
   }
+  // MARK: - Properties
+  private let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
+  private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
   
-  // MARK: Initializers
+  private var selectedButtonIndex: Int? = nil
+  
+  // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -63,7 +62,13 @@ class BudgetCategorySettingView: UIView {
     setupView()
   }
   
-  // MARK: Setup
+  // MARK: - Lifecycle
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    updateButtonCornerRadius()
+  }
+  
+  // MARK: - Setup Methods
   private func setupView() {
     backgroundColor = .white
     
@@ -72,10 +77,6 @@ class BudgetCategorySettingView: UIView {
     addSubview(buttonStackView)
     
     buttons.forEach { buttonStackView.addArrangedSubview($0) }
-    
-    categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-    buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-    separatorLine.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       categoryLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -92,15 +93,14 @@ class BudgetCategorySettingView: UIView {
     ])
   }
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
+  // MARK: - Private Methods
+  private func updateButtonCornerRadius() {
     buttons.forEach { button in
       let cornerRadius = max(13, button.bounds.height / 2)
       button.layer.cornerRadius = cornerRadius
     }
   }
   
-  // MARK: Actions
   @objc private func buttonTapped(_ sender: UIButton) {
     let index = sender.tag
     
