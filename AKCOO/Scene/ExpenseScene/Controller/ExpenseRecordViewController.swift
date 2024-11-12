@@ -9,10 +9,10 @@ import UIKit
 
 class ExpenseRecordViewController: UIViewController {
   private let expenseUseCase: ExpenseUseCase
-  weak var coordinator: ExpenseCoordinator?
+  weak var coordinator: ExpenseRecordCoordinator?
   
   // MARK: - Properties
-  private let id: Int
+  private let id: String
 
   // MARK: - Views
   private let button: UIButton = {
@@ -22,7 +22,7 @@ class ExpenseRecordViewController: UIViewController {
   }()
 
   // MARK: - Initializers
-  init(countryId id: Int, expenseUseCase: ExpenseUseCase) {
+  init(travelId id: String, expenseUseCase: ExpenseUseCase) {
     self.id = id
     self.expenseUseCase = expenseUseCase
     super.init(nibName: nil, bundle: nil)
@@ -48,8 +48,8 @@ class ExpenseRecordViewController: UIViewController {
   private func setupConstraints() {
     button.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
       button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
       button.heightAnchor.constraint(equalToConstant: 50),
       button.widthAnchor.constraint(equalToConstant: 200)
     ])

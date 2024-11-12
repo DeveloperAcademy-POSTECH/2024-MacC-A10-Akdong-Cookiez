@@ -8,19 +8,13 @@
 import UIKit
 
 class ExpenseSceneController: UIViewController {
-  private let recordViewController: ExpenseRecordViewController
-  private let statsViewController: ExpenseStatsViewController
+  private let recordViewController: UIViewController
+  private let statsViewController: UIViewController
 
   // MARK: - Views
-  let label: UILabel = { // 화면 구분을 위한 임시생성
-    let label = UILabel()
-    label.text = "ExpenseSceneController"
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-  }()
   
   // MARK: - Initializers
-  init(recordViewController: ExpenseRecordViewController, statsViewController: ExpenseStatsViewController) {
+  init(recordViewController: UIViewController, statsViewController: UIViewController) {
     self.recordViewController = recordViewController
     self.statsViewController = statsViewController
     super.init(nibName: nil, bundle: nil)
@@ -42,16 +36,16 @@ class ExpenseSceneController: UIViewController {
     addChild(recordViewController)
     view.addSubview(recordViewController.view)
     recordViewController.didMove(toParent: self)
-
-    view.addSubview(label)
   }
 
   private func setupConstraints() {
     recordViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
+    
     NSLayoutConstraint.activate([
-      recordViewController.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      recordViewController.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      recordViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+      recordViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      recordViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      recordViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
   }
 }
