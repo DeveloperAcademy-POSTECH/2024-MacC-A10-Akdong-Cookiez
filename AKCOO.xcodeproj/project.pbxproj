@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
+		6D59B8372CDF9DE40018E1A2 /* ExpenseCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */; };
+		955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8B92CE0AC0A009227FA /* CircleView.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
@@ -30,7 +32,6 @@
 		F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */; };
 		F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */; };
 		F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */; };
-		F3EB76692CDDE39A0054D4E1 /* TravelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */; };
 		F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */; };
 		F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */; };
 		F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */; };
@@ -104,6 +105,8 @@
 /* Begin PBXFileReference section */
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
+		6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryController.swift; sourceTree = "<group>"; };
+		955BF8B92CE0AC0A009227FA /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,7 +132,6 @@
 		F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewSceneController.swift; sourceTree = "<group>"; };
 		F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableView.swift; sourceTree = "<group>"; };
 		F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
-		F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelTableViewCell.xib; sourceTree = "<group>"; };
 		F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseSceneController.swift; sourceTree = "<group>"; };
 		F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseStatsViewController.swift; sourceTree = "<group>"; };
 		F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseRecordViewController.swift; sourceTree = "<group>"; };
@@ -331,7 +333,7 @@
 			children = (
 				F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */,
 				F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */,
-				F3EB76662CDDE39A0054D4E1 /* TravelTableViewCell.xib */,
+				955BF8B92CE0AC0A009227FA /* CircleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +352,10 @@
 			isa = PBXGroup;
 			children = (
 				F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */,
+				6D59B8302CDE77890018E1A2 /* budgetTextFieldView.swift */,
+				6D59B8342CDF1FCE0018E1A2 /* budgetNameSettingView.swift */,
+				6D59B8322CDF02650018E1A2 /* budgetCategorySettingView.swift */,
+				6D59B8382CE08E0F0018E1A2 /* budgetDeleteButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */,
 				F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */,
 				F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */,
+				6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -680,7 +687,6 @@
 				F3EB76D02CDE406D0054D4E1 /* SFMonoLightItalic.otf in Resources */,
 				F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */,
 				F3EB76102CDD14B20054D4E1 /* Base in Resources */,
-				F3EB76692CDDE39A0054D4E1 /* TravelTableViewCell.xib in Resources */,
 				F3EB76D22CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +753,7 @@
 				F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */,
 				F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
+				6D59B8372CDF9DE40018E1A2 /* ExpenseCategoryController.swift in Sources */,
 				F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
 				F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */,
@@ -770,6 +777,7 @@
 				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
 				F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */,
 				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
+				955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
 				F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */,
@@ -778,6 +786,7 @@
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
+				6D59B8352CDF1FCE0018E1A2 /* budgetNameSettingView.swift in Sources */,
 				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
 				F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */,
 			);
@@ -953,7 +962,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99KH3TLG9V;
+				DEVELOPMENT_TEAM = R94YP9SKB4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -986,7 +995,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99KH3TLG9V;
+				DEVELOPMENT_TEAM = R94YP9SKB4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
