@@ -20,6 +20,8 @@ class TravelCoordinatorImp: TravelCoordinator {
   private let expenseRecordFactory: any ExpenseRecordFactory
   private let expenseStatsFactory: any ExpenseStatsFactory
   
+  private let transition = ExpenseSceneTransitioningDelegater()
+  
   required init(
     _ navigationController: UINavigationController,
     travelNewCoordinator: any TravelNewCoordinator,
@@ -39,11 +41,11 @@ class TravelCoordinatorImp: TravelCoordinator {
   func start() {
     let viewController = travelListSceneFactory.create(coordinator: self)
     self.navigationController.viewControllers = [viewController]
-    if true { // 등록된 여행이 있다면
-      let id = "실제로는UseCase에서불러오기"
-      let cellIndexPath: IndexPath? = .none // 저장해두거나 직접 불러와서 계산할 타이밍 고려
-      self.presentExpense(travelId: id, cellIndexPath: cellIndexPath, form: viewController)
-    }
+//    if true { // 등록된 여행이 있다면
+//      let id = "실제로는UseCase에서불러오기"
+//      let cellIndexPath: IndexPath? = .none // 저장해두거나 직접 불러와서 계산할 타이밍 고려
+//      self.presentExpense(travelId: id, cellIndexPath: cellIndexPath, form: viewController)
+//    }
   }
   
   func presentExpense(
@@ -55,12 +57,9 @@ class TravelCoordinatorImp: TravelCoordinator {
     let statsViewController = expenseStatsFactory.create(travelId: id, coordinator: self)
     let expenseSenceController = expenseSceneFactory.create(travelId: id, recordViewController: recordViewController, statsViewController: statsViewController)
     
+    transition.selectedIndexPath = cellIndexPath
     expenseSenceController.modalPresentationStyle = .custom
-    
-    // TODO: - Transition 로직
-    // customTransitionDelegate.indexPath
-    // expenseSenceController.transitioningDelegate = self.customTransitionDelegate
-    
+    expenseSenceController.transitioningDelegate = self.transition
     presenting.present(expenseSenceController, animated: true)
   }
   

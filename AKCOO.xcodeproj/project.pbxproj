@@ -79,6 +79,9 @@
 		F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */; };
 		F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */; };
 		F3EB77002CE09CE50054D4E1 /* TravelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */; };
+		F3EB77032CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */; };
+		F3EB77052CE0B1210054D4E1 /* ExpenseSceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */; };
+		F3EB77072CE0DDB00054D4E1 /* SnapshotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +178,9 @@
 		F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordCoordinator.swift; sourceTree = "<group>"; };
 		F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUseCase.swift; sourceTree = "<group>"; };
 		F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUseCase.swift; sourceTree = "<group>"; };
+		F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransitioningDelegater.swift; sourceTree = "<group>"; };
+		F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransition.swift; sourceTree = "<group>"; };
+		F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +368,7 @@
 		F3EB76532CDDE0280054D4E1 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB77012CE0B01B0054D4E1 /* Transition */,
 				F3EB76822CDDE5E20054D4E1 /* Protocol */,
 				F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */,
 				F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */,
@@ -540,6 +547,16 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		F3EB77012CE0B01B0054D4E1 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */,
+				F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */,
+				F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -711,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EB77052CE0B1210054D4E1 /* ExpenseSceneTransition.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
 				F3EB76E72CDF990B0054D4E1 /* ExpenseSceneFactory.swift in Sources */,
@@ -724,6 +742,7 @@
 				F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */,
 				F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */,
 				F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */,
+				F3EB77032CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
 				F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */,
 				F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */,
@@ -755,6 +774,7 @@
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
 				F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */,
 				F3EB76E22CDF97410054D4E1 /* TravelNewSceneFactory.swift in Sources */,
+				F3EB77072CE0DDB00054D4E1 /* SnapshotTransition.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
