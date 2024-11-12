@@ -282,6 +282,7 @@
 		F3EB763F2CDDDDAD0054D4E1 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED92742CE38B8800CF5238 /* JudgmentScene */,
 				F3EB764C2CDDDF520054D4E1 /* TravelScene */,
 				F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */,
 				F3EB76422CDDDDD10054D4E1 /* Common */,
@@ -570,6 +571,37 @@
 				F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		F3ED92742CE38B8800CF5238 /* JudgmentScene */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92752CE38BA400CF5238 /* View */,
+				F3ED92762CE38BA700CF5238 /* Controller */,
+				F3ED92772CE38BB300CF5238 /* Coordinator */,
+			);
+			path = JudgmentScene;
+			sourceTree = "<group>";
+		};
+		F3ED92752CE38BA400CF5238 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3ED92762CE38BA700CF5238 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3ED92772CE38BB300CF5238 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
