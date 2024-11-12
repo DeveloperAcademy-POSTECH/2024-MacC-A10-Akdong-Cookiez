@@ -83,6 +83,10 @@
 		F3EB77032CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */; };
 		F3EB77052CE0B1210054D4E1 /* ExpenseSceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */; };
 		F3EB77072CE0DDB00054D4E1 /* SnapshotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */; };
+		F3ED92702CE3894D00CF5238 /* BudgetDeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */; };
+		F3ED92712CE3894D00CF5238 /* BudgetCategorySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */; };
+		F3ED92722CE3894D00CF5238 /* BudgetNameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */; };
+		F3ED92732CE3894D00CF5238 /* BudgetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +187,10 @@
 		F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransitioningDelegater.swift; sourceTree = "<group>"; };
 		F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransition.swift; sourceTree = "<group>"; };
 		F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTransition.swift; sourceTree = "<group>"; };
+		F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetDeleteButtonView.swift; sourceTree = "<group>"; };
+		F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetCategorySettingView.swift; sourceTree = "<group>"; };
+		F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetNameSettingView.swift; sourceTree = "<group>"; };
+		F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,11 +359,11 @@
 		F3EB76512CDDDFF90054D4E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */,
+				F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */,
+				F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */,
+				F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */,
 				F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */,
-				6D59B8302CDE77890018E1A2 /* budgetTextFieldView.swift */,
-				6D59B8342CDF1FCE0018E1A2 /* budgetNameSettingView.swift */,
-				6D59B8322CDF02650018E1A2 /* budgetCategorySettingView.swift */,
-				6D59B8382CE08E0F0018E1A2 /* budgetDeleteButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +785,7 @@
 				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
 				F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */,
 				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
+				F3ED92722CE3894D00CF5238 /* BudgetNameSettingView.swift in Sources */,
 				955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
@@ -786,7 +795,9 @@
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
-				6D59B8352CDF1FCE0018E1A2 /* budgetNameSettingView.swift in Sources */,
+				F3ED92732CE3894D00CF5238 /* BudgetTextFieldView.swift in Sources */,
+				F3ED92712CE3894D00CF5238 /* BudgetCategorySettingView.swift in Sources */,
+				F3ED92702CE3894D00CF5238 /* BudgetDeleteButtonView.swift in Sources */,
 				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
 				F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */,
 			);

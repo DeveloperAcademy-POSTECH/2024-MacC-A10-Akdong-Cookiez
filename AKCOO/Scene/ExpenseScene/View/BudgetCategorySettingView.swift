@@ -53,34 +53,28 @@ class BudgetCategorySettingView: UIView {
   // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupView()
   }
   
   // MARK: - LifeCycle
   override func layoutSubviews() {
     super.layoutSubviews()
-    updateButtonCornerRadius()
+    setupView()
+    setupConstraints()
   }
   
   // MARK: - Setup Methods
   private func setupView() {
-      backgroundColor = .white
-      
-      addSubview(separatorLine)
-      addSubview(categoryLabel)
-      addSubview(buttonStackView)
-      
-      buttons.forEach { button in
-          buttonStackView.addArrangedSubview(button)
-          button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-      }
-      
-      setupConstraints()
+    backgroundColor = .white
+    
+    addSubview(separatorLine)
+    addSubview(categoryLabel)
+    addSubview(buttonStackView)
+    
+    updateButtonCornerRadius()
   }
   
   private func setupConstraints() {
@@ -101,6 +95,10 @@ class BudgetCategorySettingView: UIView {
   
   // MARK: - Private Methods
   private func updateButtonCornerRadius() {
+    buttons.forEach { button in
+      buttonStackView.addArrangedSubview(button)
+      button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+    }
     buttons.forEach { button in
       let cornerRadius = max(13, button.bounds.height / 2)
       button.layer.cornerRadius = cornerRadius

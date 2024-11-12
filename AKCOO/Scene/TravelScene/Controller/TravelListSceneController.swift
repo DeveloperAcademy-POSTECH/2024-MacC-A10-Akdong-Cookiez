@@ -134,6 +134,6 @@ extension TravelListSceneController: TravelTableViewDelegate {
 
 // Preview 화면
 #Preview {
-  let preview = TravelListSceneController(useCase: TravelUseCase())
+  let preview = TravelListSceneController(useCase: TravelUseCaseImp())
   return preview
 }
