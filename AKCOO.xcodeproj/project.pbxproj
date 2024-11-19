@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
-		6D59B8372CDF9DE40018E1A2 /* ExpenseCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */; };
-		955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BF8B92CE0AC0A009227FA /* CircleView.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
-		F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
 		F3EB76272CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76262CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift */; };
 		F3EB76352CDD14F60054D4E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76342CDD14F60054D4E1 /* .gitignore */; };
@@ -24,23 +21,6 @@
 		F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76452CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift */; };
 		F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */; };
 		F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */; };
-		F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */; };
-		F3EB765D2CDDE30B0054D4E1 /* TravelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */; };
-		F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */; };
-		F3EB765F2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */; };
-		F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */; };
-		F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */; };
-		F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */; };
-		F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */; };
-		F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */; };
-		F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */; };
-		F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */; };
-		F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */; };
-		F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */; };
-		F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76792CDDE5790054D4E1 /* Expense.swift */; };
-		F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767A2CDDE5790054D4E1 /* Currency.swift */; };
-		F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767B2CDDE5790054D4E1 /* Travel.swift */; };
-		F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB767C2CDDE5790054D4E1 /* Budget.swift */; };
 		F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */; };
 		F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */; };
 		F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */; };
@@ -49,7 +29,6 @@
 		F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */; };
 		F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */; };
 		F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */; };
-		F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */; };
 		F3EB76CD2CDE406D0054D4E1 /* SFMonoBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76BE2CDE406C0054D4E1 /* SFMonoBoldItalic.otf */; };
 		F3EB76CE2CDE406D0054D4E1 /* SFMonoMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76BF2CDE406D0054D4E1 /* SFMonoMedium.otf */; };
 		F3EB76CF2CDE406D0054D4E1 /* SFMonoSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76C02CDE406D0054D4E1 /* SFMonoSemibold.otf */; };
@@ -65,28 +44,68 @@
 		F3EB76D92CDE406D0054D4E1 /* SFMonoRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */; };
 		F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */; };
 		F3EB76DB2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */; };
-		F3EB76DE2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */; };
-		F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */; };
-		F3EB76E22CDF97410054D4E1 /* TravelNewSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */; };
-		F3EB76E42CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */; };
-		F3EB76E72CDF990B0054D4E1 /* ExpenseSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */; };
-		F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */; };
-		F3EB76ED2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */; };
-		F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */; };
-		F3EB76F12CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */; };
-		F3EB76F32CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */; };
-		F3EB76F52CDFB95A0054D4E1 /* TravelListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */; };
-		F3EB76F92CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */; };
-		F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */; };
-		F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */; };
-		F3EB77002CE09CE50054D4E1 /* TravelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */; };
-		F3EB77032CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */; };
-		F3EB77052CE0B1210054D4E1 /* ExpenseSceneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */; };
-		F3EB77072CE0DDB00054D4E1 /* SnapshotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */; };
-		F3ED92702CE3894D00CF5238 /* BudgetDeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */; };
-		F3ED92712CE3894D00CF5238 /* BudgetCategorySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */; };
-		F3ED92722CE3894D00CF5238 /* BudgetNameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */; };
-		F3ED92732CE3894D00CF5238 /* BudgetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */; };
+		F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED927A2CE4AD8600CF5238 /* AmountMoneyTextField.swift */; };
+		F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED927C2CE4B9F100CF5238 /* AmountMoneyTextFieldTests.swift */; };
+		F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92862CE4F69500CF5238 /* OpenedPaperView.swift */; };
+		F3ED92892CE506D100CF5238 /* CountrySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92882CE506D100CF5238 /* CountrySelector.swift */; };
+		F3ED928B2CE5162100CF5238 /* JudgmentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED928A2CE5162100CF5238 /* JudgmentCoordinator.swift */; };
+		F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED928C2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift */; };
+		F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92932CE517DE00CF5238 /* JudgmentCompletedFactory.swift */; };
+		F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92952CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift */; };
+		F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92972CE5192500CF5238 /* JudgmentReadyViewController.swift */; };
+		F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92992CE5193100CF5238 /* JudgmentCompletedViewController.swift */; };
+		F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED929B2CE519B000CF5238 /* ClosedPaperView.swift */; };
+		F3ED92A02CE5271300CF5238 /* ReactionBirdTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */; };
+		F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */; };
+		F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A32CE6280E00CF5238 /* JudgementReadyFactory.swift */; };
+		F3ED92A62CE6281400CF5238 /* JudgementReadyFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A52CE6281400CF5238 /* JudgementReadyFactoryImp.swift */; };
+		F3ED92A82CE62EAC00CF5238 /* JudgmentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A72CE62EAC00CF5238 /* JudgmentEditViewController.swift */; };
+		F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A92CE62FEA00CF5238 /* JudgementEditFactory.swift */; };
+		F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92AB2CE62FF300CF5238 /* JudgementEditFactoryImp.swift */; };
+		F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92AE2CE6362000CF5238 /* GradientView.swift */; };
+		F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B02CE6364700CF5238 /* GradientStyle.swift */; };
+		F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B22CE636B000CF5238 /* GradientStyle+bottomShade.swift */; };
+		F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B52CE645EA00CF5238 /* StartTransition.swift */; };
+		F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B82CE64BEA00CF5238 /* SnapshotTransition.swift */; };
+		F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92BB2CE64C3F00CF5238 /* LayerShadow.swift */; };
+		F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92BE2CE65D1F00CF5238 /* JudgmentView.swift */; };
+		F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */; };
+		F3ED92C32CE68B1700CF5238 /* EditTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C22CE68B1700CF5238 /* EditTransition.swift */; };
+		F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C42CE68ED800CF5238 /* JudgmentReadyView.swift */; };
+		F3ED92C72CE6942A00CF5238 /* EditTransitionaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */; };
+		F3ED92CD2CE7194B00CF5238 /* JudgmentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92CC2CE7194B00CF5238 /* JudgmentUseCase.swift */; };
+		F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92CE2CE71C8400CF5238 /* JudgmentUseCaseImp.swift */; };
+		F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92D32CE72FE400CF5238 /* BirdModel.swift */; };
+		F3ED92E92CE78D9000CF5238 /* JudgmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92E82CE78D9000CF5238 /* JudgmentRepository.swift */; };
+		F3ED92EB2CE78E3500CF5238 /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92EA2CE78E3500CF5238 /* UserRecord.swift */; };
+		F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92EC2CE7920B00CF5238 /* RecordRepository.swift */; };
+		F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92F02CE7924000CF5238 /* VoidResponse.swift */; };
+		F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92F42CE792B600CF5238 /* JudgmentRepositoryMock.swift */; };
+		F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92F62CE792C600CF5238 /* RecordRepositoryMock.swift */; };
+		F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92FD2CE7BEFD00CF5238 /* JudgmentType.swift */; };
+		F3ED93002CE7C0C500CF5238 /* UserQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92FF2CE7C0C500CF5238 /* UserQuestion.swift */; };
+		F3ED93022CE7C24400CF5238 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93012CE7C24400CF5238 /* Item.swift */; };
+		F3ED930F2CE7C54300CF5238 /* CategorySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED930E2CE7C54300CF5238 /* CategorySettingView.swift */; };
+		F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93122CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift */; };
+		F3ED93152CE7DD4700CF5238 /* PaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93142CE7DD4700CF5238 /* PaperModel.swift */; };
+		F3ED93192CE8617800CF5238 /* Array+RemovingDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */; };
+		F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931A2CE861B000CF5238 /* JudgmentRepositoryImp.swift */; };
+		F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931C2CE861BC00CF5238 /* RecordRepositoryImp.swift */; };
+		F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931F2CE8961400CF5238 /* BirdCharacterType.swift */; };
+		F3ED93252CEB2E2A00CF5238 /* ReactionBirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */; };
+		F3ED93272CEB2EB100CF5238 /* ReactionBirdCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */; };
+		F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93292CEB30B200CF5238 /* Standard.swift */; };
+		F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93322CEB57A300CF5238 /* Judgment.swift */; };
+		F3ED933B2CEB5E7900CF5238 /* CountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED933A2CEB5E7900CF5238 /* CountryAverageJudgment.swift */; };
+		F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED933E2CEB5EB100CF5238 /* PreviousJudgment.swift */; };
+		F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93432CEB672700CF5238 /* CountryProfile.swift */; };
+		F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93452CEB67F100CF5238 /* Currency.swift */; };
+		F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93492CEB694300CF5238 /* BirdReaction.swift */; };
+		F3ED934C2CEB6BAC00CF5238 /* ForignBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934B2CEB6BAC00CF5238 /* ForignBird.swift */; };
+		F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */; };
+		F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */; };
+		F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */; };
+		F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93562CEBA41200CF5238 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,14 +128,11 @@
 /* Begin PBXFileReference section */
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
-		6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryController.swift; sourceTree = "<group>"; };
-		955BF8B92CE0AC0A009227FA /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3EB76112CDD14B20054D4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3EB76162CDD14B20054D4E1 /* AKCOOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKCOOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCOOTests.swift; sourceTree = "<group>"; };
 		F3EB76202CDD14B20054D4E1 /* AKCOOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKCOOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCOOUITests.swift; sourceTree = "<group>"; };
 		F3EB76262CDD14B20054D4E1 /* AKCOOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCOOUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -128,23 +144,6 @@
 		F3EB76452CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
 		F3EB76462CDDDDFF0054D4E1 /* CoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		F3EB764A2CDDDE280054D4E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinatorImp.swift; sourceTree = "<group>"; };
-		F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCoordinator.swift; sourceTree = "<group>"; };
-		F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewCoordinator.swift; sourceTree = "<group>"; };
-		F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelCoordinatorImp.swift; sourceTree = "<group>"; };
-		F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListSceneController.swift; sourceTree = "<group>"; };
-		F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelNewSceneController.swift; sourceTree = "<group>"; };
-		F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableView.swift; sourceTree = "<group>"; };
-		F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
-		F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseSceneController.swift; sourceTree = "<group>"; };
-		F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseStatsViewController.swift; sourceTree = "<group>"; };
-		F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseRecordViewController.swift; sourceTree = "<group>"; };
-		F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseUseCaseImp.swift; sourceTree = "<group>"; };
-		F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelUseCaseImp.swift; sourceTree = "<group>"; };
-		F3EB76792CDDE5790054D4E1 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		F3EB767A2CDDE5790054D4E1 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		F3EB767B2CDDE5790054D4E1 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
-		F3EB767C2CDDE5790054D4E1 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		F3EB768B2CDDECFF0054D4E1 /* UIFont+AKFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AKFont.swift"; sourceTree = "<group>"; };
 		F3EB76AB2CDDEED10054D4E1 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		F3EB76AD2CDDEEE80054D4E1 /* AKFontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFontType.swift; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 		F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWindowBackground.swift; sourceTree = "<group>"; };
 		F3EB76BA2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+AkSpacing.swift"; sourceTree = "<group>"; };
-		F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		F3EB76BE2CDE406C0054D4E1 /* SFMonoBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoBoldItalic.otf; sourceTree = "<group>"; };
 		F3EB76BF2CDE406D0054D4E1 /* SFMonoMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoMedium.otf; sourceTree = "<group>"; };
 		F3EB76C02CDE406D0054D4E1 /* SFMonoSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoSemibold.otf; sourceTree = "<group>"; };
@@ -169,28 +167,68 @@
 		F3EB76CA2CDE406D0054D4E1 /* SFMonoRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoRegularItalic.otf; sourceTree = "<group>"; };
 		F3EB76CB2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoHeavyItalic.otf; sourceTree = "<group>"; };
 		F3EB76CC2CDE406D0054D4E1 /* SFMonoSemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFMonoSemiboldItalic.otf; sourceTree = "<group>"; };
-		F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListSceneFactoryImp.swift; sourceTree = "<group>"; };
-		F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListSceneFactory.swift; sourceTree = "<group>"; };
-		F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelNewSceneFactory.swift; sourceTree = "<group>"; };
-		F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelNewSceneFactoryImp.swift; sourceTree = "<group>"; };
-		F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneFactory.swift; sourceTree = "<group>"; };
-		F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneFactoryImp.swift; sourceTree = "<group>"; };
-		F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordFactoryImp.swift; sourceTree = "<group>"; };
-		F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordFactory.swift; sourceTree = "<group>"; };
-		F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsFactory.swift; sourceTree = "<group>"; };
-		F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsFactoryImp.swift; sourceTree = "<group>"; };
-		F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListCoordinator.swift; sourceTree = "<group>"; };
-		F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseStatsCoordinator.swift; sourceTree = "<group>"; };
-		F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordCoordinator.swift; sourceTree = "<group>"; };
-		F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUseCase.swift; sourceTree = "<group>"; };
-		F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUseCase.swift; sourceTree = "<group>"; };
-		F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransitioningDelegater.swift; sourceTree = "<group>"; };
-		F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSceneTransition.swift; sourceTree = "<group>"; };
-		F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTransition.swift; sourceTree = "<group>"; };
-		F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetDeleteButtonView.swift; sourceTree = "<group>"; };
-		F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetCategorySettingView.swift; sourceTree = "<group>"; };
-		F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetNameSettingView.swift; sourceTree = "<group>"; };
-		F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTextFieldView.swift; sourceTree = "<group>"; };
+		F3ED927A2CE4AD8600CF5238 /* AmountMoneyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountMoneyTextField.swift; sourceTree = "<group>"; };
+		F3ED927C2CE4B9F100CF5238 /* AmountMoneyTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountMoneyTextFieldTests.swift; sourceTree = "<group>"; };
+		F3ED92862CE4F69500CF5238 /* OpenedPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedPaperView.swift; sourceTree = "<group>"; };
+		F3ED92882CE506D100CF5238 /* CountrySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelector.swift; sourceTree = "<group>"; };
+		F3ED928A2CE5162100CF5238 /* JudgmentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCoordinator.swift; sourceTree = "<group>"; };
+		F3ED928C2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCoordinatorImp.swift; sourceTree = "<group>"; };
+		F3ED92932CE517DE00CF5238 /* JudgmentCompletedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCompletedFactory.swift; sourceTree = "<group>"; };
+		F3ED92952CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCompletedFactoryImp.swift; sourceTree = "<group>"; };
+		F3ED92972CE5192500CF5238 /* JudgmentReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentReadyViewController.swift; sourceTree = "<group>"; };
+		F3ED92992CE5193100CF5238 /* JudgmentCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCompletedViewController.swift; sourceTree = "<group>"; };
+		F3ED929B2CE519B000CF5238 /* ClosedPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPaperView.swift; sourceTree = "<group>"; };
+		F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdTextView.swift; sourceTree = "<group>"; };
+		F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdsCollectionView.swift; sourceTree = "<group>"; };
+		F3ED92A32CE6280E00CF5238 /* JudgementReadyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementReadyFactory.swift; sourceTree = "<group>"; };
+		F3ED92A52CE6281400CF5238 /* JudgementReadyFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementReadyFactoryImp.swift; sourceTree = "<group>"; };
+		F3ED92A72CE62EAC00CF5238 /* JudgmentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditViewController.swift; sourceTree = "<group>"; };
+		F3ED92A92CE62FEA00CF5238 /* JudgementEditFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementEditFactory.swift; sourceTree = "<group>"; };
+		F3ED92AB2CE62FF300CF5238 /* JudgementEditFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementEditFactoryImp.swift; sourceTree = "<group>"; };
+		F3ED92AE2CE6362000CF5238 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F3ED92B02CE6364700CF5238 /* GradientStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientStyle.swift; sourceTree = "<group>"; };
+		F3ED92B22CE636B000CF5238 /* GradientStyle+bottomShade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GradientStyle+bottomShade.swift"; sourceTree = "<group>"; };
+		F3ED92B52CE645EA00CF5238 /* StartTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTransition.swift; sourceTree = "<group>"; };
+		F3ED92B82CE64BEA00CF5238 /* SnapshotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTransition.swift; sourceTree = "<group>"; };
+		F3ED92BB2CE64C3F00CF5238 /* LayerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerShadow.swift; sourceTree = "<group>"; };
+		F3ED92BE2CE65D1F00CF5238 /* JudgmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentView.swift; sourceTree = "<group>"; };
+		F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTransitionaler.swift; sourceTree = "<group>"; };
+		F3ED92C22CE68B1700CF5238 /* EditTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransition.swift; sourceTree = "<group>"; };
+		F3ED92C42CE68ED800CF5238 /* JudgmentReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentReadyView.swift; sourceTree = "<group>"; };
+		F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransitionaler.swift; sourceTree = "<group>"; };
+		F3ED92CC2CE7194B00CF5238 /* JudgmentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentUseCase.swift; sourceTree = "<group>"; };
+		F3ED92CE2CE71C8400CF5238 /* JudgmentUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentUseCaseImp.swift; sourceTree = "<group>"; };
+		F3ED92D32CE72FE400CF5238 /* BirdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdModel.swift; sourceTree = "<group>"; };
+		F3ED92E82CE78D9000CF5238 /* JudgmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentRepository.swift; sourceTree = "<group>"; };
+		F3ED92EA2CE78E3500CF5238 /* UserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
+		F3ED92EC2CE7920B00CF5238 /* RecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRepository.swift; sourceTree = "<group>"; };
+		F3ED92F02CE7924000CF5238 /* VoidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidResponse.swift; sourceTree = "<group>"; };
+		F3ED92F42CE792B600CF5238 /* JudgmentRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentRepositoryMock.swift; sourceTree = "<group>"; };
+		F3ED92F62CE792C600CF5238 /* RecordRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRepositoryMock.swift; sourceTree = "<group>"; };
+		F3ED92FD2CE7BEFD00CF5238 /* JudgmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentType.swift; sourceTree = "<group>"; };
+		F3ED92FF2CE7C0C500CF5238 /* UserQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestion.swift; sourceTree = "<group>"; };
+		F3ED93012CE7C24400CF5238 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F3ED930E2CE7C54300CF5238 /* CategorySettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingView.swift; sourceTree = "<group>"; };
+		F3ED93122CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentUseCaseMock.swift; sourceTree = "<group>"; };
+		F3ED93142CE7DD4700CF5238 /* PaperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperModel.swift; sourceTree = "<group>"; };
+		F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemovingDuplicates.swift"; sourceTree = "<group>"; };
+		F3ED931A2CE861B000CF5238 /* JudgmentRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentRepositoryImp.swift; sourceTree = "<group>"; };
+		F3ED931C2CE861BC00CF5238 /* RecordRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRepositoryImp.swift; sourceTree = "<group>"; };
+		F3ED931F2CE8961400CF5238 /* BirdCharacterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCharacterType.swift; sourceTree = "<group>"; };
+		F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdCell.swift; sourceTree = "<group>"; };
+		F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdCharacterView.swift; sourceTree = "<group>"; };
+		F3ED93292CEB30B200CF5238 /* Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standard.swift; sourceTree = "<group>"; };
+		F3ED93322CEB57A300CF5238 /* Judgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Judgment.swift; sourceTree = "<group>"; };
+		F3ED933A2CEB5E7900CF5238 /* CountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAverageJudgment.swift; sourceTree = "<group>"; };
+		F3ED933E2CEB5EB100CF5238 /* PreviousJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousJudgment.swift; sourceTree = "<group>"; };
+		F3ED93432CEB672700CF5238 /* CountryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProfile.swift; sourceTree = "<group>"; };
+		F3ED93452CEB67F100CF5238 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		F3ED93492CEB694300CF5238 /* BirdReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReaction.swift; sourceTree = "<group>"; };
+		F3ED934B2CEB6BAC00CF5238 /* ForignBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForignBird.swift; sourceTree = "<group>"; };
+		F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBird.swift; sourceTree = "<group>"; };
+		F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDayBird.swift; sourceTree = "<group>"; };
+		F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
+		F3ED93562CEBA41200CF5238 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +285,9 @@
 				F3EB76392CDDDC990054D4E1 /* App */,
 				F3EB763F2CDDDDAD0054D4E1 /* Scene */,
 				F3EB76842CDDE65A0054D4E1 /* DesignSystem */,
-				F3EB764E2CDDDFE30054D4E1 /* Model */,
+				F3EB764E2CDDDFE30054D4E1 /* Domain */,
+				F3ED92E62CE78D7E00CF5238 /* Data */,
+				F3ED93162CE8616800CF5238 /* Utils */,
 			);
 			path = AKCOO;
 			sourceTree = "<group>";
@@ -255,7 +295,7 @@
 		F3EB76192CDD14B20054D4E1 /* AKCOOTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB761A2CDD14B20054D4E1 /* AKCOOTests.swift */,
+				F3ED92812CE4C44000CF5238 /* Components */,
 			);
 			path = AKCOOTests;
 			sourceTree = "<group>";
@@ -283,8 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				F3ED92742CE38B8800CF5238 /* JudgmentScene */,
-				F3EB764C2CDDDF520054D4E1 /* TravelScene */,
-				F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */,
 				F3EB76422CDDDDD10054D4E1 /* Common */,
 			);
 			path = Scene;
@@ -308,96 +346,21 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		F3EB764C2CDDDF520054D4E1 /* TravelScene */ = {
+		F3EB764E2CDDDFE30054D4E1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB764F2CDDDFEC0054D4E1 /* View */,
-				F3EB76502CDDDFF20054D4E1 /* Controller */,
-				F3EB76532CDDE0280054D4E1 /* Coordinator */,
-			);
-			path = TravelScene;
-			sourceTree = "<group>";
-		};
-		F3EB764D2CDDDFC30054D4E1 /* ExpenseScene */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76F62CDFB9FC0054D4E1 /* Coordinator */,
-				F3EB76512CDDDFF90054D4E1 /* View */,
-				F3EB76522CDDDFFC0054D4E1 /* Controller */,
-			);
-			path = ExpenseScene;
-			sourceTree = "<group>";
-		};
-		F3EB764E2CDDDFE30054D4E1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
+				F3ED932F2CEB53E400CF5238 /* ViewModel */,
 				F3EB76552CDDE0970054D4E1 /* UseCase */,
 				F3EB76562CDDE09E0054D4E1 /* Entity */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F3EB764F2CDDDFEC0054D4E1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76642CDDE39A0054D4E1 /* TravelTableView.swift */,
-				F3EB76652CDDE39A0054D4E1 /* TravelTableViewCell.swift */,
-				955BF8B92CE0AC0A009227FA /* CircleView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F3EB76502CDDDFF20054D4E1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76DC2CDF96420054D4E1 /* Factory */,
-				F3EB76602CDDE3680054D4E1 /* TravelListSceneController.swift */,
-				F3EB76612CDDE3680054D4E1 /* TravelNewSceneController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F3EB76512CDDDFF90054D4E1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F3ED926D2CE3894D00CF5238 /* BudgetCategorySettingView.swift */,
-				F3ED926C2CE3894D00CF5238 /* BudgetDeleteButtonView.swift */,
-				F3ED926E2CE3894D00CF5238 /* BudgetNameSettingView.swift */,
-				F3ED926F2CE3894D00CF5238 /* BudgetTextFieldView.swift */,
-				F3EB76BC2CDE33AF0054D4E1 /* Empty.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F3EB76522CDDDFFC0054D4E1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76E52CDF98620054D4E1 /* Factory */,
-				F3EB766F2CDDE3DF0054D4E1 /* ExpenseSceneController.swift */,
-				F3EB76712CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift */,
-				F3EB76702CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift */,
-				6D59B8362CDF9DE30018E1A2 /* ExpenseCategoryController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F3EB76532CDDE0280054D4E1 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB77012CE0B01B0054D4E1 /* Transition */,
-				F3EB76822CDDE5E20054D4E1 /* Protocol */,
-				F3EB765B2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift */,
-				F3EB76572CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift */,
-			);
-			path = Coordinator;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		F3EB76552CDDE0970054D4E1 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
 				F3EB76FC2CE09CB50054D4E1 /* Interface */,
-				F3EB76752CDDE5720054D4E1 /* ExpenseUseCaseImp.swift */,
-				F3EB76762CDDE5720054D4E1 /* TravelUseCaseImp.swift */,
+				F3ED92CE2CE71C8400CF5238 /* JudgmentUseCaseImp.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -405,22 +368,12 @@
 		F3EB76562CDDE09E0054D4E1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB767C2CDDE5790054D4E1 /* Budget.swift */,
-				F3EB767A2CDDE5790054D4E1 /* Currency.swift */,
-				F3EB76792CDDE5790054D4E1 /* Expense.swift */,
-				F3EB767B2CDDE5790054D4E1 /* Travel.swift */,
+				F3ED93542CEB7F8600CF5238 /* Country */,
+				F3ED93402CEB5F1600CF5238 /* Standard */,
+				F3ED93302CEB572100CF5238 /* Judgmemt */,
+				F3ED930B2CE7C39200CF5238 /* User */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		F3EB76822CDDE5E20054D4E1 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76582CDDE30B0054D4E1 /* TravelCoordinator.swift */,
-				F3EB76592CDDE30B0054D4E1 /* TravelNewCoordinator.swift */,
-				F3EB76F42CDFB95A0054D4E1 /* TravelListCoordinator.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		F3EB76832CDDE64B0054D4E1 /* Coordinator */ = {
@@ -435,6 +388,10 @@
 		F3EB76842CDDE65A0054D4E1 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED931E2CE8960A00CF5238 /* Type */,
+				F3ED92AD2CE6361000CF5238 /* Components */,
+				F3ED92BA2CE64C3800CF5238 /* LayerShadow */,
+				F3ED92B72CE64BD700CF5238 /* SnapshotTransition */,
 				F3EB76B92CDE1A100054D4E1 /* Spacing */,
 				F3EB76AF2CDDFCD50054D4E1 /* Color */,
 				F3EB76872CDDE6990054D4E1 /* Font */,
@@ -450,6 +407,7 @@
 				512579B92CDE43EB00649D3F /* UIView+Setter.swift */,
 				F3EB76B42CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift */,
 				F3EB76B62CDE157B0054D4E1 /* SetWindowBackground.swift */,
+				F3ED92B22CE636B000CF5238 /* GradientStyle+bottomShade.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -501,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				F3EB76B02CDDFD210054D4E1 /* UIColor+AKColor.swift */,
+				F3ED92B02CE6364700CF5238 /* GradientStyle.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -513,72 +472,22 @@
 			path = Spacing;
 			sourceTree = "<group>";
 		};
-		F3EB76DC2CDF96420054D4E1 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76DD2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift */,
-				F3EB76DF2CDF969E0054D4E1 /* TravelListSceneFactory.swift */,
-				F3EB76E32CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift */,
-				F3EB76E12CDF97410054D4E1 /* TravelNewSceneFactory.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		F3EB76E52CDF98620054D4E1 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76E62CDF990B0054D4E1 /* ExpenseSceneFactory.swift */,
-				F3EB76E82CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift */,
-				F3EB76EE2CDFAF800054D4E1 /* ExpenseRecordFactory.swift */,
-				F3EB76EC2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift */,
-				F3EB76F02CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift */,
-				F3EB76F22CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		F3EB76F62CDFB9FC0054D4E1 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76F72CDFBA010054D4E1 /* Protocol */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		F3EB76F72CDFBA010054D4E1 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB76F82CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift */,
-				F3EB76FA2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		F3EB76FC2CE09CB50054D4E1 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				F3EB76FD2CE09CCD0054D4E1 /* ExpenseUseCase.swift */,
-				F3EB76FF2CE09CE50054D4E1 /* TravelUseCase.swift */,
+				F3ED93102CE7CEED00CF5238 /* Mock */,
+				F3ED92F92CE7951D00CF5238 /* UseCase */,
+				F3ED92F82CE7951A00CF5238 /* Repository */,
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		F3EB77012CE0B01B0054D4E1 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				F3EB77022CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift */,
-				F3EB77042CE0B1210054D4E1 /* ExpenseSceneTransition.swift */,
-				F3EB77062CE0DDAF0054D4E1 /* SnapshotTransition.swift */,
-			);
-			path = Transition;
 			sourceTree = "<group>";
 		};
 		F3ED92742CE38B8800CF5238 /* JudgmentScene */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED92752CE38BA400CF5238 /* View */,
-				F3ED92762CE38BA700CF5238 /* Controller */,
 				F3ED92772CE38BB300CF5238 /* Coordinator */,
+				F3ED92762CE38BA700CF5238 /* Controller */,
+				F3ED92752CE38BA400CF5238 /* View */,
 			);
 			path = JudgmentScene;
 			sourceTree = "<group>";
@@ -586,6 +495,9 @@
 		F3ED92752CE38BA400CF5238 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED92BD2CE65CF500CF5238 /* Judgment */,
+				F3ED929E2CE5270500CF5238 /* Reaction */,
+				F3ED929D2CE51A1600CF5238 /* Paper */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -593,6 +505,10 @@
 		F3ED92762CE38BA700CF5238 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED928E2CE516A300CF5238 /* Factory */,
+				F3ED92972CE5192500CF5238 /* JudgmentReadyViewController.swift */,
+				F3ED92992CE5193100CF5238 /* JudgmentCompletedViewController.swift */,
+				F3ED92A72CE62EAC00CF5238 /* JudgmentEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -600,8 +516,285 @@
 		F3ED92772CE38BB300CF5238 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED92B42CE645CE00CF5238 /* Presenter */,
+				F3ED928A2CE5162100CF5238 /* JudgmentCoordinator.swift */,
+				F3ED928C2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F3ED92812CE4C44000CF5238 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED927C2CE4B9F100CF5238 /* AmountMoneyTextFieldTests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F3ED928E2CE516A300CF5238 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92932CE517DE00CF5238 /* JudgmentCompletedFactory.swift */,
+				F3ED92952CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift */,
+				F3ED92A32CE6280E00CF5238 /* JudgementReadyFactory.swift */,
+				F3ED92A52CE6281400CF5238 /* JudgementReadyFactoryImp.swift */,
+				F3ED92A92CE62FEA00CF5238 /* JudgementEditFactory.swift */,
+				F3ED92AB2CE62FF300CF5238 /* JudgementEditFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F3ED929D2CE51A1600CF5238 /* Paper */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED927A2CE4AD8600CF5238 /* AmountMoneyTextField.swift */,
+				F3ED92882CE506D100CF5238 /* CountrySelector.swift */,
+				F3ED92862CE4F69500CF5238 /* OpenedPaperView.swift */,
+				F3ED929B2CE519B000CF5238 /* ClosedPaperView.swift */,
+				F3ED930E2CE7C54300CF5238 /* CategorySettingView.swift */,
+			);
+			path = Paper;
+			sourceTree = "<group>";
+		};
+		F3ED929E2CE5270500CF5238 /* Reaction */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93232CEB2D9000CF5238 /* ReactionBirdCell */,
+				F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */,
+			);
+			path = Reaction;
+			sourceTree = "<group>";
+		};
+		F3ED92AD2CE6361000CF5238 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92AE2CE6362000CF5238 /* GradientView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F3ED92B42CE645CE00CF5238 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92B52CE645EA00CF5238 /* StartTransition.swift */,
+				F3ED92C22CE68B1700CF5238 /* EditTransition.swift */,
+				F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */,
+				F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F3ED92B72CE64BD700CF5238 /* SnapshotTransition */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92B82CE64BEA00CF5238 /* SnapshotTransition.swift */,
+			);
+			path = SnapshotTransition;
+			sourceTree = "<group>";
+		};
+		F3ED92BA2CE64C3800CF5238 /* LayerShadow */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92BB2CE64C3F00CF5238 /* LayerShadow.swift */,
+			);
+			path = LayerShadow;
+			sourceTree = "<group>";
+		};
+		F3ED92BD2CE65CF500CF5238 /* Judgment */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92BE2CE65D1F00CF5238 /* JudgmentView.swift */,
+				F3ED92C42CE68ED800CF5238 /* JudgmentReadyView.swift */,
+			);
+			path = Judgment;
+			sourceTree = "<group>";
+		};
+		F3ED92E62CE78D7E00CF5238 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92EE2CE7922C00CF5238 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3ED92EE2CE7922C00CF5238 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED931A2CE861B000CF5238 /* JudgmentRepositoryImp.swift */,
+				F3ED931C2CE861BC00CF5238 /* RecordRepositoryImp.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F3ED92F82CE7951A00CF5238 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92E82CE78D9000CF5238 /* JudgmentRepository.swift */,
+				F3ED92EC2CE7920B00CF5238 /* RecordRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F3ED92F92CE7951D00CF5238 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92F02CE7924000CF5238 /* VoidResponse.swift */,
+				F3ED92CC2CE7194B00CF5238 /* JudgmentUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F3ED92FA2CE7BC7100CF5238 /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93482CEB68B400CF5238 /* Protocol */,
+				F3ED934B2CEB6BAC00CF5238 /* ForignBird.swift */,
+				F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */,
+				F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */,
+				F3ED93492CEB694300CF5238 /* BirdReaction.swift */,
+			);
+			path = Bird;
+			sourceTree = "<group>";
+		};
+		F3ED930B2CE7C39200CF5238 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92FF2CE7C0C500CF5238 /* UserQuestion.swift */,
+				F3ED92EA2CE78E3500CF5238 /* UserRecord.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		F3ED93102CE7CEED00CF5238 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92F42CE792B600CF5238 /* JudgmentRepositoryMock.swift */,
+				F3ED92F62CE792C600CF5238 /* RecordRepositoryMock.swift */,
+				F3ED93122CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		F3ED93162CE8616800CF5238 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93172CE8616C00CF5238 /* Extension */,
+				F3ED93562CEBA41200CF5238 /* NetworkError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F3ED93172CE8616C00CF5238 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F3ED931E2CE8960A00CF5238 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED931F2CE8961400CF5238 /* BirdCharacterType.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		F3ED93232CEB2D9000CF5238 /* ReactionBirdCell */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93282CEB2F3200CF5238 /* Components */,
+				F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */,
+			);
+			path = ReactionBirdCell;
+			sourceTree = "<group>";
+		};
+		F3ED93282CEB2F3200CF5238 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */,
+				F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F3ED932F2CEB53E400CF5238 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92FA2CE7BC7100CF5238 /* Bird */,
+				F3ED93472CEB68A200CF5238 /* Paper */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3ED93302CEB572100CF5238 /* Judgmemt */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93342CEB57CF00CF5238 /* Type */,
+				F3ED93312CEB572900CF5238 /* Protocol */,
+				F3ED933A2CEB5E7900CF5238 /* CountryAverageJudgment.swift */,
+				F3ED933E2CEB5EB100CF5238 /* PreviousJudgment.swift */,
+			);
+			path = Judgmemt;
+			sourceTree = "<group>";
+		};
+		F3ED93312CEB572900CF5238 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93322CEB57A300CF5238 /* Judgment.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3ED93342CEB57CF00CF5238 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92FD2CE7BEFD00CF5238 /* JudgmentType.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		F3ED93402CEB5F1600CF5238 /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93412CEB5F2100CF5238 /* Protocol */,
+				F3ED93012CE7C24400CF5238 /* Item.swift */,
+			);
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		F3ED93412CEB5F2100CF5238 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93292CEB30B200CF5238 /* Standard.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3ED93472CEB68A200CF5238 /* Paper */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93142CE7DD4700CF5238 /* PaperModel.swift */,
+			);
+			path = Paper;
+			sourceTree = "<group>";
+		};
+		F3ED93482CEB68B400CF5238 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92D32CE72FE400CF5238 /* BirdModel.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F3ED93542CEB7F8600CF5238 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93432CEB672700CF5238 /* CountryProfile.swift */,
+				F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */,
+				F3ED93452CEB67F100CF5238 /* Currency.swift */,
+			);
+			path = Country;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,64 +967,83 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EB77052CE0B1210054D4E1 /* ExpenseSceneTransition.swift in Sources */,
+				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
+				F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */,
+				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
+				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
+				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
+				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
+				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
+				F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */,
+				F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
-				F3EB76E72CDF990B0054D4E1 /* ExpenseSceneFactory.swift in Sources */,
-				F3EB76DE2CDF965F0054D4E1 /* TravelListSceneFactoryImp.swift in Sources */,
-				F3EB76722CDDE3DF0054D4E1 /* ExpenseSceneController.swift in Sources */,
-				F3EB77002CE09CE50054D4E1 /* TravelUseCase.swift in Sources */,
-				F3EB76672CDDE39A0054D4E1 /* TravelTableView.swift in Sources */,
+				F3ED92CD2CE7194B00CF5238 /* JudgmentUseCase.swift in Sources */,
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
+				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
-				F3EB765E2CDDE30B0054D4E1 /* TravelNewCoordinator.swift in Sources */,
-				F3EB76732CDDE3DF0054D4E1 /* ExpenseStatsViewController.swift in Sources */,
-				F3EB76FB2CDFBB600054D4E1 /* ExpenseRecordCoordinator.swift in Sources */,
-				F3EB76682CDDE39A0054D4E1 /* TravelTableViewCell.swift in Sources */,
-				F3EB77032CE0B0360054D4E1 /* ExpenseSceneTransitioningDelegater.swift in Sources */,
+				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
+				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
-				F3EB76EF2CDFAF800054D4E1 /* ExpenseRecordFactory.swift in Sources */,
-				F3EB76772CDDE5720054D4E1 /* ExpenseUseCaseImp.swift in Sources */,
+				F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
-				6D59B8372CDF9DE40018E1A2 /* ExpenseCategoryController.swift in Sources */,
-				F3EB76FE2CE09CCD0054D4E1 /* ExpenseUseCase.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
-				F3EB76BD2CDE33AF0054D4E1 /* Empty.swift in Sources */,
-				F3EB76E42CDF97480054D4E1 /* TravelNewSceneFactoryImp.swift in Sources */,
-				F3EB76ED2CDFAF700054D4E1 /* ExpenseRecordFactoryImp.swift in Sources */,
-				F3EB765F2CDDE30B0054D4E1 /* TravelCoordinatorImp.swift in Sources */,
-				F3EB76622CDDE3680054D4E1 /* TravelListSceneController.swift in Sources */,
-				F3EB76F52CDFB95A0054D4E1 /* TravelListCoordinator.swift in Sources */,
-				F3EB76F92CDFBA0B0054D4E1 /* ExpenseStatsCoordinator.swift in Sources */,
-				F3EB76F12CDFAF8E0054D4E1 /* ExpenseStatsFactory.swift in Sources */,
+				F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */,
+				F3ED93152CE7DD4700CF5238 /* PaperModel.swift in Sources */,
+				F3ED92A62CE6281400CF5238 /* JudgementReadyFactoryImp.swift in Sources */,
+				F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */,
+				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
+				F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */,
+				F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */,
+				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
+				F3ED93022CE7C24400CF5238 /* Item.swift in Sources */,
+				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
+				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
+				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
+				F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */,
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
-				F3EB76632CDDE3680054D4E1 /* TravelNewSceneController.swift in Sources */,
-				F3EB767E2CDDE5790054D4E1 /* Currency.swift in Sources */,
-				F3EB767D2CDDE5790054D4E1 /* Expense.swift in Sources */,
+				F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */,
+				F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */,
+				F3ED92C32CE68B1700CF5238 /* EditTransition.swift in Sources */,
+				F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */,
+				F3ED92A02CE5271300CF5238 /* ReactionBirdTextView.swift in Sources */,
+				F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */,
+				F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
-				F3EB765C2CDDE30B0054D4E1 /* TravelNewCoordinatorImp.swift in Sources */,
+				F3ED93002CE7C0C500CF5238 /* UserQuestion.swift in Sources */,
+				F3ED93192CE8617800CF5238 /* Array+RemovingDuplicates.swift in Sources */,
+				F3ED92EB2CE78E3500CF5238 /* UserRecord.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
-				F3EB765D2CDDE30B0054D4E1 /* TravelCoordinator.swift in Sources */,
-				F3EB76F32CDFAF960054D4E1 /* ExpenseStatsFactoryImp.swift in Sources */,
-				F3EB76742CDDE3DF0054D4E1 /* ExpenseRecordViewController.swift in Sources */,
-				F3EB76E92CDF99150054D4E1 /* ExpenseSceneFactoryImp.swift in Sources */,
-				F3EB76802CDDE5790054D4E1 /* Budget.swift in Sources */,
-				F3ED92722CE3894D00CF5238 /* BudgetNameSettingView.swift in Sources */,
-				955BF8BA2CE0AC0A009227FA /* CircleView.swift in Sources */,
+				F3ED930F2CE7C54300CF5238 /* CategorySettingView.swift in Sources */,
+				F3ED92C72CE6942A00CF5238 /* EditTransitionaler.swift in Sources */,
+				F3ED92892CE506D100CF5238 /* CountrySelector.swift in Sources */,
+				F3ED92A82CE62EAC00CF5238 /* JudgmentEditViewController.swift in Sources */,
+				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
+				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
+				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
+				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
+				F3ED934C2CEB6BAC00CF5238 /* ForignBird.swift in Sources */,
+				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,
+				F3ED933B2CEB5E7900CF5238 /* CountryAverageJudgment.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
-				F3EB76E02CDF969E0054D4E1 /* TravelListSceneFactory.swift in Sources */,
-				F3EB76E22CDF97410054D4E1 /* TravelNewSceneFactory.swift in Sources */,
-				F3EB77072CE0DDB00054D4E1 /* SnapshotTransition.swift in Sources */,
+				F3ED928B2CE5162100CF5238 /* JudgmentCoordinator.swift in Sources */,
+				F3ED92E92CE78D9000CF5238 /* JudgmentRepository.swift in Sources */,
+				F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */,
+				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
+				F3ED93252CEB2E2A00CF5238 /* ReactionBirdCell.swift in Sources */,
+				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
+				F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
-				F3ED92732CE3894D00CF5238 /* BudgetTextFieldView.swift in Sources */,
-				F3ED92712CE3894D00CF5238 /* BudgetCategorySettingView.swift in Sources */,
-				F3ED92702CE3894D00CF5238 /* BudgetDeleteButtonView.swift in Sources */,
-				F3EB767F2CDDE5790054D4E1 /* Travel.swift in Sources */,
-				F3EB76782CDDE5720054D4E1 /* TravelUseCaseImp.swift in Sources */,
+				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,
+				F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */,
+				F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */,
+				F3ED93272CEB2EB100CF5238 /* ReactionBirdCharacterView.swift in Sources */,
+				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
+				F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,7 +1051,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EB761B2CDD14B20054D4E1 /* AKCOOTests.swift in Sources */,
+				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
