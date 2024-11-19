@@ -30,7 +30,10 @@ opt_in_rules: # Default Rules에서 활성화할 규칙
 indentation_width:
   indentation_width: 2
 
-type_body_length: 
+# 변수명의 최소 길이를 1로 제한합니다 (제한이 없는 것처럼 동작)
+identifier_name:
+  min_length: 1
+
+type_body_length:
   warning: 500
   error: 600
-
