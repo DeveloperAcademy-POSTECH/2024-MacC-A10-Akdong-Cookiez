@@ -8,7 +8,6 @@
 import Foundation
 
 enum CoordinatorType {
-  case app, travelList, expense
-  case travelNew
-  case expenseRecord, expenseStats
+  case app
+  case judement
 }
