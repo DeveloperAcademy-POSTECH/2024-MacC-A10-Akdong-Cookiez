@@ -14,6 +14,9 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
   
   # 아무 것도 재정의 하지 않는 함수를 제한합니다. https://realm.github.io/SwiftLint/unneeded_override.html
   - unneeded_override
+  
+  # 튜플의 요소 수 제한 비활성화
+  - large_tuple
 
 opt_in_rules: # Default Rules에서 활성화할 규칙
   
@@ -30,3 +33,4 @@ indentation_width:
 type_body_length: 
   warning: 500
   error: 600
+

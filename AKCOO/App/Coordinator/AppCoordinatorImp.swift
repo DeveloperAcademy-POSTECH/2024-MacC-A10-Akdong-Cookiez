@@ -15,34 +15,24 @@ final class AppCoordinatorImp: AppCoordinator {
   
   required init(_ navigationController: UINavigationController) {
     self.navigationController = navigationController
-    self.navigationController.view.backgroundColor = .white
+    self.navigationController.view.backgroundColor = .blue
   }
   
   // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
   func start() {
-    let travelUseCase = TravelUseCaseImp()
-    let expenseUseCase = ExpenseUseCaseImp()
-    let travelListSceneFactory = TravelListSceneFactoryImp(useCase: travelUseCase)
-    let travelNewFactory = TravelNewSceneFactoryImp(useCase: travelUseCase)
-    let expenseSceneFactory = ExpenseSceneFactoryImp()
-    let expenseRecordFactory = ExpenseRecordFactoryImp(useCase: expenseUseCase)
-    let expenseStatsFactory = ExpenseStatsFactoryImp(useCase: expenseUseCase)
+    let judgmentUseCase = JudgmentUseCaseImp(judgmentRepository: JudgmentRepositoryMock(), recordRepository: RecordRepositoryMock())
+    let judgmentReadyFactory = JudgmentReadyFactoryImp(useCase: judgmentUseCase)
+    let judgmentCompletedFactory = JudgmentCompletedFactoryImp(useCase: judgmentUseCase)
+    let judgmentEditFactory = JudgmentEditFactoryImp(useCase: judgmentUseCase)
     
-    let travelNewCoordinator = TravelNewCoordinatorImp(
-      self.navigationController,
-      factory: travelNewFactory
+    let judgmentCoordinator = JudgmentCoordinatorImp(
+      navigationController,
+      judgmentReadyNewfactory: judgmentReadyFactory,
+      judgmentCompletedFactory: judgmentCompletedFactory, 
+      judgmentEditFactory: judgmentEditFactory
     )
     
-    let travelCoordinator = TravelCoordinatorImp(
-      self.navigationController,
-      travelNewCoordinator: travelNewCoordinator, 
-      travelListSceneFactory: travelListSceneFactory,
-      expenseSceneFactory: expenseSceneFactory,
-      expenseRecordFactory: expenseRecordFactory,
-      expenseStatsFactory: expenseStatsFactory
-    )
-    
-    childCoordinators.append(travelCoordinator)
-    travelCoordinator.start()
+    childCoordinators.append(judgmentCoordinator)
+    judgmentCoordinator.start()
   }
 }
