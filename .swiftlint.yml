@@ -17,6 +17,9 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
   
   # 튜플의 요소 수 제한 비활성화
   - large_tuple
+  
+  # Type 이름의 글자 수를 제한합니다. https://realm.github.io/SwiftLint/type_name.html
+  - type_name
 
 opt_in_rules: # Default Rules에서 활성화할 규칙
   
@@ -30,7 +33,7 @@ opt_in_rules: # Default Rules에서 활성화할 규칙
 indentation_width:
   indentation_width: 2
 
-# 변수명의 최소 길이를 1로 제한합니다 (제한이 없는 것처럼 동작)
+# 변수명의 최소 길이를 1로 제한합니다 (제한이 없는 것처럼 동작) https://realm.github.io/SwiftLint/identifier_name.html
 identifier_name:
   min_length: 1
 
