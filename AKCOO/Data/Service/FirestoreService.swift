@@ -25,7 +25,6 @@ struct FirestoreService {
       }
       
       // 성공
-      print("🍀 DEBUG(SUCCESS): Firestore에서 나라 목록 가져오기 성공 \(countries)")
       return .success(countries)
     } catch {
       // 실패
@@ -42,7 +41,6 @@ struct FirestoreService {
       let exchangeRateInfo = try await countryDocument.getDocument(as: ExchangeRateResponseDTO.self)
       
       // 성공
-      print("🍀 DEBUG(SUCCESS): Firestore에서 특정 나라(\(country))의 환율 정보 가져오기 성공 \(exchangeRateInfo)")
       return .success(exchangeRateInfo)
     } catch {
       // 실패
@@ -65,7 +63,6 @@ struct FirestoreService {
       }
       
       // 성공
-      print("🍀 DEBUG(SUCCESS): Firestore에서 특정 나라(\(country)의 물가 정보 가져오기 성공 \(prices)")
       return .success(prices)
     } catch {
       // 실패

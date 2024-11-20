@@ -12,18 +12,19 @@ import Foundation
 struct JudgmentRepositoryImp: JudgmentRepository {
   private let firestore = FirestoreService()
   
+  /// 해외 모든 국가 데이터를 반환하는 메서드
   func fetchAllCountriesDetails() async -> Result<[CountryDetail], Error> {
     do {
       // 국가 목록 가져오기
       let countries = try await firestore.getAllCountries().get()
       var countryDetails: [CountryDetail] = []
+      
+      // 한국 제외 국가 정보 가져오기
       for country in countries.filter({ $0.contains("korea") == false }) {
         let detail = try await fetchCountryDetail(at: country).get()
         countryDetails.append(detail)
       }
       
-      // 성공
-      print("🍀 DEBUG(SUCCESS): Firestore에서 모든 나라 정보 가져오기 성공 \(countryDetails)")
       return .success(countryDetails)
     } catch {
       print("🚨 DEBUG(ERROR): Firestore에서 모든 나라 정보 가져오기 실패 \(error)")
@@ -43,7 +44,7 @@ struct JudgmentRepositoryImp: JudgmentRepository {
   }
 }
 
-/// 해외 모든 국가 데이터를 반환하는 메서드
+// MARK: - JudgmentRepository에 필요한 method를 위한 method
 extension JudgmentRepositoryImp {
   // 국가 정보(환율 + 물가) 가져오기
   private func fetchCountryDetail(at country: String) async -> Result<CountryDetail, Error> {
