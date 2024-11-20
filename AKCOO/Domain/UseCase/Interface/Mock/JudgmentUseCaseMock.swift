@@ -31,7 +31,7 @@ class JudgmentUseCaseMock: JudgmentUseCase {
       case .failure: return // 실패 시 처리
       }
       
-      switch judgmentRepository.fetchLocalDetails() {
+      switch await judgmentRepository.fetchLocalDetails() {
       case .success(let localDetail):
         self.localCountryDetail = localDetail
       case .failure: return // 실패 시 처리
