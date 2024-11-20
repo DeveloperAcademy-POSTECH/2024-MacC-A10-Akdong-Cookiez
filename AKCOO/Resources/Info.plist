@@ -5,10 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>GmarketSansTTFMedium.ttf</string>
-		<string>GmarketSansTTFLight.ttf</string>
-		<string>SFMonoRegular.otf</string>
-		<string>SFMonoMedium.otf</string>
-		<string>SFMonoSemibold.otf</string>
+		<string>GmarketSansTTFBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
