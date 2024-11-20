@@ -16,6 +16,7 @@
 		515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */; };
 		515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */; };
 		515E40422CEE0A9300AE4A2F /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40412CEE0A9300AE4A2F /* FirestoreError.swift */; };
+		515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -140,6 +141,7 @@
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
 		515E40412CEE0A9300AE4A2F /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceResponseDTO.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */,
+				515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1052,6 +1055,7 @@
 				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
 				F3ED93022CE7C24400CF5238 /* Item.swift in Sources */,
 				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
+				515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
 				F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */,
