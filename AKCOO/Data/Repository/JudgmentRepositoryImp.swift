@@ -16,10 +16,12 @@ struct JudgmentRepositoryImp: JudgmentRepository {
   func fetchAllCountriesDetails() async -> Result<[CountryDetail], Error> {
     do {
       // 국가 목록 가져오기
-      let countries = try await firestore.getAllCountries().get()
-      var countryDetails: [CountryDetail] = []
+      let countries = try await firestore
+        .getAllCountries()
+        .get()
       
       // 한국 제외 국가 정보 가져오기
+      var countryDetails: [CountryDetail] = []
       for country in countries.filter({ $0.contains("korea") == false }) {
         let detail = try await fetchCountryDetail(at: country).get()
         countryDetails.append(detail)
@@ -46,7 +48,7 @@ struct JudgmentRepositoryImp: JudgmentRepository {
 
 // MARK: - JudgmentRepository에 필요한 method를 위한 method
 extension JudgmentRepositoryImp {
-  // 국가 정보(환율 + 물가) 가져오기
+  /// 국가 정보(환율 + 물가) 가져오기
   private func fetchCountryDetail(at country: String) async -> Result<CountryDetail, Error> {
     do {
       // 국가별 환율 정보 가져오기
@@ -67,7 +69,7 @@ extension JudgmentRepositoryImp {
     }
   }
   
-  // 국가별 환율 정보 가져오기
+  /// 국가별 환율 정보 가져오기
   private func fetchCountryProfile(at country: String) async -> Result<CountryProfile, Error> {
     switch await firestore.getExchangeRate(at: country) {
     case .success(let exchangeRateInfo):
@@ -89,7 +91,7 @@ extension JudgmentRepositoryImp {
     }
   }
   
-  // 국가별 물가 정보 가져오기
+  /// 국가별 물가 정보 가져오기
   private func fetchItems(at country: String) async -> Result<[Item], Error> {
     switch await firestore.getPrices(at: country) {
     case .success(let prices):
