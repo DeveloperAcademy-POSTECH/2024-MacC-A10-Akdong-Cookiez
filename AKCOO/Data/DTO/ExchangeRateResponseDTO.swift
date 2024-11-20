@@ -10,6 +10,12 @@ import Foundation
 /// Firestore - 나라별 환율 정보를 가져오는 DTO
 struct ExchangeRateResponseDTO: Decodable {
   let name: String
-  let exchangeRate: Double
-  let unit: String
+  let unit: Double
+  let unitTitle: String
+  
+  enum CodingKeys: String, CodingKey {
+    case name = "name"
+    case unitTitle = "unit"
+    case unit = "exchangeRate"
+  }
 }

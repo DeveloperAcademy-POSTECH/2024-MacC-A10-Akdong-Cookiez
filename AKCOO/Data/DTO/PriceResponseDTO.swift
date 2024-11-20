@@ -18,11 +18,10 @@ struct PriceAccommodationDTO: Decodable {
   let fourStar: Double
   let guestHouse: Double
   
-  // JSON 키와 프로퍼티 이름 매핑
   enum CodingKeys: String, CodingKey {
-    case threeStar = "3star"
-    case fourStar = "4star"
-    case guestHouse = "guestHouse"
+    case threeStar = "3Star"
+    case fourStar = "4Star"
+    case guestHouse = "guesthouse"
   }
 }
 

@@ -22,30 +22,32 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     self.judgmentRepository = judgmentRepository
     self.recordRepository = recordRepository
   
-    let tmpCountriesDetails: [CountryDetail]
-    switch judgmentRepository.fetchAllCountriesDetails() {
-    case .success(let countriesDetails):
-      self.countriesDetails = countriesDetails
-      tmpCountriesDetails = countriesDetails
-    case .failure: return // 실패 시 처리
-    }
-    
-    switch judgmentRepository.fetchLocalDetails() {
-    case .success(let localDetail):
-      self.localCountryDetail = localDetail
-    case .failure: return // 실패 시 처리
-    }
-
-    switch recordRepository.fetchSelectedCountry() {
-    case .success(let selectedCountryName):
-      if let selectedCountryName {
-        self.selectedCountryDetail = tmpCountriesDetails.filter({ $0.name == selectedCountryName }).first
-      } else if let firstDetails = tmpCountriesDetails.first {
-        self.selectedCountryDetail = firstDetails
-      } else {
-        print("CountriesDetails이 없습니다")
+    Task {
+      let tmpCountriesDetails: [CountryDetail]
+      switch await judgmentRepository.fetchAllCountriesDetails() {
+      case .success(let countriesDetails):
+        self.countriesDetails = countriesDetails
+        tmpCountriesDetails = countriesDetails
+      case .failure: return // 실패 시 처리
       }
-    case .failure: return
+      
+      switch judgmentRepository.fetchLocalDetails() {
+      case .success(let localDetail):
+        self.localCountryDetail = localDetail
+      case .failure: return // 실패 시 처리
+      }
+      
+      switch recordRepository.fetchSelectedCountry() {
+      case .success(let selectedCountryName):
+        if let selectedCountryName {
+          self.selectedCountryDetail = tmpCountriesDetails.filter({ $0.name == selectedCountryName }).first
+        } else if let firstDetails = tmpCountriesDetails.first {
+          self.selectedCountryDetail = firstDetails
+        } else {
+          print("CountriesDetails이 없습니다")
+        }
+      case .failure: return
+      }
     }
   }
   
