@@ -13,7 +13,7 @@ class CategorySettingView: UIView {
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.textColor = UIColor.akColor(.gray3)
+    $0.textColor = UIColor.akColor(.akGray300)
     $0.adjustsFontForContentSizeCategory = true
   }
   
@@ -29,7 +29,7 @@ class CategorySettingView: UIView {
     
     return UIButton(configuration: configuration).set {
       
-      $0.backgroundColor = UIColor.akColor(.gray1)
+      $0.backgroundColor = UIColor.akColor(.white)
       $0.titleLabel?.font = UIFont.akFont(.gmarketMedium14)
       $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
       $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -45,7 +45,7 @@ class CategorySettingView: UIView {
   }
   // MARK: - Properties
   private let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
-  private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
+  private let buttonColors: [UIColor] = [.akColor(.akBlue300), .akColor(.akYellow), .akColor(.akYellow), .akColor(.akRed), .akColor(.akRed)]
   
   private var selectedButtonIndex: Int?
   
@@ -105,11 +105,11 @@ class CategorySettingView: UIView {
     let index = sender.tag
     
     if selectedButtonIndex == index {
-      sender.backgroundColor = UIColor.akColor(.gray1)
+      sender.backgroundColor = UIColor.akColor(.akGray100)
       selectedButtonIndex = nil
     } else {
       if let previousIndex = selectedButtonIndex {
-        buttons[previousIndex].backgroundColor = UIColor.akColor(.gray1)
+        buttons[previousIndex].backgroundColor = UIColor.akColor(.akGray100)
       }
       sender.backgroundColor = buttonColors[index]
       selectedButtonIndex = index
