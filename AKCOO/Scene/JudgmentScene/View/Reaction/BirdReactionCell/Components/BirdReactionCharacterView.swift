@@ -1,5 +1,5 @@
 //
-//  ReactionBirdCharacterView.swift
+//  BirdReactionCharacterView.swift
 //  AKCOO
 //
 //  Created by 박혜운 on 11/18/24.

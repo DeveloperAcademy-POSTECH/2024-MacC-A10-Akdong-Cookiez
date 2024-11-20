@@ -1,5 +1,5 @@
 //
-//  ReactionResultsView.swift
+//  BirdReactionTextView.swift
 //  AKCOO
 //
 //  Created by 박혜운 on 11/14/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReactionBirdTextView: UIView {
+class BirdReactionTextView: UIView {
   let backgroundView = UIView(frame: .zero).set {
     $0.clipsToBounds = true
   }
@@ -177,6 +177,6 @@ class ReactionBirdTextView: UIView {
 
 // Preview 화면
 #Preview {
-  let preview = ReactionBirdTextView()
+  let preview = BirdReactionTextView()
   return preview
 }

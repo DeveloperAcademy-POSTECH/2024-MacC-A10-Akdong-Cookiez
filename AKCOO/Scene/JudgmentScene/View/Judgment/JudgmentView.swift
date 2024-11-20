@@ -23,11 +23,11 @@ class JudgmentView: UIView {
     $0.textColor = .black
   }
   
-  let reactionStackView = ReactionBirdsCollectionView().set()
+  let reactionStackView = BirdReactionCollectionView().set()
   
-  let judgmentKRW = ReactionBirdTextView().set()
-  let judgmentLocals = ReactionBirdTextView().set()
-  let judgmentBefore = ReactionBirdTextView().set()
+  let judgmentKRW = BirdReactionTextView().set()
+  let judgmentLocals = BirdReactionTextView().set()
+  let judgmentBefore = BirdReactionTextView().set()
   
   let decisionLabel = UILabel().set {
     $0.text = "구매 결정을 기록해\n내 소비 성향을 확인해 보세요!"

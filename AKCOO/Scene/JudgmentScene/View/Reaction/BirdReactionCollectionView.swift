@@ -1,6 +1,6 @@
 import UIKit
 
-class ReactionBirdsCollectionView: UIView {
+class BirdReactionCollectionView: UIView {
   // MARK: - Views
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -13,12 +13,12 @@ class ReactionBirdsCollectionView: UIView {
     collectionView.backgroundColor = .blue
     collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.register(ReactionBirdCell.self, forCellWithReuseIdentifier: ReactionBirdCell.identifier)
+    collectionView.register(BirdReactionCell.self, forCellWithReuseIdentifier: BirdReactionCell.identifier)
     return collectionView
   }()
   
   // MARK: - Properties
-  private var reactionResults: [ReactionBirdTextView] = []
+  private var reactionResults: [BirdReactionTextView] = []
   
   // MARK: - Initializers
   override init(frame: CGRect) {
@@ -48,7 +48,7 @@ class ReactionBirdsCollectionView: UIView {
   }
   
   // MARK: - Public Methods
-  func configure(with reactionResults: [ReactionBirdTextView]) {
+  func configure(with reactionResults: [BirdReactionTextView]) {
     // TODO: - cell 재정의 후 올라가는 화면 전체적으로 수정
     self.reactionResults = reactionResults
     reactionResults.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
@@ -57,13 +57,13 @@ class ReactionBirdsCollectionView: UIView {
 }
 
 // MARK: - UICollectionViewDataSource
-extension ReactionBirdsCollectionView: UICollectionViewDataSource {
+extension BirdReactionCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return reactionResults.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReactionBirdCell.identifier, for: indexPath) as? ReactionBirdCell else {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BirdReactionCell.identifier, for: indexPath) as? BirdReactionCell else {
       return UICollectionViewCell()
     }
     cell.alpha = 0
@@ -90,7 +90,7 @@ extension ReactionBirdsCollectionView: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension ReactionBirdsCollectionView: UICollectionViewDelegate {
+extension BirdReactionCollectionView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("Cell at index \(indexPath.item) selected")
     let selectedView = reactionResults[indexPath.item]
@@ -101,7 +101,7 @@ extension ReactionBirdsCollectionView: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension ReactionBirdsCollectionView: UICollectionViewDelegateFlowLayout {
+extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = collectionView.frame.width // Inset adjustment
     let targetView = reactionResults[indexPath.item]
@@ -112,7 +112,7 @@ extension ReactionBirdsCollectionView: UICollectionViewDelegateFlowLayout {
 
 // Preview for ReactionCollectionView
 #Preview {
-  let preview = ReactionBirdsCollectionView()
-  preview.configure(with: [ReactionBirdTextView(), ReactionBirdTextView(), ReactionBirdTextView()])
+  let preview = BirdReactionCollectionView()
+  preview.configure(with: [BirdReactionTextView(), BirdReactionTextView(), BirdReactionTextView()])
   return preview
 }

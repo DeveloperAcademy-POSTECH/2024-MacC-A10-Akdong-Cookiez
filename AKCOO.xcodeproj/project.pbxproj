@@ -55,8 +55,8 @@
 		F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92972CE5192500CF5238 /* JudgmentReadyViewController.swift */; };
 		F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92992CE5193100CF5238 /* JudgmentCompletedViewController.swift */; };
 		F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED929B2CE519B000CF5238 /* ClosedPaperView.swift */; };
-		F3ED92A02CE5271300CF5238 /* ReactionBirdTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */; };
-		F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */; };
+		F3ED92A02CE5271300CF5238 /* BirdReactionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED929F2CE5271300CF5238 /* BirdReactionTextView.swift */; };
+		F3ED92A22CE5C15D00CF5238 /* BirdReactionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A12CE5C15D00CF5238 /* BirdReactionCollectionView.swift */; };
 		F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A32CE6280E00CF5238 /* JudgementReadyFactory.swift */; };
 		F3ED92A62CE6281400CF5238 /* JudgementReadyFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A52CE6281400CF5238 /* JudgementReadyFactoryImp.swift */; };
 		F3ED92A82CE62EAC00CF5238 /* JudgmentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92A72CE62EAC00CF5238 /* JudgmentEditViewController.swift */; };
@@ -92,8 +92,8 @@
 		F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931A2CE861B000CF5238 /* JudgmentRepositoryImp.swift */; };
 		F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931C2CE861BC00CF5238 /* RecordRepositoryImp.swift */; };
 		F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED931F2CE8961400CF5238 /* BirdCharacterType.swift */; };
-		F3ED93252CEB2E2A00CF5238 /* ReactionBirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */; };
-		F3ED93272CEB2EB100CF5238 /* ReactionBirdCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */; };
+		F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93242CEB2E2A00CF5238 /* BirdReactionCell.swift */; };
+		F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93262CEB2EB100CF5238 /* BirdReactionCharacterView.swift */; };
 		F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93292CEB30B200CF5238 /* Standard.swift */; };
 		F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93322CEB57A300CF5238 /* Judgment.swift */; };
 		F3ED933B2CEB5E7900CF5238 /* CountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED933A2CEB5E7900CF5238 /* CountryAverageJudgment.swift */; };
@@ -178,8 +178,8 @@
 		F3ED92972CE5192500CF5238 /* JudgmentReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentReadyViewController.swift; sourceTree = "<group>"; };
 		F3ED92992CE5193100CF5238 /* JudgmentCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCompletedViewController.swift; sourceTree = "<group>"; };
 		F3ED929B2CE519B000CF5238 /* ClosedPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPaperView.swift; sourceTree = "<group>"; };
-		F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdTextView.swift; sourceTree = "<group>"; };
-		F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdsCollectionView.swift; sourceTree = "<group>"; };
+		F3ED929F2CE5271300CF5238 /* BirdReactionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionTextView.swift; sourceTree = "<group>"; };
+		F3ED92A12CE5C15D00CF5238 /* BirdReactionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionCollectionView.swift; sourceTree = "<group>"; };
 		F3ED92A32CE6280E00CF5238 /* JudgementReadyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementReadyFactory.swift; sourceTree = "<group>"; };
 		F3ED92A52CE6281400CF5238 /* JudgementReadyFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgementReadyFactoryImp.swift; sourceTree = "<group>"; };
 		F3ED92A72CE62EAC00CF5238 /* JudgmentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditViewController.swift; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		F3ED931A2CE861B000CF5238 /* JudgmentRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentRepositoryImp.swift; sourceTree = "<group>"; };
 		F3ED931C2CE861BC00CF5238 /* RecordRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRepositoryImp.swift; sourceTree = "<group>"; };
 		F3ED931F2CE8961400CF5238 /* BirdCharacterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCharacterType.swift; sourceTree = "<group>"; };
-		F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdCell.swift; sourceTree = "<group>"; };
-		F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBirdCharacterView.swift; sourceTree = "<group>"; };
+		F3ED93242CEB2E2A00CF5238 /* BirdReactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionCell.swift; sourceTree = "<group>"; };
+		F3ED93262CEB2EB100CF5238 /* BirdReactionCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionCharacterView.swift; sourceTree = "<group>"; };
 		F3ED93292CEB30B200CF5238 /* Standard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standard.swift; sourceTree = "<group>"; };
 		F3ED93322CEB57A300CF5238 /* Judgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Judgment.swift; sourceTree = "<group>"; };
 		F3ED933A2CEB5E7900CF5238 /* CountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAverageJudgment.swift; sourceTree = "<group>"; };
@@ -559,8 +559,8 @@
 		F3ED929E2CE5270500CF5238 /* Reaction */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED93232CEB2D9000CF5238 /* ReactionBirdCell */,
-				F3ED92A12CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift */,
+				F3ED93232CEB2D9000CF5238 /* BirdReactionCell */,
+				F3ED92A12CE5C15D00CF5238 /* BirdReactionCollectionView.swift */,
 			);
 			path = Reaction;
 			sourceTree = "<group>";
@@ -700,20 +700,20 @@
 			path = Type;
 			sourceTree = "<group>";
 		};
-		F3ED93232CEB2D9000CF5238 /* ReactionBirdCell */ = {
+		F3ED93232CEB2D9000CF5238 /* BirdReactionCell */ = {
 			isa = PBXGroup;
 			children = (
 				F3ED93282CEB2F3200CF5238 /* Components */,
-				F3ED93242CEB2E2A00CF5238 /* ReactionBirdCell.swift */,
+				F3ED93242CEB2E2A00CF5238 /* BirdReactionCell.swift */,
 			);
-			path = ReactionBirdCell;
+			path = BirdReactionCell;
 			sourceTree = "<group>";
 		};
 		F3ED93282CEB2F3200CF5238 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED929F2CE5271300CF5238 /* ReactionBirdTextView.swift */,
-				F3ED93262CEB2EB100CF5238 /* ReactionBirdCharacterView.swift */,
+				F3ED929F2CE5271300CF5238 /* BirdReactionTextView.swift */,
+				F3ED93262CEB2EB100CF5238 /* BirdReactionCharacterView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -968,7 +968,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
-				F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */,
+				F3ED92A22CE5C15D00CF5238 /* BirdReactionCollectionView.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
@@ -1006,7 +1006,7 @@
 				F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */,
 				F3ED92C32CE68B1700CF5238 /* EditTransition.swift in Sources */,
 				F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */,
-				F3ED92A02CE5271300CF5238 /* ReactionBirdTextView.swift in Sources */,
+				F3ED92A02CE5271300CF5238 /* BirdReactionTextView.swift in Sources */,
 				F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */,
 				F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
@@ -1033,7 +1033,7 @@
 				F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */,
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
-				F3ED93252CEB2E2A00CF5238 /* ReactionBirdCell.swift in Sources */,
+				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
 				F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
@@ -1041,7 +1041,7 @@
 				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,
 				F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */,
 				F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */,
-				F3ED93272CEB2EB100CF5238 /* ReactionBirdCharacterView.swift in Sources */,
+				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
 				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
 				F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */,
 			);

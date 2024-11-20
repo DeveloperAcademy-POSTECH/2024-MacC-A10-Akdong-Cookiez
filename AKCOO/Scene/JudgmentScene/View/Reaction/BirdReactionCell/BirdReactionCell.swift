@@ -1,5 +1,5 @@
 //
-//  ReactionBirdCell.swift
+//  BirdReactionCell.swift
 //  AKCOO
 //
 //  Created by 박혜운 on 11/18/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-// MARK: - ReactionBirdCell
-class ReactionBirdCell: UICollectionViewCell {
+// MARK: - BirdReactionCell
+class BirdReactionCell: UICollectionViewCell {
   static let identifier = "ReactionResultsCell"
   
   private let containerView = UIView().set {
@@ -40,14 +40,14 @@ class ReactionBirdCell: UICollectionViewCell {
     ])
   }
   
-  func configure(with reactionBirdTextView: ReactionBirdTextView) {
+  func configure(with birdReactionTextView: BirdReactionTextView) {
     containerView.subviews.forEach { $0.removeFromSuperview() }
-    containerView.addSubview(reactionBirdTextView)
+    containerView.addSubview(birdReactionTextView)
     NSLayoutConstraint.activate([
-      reactionBirdTextView.topAnchor.constraint(equalTo: containerView.topAnchor),
-      reactionBirdTextView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      reactionBirdTextView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      reactionBirdTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+      birdReactionTextView.topAnchor.constraint(equalTo: containerView.topAnchor),
+      birdReactionTextView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+      birdReactionTextView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+      birdReactionTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     ])
   }
 }
