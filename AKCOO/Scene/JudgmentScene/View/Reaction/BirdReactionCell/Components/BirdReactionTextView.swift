@@ -39,7 +39,7 @@ class BirdReactionTextView: UIView {
     $0.isHidden = true
   }
   
-  private var isExpanded = false
+  var isExpanded = false
   private var backgroundBottomConstraint: NSLayoutConstraint?
   
   override init(frame: CGRect) {
@@ -105,7 +105,7 @@ class BirdReactionTextView: UIView {
     detailLabel.isHidden = true
   }
   
-  func toggleView() {
+  @objc func extendingHeight() {
     isExpanded.toggle()
     
     // 변경되어야 할 폰트
@@ -114,6 +114,7 @@ class BirdReactionTextView: UIView {
     // 스냅샷 화면에 추가
     guard let titleSnapshot = titleLabel.snapshotView(afterScreenUpdates: true) else { return }
     titleSnapshot.frame = titleLabel.frame
+
     guard let opinionSnapshot = opinionLabel.snapshotView(afterScreenUpdates: true) else { return }
     opinionSnapshot.frame = opinionLabel.frame
     
@@ -125,13 +126,18 @@ class BirdReactionTextView: UIView {
     titleLabel.sizeToFit()
     titleLabel.alpha = 0
     
+    let gap = titleLabel.frame.height - titleSnapshot.frame.height
+    
     opinionLabel.sizeToFit()
     opinionLabel.alpha = 0
+
     
     let scaleX = self.titleLabel.frame.width / titleSnapshot.frame.width
     let scaleY = self.titleLabel.frame.height / titleSnapshot.frame.height
     
     self.layoutIfNeeded()
+    
+    print(opinionSnapshot.frame.origin, self.opinionLabel.frame.origin)
     
     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { [weak self] in
       guard let self else { return }
@@ -140,7 +146,7 @@ class BirdReactionTextView: UIView {
       titleSnapshot.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
       titleSnapshot.frame.origin = self.titleLabel.frame.origin
       
-      opinionSnapshot.frame.origin = self.opinionLabel.frame.origin
+      opinionSnapshot.frame.origin.y += gap
       
       // isExpanded 여부에 따른 제약 조건 업데이트
       if self.isExpanded {
@@ -178,5 +184,7 @@ class BirdReactionTextView: UIView {
 // Preview 화면
 #Preview {
   let preview = BirdReactionTextView()
+  preview.addGestureRecognizer(UITapGestureRecognizer(target: preview.self, action: #selector(preview.extendingHeight)))
+  
   return preview
 }

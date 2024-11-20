@@ -94,9 +94,10 @@ extension BirdReactionCollectionView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("Cell at index \(indexPath.item) selected")
     let selectedView = reactionResults[indexPath.item]
-    selectedView.toggleView()
+    selectedView.extendingHeight()
     //    collectionView.reloadItems(at: [indexPath])
     collectionView.performBatchUpdates(nil, completion: nil)
+    
   }
 }
 

@@ -28,7 +28,11 @@ class BirdReactionCell: UICollectionViewCell {
   }
   
   private func setupView() {
+    containerView.clipsToBounds = false
     contentView.addSubview(containerView)
+    
+    contentView.clipsToBounds = false
+    containerView.clipsToBounds = false
   }
   
   private func setupConstraints() {
@@ -43,11 +47,23 @@ class BirdReactionCell: UICollectionViewCell {
   func configure(with birdReactionTextView: BirdReactionTextView) {
     containerView.subviews.forEach { $0.removeFromSuperview() }
     containerView.addSubview(birdReactionTextView)
+    
     NSLayoutConstraint.activate([
       birdReactionTextView.topAnchor.constraint(equalTo: containerView.topAnchor),
       birdReactionTextView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
       birdReactionTextView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
       birdReactionTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     ])
+    containerView.layoutIfNeeded()
   }
+}
+
+#Preview {
+  let birdCell = BirdReactionCell()
+  
+  let birdReactionTextView = BirdReactionTextView()
+  
+  birdCell.configure(with: birdReactionTextView)
+  
+  return birdCell
 }
