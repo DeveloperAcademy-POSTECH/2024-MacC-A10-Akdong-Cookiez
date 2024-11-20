@@ -52,34 +52,21 @@ struct FirestoreService {
   }
   
   /// Firestore: 특정 나라의 물가 정보 가져오기
-  func getPrices(at country: String) async -> Result<PriceResponseDTO, Error> {
+  func getPrices(at country: String) async -> Result<[PriceResponseDTO], Error> {
     do {
       let countriesCollection = db.collection(FirestoreConstants.Collections.countries)
-      
       let countryDocument = countriesCollection.document(country)
       let pricesCollection = countryDocument.collection(FirestoreConstants.Collections.prices)
+      let pricesDocuments = try await pricesCollection.getDocuments()
       
-      // 숙소 Document 가져오기
-      let accommodationDocument = pricesCollection.document(FirestoreConstants.Documents.accommodation)
-      let accommodationInfo = try await accommodationDocument.getDocument(as: PriceAccommodationDTO.self)
-      
-      // 카페 Document 가져오기
-      let cafeDocument = pricesCollection.document(FirestoreConstants.Documents.cafe)
-      let cafeInfo = try await cafeDocument.getDocument(as: PriceCafeDTO.self)
-      
-      // 식당 Document 가져오기
-      let restaurantDocument = pricesCollection.document(FirestoreConstants.Documents.restaurant)
-      let restaurantInfo = try await restaurantDocument.getDocument(as: PriceRestaurantDTO.self)
-      
-      let pricesInfo = PriceResponseDTO(
-        accommodation: accommodationInfo,
-        cafe: cafeInfo,
-        restaurant: restaurantInfo
-      )
+      let prices: [PriceResponseDTO] = try pricesDocuments.documents
+        .compactMap { document in
+          try document.data(as: PriceResponseDTO.self)
+      }
       
       // 성공
-      print("🍀 DEBUG(SUCCESS): Firestore에서 특정 나라(\(country)의 물가 정보 가져오기 성공 \(pricesInfo)")
-      return .success(pricesInfo)
+      print("🍀 DEBUG(SUCCESS): Firestore에서 특정 나라(\(country)의 물가 정보 가져오기 성공 \(prices)")
+      return .success(prices)
     } catch {
       // 실패
       print("🚨 DEBUG(ERROR): Firestore에서 특정 나라(\(country))의 물가 정보 가져오기 실패 \(error)")
