@@ -12,6 +12,10 @@
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E40382CEDFB1F00AE4A2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 515E40372CEDFB1F00AE4A2F /* GoogleService-Info.plist */; };
+		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
+		515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */; };
+		515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */; };
+		515E40422CEE0A9300AE4A2F /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40412CEE0A9300AE4A2F /* FirestoreError.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -132,6 +136,10 @@
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
 		515E40372CEDFB1F00AE4A2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
+		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
+		515E40412CEE0A9300AE4A2F /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -265,8 +273,27 @@
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				515E403E2CEE0A2900AE4A2F /* Firebase */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		515E403B2CEE09A800AE4A2F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		515E403E2CEE0A2900AE4A2F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				515E40392CEE08E600AE4A2F /* FirestoreService.swift */,
+				515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */,
+				515E40412CEE0A9300AE4A2F /* FirestoreError.swift */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		F3EB75F72CDD14B00054D4E1 = {
@@ -628,6 +655,7 @@
 			children = (
 				F3ED92EE2CE7922C00CF5238 /* Repository */,
 				515E40362CEDF85C00AE4A2F /* Service */,
+				515E403B2CEE09A800AE4A2F /* DTO */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -993,6 +1021,7 @@
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
 				F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
+				515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */,
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
@@ -1006,6 +1035,7 @@
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
+				515E40422CEE0A9300AE4A2F /* FirestoreError.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
 				F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */,
@@ -1019,6 +1049,7 @@
 				F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */,
 				F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
+				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
 				F3ED93022CE7C24400CF5238 /* Item.swift in Sources */,
 				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
@@ -1045,6 +1076,7 @@
 				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
 				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
+				515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */,
 				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
 				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
 				F3ED934C2CEB6BAC00CF5238 /* ForignBird.swift in Sources */,
