@@ -13,7 +13,7 @@ struct UserRecord {
   var currency: Currency
   var userQuestion: UserQuestion
   var userJudgment: JudgmentType
-  var externalJudgment: [String:JudgmentType]
+  var externalJudgment: [String: JudgmentType]
 }
 
 extension UserRecord: Standard {
