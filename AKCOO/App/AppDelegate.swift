@@ -5,12 +5,18 @@
 //  Created by 박혜운 on 11/4/24.
 //
 
+import FirebaseCore
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    // Firebase 초기화 전에 디버깅 로그 비활성화
+    FirebaseConfiguration.shared.setLoggerLevel(.error)
+    
+    // Firebase 앱 초기화
+    FirebaseApp.configure()
+    
     return true
   }
   
