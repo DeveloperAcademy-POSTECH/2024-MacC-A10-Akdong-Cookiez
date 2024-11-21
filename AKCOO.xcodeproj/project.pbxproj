@@ -16,6 +16,9 @@
 		515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */; };
 		515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */; };
 		515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */; };
+		515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */; };
+		515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */; };
+		515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -140,6 +143,9 @@
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
 		515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceResponseDTO.swift; sourceTree = "<group>"; };
+		515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
+		515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				515E403E2CEE0A2900AE4A2F /* Firebase */,
+				515E40452CEF04D100AE4A2F /* UserDefaults */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -294,6 +301,16 @@
 				515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */,
 			);
 			name = Firebase;
+			sourceTree = "<group>";
+		};
+		515E40452CEF04D100AE4A2F /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */,
+				515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */,
+				515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */,
+			);
+			name = UserDefaults;
 			sourceTree = "<group>";
 		};
 		F3EB75F72CDD14B00054D4E1 = {
@@ -1024,6 +1041,7 @@
 				515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */,
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
+				515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
@@ -1076,8 +1094,10 @@
 				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
 				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
+				515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */,
 				515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */,
 				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
+				515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */,
 				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
 				F3ED934C2CEB6BAC00CF5238 /* ForignBird.swift in Sources */,
 				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,
