@@ -9,6 +9,6 @@ import Foundation
 
 struct UserDefaultsConstants {
   enum Keys: String {
-    case currentCountry = "currentCountry"
+    case selectedCountry = "selectedCountry"
   }
 }

@@ -18,6 +18,7 @@
 		515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */; };
 		515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */; };
 		515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */; };
+		515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -144,6 +145,7 @@
 		515E40432CEE178C00AE4A2F /* PriceResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceResponseDTO.swift; sourceTree = "<group>"; };
 		515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
+		515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */,
 				515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */,
+				515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */,
 			);
 			name = UserDefaults;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
 				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
+				515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */,
 				515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */,
 				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
 				515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */,

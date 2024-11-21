@@ -14,9 +14,12 @@ struct UserDefaultsService {
   }
   
   // 불러오기
-  func load<T>(type: T.Type, key: UserDefaultsConstants.Keys) -> T? {
-    let data = UserDefaults.standard.value(forKey: key.rawValue) as? T
-    return data
+  func load<T>(type: T.Type, key: UserDefaultsConstants.Keys) -> Result<T, Error> {
+    if let data = UserDefaults.standard.value(forKey: key.rawValue) as? T {
+      return .success(data)
+    } else {
+      return .failure(UserDefaultsError.keyNotFound(key: key.rawValue))
+    }
   }
   
   // 삭제
