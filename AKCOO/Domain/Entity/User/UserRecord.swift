@@ -10,10 +10,10 @@ import Foundation
 /// 사용자 지출 판단 기록 
 struct UserRecord {
   let date: Date
-  var currency: Currency
+  var country: CountryProfile
   var userQuestion: UserQuestion
   var userJudgment: JudgmentType
-  var externalJudgment: [String:JudgmentType]
+  var externalJudgment: [String: JudgmentType]
 }
 
 extension UserRecord: Standard {
