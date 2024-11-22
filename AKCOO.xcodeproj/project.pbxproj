@@ -106,6 +106,7 @@
 		F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */; };
 		F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */; };
 		F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93562CEBA41200CF5238 /* NetworkError.swift */; };
+		F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93592CEE2E1600CF5238 /* BirdCharacterImageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +230,7 @@
 		F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDayBird.swift; sourceTree = "<group>"; };
 		F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
 		F3ED93562CEBA41200CF5238 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F3ED93592CEE2E1600CF5238 /* BirdCharacterImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCharacterImageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 		F3EB76422CDDDDD10054D4E1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F3ED93582CEE2DF800CF5238 /* Type */,
 				F3EB76432CDDDDED0054D4E1 /* Coordinator */,
 			);
 			path = Common;
@@ -797,6 +800,14 @@
 			path = Country;
 			sourceTree = "<group>";
 		};
+		F3ED93582CEE2DF800CF5238 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED93592CEE2E1600CF5238 /* BirdCharacterImageType.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1041,6 +1052,7 @@
 				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,
 				F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */,
 				F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */,
+				F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */,
 				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
 				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
 				F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */,
