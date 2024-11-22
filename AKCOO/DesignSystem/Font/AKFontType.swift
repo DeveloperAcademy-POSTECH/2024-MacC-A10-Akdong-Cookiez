@@ -13,6 +13,7 @@ enum AKFontType {
   case gmarketMedium14
   case gmarketMedium16
   
+  case gmarketBold14
   case gmarketBold16
   case gmarketBold18
   case gmarketBold20
@@ -22,7 +23,7 @@ enum AKFontType {
     case .gmarketMedium12, .gmarketMedium13, .gmarketMedium14, .gmarketMedium16:
       return CustomFont.gmarketSansMedium.name
       
-    case .gmarketBold16, .gmarketBold18, .gmarketBold20:
+    case .gmarketBold14, .gmarketBold16, .gmarketBold18, .gmarketBold20:
       return CustomFont.gmarketSansBold.name
     }
   }
@@ -34,6 +35,7 @@ enum AKFontType {
     case .gmarketMedium14: 14
     case .gmarketMedium16: 16
       
+    case .gmarketBold14: 14
     case .gmarketBold16: 16
     case .gmarketBold18: 18
     case .gmarketBold20: 20
