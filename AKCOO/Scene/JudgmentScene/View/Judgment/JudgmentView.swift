@@ -23,11 +23,13 @@ class JudgmentView: UIView {
     $0.textColor = .black
   }
   
-  let reactionStackView = ReactionBirdsCollectionView().set()
+  let reactionStackView = BirdReactionCollectionView().set {
+    $0.clipsToBounds = false
+  }
   
-  let judgmentKRW = ReactionBirdTextView().set()
-  let judgmentLocals = ReactionBirdTextView().set()
-  let judgmentBefore = ReactionBirdTextView().set()
+  let judgmentKRW = BirdReactionTextView().set()
+  let judgmentLocals = BirdReactionTextView().set()
+  let judgmentBefore = BirdReactionTextView().set()
   
   let decisionLabel = UILabel().set {
     $0.text = "구매 결정을 기록해\n내 소비 성향을 확인해 보세요!"
@@ -71,7 +73,42 @@ class JudgmentView: UIView {
   }
   
   private func setupView() {
-    reactionStackView.configure(with: [judgmentKRW, judgmentLocals, judgmentBefore])
+    let userQuestionAmount: Double = 1000000
+    let items: [Item] = []
+    let country = CountryProfile.init(
+      name: "베트남",
+      currency: .init(unitTitle: "동", unit: 1)
+    )
+    
+    let forignJudgment = CountryAverageJudgment(
+      userAmount: userQuestionAmount,
+      standards: items
+    )
+    let localJudgment = CountryAverageJudgment(
+      userAmount: userQuestionAmount,
+      standards: items
+    )
+    
+    let previousJudgment = PreviousJudgment(
+      userAmount: userQuestionAmount,
+      standards: nil
+    )
+    
+    let birds: [BirdModel] = [
+      ForignBird(
+        country: country,
+        judgment: forignJudgment
+      ),
+      LocalBird(
+        country: country,
+        judgment: localJudgment
+      ),
+      PreviousDayBird(
+        judgment: previousJudgment
+      )
+    ]
+    
+    reactionStackView.configure(with: birds)
     
     decisionStack.addArrangedSubview(notBuyButton)
     decisionStack.addArrangedSubview(buyButton)
@@ -122,6 +159,13 @@ class JudgmentView: UIView {
       decisionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -topPadding),
       decisionStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
     ])
+  }
+  
+  func configurePaper(userQuesion: UserQuestion, currency: Currency) {
+    // TODO: - 적절한 변환처리 거치기
+    paper.categoryLabel.text = userQuesion.category
+    paper.moneyAmountLabel.text = "\(userQuesion.amount)"
+    paper.convertKRWLabel.text = currency.unitTitle
   }
 }
 

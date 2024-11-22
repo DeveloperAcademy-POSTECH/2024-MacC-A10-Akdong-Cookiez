@@ -9,20 +9,22 @@ import UIKit
 
 extension UIColor {
   enum AkColorType: String {
-    case white = "#FFFFFF"
-    case gray1 = "#F1F1F1"
-    case gray2 = "#B3B3B3"
-    case gray3 = "#8E8E93"
     case black = "#000000"
+    case white = "#FFFFFF"
     
-    case akOrange = "#F64E05"
-    case akGreen = "#DCED59"
+    case akYellow = "#FEECA4"
+    case akRed = "#FF8E6B"
     
-    case akPurple = "#EFD0F4"
-    case akSubGreen = "#E3F4DC"
-    case akRed = "#FFD8D6"
-    case akYellow = "#FFF4CA"
-    case akBlue = "#D0E0F4"
+    case akBlue300 = "#6EB4FF"
+    case akBlue400 = "#3685D9"
+    case akBlue500 = "#1A76D9"
+    case akBlue600 = "#275FBE"
+    
+    case akGray100 = "#F7F7F7"
+    case akGray200 = "#ECECEC"
+    case akGray300 = "#8E8E93"
+    
+    case akOrange = "#FFC87A"
   }
   
   static func akColor(_ type: AkColorType) -> UIColor {

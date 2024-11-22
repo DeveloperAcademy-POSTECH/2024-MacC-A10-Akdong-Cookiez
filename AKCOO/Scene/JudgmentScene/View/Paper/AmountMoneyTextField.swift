@@ -38,7 +38,7 @@ class AmountMoneyTextField: UIView {
     $0.accessibilityIdentifier = "AmountMoneyTextField"
     $0.borderStyle = .none
     $0.placeholder = "판단할 금액을 입력하세요"
-    $0.font = UIFont.akFont(.gmarketLight16)
+    $0.font = UIFont.akFont(.gmarketBold16)
     $0.textAlignment = .right
     $0.adjustsFontForContentSizeCategory = true
   }
@@ -47,7 +47,7 @@ class AmountMoneyTextField: UIView {
     $0.accessibilityIdentifier = "AmountMoneyUnitLabel"
     $0.text = "동"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.textColor = UIColor.akColor(.gray3)
+    $0.textColor = UIColor.akColor(.akGray300)
     $0.adjustsFontForContentSizeCategory = true
   }
   
@@ -61,7 +61,7 @@ class AmountMoneyTextField: UIView {
     $0.accessibilityIdentifier = "AmountMoneyConvertKRWLabel"
     $0.text = "약 0원"
     $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.textColor = UIColor.akColor(.gray3)
+    $0.textColor = UIColor.akColor(.akGray300)
     $0.adjustsFontForContentSizeCategory = true
   }
   

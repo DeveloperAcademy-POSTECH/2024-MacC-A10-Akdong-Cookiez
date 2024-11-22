@@ -12,8 +12,8 @@ class CategorySettingView: UIView {
   // MARK: - Views
   private let categoryLabel = UILabel().set {
     $0.text = "카테고리"
-    $0.font = UIFont.akFont(.gmarketMedium16)
-    $0.textColor = UIColor.akColor(.gray3)
+    $0.font = UIFont.akFont(.gmarketMedium14)
+    $0.textColor = UIColor.akColor(.black)
     $0.adjustsFontForContentSizeCategory = true
   }
   
@@ -21,16 +21,17 @@ class CategorySettingView: UIView {
     $0.axis = .horizontal
     $0.distribution = .equalSpacing
     $0.alignment = .center
+    $0.spacing = 10
   }
   
-  private lazy var buttons: [UIButton] = (0..<5).map { index in
+  private lazy var buttons: [UIButton] = (0..<3).map { index in
     var configuration = UIButton.Configuration.filled()
-    configuration.contentInsets = NSDirectionalEdgeInsets(top: 6, leading: 11, bottom: 6, trailing: 11)
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 7, leading: 12, bottom: 7, trailing: 12)
     
     return UIButton(configuration: configuration).set {
       
-      $0.backgroundColor = UIColor.akColor(.gray1)
-      $0.titleLabel?.font = UIFont.akFont(.gmarketMedium14)
+      $0.backgroundColor = .akColor(.akGray200)
+      $0.titleLabel?.font = .akFont(.gmarketMedium14)
       $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
       $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
       
@@ -44,8 +45,8 @@ class CategorySettingView: UIView {
     }
   }
   // MARK: - Properties
-  private let buttonTitles = ["교통", "관광", "식비", "쇼핑", "기타"]
-  private let buttonColors: [UIColor] = [.akColor(.akBlue), .akColor(.akGreen), .akColor(.akYellow), .akColor(.akRed), .akColor(.akPurple)]
+  private let buttonTitles = ["호텔", "숙박", "카페"]
+  private let buttonColor: UIColor = .akColor(.akBlue500)
   
   private var selectedButtonIndex: Int?
   
@@ -93,11 +94,10 @@ class CategorySettingView: UIView {
     ])
   }
   
-  // MARK: - Private Methods
   private func updateButtonCornerRadius() {
     buttons.forEach { button in
-      let cornerRadius = max(13, button.bounds.height / 2)
-      button.layer.cornerRadius = cornerRadius
+      button.layer.cornerRadius = 15
+      button.clipsToBounds = true
     }
   }
   
@@ -105,13 +105,13 @@ class CategorySettingView: UIView {
     let index = sender.tag
     
     if selectedButtonIndex == index {
-      sender.backgroundColor = UIColor.akColor(.gray1)
+      sender.backgroundColor = UIColor.akColor(.akGray100)
       selectedButtonIndex = nil
     } else {
       if let previousIndex = selectedButtonIndex {
-        buttons[previousIndex].backgroundColor = UIColor.akColor(.gray1)
+        buttons[previousIndex].backgroundColor = UIColor.akColor(.akGray100)
       }
-      sender.backgroundColor = buttonColors[index]
+      sender.backgroundColor = buttonColor
       selectedButtonIndex = index
     }
   }

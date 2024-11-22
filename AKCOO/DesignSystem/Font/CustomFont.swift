@@ -9,12 +9,8 @@ import Foundation
 
 enum CustomFont: String {
   case gmarketSansMedium = "GmarketSansTTFMedium"
-  case gmarketSansLight = "GmarketSansTTFLight"
-  
-  case sfMonoRegular = "SFMonoRegular"
-  case sfMonoMedium = "SFMonoMedium"
-  case sfMonoSemibold = "SFMonoSemibold"
-  
+  case gmarketSansBold = "GmarketSansTTFBold"
+
   var name: String {
     return self.rawValue
   }

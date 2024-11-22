@@ -9,12 +9,14 @@ import Foundation
 
 /// 직전 소비를 기준하는 새
 struct PreviousDayBird: BirdModel {
-  private let judgment: PreviousJudgment
+  private let judgmentCriteria: PreviousJudgment
   
   init(judgment: PreviousJudgment) {
-    self.judgment = judgment
+    self.judgmentCriteria = judgment
   }
   
+  var judgment: Bool { return judgmentCriteria.result == .buying }
+
   private var birdReaction: BirdReaction { return .mediumNo }
   
   var name: String { "지난 날의 나" }

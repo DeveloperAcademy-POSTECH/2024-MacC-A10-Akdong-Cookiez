@@ -37,14 +37,15 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
     self.navigationController.viewControllers = [newViewController]
   }
   
-  func startJudgment(presenting: UIViewController) { // 데이터 받아와서 진행
-    let judgmentCompletedViewController = judgmentCompletedFactory.create(coordinator: self)
+  func startJudgment(presenting: UIViewController, userQuestion: UserQuestion) { // 데이터 받아와서 진행
+    let judgmentCompletedViewController = judgmentCompletedFactory.create(coordinator: self, userQuestion: userQuestion)
     judgmentCompletedViewController.modalPresentationStyle = .custom
     judgmentCompletedViewController.transitioningDelegate = self.startTransitionaler
     presenting.present(judgmentCompletedViewController, animated: true)
   }
   
   func startEditPaper(presenting: UIViewController) { // 데이터 받아와서 진행
+    // TODO: - judgmentEditFactory로 변경 후 Transition 연결 
     let readyViewController = judgmentReadyFactory.create(coordinator: self)
     readyViewController.modalPresentationStyle = .custom
     readyViewController.transitioningDelegate = self.editTransitionaler
@@ -52,6 +53,7 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   }
   
   func completedEditPaper(editViewController: JudgmentEditViewController) { // 데이터 받아와서 진행
-    editViewController.presentingViewController?.dismiss(animated: true)
+    editViewController.dismiss(animated: true)
+//    editViewController.presentingViewController?.dismiss(animated: true)
   }
 }

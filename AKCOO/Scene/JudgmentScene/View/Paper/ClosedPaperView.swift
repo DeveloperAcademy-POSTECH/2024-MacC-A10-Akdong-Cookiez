@@ -10,7 +10,7 @@ import UIKit
 class ClosedPaperView: UIView {
   // MARK: - Views
   let paperBackgroundView = UIView().set {
-    $0.backgroundColor = .white
+    $0.backgroundColor = .akColor(.akBlue500)
   }
   
   let contentStack = UIStackView().set {
@@ -27,8 +27,12 @@ class ClosedPaperView: UIView {
   
   let titleLabel = UILabel().set {
     $0.text = "베트남"
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    $0.textColor = .black
+    $0.font = .akFont(.gmarketBold16)
+    $0.textColor = .akColor(.black)
+  }
+  
+  let category = UIView().set {
+    $0.backgroundColor = .akColor(.akBlue500)
   }
   
   let categoryLabel = UILabel().set {

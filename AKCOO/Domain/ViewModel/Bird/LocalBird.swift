@@ -10,15 +10,17 @@ import Foundation
 /// 한국 물가를 기준하는 새
 struct LocalBird: BirdModel {
   private let country: CountryProfile
-  private let judgment: CountryAverageJudgment
+  var judgmentCriteria: CountryAverageJudgment
   
   init(
     country: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
     self.country = country
-    self.judgment = judgment
+    self.judgmentCriteria = judgment
   }
+  
+  var judgment: Bool { return judgmentCriteria.result == .buying }
   
   private var birdReaction: BirdReaction {
     return .mediumNo
