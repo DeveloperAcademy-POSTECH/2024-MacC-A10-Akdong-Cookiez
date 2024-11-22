@@ -10,22 +10,24 @@ import Foundation
 /// 물가를 기준하는 새
 struct ForignBird: BirdModel {
   private let country: CountryProfile
-  private let judgment: CountryAverageJudgment
-  
+  private let judgmentCriteria: CountryAverageJudgment
+
   init(
     country: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
     self.country = country
-    self.judgment = judgment
+    self.judgmentCriteria = judgment
   }
+  
+  var judgment: Bool { return judgmentCriteria.result == .buying }
   
   var name: String { return "\(country.name) 10년차" }
   var information: String { return "나는 \(country.name) 10년 차 짹짹이야! 베트남의 평균물가를 기준으로 너의 지출들을 판단해줄게!" }
   
   private var birdReaction: BirdReaction {
     // TODO: - 기준 미정
-    return .mediumNo
+    return .mediumYes
   }
   
   var opinion: String {
