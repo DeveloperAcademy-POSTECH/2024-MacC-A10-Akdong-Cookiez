@@ -11,9 +11,16 @@ import UIKit
 class BirdReactionCell: UICollectionViewCell {
   static let identifier = "ReactionResultsCell"
   
-  private let containerView = UIView().set {
-    $0.translatesAutoresizingMaskIntoConstraints = false
-  }
+  // MARK: - Views
+  private let containerView = UIView().set()
+  private let textContainerView: BirdReactionTextView = BirdReactionTextView().set()
+  private let characterImageView: BirdReactionCharacterView = BirdReactionCharacterView().set()
+  
+  // MARK: - Properties
+  private var characterLeadingConstraint: NSLayoutConstraint?
+  private var characterTrailingConstraint: NSLayoutConstraint?
+  private var textLeadingConstraint: NSLayoutConstraint?
+  private var textTrailingConstraint: NSLayoutConstraint?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -28,42 +35,125 @@ class BirdReactionCell: UICollectionViewCell {
   }
   
   private func setupView() {
-    containerView.clipsToBounds = false
     contentView.addSubview(containerView)
+    containerView.addSubview(textContainerView)
+    containerView.addSubview(characterImageView)
     
-    contentView.clipsToBounds = false
-    containerView.clipsToBounds = false
+    setShadow()
+  }
+  
+  private func setShadow() {
+    contentView.layer.masksToBounds = false
+    contentView.layer.shadowColor = UIColor.black.cgColor
+    contentView.layer.shadowOpacity = 0.2
+    contentView.layer.shadowOffset = CGSize(width: 4, height: 4)
+    contentView.layer.shadowRadius = 4
   }
   
   private func setupConstraints() {
+    characterLeadingConstraint = characterImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+    characterTrailingConstraint = characterImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+    textLeadingConstraint = textContainerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+    textTrailingConstraint = textContainerView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+
     NSLayoutConstraint.activate([
       containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
       containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+      
+      textContainerView.topAnchor.constraint(equalTo: containerView.topAnchor),
+      textContainerView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+
+      characterImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     ])
+    
+    setConstraintsJudgment()
   }
   
-  func configure(with birdReactionTextView: BirdReactionTextView) {
-    containerView.subviews.forEach { $0.removeFromSuperview() }
-    containerView.addSubview(birdReactionTextView)
+  func configure(
+    name: String,
+    opinion: String,
+    detail: String,
+    buying: Bool,
+    birdImageType: BirdCharacterImageType
+  ) {
+    textContainerView.configure(
+      title: name,
+      opinion: opinion,
+      detail: detail,
+      buying: buying
+    )
     
-    NSLayoutConstraint.activate([
-      birdReactionTextView.topAnchor.constraint(equalTo: containerView.topAnchor),
-      birdReactionTextView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      birdReactionTextView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      birdReactionTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-    ])
-    containerView.layoutIfNeeded()
+    characterImageView.configure(
+      buying: buying,
+      correctImage: birdImageType.buying,
+      crossImage: birdImageType.notBuying
+    )
+    
+    setConstraintsJudgment(buying)
+    
+    layoutIfNeeded()
+  }
+  
+  func tappedCell() {
+    textContainerView.tappedView()
+  }
+  
+  func cellHeight() -> CGFloat {
+    return textContainerView.calculateHeightUsingSuperview()
+  }
+  
+  func calculateSize(width: CGFloat) -> CGSize {
+    layoutIfNeeded() // 레이아웃 갱신
+    
+    let targetSize = CGSize(
+      width: width,
+      height: UIView.layoutFittingCompressedSize.height
+    )
+    return contentView.systemLayoutSizeFitting(
+      targetSize,
+      withHorizontalFittingPriority: .required,
+      verticalFittingPriority: .fittingSizeLevel
+    )
+  }
+  
+  private func setConstraintsJudgment(_ buying: Bool = true) {
+    characterLeadingConstraint?.isActive = false
+    characterTrailingConstraint?.isActive = false
+    textLeadingConstraint?.isActive = false
+    textTrailingConstraint?.isActive = false
+    
+    if buying {
+      characterTrailingConstraint?.isActive = true
+      textLeadingConstraint?.constant = 0
+      textLeadingConstraint?.isActive = true
+      textTrailingConstraint?.constant = -36
+      textTrailingConstraint?.isActive = true
+    } else {
+      characterLeadingConstraint?.isActive = true
+      textLeadingConstraint?.constant = 36
+      textLeadingConstraint?.isActive = true
+      textTrailingConstraint?.constant = 0
+      textTrailingConstraint?.isActive = true
+    }
   }
 }
 
 #Preview {
   let birdCell = BirdReactionCell()
   
-  let birdReactionTextView = BirdReactionTextView()
+  birdCell.configure(
+    name: "베트남 10년차",
+    opinion: "어쩌구저쩌구",
+    detail: "상세정보",
+    buying: true,
+    birdImageType: .foriegn
+  )
   
-  birdCell.configure(with: birdReactionTextView)
+  let size = birdCell.cellHeight()
+  birdCell.heightAnchor.constraint(equalToConstant: size).isActive = true
+  birdCell.tappedCell()
   
   return birdCell
 }

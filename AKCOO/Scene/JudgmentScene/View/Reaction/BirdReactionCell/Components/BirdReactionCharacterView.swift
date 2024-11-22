@@ -4,7 +4,106 @@
 //
 //  Created by 박혜운 on 11/18/24.
 //
+import UIKit
 
-import Foundation
+class BirdReactionCharacterView: UIView {
+  // MARK: - Properties
+  
+  private let birdImageView = UIImageView().set {
+    $0.contentMode = .scaleAspectFit
+    $0.isHidden = true
+  }
+  
+  private let markImageView = UIImageView().set {
+    $0.contentMode = .scaleAspectFit
+    $0.isHidden = true
+  }
+  
+  private var correctBirdImage: UIImage?
+  private var crossBirdImage: UIImage?
+  private var omarkImage = UIImage(resource: .omark)
+  private var xmarkImage = UIImage(resource: .xmark)
+  
+  private var markLeadingConstraint: NSLayoutConstraint?
+  private var markTrailingConstraint: NSLayoutConstraint?
+  
+  // MARK: - Initializers
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupView()
+    setupConstraints()
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setupView()
+    setupConstraints()
+  }
+  
+  // MARK: - Setup Methods
+  
+  private func setupView() {
+    addSubview(markImageView)
+    addSubview(birdImageView)
+  }
+  
+  private func setupConstraints() {
+    // birdImageView 제약 조건
+    NSLayoutConstraint.activate([
+      birdImageView.widthAnchor.constraint(equalToConstant: 89),
+      birdImageView.heightAnchor.constraint(equalToConstant: 72),
+      markImageView.heightAnchor.constraint(equalToConstant: 43),
+      markImageView.widthAnchor.constraint(equalToConstant: 33),
+      
+      birdImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      birdImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      birdImageView.topAnchor.constraint(equalTo: topAnchor),
+      birdImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      markImageView.bottomAnchor.constraint(equalTo: birdImageView.bottomAnchor, constant: -52)
+    ])
 
-// TODO: - 새 캐릭터 이미지를 묶은 애니메이션 View 
+    markLeadingConstraint = markImageView.leadingAnchor.constraint(equalTo: birdImageView.leadingAnchor, constant: 19)
+    markTrailingConstraint = markImageView.trailingAnchor.constraint(equalTo: birdImageView.trailingAnchor, constant: -19)
+    
+    // 초기에는 leadingConstraint 활성화
+    markLeadingConstraint?.isActive = false
+    markTrailingConstraint?.isActive = false
+  }
+  
+  // MARK: - Configuration
+  
+  func configure(buying: Bool, correctImage: UIImage, crossImage: UIImage) {
+    self.correctBirdImage = correctImage
+    self.crossBirdImage = crossImage
+
+    updateImages(buying)
+  }
+  
+  private func updateImages(_ buying: Bool) {
+    markLeadingConstraint?.isActive = false
+    markTrailingConstraint?.isActive = false
+    // 이미지 설정
+    birdImageView.image = buying ? correctBirdImage : crossBirdImage
+    markImageView.image = buying ? omarkImage : xmarkImage
+    
+    markImageView.isHidden = false
+    birdImageView.isHidden = false
+    
+    markLeadingConstraint?.isActive = buying
+    markTrailingConstraint?.isActive = !buying
+  }
+}
+
+// Preview 화면
+#Preview {
+  let bird = BirdReactionCharacterView()
+  // O 상태
+  bird.configure(
+    buying: false,
+    correctImage: UIImage(resource: .greenbirdpointL),
+    crossImage: UIImage(resource: .greenbirdpointR)
+  )
+  return bird
+}
