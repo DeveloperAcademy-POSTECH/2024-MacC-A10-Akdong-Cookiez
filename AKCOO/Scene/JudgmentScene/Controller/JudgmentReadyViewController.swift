@@ -41,11 +41,14 @@ class JudgmentReadyViewController: UIViewController {
     judgmentReadyView.paper.readyButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
   }
   
-  @objc func tappedPaper() {
-    // MARK: - TODO 
+  @objc func tappedPaper() { 
     coordinator?.startJudgment(
       presenting: self,
-      userQuestion: .init(country: "", category: "", amount: 0)
+      userQuestion: .init(
+        country: "",
+        category: "",
+        amount: 0
+      )
     )
   }
 }
