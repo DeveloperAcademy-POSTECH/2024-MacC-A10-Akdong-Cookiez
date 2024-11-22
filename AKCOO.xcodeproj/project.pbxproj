@@ -19,6 +19,8 @@
 		515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */; };
 		515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */; };
 		515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */; };
+		515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404D2CEF707300AE4A2F /* CoreDataService.swift */; };
+		515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -146,6 +148,8 @@
 		515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
 		515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
+		515E404D2CEF707300AE4A2F /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		515E40502CEF7C8800AE4A2F /* UserRecordModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserRecordModel.xcdatamodel; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 			children = (
 				515E403E2CEE0A2900AE4A2F /* Firebase */,
 				515E40452CEF04D100AE4A2F /* UserDefaults */,
+				515E404C2CEF705A00AE4A2F /* CoreData */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -311,6 +316,15 @@
 				515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */,
 			);
 			name = UserDefaults;
+			sourceTree = "<group>";
+		};
+		515E404C2CEF705A00AE4A2F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				515E404D2CEF707300AE4A2F /* CoreDataService.swift */,
+				515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		F3EB75F72CDD14B00054D4E1 = {
@@ -1052,6 +1066,7 @@
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
+				515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */,
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
@@ -1065,6 +1080,7 @@
 				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
 				F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */,
 				F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */,
+				515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
 				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
 				F3ED93022CE7C24400CF5238 /* Item.swift in Sources */,
@@ -1491,6 +1507,19 @@
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				515E40502CEF7C8800AE4A2F /* UserRecordModel.xcdatamodel */,
+			);
+			currentVersion = 515E40502CEF7C8800AE4A2F /* UserRecordModel.xcdatamodel */;
+			path = UserRecordModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3EB75F82CDD14B00054D4E1 /* Project object */;
 }

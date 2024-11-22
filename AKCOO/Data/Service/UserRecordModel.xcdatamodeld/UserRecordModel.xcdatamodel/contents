@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CountryProfileEntity" representedClassName="CountryProfileEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="currencyExchangeRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currencyUnitTitle" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ExternalJudgmentEntity" representedClassName="ExternalJudgmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="judgmentType" optional="YES" attributeType="String"/>
+        <attribute name="key" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserQuestionEntity" representedClassName="UserQuestionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserRecordEntity" representedClassName="UserRecordEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userJudgment" optional="YES" attributeType="String"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CountryProfileEntity"/>
+        <relationship name="externalJudgment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExternalJudgmentEntity"/>
+        <relationship name="userQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserQuestionEntity"/>
+    </entity>
+</model>
