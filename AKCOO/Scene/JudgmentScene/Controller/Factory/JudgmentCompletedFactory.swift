@@ -8,6 +8,6 @@
 import UIKit
 
 protocol JudgmentCompletedFactory {
-  func create(coordinator: JudgmentCoordinator) -> UIViewController
+  func create(coordinator: JudgmentCoordinator, userQuestion: UserQuestion) -> UIViewController
   func dismisser(judgmentCompletedViewController viewController: UIViewController)
 }

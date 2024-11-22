@@ -16,8 +16,14 @@ class JudgmentCompletedViewController: UIViewController {
     return view as? JudgmentView
   }
   
-  init(judgmentUseCase: JudgmentUseCase) {
+  private var userQuestion: UserQuestion
+  
+  init(
+    judgmentUseCase: JudgmentUseCase,
+    userQuestion: UserQuestion
+  ) {
     self.judgmentUseCase = judgmentUseCase
+    self.userQuestion = userQuestion
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -52,5 +58,12 @@ class JudgmentCompletedViewController: UIViewController {
 }
 
 #Preview {
-  JudgmentCompletedViewController(judgmentUseCase: JudgmentUseCaseMock())
+  JudgmentCompletedViewController(
+    judgmentUseCase: JudgmentUseCaseMock(),
+    userQuestion: .init(
+      country: "베튼탐",
+      category: "카테고리",
+      amount: 10000
+    )
+  )
 }

@@ -10,8 +10,8 @@ import UIKit
 struct JudgmentCompletedFactoryImp: JudgmentCompletedFactory {
   let useCase: JudgmentUseCase
   
-  func create(coordinator: JudgmentCoordinator) -> UIViewController {
-    let judgmentCompletedViewController = JudgmentCompletedViewController(judgmentUseCase: useCase)
+  func create(coordinator: JudgmentCoordinator, userQuestion: UserQuestion) -> UIViewController {
+    let judgmentCompletedViewController = JudgmentCompletedViewController(judgmentUseCase: useCase, userQuestion: userQuestion)
     judgmentCompletedViewController.coordinator = coordinator
     return judgmentCompletedViewController
   }

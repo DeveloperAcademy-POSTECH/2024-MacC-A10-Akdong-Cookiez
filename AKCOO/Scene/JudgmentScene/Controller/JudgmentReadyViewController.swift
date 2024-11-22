@@ -42,7 +42,11 @@ class JudgmentReadyViewController: UIViewController {
   }
   
   @objc func tappedPaper() {
-    coordinator?.startJudgment(presenting: self)
+    // MARK: - TODO 
+    coordinator?.startJudgment(
+      presenting: self,
+      userQuestion: .init(country: "", category: "", amount: 0)
+    )
   }
 }
 
