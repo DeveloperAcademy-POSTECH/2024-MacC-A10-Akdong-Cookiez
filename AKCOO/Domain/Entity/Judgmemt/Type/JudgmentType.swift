@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum JudgmentType {
-  case buying
-  case notBuying
+enum JudgmentType: String {
+  case buying = "살래요"
+  case notBuying = "안살래요"
 }
