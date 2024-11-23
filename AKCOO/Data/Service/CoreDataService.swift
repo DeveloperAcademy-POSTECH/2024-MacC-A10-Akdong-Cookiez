@@ -23,43 +23,42 @@ struct CoreDataService {
   var context: NSManagedObjectContext {
     return persistentContainer.viewContext
   }
-  
-  // TODO: save 별개로 분리 재고
-  private func saveContext() -> Result<VoidResponse, Error> {
-    guard self.context.hasChanges else { return .success(VoidResponse()) }
-    
-    do {
-      try context.save()
-      return .success(VoidResponse())
-    } catch {
-      // 실패
-      print("🚨 DEBUG(ERROR): Coredata에서 저장하기 실패 \(error)")
-      return .failure(error)
-    }
-  }
-  
+}
+
+// MARK: - CREATE
+extension CoreDataService {
+  /// CREATE - UserRecord 저장
   func saveUserRecord(_ userRecord: UserRecord) -> Result<VoidResponse, Error> {
     _ = UserRecord.toEntity(context: self.context, record: userRecord)
     
-    switch self.saveContext() {
-    case .success:
+    // context 저장
+    do {
+      try self.context.save()
       return .success(VoidResponse())
-    case .failure(let error):
+    } catch {
       return .failure(error)
     }
   }
-  
+}
+
+// MARK: - READ
+extension CoreDataService {
+  /// READ - UserRecord 불러오기
   func getUserRecord() -> Result<[UserRecord], Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
     do {
       let entities = try self.context.fetch(request)
-      return .success(entities.map { UserRecord.fromEntity(entity: $0) })
+      let userRecords = try entities.map {
+        try UserRecord.fromEntity(entity: $0).get()
+      }
+      return .success(userRecords)
     } catch {
       return .failure(error)
     }
   }
   
+  /// READ - 가장 최신의 UserRecord 불러오기
   func getLatestUserRecord() -> Result<UserRecord, Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
@@ -72,14 +71,20 @@ struct CoreDataService {
         return .failure(CoreDataError.getFailed)
       }
       
-      return .success(UserRecord.fromEntity(entity: latestEntity))
+      let latestUserRecord = try UserRecord.fromEntity(entity: latestEntity).get()
+      
+      return .success(latestUserRecord)
     } catch {
       // 실패
       print("🚨 DEBUG(ERROR): Coredata에서 최근 UserRecord 1개 가져오기 실패 \(error)")
       return .failure(error)
     }
   }
-  
+}
+
+// MARK: - DELETE
+extension CoreDataService {
+  /// DELETE - 특정 id의 UserRecord 삭제
   func deleteUserRecord(by id: UUID) -> Result<VoidResponse, Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
@@ -95,12 +100,14 @@ struct CoreDataService {
       
       self.context.delete(record)
       
-      switch self.saveContext() {
-      case .success:
+      // context 저장
+      do {
+        try self.context.save()
         return .success(VoidResponse())
-      case .failure(let error):
+      } catch {
         return .failure(error)
       }
+      
     } catch {
       // 실패
       print("🚨 DEBUG(ERROR): Coredata에서 UserRecord(id: \(id) 삭제 실패 \(error)")
@@ -108,16 +115,17 @@ struct CoreDataService {
     }
   }
   
+  /// DELETE - 모든 UserRecord 삭제
   func deleteAllUserRecords() {
-      let request: NSFetchRequest<NSFetchRequestResult> = UserRecordEntity.fetchRequest()
-      let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
-      
-      do {
-          try context.execute(deleteRequest) // 모든 레코드 삭제
-          try context.save()
-          print("All records deleted successfully.")
-      } catch {
-          print("Failed to delete all records: \(error)")
-      }
+    let request: NSFetchRequest<NSFetchRequestResult> = UserRecordEntity.fetchRequest()
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+    
+    do {
+      try context.execute(deleteRequest) // 모든 레코드 삭제
+      try context.save()
+      print("All records deleted successfully.")
+    } catch {
+      print("Failed to delete all records: \(error)")
+    }
   }
 }
