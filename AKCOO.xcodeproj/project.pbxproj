@@ -21,6 +21,11 @@
 		515E404B2CEF195B00AE4A2F /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */; };
 		515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E404D2CEF707300AE4A2F /* CoreDataService.swift */; };
 		515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */; };
+		515E40832CF0AA6000AE4A2F /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40822CF0AA6000AE4A2F /* CoreDataError.swift */; };
+		515E40862CF0AAB000AE4A2F /* CountryProfile+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40852CF0AAB000AE4A2F /* CountryProfile+CoreData.swift */; };
+		515E40882CF0AC2400AE4A2F /* UserQuestion+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40872CF0AC2400AE4A2F /* UserQuestion+CoreData.swift */; };
+		515E408A2CF0AD8F00AE4A2F /* ExternalJudgmentEntity+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40892CF0AD8F00AE4A2F /* ExternalJudgmentEntity+CoreData.swift */; };
+		515E408C2CF0AFE200AE4A2F /* UserRecord+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E408B2CF0AFE200AE4A2F /* UserRecord+CoreData.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -150,6 +155,11 @@
 		515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 		515E404D2CEF707300AE4A2F /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		515E40502CEF7C8800AE4A2F /* UserRecordModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserRecordModel.xcdatamodel; sourceTree = "<group>"; };
+		515E40822CF0AA6000AE4A2F /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		515E40852CF0AAB000AE4A2F /* CountryProfile+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryProfile+CoreData.swift"; sourceTree = "<group>"; };
+		515E40872CF0AC2400AE4A2F /* UserQuestion+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQuestion+CoreData.swift"; sourceTree = "<group>"; };
+		515E40892CF0AD8F00AE4A2F /* ExternalJudgmentEntity+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExternalJudgmentEntity+CoreData.swift"; sourceTree = "<group>"; };
+		515E408B2CF0AFE200AE4A2F /* UserRecord+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserRecord+CoreData.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -321,10 +331,23 @@
 		515E404C2CEF705A00AE4A2F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				515E40842CF0AA9100AE4A2F /* Extensions */,
 				515E404D2CEF707300AE4A2F /* CoreDataService.swift */,
 				515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */,
+				515E40822CF0AA6000AE4A2F /* CoreDataError.swift */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		515E40842CF0AA9100AE4A2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				515E408B2CF0AFE200AE4A2F /* UserRecord+CoreData.swift */,
+				515E40852CF0AAB000AE4A2F /* CountryProfile+CoreData.swift */,
+				515E40872CF0AC2400AE4A2F /* UserQuestion+CoreData.swift */,
+				515E40892CF0AD8F00AE4A2F /* ExternalJudgmentEntity+CoreData.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F3EB75F72CDD14B00054D4E1 = {
@@ -1049,6 +1072,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515E408A2CF0AD8F00AE4A2F /* ExternalJudgmentEntity+CoreData.swift in Sources */,
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
 				F3ED92A22CE5C15D00CF5238 /* ReactionBirdsCollectionView.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
@@ -1056,6 +1080,7 @@
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
 				515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */,
+				515E40882CF0AC2400AE4A2F /* UserQuestion+CoreData.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
@@ -1068,6 +1093,7 @@
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
 				515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */,
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
+				515E40862CF0AAB000AE4A2F /* CountryProfile+CoreData.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
 				F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */,
@@ -1096,10 +1122,12 @@
 				F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */,
 				F3ED92A02CE5271300CF5238 /* ReactionBirdTextView.swift in Sources */,
 				F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */,
+				515E40832CF0AA6000AE4A2F /* CoreDataError.swift in Sources */,
 				F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
 				F3ED93002CE7C0C500CF5238 /* UserQuestion.swift in Sources */,
+				515E408C2CF0AFE200AE4A2F /* UserRecord+CoreData.swift in Sources */,
 				F3ED93192CE8617800CF5238 /* Array+RemovingDuplicates.swift in Sources */,
 				F3ED92EB2CE78E3500CF5238 /* UserRecord.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,

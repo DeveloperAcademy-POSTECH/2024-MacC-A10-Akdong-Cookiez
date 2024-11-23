@@ -9,6 +9,7 @@ import Foundation
 
 /// 사용자 지출 판단 기록 
 struct UserRecord {
+  let id: UUID
   let date: Date
   var country: CountryProfile
   var userQuestion: UserQuestion
