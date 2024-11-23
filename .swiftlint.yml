@@ -20,6 +20,9 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
   
   # Type 이름의 글자 수를 제한합니다. https://realm.github.io/SwiftLint/type_name.html
   - type_name
+  
+  # String enum value는 enum case 이름과 같을 경우 생략합니다. https://realm.github.io/SwiftLint/redundant_string_enum_value.html
+  - redundant_string_enum_value
 
 opt_in_rules: # Default Rules에서 활성화할 규칙
   

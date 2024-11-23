@@ -22,7 +22,7 @@ struct RecordRepositoryImp: RecordRepository {
     switch userDefaults.load(type: String.self, key: .selectedCountry) {
     case .success(let country):
       return .success(country)
-    case .failure(let error):
+    case .failure:
       // FIXME: return 타입 논의 후 수정
       // return Type이 String?으로 Optional 형태라
       // Key를 찾지 못해 반환되는 error를 보내야 할지
