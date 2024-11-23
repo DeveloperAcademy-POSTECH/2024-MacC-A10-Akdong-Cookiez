@@ -1,8 +1,8 @@
 //
-//  ExternalJudgmentEntity+CoreData.swift
+//  ExternalJudgmentEntity+toEntity.swift
 //  AKCOO
 //
-//  Created by Anjin on 11/22/24.
+//  Created by Anjin on 11/24/24.
 //
 
 import CoreData
