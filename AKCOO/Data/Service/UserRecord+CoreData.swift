@@ -42,23 +42,18 @@ extension UserRecord {
     return entity
   }
   
-  static func fromEntity(entity: UserRecordEntity) -> Result<UserRecord, Error> {
+  static func fromEntity(entity: UserRecordEntity) -> Result<UserRecord?, Error> {
     guard
       let id = entity.id,
       let date = entity.date,
       let countryProfileEntity = entity.country,
       let userQuestionEntity = entity.userQuestion,
       let userJudgmentString = entity.userJudgment,
-      let userJudgment = JudgmentType(rawValue: userJudgmentString)
-    else {
-      return .failure(CoreDataError.mapFromEntityFailed)
-    }
-    
-    // 짹짹이들의 판단 Entity
-    guard
+      let userJudgment = JudgmentType(rawValue: userJudgmentString),
       let externalJudgmentEntities = entity.externalJudgments as? Set<ExternalJudgmentEntity>
     else {
-      return .failure(CoreDataError.mapFromEntityFailed)
+      // 값이 없는 경우, Success 형태지만 nil로 반환
+      return .success(nil)
     }
     
     // 짹짹이들의 판단 Entity에서 변환
@@ -69,19 +64,30 @@ extension UserRecord {
         let rawValue = judgment.judgmentType,
         let type = JudgmentType(rawValue: rawValue)
       else {
+        // 변환실패
         return .failure(CoreDataError.mapFromEntityFailed)
       }
       externalJudgments[key] = type
     }
     
     do {
-      let countryProfile = try CountryProfile
-        .fromEntity(entity: countryProfileEntity)
-        .get()
+      guard
+        let countryProfile = try CountryProfile
+          .fromEntity(entity: countryProfileEntity)
+          .get()
+      else {
+        // 값이 없는 경우, Success 형태지만 nil로 반환
+        return .success(nil)
+      }
       
-      let userQuestion = try UserQuestion
-        .fromEntity(entity: userQuestionEntity)
-        .get()
+      guard
+        let userQuestion = try UserQuestion
+          .fromEntity(entity: userQuestionEntity)
+          .get()
+      else {
+        // 값이 없는 경우, Success 형태지만 nil로 반환
+        return .success(nil)
+      }
       
       let userRecord = UserRecord(
         id: id,

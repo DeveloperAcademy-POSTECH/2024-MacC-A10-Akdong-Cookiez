@@ -16,12 +16,12 @@ extension CountryProfile {
     return entity
   }
   
-  static func fromEntity(entity: CountryProfileEntity) -> Result<CountryProfile, Error> {
+  static func fromEntity(entity: CountryProfileEntity) -> Result<CountryProfile?, Error> {
     guard
       let name = entity.name,
       let unitTitle = entity.currencyUnitTitle
     else {
-      return .failure(CoreDataError.mapFromEntityFailed)
+      return .success(nil)
     }
     
     let countryProfile = CountryProfile(

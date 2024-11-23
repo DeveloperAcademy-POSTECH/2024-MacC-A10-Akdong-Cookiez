@@ -44,7 +44,7 @@ extension CoreDataService {
 // MARK: - READ
 extension CoreDataService {
   /// READ - UserRecord 불러오기
-  func getUserRecord() -> Result<[UserRecord], Error> {
+  func getUserRecord() -> Result<[UserRecord?], Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
     do {
@@ -59,7 +59,7 @@ extension CoreDataService {
   }
   
   /// READ - 가장 최신의 UserRecord 불러오기
-  func getLatestUserRecord() -> Result<UserRecord, Error> {
+  func getLatestUserRecord() -> Result<UserRecord?, Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
     // 정렬 조건 추가: date 기준 내림차순 -> 데이터 1개만 가져오기
@@ -68,7 +68,7 @@ extension CoreDataService {
     
     do {
       guard let latestEntity = try context.fetch(request).first else {
-        return .failure(CoreDataError.getFailed)
+        return .success(nil)
       }
       
       let latestUserRecord = try UserRecord.fromEntity(entity: latestEntity).get()

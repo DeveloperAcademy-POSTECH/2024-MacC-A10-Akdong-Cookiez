@@ -16,12 +16,12 @@ extension UserQuestion {
     return entity
   }
   
-  static func fromEntity(entity: UserQuestionEntity) -> Result<UserQuestion, Error> {
+  static func fromEntity(entity: UserQuestionEntity) -> Result<UserQuestion?, Error> {
     guard
       let country = entity.country,
       let category = entity.category
     else {
-      return .failure(CoreDataError.mapFromEntityFailed)
+      return .success(nil)
     }
     
     let userQuestion = UserQuestion(
