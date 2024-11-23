@@ -10,6 +10,7 @@ import Foundation
 // MARK: - 이오가 만들어줄 거야
 struct RecordRepositoryImp: RecordRepository {
   private let userDefaults = UserDefaultsService()
+  private let coreData = CoreDataService()
   
   /// 사용자가 선택한 나라를 저장
   func saveSelectedCountry(_ country: String) -> Result<VoidResponse, any Error> {
@@ -31,13 +32,23 @@ struct RecordRepositoryImp: RecordRepository {
     }
   }
   
+  /// 사용자의 직전 소비 기록을 반환
   func fetchPreviousDaySpending(country: String, category: String) -> Result<UserRecord?, any Error> {
-    .success(nil)
+    switch coreData.getLatestUserRecord() {
+    case .success(let success):
+      return .success(success)
+    case .failure(let error):
+      return .failure(error)
+    }
   }
   
+  /// 사용자가 선택한 소비 기록을 저장
   func saveRecord(record: UserRecord) -> Result<VoidResponse, Error> {
-    // 사용자 기록을 저장합니다
-    print("Mock Record saved: \(record)")
-    return .success(VoidResponse())
+    switch coreData.saveUserRecord(record) {
+    case .success(let response):
+      return .success(response)
+    case .failure(let error):
+      return .failure(error)
+    }
   }
 }
