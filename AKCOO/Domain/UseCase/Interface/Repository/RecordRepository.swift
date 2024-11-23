@@ -12,7 +12,7 @@ protocol RecordRepository {
   func fetchSelectedCountry() -> Result<String?, Error>
   /// 사용자가 설정한 국가명을 저장하는 메서드
   func saveSelectedCountry(_ country: String) -> Result<VoidResponse, Error>
-  /// 전날 소비 기록을 반환하는 메서드
+  /// 직전 소비 기록을 반환하는 메서드
   func fetchPreviousDaySpending(country: String, category: String) -> Result<UserRecord?, Error>
   /// 소비 기록을 저장하는 메서드
   func saveRecord(record: UserRecord) -> Result<VoidResponse, Error>
