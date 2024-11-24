@@ -41,6 +41,7 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
     let judgmentCompletedViewController = judgmentCompletedFactory.create(coordinator: self, userQuestion: userQuestion)
     judgmentCompletedViewController.modalPresentationStyle = .custom
     judgmentCompletedViewController.transitioningDelegate = self.startTransitionaler
+    judgmentCompletedViewController.view.backgroundColor = .akColor(.akBlue400)
     presenting.present(judgmentCompletedViewController, animated: true)
   }
   
