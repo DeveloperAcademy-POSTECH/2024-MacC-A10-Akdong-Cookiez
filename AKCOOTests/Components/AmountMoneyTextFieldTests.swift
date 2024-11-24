@@ -8,63 +8,90 @@
 @testable import AKCOO
 import XCTest
 
-class AmountMoneyTextFieldUITests: XCTestCase {
+class AmountMoneyTextFieldTests: XCTestCase {
   
-  var sut: AmountMoneyTextField!
+  var textField: AmountMoneyTextField!
+  var currency: Currency!
   
-  override func setUpWithError() throws {
-    continueAfterFailure = false
-    sut = AmountMoneyTextField(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+  override func setUp() {
+    super.setUp()
+    textField = AmountMoneyTextField()
+    currency = Currency(unitTitle: "동", unit: 0.05539)
+    textField.configure(currency: currency, amount: "0")
   }
   
-  override func tearDownWithError() throws {
-    sut = nil
+  override func tearDown() {
+    textField = nil
+    currency = nil
+    super.tearDown()
   }
   
-  func test_금액라벨_초기상태확인() {
-    // 유닛 테스트로 변경
-    // 금액 라벨의 초기 상태가 올바른지 확인합니다.
-    let titleLabel = sut.titleLabel
+  func test_초기_상태_확인() {
+    XCTAssertEqual(textField.inputText, "0", "초기 inputText는 '0'이어야 합니다.")
+    XCTAssertEqual(textField.textField.text, "0", "초기 textField.text는 '0'이어야 합니다.")
+    XCTAssertEqual(textField.infoLabel.text, "약 0 원", "초기 infoLabel은 '약 0원'을 표시해야 합니다.")
+  }
+  
+  func test_유효한_숫자_입력() {
+    textField.inputText = "12345"
+    XCTAssertEqual(textField.inputText, "12345", "inputText는 업데이트되어야 합니다.")
+    XCTAssertEqual(textField.textField.text, "12,345", "textField.text는 콤마로 포맷팅되어야 합니다.")
+    XCTAssertEqual(textField.infoLabel.text, "약 678.98 원", "infoLabel은 변환된 값을 올바르게 표시해야 합니다.")
+  }
+  
+  func test_잘못된_문자_입력() {
+    textField.inputText = "12abc"
+    XCTAssertEqual(textField.infoLabel.text, "숫자만 입력할 수 있어요", "infoLabel은 잘못된 문자 입력에 대한 에러 메시지를 표시해야 합니다.")
+    XCTAssertEqual(textField.infoLabel.textColor, .akColor(.akRed), "infoLabel은 잘못된 입력 시 빨간색이어야 합니다.")
+  }
+  
+  func test_입력_자릿수_초과() {
+    textField.inputText = "1234567890123"
+    XCTAssertEqual(textField.infoLabel.text, "12자리 숫자까지 입력할 수 있어요", "infoLabel은 자릿수 초과에 대한 에러 메시지를 표시해야 합니다.")
+    XCTAssertEqual(textField.infoLabel.textColor, .akColor(.akRed), "infoLabel은 초과 입력 시 빨간색이어야 합니다.")
+  }
+  
+  func test_소수점_입력() {
+    textField.inputText = "12345.67"
+    XCTAssertEqual(textField.inputText, "12345.67", "inputText는 소수점을 포함해야 합니다.")
+    XCTAssertEqual(textField.textField.text, "12,345.67", "textField.text는 소수점 포함 포맷팅을 적용해야 합니다.")
+    XCTAssertEqual(textField.infoLabel.text, "약 670.01 원", "infoLabel은 변환된 값을 올바르게 표시해야 합니다.")
+  }
+  
+  func test_소수점_두_자리_제한() {
+    textField.inputText = "12345.678"
+    XCTAssertEqual(textField.textField.text, "12,345.67", "textField.text는 소수점 이하 2자리까지만 표시해야 합니다.")
+  }
+  
+  func test_선행_0_제거() {
+    textField.inputText = "000123"
+    XCTAssertEqual(textField.inputText, "123", "선행 0은 제거되어야 합니다.")
+    XCTAssertEqual(textField.textField.text, "123", "textField.text는 선행 0 없이 표시되어야 합니다.")
+  }
+  
+  func test_0_입력() {
+    textField.inputText = "0"
+    XCTAssertEqual(textField.inputText, "0", "inputText는 '0'이어야 합니다.")
+    XCTAssertEqual(textField.textField.text, "0", "textField.text는 '0'으로 표시되어야 합니다.")
+    XCTAssertEqual(textField.infoLabel.text, "약 0 원", "infoLabel은 '약 0원'을 표시해야 합니다.")
+  }
+  
+  func test_입력_유효성_콜백() {
+    var callbackCalled = false
+    var callbackValue: Bool?
     
-    XCTAssertEqual(titleLabel.text, "금액", "금액 라벨의 텍스트는 '금액'이어야 합니다.")
-  }
-  
-  func test_금액텍스트필드_입력동작확인() {
-    // 유닛 테스트로 변경
-    // 텍스트 필드에 값을 입력할 수 있는지 확인합니다.
-    let textField = sut.textField
-    textField.text = "100000"
+    textField.onActionValidInput = { isValid in
+      callbackCalled = true
+      callbackValue = isValid
+    }
     
-    // 텍스트 필드에 올바른 값이 입력되었는지 확인합니다.
-    XCTAssertEqual(sut.textField.text, "100000", "텍스트 필드에는 '100000'이 입력되어 있어야 합니다.")
-  }
-  
-  func test_텍스트필드확장시_스택뷰축변경() {
-    // 유닛 테스트로 변경
-    // 텍스트 필드가 너무 넓어질 때 스택 뷰가 수직으로 전환되는지 확인합니다.
-    let textField = sut.textField
-    let inputStackView = sut.contentStack
+    textField.inputText = "12345"
+    XCTAssertTrue(callbackCalled, "inputText가 변경될 때 onActionInputNum 콜백이 호출되어야 합니다.")
+    XCTAssertEqual(callbackValue, true, "유효한 입력에 대해 콜백은 'true'를 전달해야 합니다.")
     
-    textField.text = "1000000000000" // 큰 값을 입력하여 축 변경을 유도합니다.
-    
-    // 스택 뷰의 축이 수직으로 변경되었는지 확인합니다.
-    XCTAssertEqual(inputStackView.axis == .vertical, true, "스택 뷰는 수직 축으로 변경되어야 합니다.")
-  }
-  
-  func test_다이나믹폰트_지원확인() {
-    // 유닛 테스트로 변경
-    // 다이나믹 폰트 설정 시 레이블들이 올바르게 조정되는지 확인합니다.
-    let titleLabel = sut.titleLabel
-    let unitLabel = sut.unitLabel
-    
-    XCTAssertNotNil(titleLabel, "금액 라벨이 존재해야 합니다.")
-    XCTAssertNotNil(unitLabel, "단위 라벨이 존재해야 합니다.")
-  }
-  
-  func test_구분선_존재확인() {
-    // 유닛 테스트로 변경
-    // 구분선이 올바르게 존재하는지 확인합니다.
-    let separatorLine = sut.separatorLine
-    XCTAssertNotNil(separatorLine, "구분선이 존재해야 합니다.")
+    callbackCalled = false
+    textField.inputText = "0"
+    XCTAssertTrue(callbackCalled, "inputText가 '0'으로 변경될 때 콜백이 호출되어야 합니다.")
+    XCTAssertEqual(callbackValue, false, "입력이 '0'일 경우 콜백은 'false'를 전달해야 합니다.")
   }
 }
