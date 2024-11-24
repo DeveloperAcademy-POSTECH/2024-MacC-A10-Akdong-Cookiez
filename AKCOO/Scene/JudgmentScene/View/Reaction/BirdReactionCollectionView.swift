@@ -1,3 +1,10 @@
+//
+//  BirdReactionCollectionView.swift
+//  AKCOO
+//
+//  Created by 박혜운 on 11/18/24.
+//
+
 import UIKit
 
 class BirdReactionCollectionView: UIView {
@@ -7,7 +14,7 @@ class BirdReactionCollectionView: UIView {
     layout.scrollDirection = .vertical
     layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     layout.minimumLineSpacing = 30
-    layout.sectionInset = UIEdgeInsets(top: 13, left: 0, bottom: 60, right: 0)
+    layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 60, right: 0)
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +45,8 @@ class BirdReactionCollectionView: UIView {
   // MARK: - Setup Methods
   private func setupViews() {
     addSubview(collectionView)
+    collectionView.backgroundColor = .clear
+    collectionView.clipsToBounds = false
   }
   
   private func setupConstraints() {
@@ -76,7 +85,7 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
     let birdModel = birdModels[indexPath.item]
     let birdImageType: BirdCharacterImageType = {
       switch birdModel {
-      case is ForignBird: return .foriegn
+      case is ForeignBird: return .foriegn
       case is LocalBird: return .local
       case is PreviousDayBird: return .previous
       default: fatalError("Unknown BirdModel type")
@@ -100,7 +109,7 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
     UIView.animate(
       withDuration: 0.4, // 좀 더 오래 지속되는 애니메이션
       delay: 0.3 * Double(indexPath.item), // 각 셀이 약간의 시간 차이를 두고 등장
-      usingSpringWithDamping: 0.9, // 스프링 효과를 줄 때 사용 (0에 가까울수록 더 강한 스프링)
+      usingSpringWithDamping: 0.9, // 0에 가까울수록 더 강한 스프링
       initialSpringVelocity: 0.2, // 초기 스프링 속도
       options: [.curveEaseInOut],
       animations: {

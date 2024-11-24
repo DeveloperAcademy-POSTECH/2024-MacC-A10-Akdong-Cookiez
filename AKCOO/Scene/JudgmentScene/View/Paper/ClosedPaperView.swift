@@ -62,22 +62,22 @@ class ClosedPaperView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
-    setConstraints()
+    setupViews()
+    setupConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupView()
-    setConstraints()
+    setupViews()
+    setupConstraints()
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    setLayout()
+    setupLayout()
   }
   
-  func setupView() {
+  func setupViews() {
     addSubview(paperBackgroundView)
     paperBackgroundView.addSubview(contentStack)
     paperBackgroundView.addSubview(separatorLine)
@@ -90,7 +90,7 @@ class ClosedPaperView: UIView {
     contentStack.addArrangedSubview(moneyAmountLabel)
   }
   
-  func setConstraints() {
+  func setupConstraints() {
     let horizontalPadding: CGFloat = 35
     let verticalPadding: CGFloat = 26
     let innerPadding: CGFloat = 4
@@ -116,7 +116,7 @@ class ClosedPaperView: UIView {
     ])
   }
   
-  private func setLayout() {
+  private func setupLayout() {
     paperBackgroundView.layer.cornerRadius = 30
     paperBackgroundView.layer.masksToBounds = true
   }

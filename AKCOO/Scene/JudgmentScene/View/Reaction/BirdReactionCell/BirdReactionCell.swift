@@ -39,17 +39,9 @@ class BirdReactionCell: UICollectionViewCell {
     containerView.addSubview(textContainerView)
     containerView.addSubview(characterImageView)
     
-    setShadow()
+    setupShadow()
   }
-  
-  private func setShadow() {
-    contentView.layer.masksToBounds = false
-    contentView.layer.shadowColor = UIColor.black.cgColor
-    contentView.layer.shadowOpacity = 0.2
-    contentView.layer.shadowOffset = CGSize(width: 4, height: 4)
-    contentView.layer.shadowRadius = 4
-  }
-  
+
   private func setupConstraints() {
     characterLeadingConstraint = characterImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
     characterTrailingConstraint = characterImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
@@ -69,6 +61,34 @@ class BirdReactionCell: UICollectionViewCell {
     ])
     
     setConstraintsJudgment()
+  }
+  
+  private func setConstraintsJudgment(_ buying: Bool = true) {
+    characterLeadingConstraint?.isActive = false
+    characterTrailingConstraint?.isActive = false
+    textLeadingConstraint?.isActive = false
+    textTrailingConstraint?.isActive = false
+    
+    if buying {
+      characterTrailingConstraint?.isActive = true
+      textLeadingConstraint?.constant = 0
+      textLeadingConstraint?.isActive = true
+      textTrailingConstraint?.constant = -36
+      textTrailingConstraint?.isActive = true
+    } else {
+      characterLeadingConstraint?.isActive = true
+      textLeadingConstraint?.constant = 36
+      textLeadingConstraint?.isActive = true
+      textTrailingConstraint?.constant = 0
+      textTrailingConstraint?.isActive = true
+    }
+  }
+  
+  private func setupShadow() {
+    contentView.layer.shadowColor = UIColor.akColor(.akBlue600).cgColor
+    contentView.layer.shadowOpacity = 0.9
+    contentView.layer.shadowOffset = CGSize(width: 5, height: 10)
+    contentView.layer.shadowRadius = 4
   }
   
   func configure(
@@ -92,8 +112,6 @@ class BirdReactionCell: UICollectionViewCell {
     )
     
     setConstraintsJudgment(buying)
-    
-    layoutIfNeeded()
   }
   
   func tappedCell() {
@@ -116,27 +134,6 @@ class BirdReactionCell: UICollectionViewCell {
       withHorizontalFittingPriority: .required,
       verticalFittingPriority: .fittingSizeLevel
     )
-  }
-  
-  private func setConstraintsJudgment(_ buying: Bool = true) {
-    characterLeadingConstraint?.isActive = false
-    characterTrailingConstraint?.isActive = false
-    textLeadingConstraint?.isActive = false
-    textTrailingConstraint?.isActive = false
-    
-    if buying {
-      characterTrailingConstraint?.isActive = true
-      textLeadingConstraint?.constant = 0
-      textLeadingConstraint?.isActive = true
-      textTrailingConstraint?.constant = -36
-      textTrailingConstraint?.isActive = true
-    } else {
-      characterLeadingConstraint?.isActive = true
-      textLeadingConstraint?.constant = 36
-      textLeadingConstraint?.isActive = true
-      textTrailingConstraint?.constant = 0
-      textTrailingConstraint?.isActive = true
-    }
   }
 }
 

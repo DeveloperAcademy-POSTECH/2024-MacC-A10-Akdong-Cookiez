@@ -9,7 +9,6 @@ import UIKit
 
 class BirdReactionTextView: UIView {
   private let backgroundView = UIView(frame: .zero).set {
-    $0.backgroundColor = .brown
     $0.clipsToBounds = true
   }
   
@@ -37,7 +36,6 @@ class BirdReactionTextView: UIView {
     $0.alpha = 0
   }
   
-  private let buying = true
   private var isExpanded = false
   private var backgroundBottomConstraint: NSLayoutConstraint?
   private var detailVetricalConstraint: [NSLayoutConstraint]?
@@ -49,17 +47,19 @@ class BirdReactionTextView: UIView {
     super.init(frame: frame)
     setupViews()
     setupConstraints()
+    setupConstraints(isExpanded: false)
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     setupViews()
     setupConstraints()
+    setupConstraints(isExpanded: false)
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    setLayout()
+    setupLayout()
   }
   
   private func setupViews() {
@@ -109,22 +109,25 @@ class BirdReactionTextView: UIView {
     titleLabel.text = "\"\(title)\""
     opinionLabel.text = opinion
     detailLabel.text = detail
-    setConstraints(buying: buying)
+    
+    setupConstraints(buying: buying)
+    
+    self.backgroundView.backgroundColor = buying ? .akColor(.akYellow) : .akColor(.akRed)
   }
   
   @objc func tappedView() {
     isExpanded.toggle()
-    setConstraints(isExpanded: isExpanded)
+    setupConstraints(isExpanded: isExpanded)
     animateExpansion()
   }
   
-  private func setConstraints(buying: Bool) {
+  private func setupConstraints(buying: Bool) {
     titleLeadingConstraint?.isActive = false
     titleLeadingConstraint?.constant = buying ? horizentalPadding : largeHorizentalPadding
     titleLeadingConstraint?.isActive = true
   }
   
-  private func setConstraints(isExpanded: Bool) {
+  private func setupConstraints(isExpanded: Bool) {
     backgroundBottomConstraint?.isActive = false
     self.detailVetricalConstraint?.forEach { $0.isActive = false }
     backgroundBottomConstraint =  backgroundView.bottomAnchor.constraint(equalTo: isExpanded ? detailLabel.bottomAnchor : opinionLabel.bottomAnchor, constant: 26)
@@ -165,7 +168,7 @@ class BirdReactionTextView: UIView {
     ).height
   }
   
-  private func setLayout() {
+  private func setupLayout() {
     backgroundView.layer.cornerRadius = 30
     backgroundView.layer.masksToBounds = true
   }

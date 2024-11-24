@@ -31,19 +31,19 @@ class BirdReactionCharacterView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
+    setupViews()
     setupConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupView()
+    setupViews()
     setupConstraints()
   }
   
   // MARK: - Setup Methods
   
-  private func setupView() {
+  private func setupViews() {
     addSubview(markImageView)
     addSubview(birdImageView)
   }
@@ -51,8 +51,8 @@ class BirdReactionCharacterView: UIView {
   private func setupConstraints() {
     // birdImageView 제약 조건
     NSLayoutConstraint.activate([
-      birdImageView.widthAnchor.constraint(equalToConstant: 89),
-      birdImageView.heightAnchor.constraint(equalToConstant: 72),
+      birdImageView.widthAnchor.constraint(equalToConstant: 87),
+      birdImageView.heightAnchor.constraint(equalToConstant: 77),
       markImageView.heightAnchor.constraint(equalToConstant: 43),
       markImageView.widthAnchor.constraint(equalToConstant: 33),
       
@@ -61,7 +61,7 @@ class BirdReactionCharacterView: UIView {
       birdImageView.topAnchor.constraint(equalTo: topAnchor),
       birdImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
       
-      markImageView.bottomAnchor.constraint(equalTo: birdImageView.bottomAnchor, constant: -52)
+      markImageView.bottomAnchor.constraint(equalTo: birdImageView.bottomAnchor, constant: -50)
     ])
 
     markLeadingConstraint = markImageView.leadingAnchor.constraint(equalTo: birdImageView.leadingAnchor, constant: 19)

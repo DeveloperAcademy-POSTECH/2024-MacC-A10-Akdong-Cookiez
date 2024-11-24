@@ -1,5 +1,5 @@
 //
-//  ForignBird.swift
+//  ForeignBird.swift
 //  AKCOO
 //
 //  Created by 박혜운 on 11/18/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// 물가를 기준하는 새
-struct ForignBird: BirdModel {
+struct ForeignBird: BirdModel {
   private let country: CountryProfile
   private let judgmentCriteria: CountryAverageJudgment
 

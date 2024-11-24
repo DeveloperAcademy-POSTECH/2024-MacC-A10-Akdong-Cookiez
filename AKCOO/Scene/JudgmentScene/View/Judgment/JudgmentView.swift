@@ -62,71 +62,34 @@ class JudgmentView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
-    setConstraints()
+    setupViews()
+    setupConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupView()
-    setConstraints()
+    setupViews()
+    setupConstraints()
   }
   
-  private func setupView() {
-    let userQuestionAmount: Double = 1000000
-    let items: [Item] = []
-    let country = CountryProfile.init(
-      name: "베트남",
-      currency: .init(unitTitle: "동", unit: 1)
-    )
+  private func setupViews() {
+    addSubview(paperTitleLabel)
+    addSubview(paper)
     
-    let forignJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
-      standards: items
-    )
-    let localJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
-      standards: items
-    )
+    addSubview(birdsReactionTitleLabel)
+    addSubview(decisionStack)
+    addSubview(gradientView)
     
-    let previousJudgment = PreviousJudgment(
-      userAmount: userQuestionAmount,
-      standards: nil
-    )
-    
-    let birds: [BirdModel] = [
-      ForignBird(
-        country: country,
-        judgment: forignJudgment
-      ),
-      LocalBird(
-        country: country,
-        judgment: localJudgment
-      ),
-      PreviousDayBird(
-        judgment: previousJudgment
-      )
-    ]
-    
-    reactionStackView.configure(with: birds)
+    addSubview(reactionStackView)
     
     decisionStack.addArrangedSubview(notBuyButton)
     decisionStack.addArrangedSubview(buyButton)
     
     gradientView.addSubview(decisionLabel)
-    
-    addSubview(paperTitleLabel)
-    addSubview(paper)
-    
-    addSubview(birdsReactionTitleLabel)
-    addSubview(reactionStackView)
-    
-    addSubview(gradientView)
-    addSubview(decisionStack)
   }
   
-  private func setConstraints() {
-    let infoTitleTopPadding: CGFloat = 1
+  private func setupConstraints() {
+    let infoTitleTopPadding: CGFloat = 8
     let titleLeading: CGFloat = 38
     let topPadding: CGFloat = 16
     
@@ -161,14 +124,25 @@ class JudgmentView: UIView {
     ])
   }
   
-  func configurePaper(userQuesion: UserQuestion, currency: Currency) {
-    // TODO: - 적절한 변환처리 거치기
+  func configure(
+    userQuesion: UserQuestion,
+    birds: [BirdModel]
+  ) {
+    paper.titleLabel.text = userQuesion.country.name
     paper.categoryLabel.text = userQuesion.category
     paper.moneyAmountLabel.text = "\(userQuesion.amount)"
-    paper.convertKRWLabel.text = currency.unitTitle
+    paper.convertKRWLabel.text = userQuesion.country.currency.unitTitle
+    
+    reactionStackView.configure(with: birds)
   }
 }
 
 #Preview {
-  JudgmentView()
+  let view = JudgmentView()
+  view.configure(
+    userQuesion: .init(
+      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1)), category: "어쩌구", amount: 20000),
+    birds: []
+  )
+  return view
 }

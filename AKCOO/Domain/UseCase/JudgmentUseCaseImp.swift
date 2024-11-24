@@ -57,20 +57,31 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     guard let selectedCountryDetail else { return .failure(NetworkError()) }
 
     let countryProfiles = getCountryProfiles(to: countriesDetails)
+    let countryNames = countryProfiles.map { $0.name }
     let selectedCategories = selectedCountryDetail.categories
     let paperModel = PaperModel(
-      selectedCountry: selectedCountryDetail.name,
-      countries: countryProfiles,
+      selectedCountryProfile: .init(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency),
+      countries: countryNames,
       categories: selectedCategories
     )
     
     return .success(paperModel)
   }
   
-  func requestBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
+  // TODO: - 이오 확인
+  func getNewPaperModel(newCountryName selectedCountryName: String) -> Result<PaperModel, any Error> {
+    guard let countriesDetails,
+          let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
+    // TODO: - RecordRepository를 통해 선택된 국가를 변경하는 로직 추가
+    selectedCountryDetail = newSelectedCountryDetail
+    
+    return getPaperModel()
+  }
+  
+  func getBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
     guard let selectedCountryDetail else { return .failure(NetworkError()) }
     guard let localCountryDetail else { return .failure(NetworkError()) }
-    let previousResult = recordRepository.fetchPreviousDaySpending(country: userQuestion.country, category: userQuestion.category)
+    let previousResult = recordRepository.fetchPreviousDaySpending(country: userQuestion.country.name, category: userQuestion.category)
     guard case .success(let previousRecord) = previousResult else { return .failure(NetworkError()) }
 
     let country = CountryProfile(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency)
@@ -91,7 +102,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     )
     
     let birds: [BirdModel] = [
-      ForignBird(
+      ForeignBird(
         country: country,
         judgment: forignJudgment
       ),

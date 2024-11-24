@@ -39,7 +39,7 @@ class StartTransition: NSObject, UIViewControllerAnimatedTransitioning {
         to: judgmentView,
         in: transitionContext.containerView,
         childTransitions: [
-          (from: judgmentReadyView.paper.paper, to: judgmentView.paper)
+          (from: judgmentReadyView.paper.paperView, to: judgmentView.paper)
         ]
       )
     case .dismiss:
