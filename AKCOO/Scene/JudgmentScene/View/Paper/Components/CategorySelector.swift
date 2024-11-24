@@ -7,9 +7,19 @@
 
 import UIKit
 
-class CategorySelectorView: UIView {
+class CategorySelector: UIView {
   
   // MARK: - Views
+  
+  let contentStack = UIStackView().set {
+    $0.axis = .horizontal
+    $0.alignment = .center
+    $0.distribution = .fill
+    $0.distribution = .equalSpacing
+  }
+  
+  lazy var titleLabel: UILabel = .paperLabel(with: "카테고리").set()
+  
   private let buttonStackView = UIStackView().set {
     $0.axis = .horizontal
     $0.distribution = .equalSpacing
@@ -18,7 +28,6 @@ class CategorySelectorView: UIView {
   }
   
   private var buttons: [UIButton] = []
-  
   // MARK: - Properties
   private var categories: [String] = ["호텔", "숙박", "카페"]
   private var selectedCategoryIndex: Int = 0
@@ -26,43 +35,50 @@ class CategorySelectorView: UIView {
   private let selectedButtonColor: UIColor = .akColor(.akBlue500)
   private let defaultButtonColor: UIColor = .akColor(.akGray100)
   
+  // MARK: - OnAction
+  var onActionChangeCategory: ((String?) -> Void)?
+  
   // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupView()
+    setupViews()
     setupConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    setupView()
+    setupViews()
     setupConstraints()
   }
   
   // MARK: - LifeCycle
   override func layoutSubviews() {
     super.layoutSubviews()
-    updateButtonCornerRadius()
+    updateButtonLayout()
   }
   
   // MARK: - Setup Methods
-  private func setupView() {
-    addSubview(buttonStackView)
+  private func setupViews() {
+    addSubview(contentStack)
+    
+    contentStack.addArrangedSubview(titleLabel)
+    contentStack.addArrangedSubview(buttonStackView)
   }
   
   private func setupConstraints() {
     NSLayoutConstraint.activate([
-      buttonStackView.topAnchor.constraint(equalTo: topAnchor),
-      buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+      contentStack.topAnchor.constraint(equalTo: topAnchor),
+      contentStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+      contentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+      contentStack.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
   
-  private func updateButtonCornerRadius() {
+  private func updateButtonLayout() {
     buttons.forEach { button in
       button.layer.cornerRadius = 15
       button.clipsToBounds = true
+      
     }
   }
   
@@ -93,16 +109,19 @@ class CategorySelectorView: UIView {
       button.layer.cornerCurve = .continuous
       
       button.setTitle(title, for: .normal)
-      button.setTitleColor(.black, for: .normal)
+      button.akFont(.gmarketMedium14)
       button.titleLabel?.adjustsFontForContentSizeCategory = true
       
       // 상태에 따라 버튼의 색상을 업데이트
       button.configurationUpdateHandler = { [weak self] button in
-        guard let self = self else { return }
+        guard let self else { return }
         if button.isSelected {
           button.configuration?.background.backgroundColor = self.selectedButtonColor
+          button.configuration?.baseForegroundColor = .white
+          self.onActionChangeCategory?(button.titleLabel?.text)
         } else {
           button.configuration?.background.backgroundColor = self.defaultButtonColor
+          button.configuration?.baseForegroundColor = .black
         }
       }
       
@@ -142,7 +161,6 @@ class CategorySelectorView: UIView {
     
     // 선택된 버튼 인덱스 업데이트
     selectedCategoryIndex = index
-    layoutIfNeeded()
   }
   
   // MARK: - Actions
@@ -156,7 +174,7 @@ class CategorySelectorView: UIView {
 }
 
 #Preview {
-  let categorySelector = CategorySelectorView()
+  let categorySelector = CategorySelector()
   categorySelector.configure(
     categoryList: ["호텔", "숙박", "카페"],
     selected: "숙박"
