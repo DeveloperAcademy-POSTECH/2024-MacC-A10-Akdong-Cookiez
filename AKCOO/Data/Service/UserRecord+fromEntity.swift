@@ -12,7 +12,6 @@ extension UserRecord {
     guard
       let id = entity.id,
       let date = entity.date,
-      let countryProfileEntity = entity.country,
       let userQuestionEntity = entity.userQuestion,
       let userJudgmentString = entity.userJudgment,
       let userJudgment = JudgmentType(rawValue: userJudgmentString),
@@ -38,15 +37,6 @@ extension UserRecord {
     
     do {
       guard
-        let countryProfile = try CountryProfile
-          .fromEntity(entity: countryProfileEntity)
-          .get()
-      else {
-        // 값이 없는 경우, Success 형태지만 nil로 반환
-        return .success(nil)
-      }
-      
-      guard
         let userQuestion = try UserQuestion
           .fromEntity(entity: userQuestionEntity)
           .get()
@@ -58,7 +48,6 @@ extension UserRecord {
       let userRecord = UserRecord(
         id: id,
         date: date,
-        country: countryProfile,
         userQuestion: userQuestion,
         userJudgment: userJudgment,
         externalJudgment: externalJudgments
