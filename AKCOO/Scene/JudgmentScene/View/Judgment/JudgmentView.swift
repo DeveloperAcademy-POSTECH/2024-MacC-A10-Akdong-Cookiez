@@ -128,11 +128,7 @@ class JudgmentView: UIView {
     userQuesion: UserQuestion,
     birds: [BirdModel]
   ) {
-    paper.countryLabel.text = userQuesion.country.name
-    paper.categoryLabel.text = userQuesion.category
-    paper.moneyAmountLabel.text = "\(userQuesion.amount)"
-    paper.convertKRWLabel.text = userQuesion.country.currency.unitTitle
-    
+    paper.configure(userQuestion: userQuesion)
     reactionStackView.configure(with: birds)
   }
 }
@@ -141,7 +137,7 @@ class JudgmentView: UIView {
   let view = JudgmentView()
   view.configure(
     userQuesion: .init(
-      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1)), category: "어쩌구", amount: 20000),
+      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1575.64)), category: "어쩌구", amount: 20000),
     birds: []
   )
   return view

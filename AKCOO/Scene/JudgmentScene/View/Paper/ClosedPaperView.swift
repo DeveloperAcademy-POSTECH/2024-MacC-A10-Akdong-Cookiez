@@ -78,7 +78,6 @@ class ClosedPaperView: UIView {
     $0.font = .akFont(.gmarketMedium12)
   }
 
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
@@ -161,8 +160,30 @@ class ClosedPaperView: UIView {
     paperBackgroundView.layer.cornerRadius = 30
     paperBackgroundView.layer.masksToBounds = true
   }
+  
+  func configure(userQuestion: UserQuestion) {
+    countryLabel.text = userQuestion.country.name
+    categoryLabel.text = userQuestion.category
+    
+    let unitTitle = userQuestion.country.currency.unitTitle
+    let unit = userQuestion.country.currency.unit
+    
+    let amount = String(userQuestion.amount).formatWithComma() ?? "0"
+    let convertAmount = String(userQuestion.amount * unit).formatWithComma() ?? "0"
+    moneyAmountLabel.text = "\(amount) \(unitTitle)"
+    convertKRWLabel.text = "\(convertAmount) 원"
+  }
 }
 
 #Preview {
-  ClosedPaperView()
+  let paper = ClosedPaperView()
+  paper.configure(
+    userQuestion: .init(
+      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1575.64)),
+      category: "물품",
+      amount: 100000
+    )
+  )
+  
+  return paper
 }
