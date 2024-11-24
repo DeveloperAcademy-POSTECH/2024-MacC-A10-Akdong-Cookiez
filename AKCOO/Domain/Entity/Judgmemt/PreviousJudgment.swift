@@ -12,6 +12,6 @@ struct PreviousJudgment: Judgment {
   var standards: UserRecord?
   var result: JudgmentType {
     // TODO: - 조건 만들기
-    return .buying
+    return .notBuying
   }
 }
