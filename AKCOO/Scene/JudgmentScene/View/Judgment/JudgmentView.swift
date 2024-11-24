@@ -128,7 +128,7 @@ class JudgmentView: UIView {
     userQuesion: UserQuestion,
     birds: [BirdModel]
   ) {
-    paper.titleLabel.text = userQuesion.country.name
+    paper.countryLabel.text = userQuesion.country.name
     paper.categoryLabel.text = userQuesion.category
     paper.moneyAmountLabel.text = "\(userQuesion.amount)"
     paper.convertKRWLabel.text = userQuesion.country.currency.unitTitle
