@@ -15,7 +15,7 @@ final class AppCoordinatorImp: AppCoordinator {
   
   required init(_ navigationController: UINavigationController) {
     self.navigationController = navigationController
-    self.navigationController.view.backgroundColor = .blue
+    self.navigationController.view.backgroundColor = .akColor(.akBlue400)
   }
   
   // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
