@@ -11,16 +11,16 @@ class JudgmentView: UIView {
   
   let paperTitleLabel = UILabel().set {
     $0.text = "입력정보"
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    $0.textColor = .black
+    $0.font = .akFont(.gmarketMedium14)
+    $0.textColor = .akColor(.white)
   }
   
   let paper = ClosedPaperView().set()
   
   let birdsReactionTitleLabel = UILabel().set {
-    $0.text = "지출판단결과"
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    $0.textColor = .black
+    $0.text = "지출판단 결과"
+    $0.font = .akFont(.gmarketMedium14)
+    $0.textColor = .akColor(.white)
   }
   
   let reactionStackView = BirdReactionCollectionView().set {
@@ -94,7 +94,7 @@ class JudgmentView: UIView {
     let topPadding: CGFloat = 16
     
     NSLayoutConstraint.activate([
-      paperTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+      paperTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       paperTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
       paper.topAnchor.constraint(equalTo: paperTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
