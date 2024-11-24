@@ -11,7 +11,6 @@ import Foundation
 struct UserRecord {
   let id: UUID
   let date: Date
-  var country: CountryProfile
   var userQuestion: UserQuestion
   var userJudgment: JudgmentType
   var externalJudgment: [String: JudgmentType]
