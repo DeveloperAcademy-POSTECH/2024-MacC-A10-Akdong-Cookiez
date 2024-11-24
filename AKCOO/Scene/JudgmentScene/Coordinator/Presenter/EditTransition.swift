@@ -41,7 +41,7 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
         to: judgmentReadyView,
         in: transitionContext.containerView,
         childTransitions: [
-          (from: judgmentView.paper, to: judgmentReadyView.paper.paper)
+          (from: judgmentView.paper, to: judgmentReadyView.paper.paperView)
         ]
       )
     case .dismiss:
