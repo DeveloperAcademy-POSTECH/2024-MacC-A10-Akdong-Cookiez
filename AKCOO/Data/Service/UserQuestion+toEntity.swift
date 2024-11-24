@@ -10,7 +10,11 @@ import CoreData
 extension UserQuestion {
   static func toEntity(context: NSManagedObjectContext, question: UserQuestion) -> UserQuestionEntity {
     let entity = UserQuestionEntity(context: context)
-    entity.country = question.country
+    entity.country = CountryProfile
+      .toEntity(
+        context: context,
+        profile: question.country
+      )
     entity.category = question.category
     entity.amount = question.amount
     return entity

@@ -15,12 +15,6 @@ extension UserRecord {
     entity.userJudgment = record.userJudgment.rawValue
     
     // Relationships
-    entity.country = CountryProfile
-      .toEntity(
-        context: context,
-        profile: record.country
-      )
-    
     entity.userQuestion = UserQuestion
       .toEntity(
         context: context,
