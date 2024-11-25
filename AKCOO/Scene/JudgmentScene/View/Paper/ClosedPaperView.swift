@@ -117,7 +117,7 @@ class ClosedPaperView: UIView {
   
   func setupConstraints() {
     let horizontalPadding: CGFloat = 35
-    let topPadding: CGFloat = 26
+    let topPadding: CGFloat = 17
     let bottomPadding: CGFloat = 13
     let innerPadding: CGFloat = 6
     
