@@ -95,8 +95,8 @@ class JudgmentView: UIView {
       birdsReactionTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
       reactionStackView.topAnchor.constraint(equalTo: birdsReactionTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
-      reactionStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: birdStackHorizentalPadding),
-      reactionStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -birdStackHorizentalPadding),
+      reactionStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      reactionStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
       reactionStackView.bottomAnchor.constraint(equalTo: decisionStack.topAnchor),
       
       gradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -118,8 +118,14 @@ class JudgmentView: UIView {
     userQuesion: UserQuestion,
     birds: [BirdModel]
   ) {
-    paper.configure(userQuestion: userQuesion)
-    reactionStackView.configure(with: birds)
+    paper.configure(
+      userQuestion: userQuesion
+    )
+    
+    reactionStackView.configure(
+      with: birds,
+      userAmount: userQuesion.amount
+    )
   }
   
   private func createCustomButton(title: String) -> UIButton {
