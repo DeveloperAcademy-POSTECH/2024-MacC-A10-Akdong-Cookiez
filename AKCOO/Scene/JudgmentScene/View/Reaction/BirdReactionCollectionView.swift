@@ -27,6 +27,7 @@ class BirdReactionCollectionView: UIView {
   
   // MARK: - Properties
   private var birdModels: [BirdModel] = []
+  private var userAmount: Double = 0
   
   // MARK: - Initializers
   override init(frame: CGRect) {
@@ -57,8 +58,12 @@ class BirdReactionCollectionView: UIView {
   }
   
   // MARK: - Public Methods
-  func configure(with birdModels: [BirdModel]) {
+  func configure(
+    with birdModels: [BirdModel],
+    userAmount: Double
+  ) {
     self.birdModels = birdModels
+    self.userAmount = userAmount
     collectionView.reloadData()
   }
 }
@@ -91,10 +96,8 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
     }()
     
     cell.configure(
-      name: birdModel.name,
-      opinion: birdModel.opinion,
-      detail: birdModel.detail,
-      buying: birdModel.judgment,
+      bird: birdModel,
+      userAmount: userAmount,
       birdImageType: birdImageType
     )
 
@@ -139,7 +142,7 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
     // 가로 길이만 컬렉션뷰 크기로 설정
-    let width = collectionView.bounds.width
+    let width = collectionView.bounds.width - 12*2
     let height: CGFloat = 100 // 기본 높이 값
     return CGSize(width: width, height: height)
   }
@@ -161,7 +164,8 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
           userAmount: 30000, standards: [ ]
         )
       )
-    ]
+    ], 
+    userAmount: 30000
   )
   
   return preview
