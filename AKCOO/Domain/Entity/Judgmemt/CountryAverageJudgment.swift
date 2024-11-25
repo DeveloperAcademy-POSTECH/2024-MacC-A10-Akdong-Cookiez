@@ -19,9 +19,11 @@ struct CountryAverageJudgment: Judgment {
       return .notBuying
     }
   }
-  
+}
+
+extension CountryAverageJudgment {
   // 기준값 평균
-  private var averageOfItems: Double? {
+  var averageOfItems: Double? {
     // 기준이 비어있다면 nil 반환
     guard standards.isEmpty == false else { return nil }
     // 기준값들의 합
