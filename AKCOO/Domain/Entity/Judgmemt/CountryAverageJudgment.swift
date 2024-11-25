@@ -10,6 +10,8 @@ import Foundation
 struct CountryAverageJudgment: Judgment {
   var userAmount: Double
   var standards: [Item]
+  
+  var name: String { return "평균" }
   var result: JudgmentType {
     guard let average = averageOfItems else { return .notBuying }
     let isBelowOrEqualAverage = userAmount <= average

@@ -92,65 +92,44 @@ class BirdReactionCell: UICollectionViewCell {
   }
   
   func configure(
-    name: String,
-    opinion: String,
-    detail: String,
-    buying: Bool,
+    bird: BirdModel,
+    userAmount: Double,
     birdImageType: BirdCharacterImageType
   ) {
     textContainerView.configure(
-      title: name,
-      opinion: opinion,
-      detail: detail,
-      buying: buying
+      bird: bird
     )
     
     characterImageView.configure(
-      buying: buying,
+      buying: bird.judgment,
       correctImage: birdImageType.buying,
       crossImage: birdImageType.notBuying
     )
-    
-    setConstraintsJudgment(buying)
+
+    setConstraintsJudgment(bird.judgment)
   }
   
   func tappedCell() {
     textContainerView.tappedView()
   }
-  
-  func cellHeight() -> CGFloat {
-    return textContainerView.calculateHeightUsingSuperview()
-  }
-  
-  func calculateSize(width: CGFloat) -> CGSize {
-    layoutIfNeeded() // 레이아웃 갱신
-    
-    let targetSize = CGSize(
-      width: width,
-      height: UIView.layoutFittingCompressedSize.height
-    )
-    return contentView.systemLayoutSizeFitting(
-      targetSize,
-      withHorizontalFittingPriority: .required,
-      verticalFittingPriority: .fittingSizeLevel
-    )
-  }
 }
 
 #Preview {
   let birdCell = BirdReactionCell()
-  
+
   birdCell.configure(
-    name: "베트남 10년차",
-    opinion: "어쩌구저쩌구",
-    detail: "상세정보",
-    buying: true,
+    bird: ForeignBird.init(
+      country: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0.0589)),
+      judgment: .init(userAmount: 5000, standards: [])
+    ),
+    userAmount: 5000,
     birdImageType: .foriegn
   )
-  
-  let size = birdCell.cellHeight()
-  birdCell.heightAnchor.constraint(equalToConstant: size).isActive = true
+
   birdCell.tappedCell()
-  
+  birdCell.widthAnchor.constraint(equalToConstant: 380).isActive = true
+  birdCell.heightAnchor.constraint(equalToConstant: 200).isActive = true
+  birdCell.layoutIfNeeded()
+
   return birdCell
 }

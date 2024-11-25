@@ -22,6 +22,7 @@ struct ForeignBird: BirdModel {
     self.judgmentGenerator = ForeignBirdJudgmentGenerator()
   }
   
+  var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
   
   var name: String { return "\(country.name) 10년차" }

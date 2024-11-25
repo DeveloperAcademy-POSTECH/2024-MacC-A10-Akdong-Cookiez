@@ -11,30 +11,28 @@ class JudgmentView: UIView {
   
   let paperTitleLabel = UILabel().set {
     $0.text = "입력정보"
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    $0.textColor = .black
+    $0.font = .akFont(.gmarketMedium14)
+    $0.textColor = .akColor(.white)
   }
   
   let paper = ClosedPaperView().set()
   
   let birdsReactionTitleLabel = UILabel().set {
-    $0.text = "지출판단결과"
-    $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    $0.textColor = .black
+    $0.text = "지출판단 결과"
+    $0.font = .akFont(.gmarketMedium14)
+    $0.textColor = .akColor(.white)
   }
   
-  let reactionStackView = BirdReactionCollectionView().set {
-    $0.clipsToBounds = false
-  }
+  let reactionStackView = BirdReactionCollectionView().set()
   
   let judgmentKRW = BirdReactionTextView().set()
   let judgmentLocals = BirdReactionTextView().set()
   let judgmentBefore = BirdReactionTextView().set()
   
   let decisionLabel = UILabel().set {
-    $0.text = "구매 결정을 기록해\n내 소비 성향을 확인해 보세요!"
-    $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    $0.textColor = .gray
+    $0.text = "구매 결정을 기록해\n나의 판단 유형을 확인해 보세요!"
+    $0.font = .akFont(.gmarketMedium14)
+    $0.textColor = .akColor(.white)
     $0.numberOfLines = 0
     $0.textAlignment = .center
   }
@@ -44,21 +42,12 @@ class JudgmentView: UIView {
   let decisionStack = UIStackView().set {
     $0.axis = .horizontal
     $0.alignment = .center
-    $0.distribution = .fillEqually
-    $0.spacing = 16
+    $0.spacing = 9
   }
   
-  let buyButton = UIButton(type: .system).set {
-    $0.setTitle("살래요", for: .normal)
-    $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    $0.setTitleColor(.systemBlue, for: .normal)
-  }
+  lazy var buyButton: UIButton = self.createCustomButton(title: "살래요")
   
-  let notBuyButton = UIButton(type: .system).set {
-    $0.setTitle("안살래요", for: .normal)
-    $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    $0.setTitleColor(.systemRed, for: .normal)
-  }
+  lazy var notBuyButton: UIButton = self.createCustomButton(title: "안 살래요")
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -73,54 +62,55 @@ class JudgmentView: UIView {
   }
   
   private func setupViews() {
+    addSubview(reactionStackView)
     addSubview(paperTitleLabel)
     addSubview(paper)
     
     addSubview(birdsReactionTitleLabel)
-    addSubview(decisionStack)
-    addSubview(gradientView)
     
-    addSubview(reactionStackView)
+    reactionStackView.addSubview(gradientView)
+    gradientView.addSubview(decisionStack)
+    
+    gradientView.addSubview(decisionLabel)
     
     decisionStack.addArrangedSubview(notBuyButton)
     decisionStack.addArrangedSubview(buyButton)
-    
-    gradientView.addSubview(decisionLabel)
   }
   
   private func setupConstraints() {
     let infoTitleTopPadding: CGFloat = 8
     let titleLeading: CGFloat = 38
-    let topPadding: CGFloat = 16
+    let birdStackHorizentalPadding: CGFloat = 16
+    let buttonHorizentalPadding: CGFloat = 33
     
     NSLayoutConstraint.activate([
-      paperTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+      paperTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       paperTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
       paper.topAnchor.constraint(equalTo: paperTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
-      paper.leadingAnchor.constraint(equalTo: leadingAnchor, constant: topPadding),
-      paper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -topPadding),
+      paper.leadingAnchor.constraint(equalTo: leadingAnchor, constant: birdStackHorizentalPadding),
+      paper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -birdStackHorizentalPadding),
       
-      birdsReactionTitleLabel.topAnchor.constraint(equalTo: paper.bottomAnchor, constant: topPadding),
+      birdsReactionTitleLabel.topAnchor.constraint(equalTo: paper.bottomAnchor, constant: birdStackHorizentalPadding),
       birdsReactionTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
       reactionStackView.topAnchor.constraint(equalTo: birdsReactionTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
-      reactionStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: topPadding),
-      reactionStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -topPadding),
-      reactionStackView.bottomAnchor.constraint(equalTo: decisionLabel.bottomAnchor),
+      reactionStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      reactionStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      reactionStackView.bottomAnchor.constraint(equalTo: decisionStack.topAnchor),
       
-      decisionLabel.bottomAnchor.constraint(equalTo: gradientView.bottomAnchor, constant: -15),
-      decisionLabel.centerXAnchor.constraint(equalTo: gradientView.centerXAnchor),
-      
-      gradientView.bottomAnchor.constraint(equalTo: decisionStack.topAnchor, constant: -15),
       gradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
       gradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
       gradientView.centerXAnchor.constraint(equalTo: centerXAnchor),
-      gradientView.heightAnchor.constraint(equalToConstant: 80),
+      gradientView.heightAnchor.constraint(equalToConstant: 170),
+      gradientView.bottomAnchor.constraint(equalTo: bottomAnchor),
       
-      decisionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: topPadding),
-      decisionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -topPadding),
-      decisionStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+      decisionLabel.bottomAnchor.constraint(equalTo: decisionStack.topAnchor, constant: -12),
+      decisionLabel.centerXAnchor.constraint(equalTo: gradientView.centerXAnchor),
+      
+      decisionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: buttonHorizentalPadding),
+      decisionStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -buttonHorizentalPadding),
+      decisionStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
     ])
   }
   
@@ -128,12 +118,28 @@ class JudgmentView: UIView {
     userQuesion: UserQuestion,
     birds: [BirdModel]
   ) {
-    paper.titleLabel.text = userQuesion.country.name
-    paper.categoryLabel.text = userQuesion.category
-    paper.moneyAmountLabel.text = "\(userQuesion.amount)"
-    paper.convertKRWLabel.text = userQuesion.country.currency.unitTitle
+    paper.configure(
+      userQuestion: userQuesion
+    )
     
-    reactionStackView.configure(with: birds)
+    reactionStackView.configure(
+      with: birds,
+      userAmount: userQuesion.amount
+    )
+  }
+  
+  private func createCustomButton(title: String) -> UIButton {
+    var configuration = UIButton.Configuration.filled()
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 37.5, bottom: 18, trailing: 37.5)
+    let button = UIButton(configuration: configuration)
+    return button.set {
+      $0.setTitle(title, for: .normal)
+      $0.configuration?.baseForegroundColor = .akColor(.akBlue500)
+      $0.akFont(.gmarketBold18)
+      $0.configuration?.background.backgroundColor = .akColor(.white)
+      $0.layer.cornerRadius = 20
+      $0.layer.masksToBounds = true // 라운드 처리를 위한 마스크
+    }
   }
 }
 
@@ -141,7 +147,7 @@ class JudgmentView: UIView {
   let view = JudgmentView()
   view.configure(
     userQuesion: .init(
-      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1)), category: "어쩌구", amount: 20000),
+      country: .init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1575.64)), category: "어쩌구", amount: 20000),
     birds: []
   )
   return view
