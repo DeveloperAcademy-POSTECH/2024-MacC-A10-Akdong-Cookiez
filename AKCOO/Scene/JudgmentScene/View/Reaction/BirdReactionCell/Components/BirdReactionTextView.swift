@@ -9,21 +9,25 @@ import UIKit
 
 class BirdReactionTextView: UIView {
   private let backgroundView = UIView(frame: .zero).set {
+    $0.accessibilityIdentifier = "BackgroundView"
     $0.clipsToBounds = true
   }
   
   private let titleLabel = UILabel().set {
+    $0.accessibilityIdentifier = "TitleLabel"
     $0.font = .akFont(.gmarketBold16)
     $0.textAlignment = .left
     $0.adjustsFontForContentSizeCategory = true
   }
   
   private let opinionLabel = UILabel().set {
+    $0.accessibilityIdentifier = "OpinionLabel"
     $0.font = .akFont(.gmarketMedium13)
     $0.textColor = .black
   }
   
   private let detailLabel = UILabel().set {
+    $0.accessibilityIdentifier = "DetailLabel"
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = 5
     $0.attributedText = NSAttributedString(
@@ -60,6 +64,7 @@ class BirdReactionTextView: UIView {
   override func layoutSubviews() {
     super.layoutSubviews()
     setupLayout()
+    print("layoutSubviews 실행 후 BirdReactionTextView frame: \(self.frame)")
   }
   
   private func setupViews() {
@@ -71,9 +76,21 @@ class BirdReactionTextView: UIView {
   
   private func setupConstraints() {
     let verticalPadding: CGFloat = 20
+    let horizentalPadding: CGFloat = 30
+    
+    let detailTrailingConstraint = detailLabel.trailingAnchor.constraint(lessThanOrEqualToSystemSpacingAfter: backgroundView.trailingAnchor, multiplier: -verticalPadding)
+    detailTrailingConstraint.priority = .defaultHigh
+    
+    self.detailVetricalConstraint = [
+      detailLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+      detailTrailingConstraint
+    ]
+    
+    let trailingConstraint = titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: backgroundView.trailingAnchor, constant: -horizentalPadding)
+    trailingConstraint.priority = .defaultHigh // 우선순위 낮추기
     
     backgroundBottomConstraint = backgroundView.bottomAnchor.constraint(equalTo: opinionLabel.bottomAnchor, constant: verticalPadding)
-    titleLeadingConstraint = titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: horizentalPadding)
+    titleLeadingConstraint = titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: horizentalPadding)
     
     NSLayoutConstraint.activate([
       backgroundView.topAnchor.constraint(equalTo: topAnchor),
@@ -84,6 +101,7 @@ class BirdReactionTextView: UIView {
       
       titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: verticalPadding),
       titleLeadingConstraint!,
+      trailingConstraint,
       
       opinionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
       opinionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
@@ -91,13 +109,10 @@ class BirdReactionTextView: UIView {
       detailLabel.topAnchor.constraint(equalTo: opinionLabel.bottomAnchor, constant: 10)
     ])
     
-    let detailTrailingConstraint = detailLabel.trailingAnchor.constraint(lessThanOrEqualToSystemSpacingAfter: backgroundView.trailingAnchor, multiplier: -verticalPadding)
-    detailTrailingConstraint.priority = .defaultLow
-    let detailVetricalConstraint = [
-      detailLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-      detailTrailingConstraint
-    ]
-    self.detailVetricalConstraint = detailVetricalConstraint
+    titleLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    detailLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    detailLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
   }
   
   func configure(
@@ -111,6 +126,7 @@ class BirdReactionTextView: UIView {
     detailLabel.text = detail
     
     setupConstraints(buying: buying)
+    applyParagraphStyleToDetailLabel()
     
     self.backgroundView.backgroundColor = buying ? .akColor(.akYellow) : .akColor(.akRed)
   }
@@ -143,29 +159,19 @@ class BirdReactionTextView: UIView {
       animations: {
         self.detailLabel.alpha = self.isExpanded ? 1 : 0
         self.layoutIfNeeded()
-      },
-      completion: { [weak self] _ in
-        guard let self else { return }
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 10 // 줄 간격을 10으로 설정 (원하는 값으로 조정)
-        if let text = self.detailLabel.text {
-          self.detailLabel.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: paragraphStyle])
-        }
-      })
-  }
-  
-  func calculateHeightUsingSuperview() -> CGFloat {
-    guard let superviewWidth = superview?.bounds.width else { return 0 }
-    let targetSize = CGSize(
-      width: superviewWidth,
-      height: UIView.layoutFittingCompressedSize.height
+      }
     )
-    
-    return systemLayoutSizeFitting(
-      targetSize,
-      withHorizontalFittingPriority: .required,
-      verticalFittingPriority: .fittingSizeLevel
-    ).height
+  }
+
+  private func applyParagraphStyleToDetailLabel() {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = 10
+    if let text = detailLabel.text {
+      detailLabel.attributedText = NSAttributedString(
+        string: text,
+        attributes: [.paragraphStyle: paragraphStyle]
+      )
+    }
   }
   
   private func setupLayout() {
@@ -180,7 +186,7 @@ class BirdReactionTextView: UIView {
   preview.configure(
     title: "베트남 10년차",
     opinion: "\"너무 비싼데... 정말 필요해?\"",
-    detail: "세부 설명이 분명 있",
+    detail: "일반적인 베트남의 식당 가격보다\n약 40,000동 비싸요!\n하지만 캐쥬얼다이닝의 가격과 비교하면\n약 50,000동 저렴한 편이에요.",
     buying: false
   )
   
