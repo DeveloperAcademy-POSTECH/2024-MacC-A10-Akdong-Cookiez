@@ -33,6 +33,7 @@
 		515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40952CF2313E00AE4A2F /* UserQuestion+toEntity.swift */; };
 		515E40982CF2315C00AE4A2F /* UserQuestion+fromEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40972CF2315C00AE4A2F /* UserQuestion+fromEntity.swift */; };
 		515E409A2CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */; };
+		516E08012CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E08002CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift */; };
 		F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */; };
 		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
 		F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */; };
@@ -180,6 +181,7 @@
 		515E40952CF2313E00AE4A2F /* UserQuestion+toEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQuestion+toEntity.swift"; sourceTree = "<group>"; };
 		515E40972CF2315C00AE4A2F /* UserQuestion+fromEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQuestion+fromEntity.swift"; sourceTree = "<group>"; };
 		515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExternalJudgmentEntity+toEntity.swift"; sourceTree = "<group>"; };
+		516E08002CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalBirdJudgmentGenerator.swift; path = AKCOO/Domain/ViewModel/Bird/BirdGenerator/LocalBirdJudgmentGenerator.swift; sourceTree = SOURCE_ROOT; };
 		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
 		F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
@@ -319,10 +321,8 @@
 		5149A2532CF48A3D00CA7500 /* BirdGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */,
-				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
-				5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */,
-				5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */,
+				516E07FE2CF4C62E006F3D54 /* ForeignBirdJudgmentGenerator */,
+				516E07FF2CF4C663006F3D54 /* LocalBirdJudgmentGenerator */,
 			);
 			path = BirdGenerator;
 			sourceTree = "<group>";
@@ -388,6 +388,25 @@
 				515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		516E07FE2CF4C62E006F3D54 /* ForeignBirdJudgmentGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */,
+				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
+				5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */,
+				5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */,
+			);
+			path = ForeignBirdJudgmentGenerator;
+			sourceTree = "<group>";
+		};
+		516E07FF2CF4C663006F3D54 /* LocalBirdJudgmentGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				516E08002CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift */,
+			);
+			path = LocalBirdJudgmentGenerator;
 			sourceTree = "<group>";
 		};
 		F365F4F52CF11A39002C1171 /* String */ = {
@@ -1202,6 +1221,7 @@
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
 				F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */,
 				F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */,
+				516E08012CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift in Sources */,
 				F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */,
 				F3ED92C32CE68B1700CF5238 /* EditTransition.swift in Sources */,
 				F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */,
