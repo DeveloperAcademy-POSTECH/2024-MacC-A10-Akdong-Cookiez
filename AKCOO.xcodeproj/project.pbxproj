@@ -34,6 +34,9 @@
 		515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40952CF2313E00AE4A2F /* UserQuestion+toEntity.swift */; };
 		515E40982CF2315C00AE4A2F /* UserQuestion+fromEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40972CF2315C00AE4A2F /* UserQuestion+fromEntity.swift */; };
 		515E409A2CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */; };
+		F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */; };
+		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
+		F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
 		F3EB76252CDD14B20054D4E1 /* AKCOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB76242CDD14B20054D4E1 /* AKCOOUITests.swift */; };
@@ -177,6 +180,9 @@
 		515E40952CF2313E00AE4A2F /* UserQuestion+toEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQuestion+toEntity.swift"; sourceTree = "<group>"; };
 		515E40972CF2315C00AE4A2F /* UserQuestion+fromEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserQuestion+fromEntity.swift"; sourceTree = "<group>"; };
 		515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExternalJudgmentEntity+toEntity.swift"; sourceTree = "<group>"; };
+		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
+		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
+		F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+PaperLabel.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EB760F2CDD14B20054D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
