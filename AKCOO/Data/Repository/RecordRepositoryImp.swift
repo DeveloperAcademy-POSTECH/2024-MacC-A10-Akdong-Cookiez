@@ -34,7 +34,7 @@ struct RecordRepositoryImp: RecordRepository {
   
   /// 사용자의 직전 소비 기록을 반환
   func fetchPreviousDaySpending(country: String, category: String) -> Result<UserRecord?, any Error> {
-    switch coreData.getLatestUserRecord() {
+    switch coreData.getLatestUserRecord(country: country, category: category) {
     case .success(let success):
       return .success(success)
     case .failure(let error):
