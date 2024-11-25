@@ -23,7 +23,7 @@ struct CountryAverageJudgment: Judgment {
 
 extension CountryAverageJudgment {
   // 값 기준 오름차순으로 정렬 (작은 값부터)
-  private var sortedItems: [Item] {
+  var sortedItems: [Item] {
     standards.sorted { $0.amount < $1.amount }
   }
   

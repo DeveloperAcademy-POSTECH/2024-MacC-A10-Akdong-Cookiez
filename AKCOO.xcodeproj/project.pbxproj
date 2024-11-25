@@ -13,6 +13,7 @@
 		5149A2552CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */; };
 		5149A2572CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */; };
 		5149A2592CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */; };
+		5149A25B2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E40382CEDFB1F00AE4A2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 515E40372CEDFB1F00AE4A2F /* GoogleService-Info.plist */; };
@@ -157,6 +158,7 @@
 		5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignBirdJudgmentGenerator.swift; sourceTree = "<group>"; };
 		5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getOpinion.swift"; sourceTree = "<group>"; };
 		5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
+		5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getReaction.swift"; sourceTree = "<group>"; };
 		515E40372CEDFB1F00AE4A2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */,
 				5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */,
 				5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */,
+				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
 			);
 			path = BirdGenerator;
 			sourceTree = "<group>";
@@ -1141,6 +1144,7 @@
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
 				F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */,
 				F3ED93152CE7DD4700CF5238 /* PaperModel.swift in Sources */,
+				5149A25B2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift in Sources */,
 				F3ED92A62CE6281400CF5238 /* JudgementReadyFactoryImp.swift in Sources */,
 				F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */,
 				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
