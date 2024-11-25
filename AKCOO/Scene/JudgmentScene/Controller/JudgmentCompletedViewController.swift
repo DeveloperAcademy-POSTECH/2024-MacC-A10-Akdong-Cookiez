@@ -42,11 +42,11 @@ class JudgmentCompletedViewController: UIViewController {
   
   override func loadView() {
     view = JudgmentView()
-    view.backgroundColor = .green
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
     setupViews()
     
     judgmentView.configure(
@@ -67,7 +67,32 @@ class JudgmentCompletedViewController: UIViewController {
   }
   
   @objc func tappedPaper() {
-    coordinator?.startEditPaper(presenting: self)
+    guard case .success(let paperModel) = judgmentUseCase.getPaperModel() else { return }
+    coordinator?.startEditPaper(
+      presenting: self,
+      paperModel: paperModel,
+      selectedCategory: userQuestion.category,
+      userAmount: String(userQuestion.amount)
+    )
+  }
+}
+
+extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
+  func onActionChangingUserQuestion(_ userQuestion: UserQuestion) {
+    switch judgmentUseCase.getBirdsJudgment(userQuestion: userQuestion) {
+    case .success(let birds):
+      self.birds = birds
+    case .failure:
+      self.birds = []
+      // TODO: - Error 처리
+    }
+    
+    self.userQuestion = userQuestion
+    
+    judgmentView.configure(
+      userQuesion: self.userQuestion,
+      birds: self.birds
+    )
   }
 }
 

@@ -45,15 +45,15 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
     presenting.present(judgmentCompletedViewController, animated: true)
   }
   
-  func startEditPaper(presenting: UIViewController) { // 데이터 받아와서 진행
-    // TODO: - judgmentEditFactory로 변경 후 Transition 연결 
-    let readyViewController = judgmentReadyFactory.create(coordinator: self)
-    readyViewController.modalPresentationStyle = .custom
-    readyViewController.transitioningDelegate = self.editTransitionaler
+  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) { // 데이터 받아와서 진행
+    // TODO: - judgmentEditFactory로 변경 후 Transition 연결
+    let readyViewController = judgmentEditFactory.create(coordinator: self, paperModel: paperModel, selectedCategory: selectedCategory, userAmount: userAmount, delegate: presenting)
+//    readyViewController.modalPresentationStyle = .custom
+//    readyViewController.transitioningDelegate = self.editTransitionaler
     presenting.present(readyViewController, animated: true)
   }
   
-  func completedEditPaper(editViewController: JudgmentEditViewController) { // 데이터 받아와서 진행
+  func completedEditPaper(editViewController: JudgmentEditViewController) {  // 데이터 받아와서 진행
     editViewController.dismiss(animated: true)
 //    editViewController.presentingViewController?.dismiss(animated: true)
   }

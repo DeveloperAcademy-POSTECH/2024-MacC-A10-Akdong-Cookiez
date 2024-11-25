@@ -8,6 +8,6 @@
 import UIKit
 
 protocol JudgmentEditFactory {
-  func create(coordinator: JudgmentCoordinator) -> UIViewController
+  func create(coordinator: JudgmentCoordinator, paperModel: PaperModel, selectedCategory: String, userAmount: String, delegate: JudgmentEditViewControllerDelegate) -> UIViewController
   func dismiss(editViewController viewController: UIViewController)
 }

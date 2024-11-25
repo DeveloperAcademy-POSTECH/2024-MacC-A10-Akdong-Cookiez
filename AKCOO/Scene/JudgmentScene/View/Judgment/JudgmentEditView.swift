@@ -1,14 +1,18 @@
 //
-//  JudgmentReadyView.swift
+//  JudgmentEditView.swift
 //  AKCOO
 //
-//  Created by 박혜운 on 11/15/24.
+//  Created by 박혜운 on 11/25/24.
 //
 
 import UIKit
 
-class JudgmentReadyView: UIView {
-  var paper = OpenedPaperView().set()
+class JudgmentEditView: UIView {
+  let paper = OpenedPaperView(type: .edit).set()
+  
+  let blueBackgroundView = UIView().set {
+    $0.backgroundColor = .akColor(.akBlue400)
+  }
   var paperBottomConstraint: NSLayoutConstraint?
   var paperCenterYConstraint: NSLayoutConstraint?
   
@@ -25,12 +29,19 @@ class JudgmentReadyView: UIView {
   }
   
   func configure(
-    paperModel: PaperModel
+    paperModel: PaperModel,
+    selectedCategory: String,
+    userAmount: String
   ) {
-    paper.configure(paperModel: paperModel)
+    paper.configure(
+      paperModel: paperModel,
+      selected: selectedCategory,
+      userAmount: userAmount
+    )
   }
   
   private func setupViews() {
+    addSubview(blueBackgroundView)
     addSubview(paper)
   }
   
@@ -38,6 +49,11 @@ class JudgmentReadyView: UIView {
     let paperPadding: CGFloat = 16
     
     NSLayoutConstraint.activate([
+      blueBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+      blueBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      blueBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      blueBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
       paper.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paperPadding),
       paper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paperPadding)
     ])
@@ -68,7 +84,7 @@ class JudgmentReadyView: UIView {
 }
 
 #Preview {
-  let readyView = JudgmentReadyView()
+  let readyView = JudgmentEditView()
   readyView.configure(
     paperModel: .init(
       selectedCountryProfile: .init(
@@ -76,10 +92,12 @@ class JudgmentReadyView: UIView {
         currency: .init(
           unitTitle: "동", unit: 0.05539
         )
-      ), 
+      ),
       countries: ["베트남", "스위스"],
       categories: ["가", "나", "다"]
-    )
+    ),
+    selectedCategory: "다",
+    userAmount: "10"
   )
   return readyView
 }

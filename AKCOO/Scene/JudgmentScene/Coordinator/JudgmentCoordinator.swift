@@ -9,6 +9,6 @@ import UIKit
 
 protocol JudgmentCoordinator: Coordinator {
   func startJudgment(presenting: UIViewController, userQuestion: UserQuestion)
-  func startEditPaper(presenting: UIViewController)
+  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String)
   func completedEditPaper(editViewController: JudgmentEditViewController)
 }
