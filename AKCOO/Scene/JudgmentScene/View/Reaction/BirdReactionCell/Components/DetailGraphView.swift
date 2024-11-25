@@ -20,7 +20,7 @@ class DetailGraphView: UIView {
     $0.backgroundColor = UIColor.akColor(.akGray300)
   }
   
-  private let averageLabel = UILabel().set {
+  let titleLabel = UILabel().set {
     $0.text = "평균"
     $0.textColor = UIColor.akColor(.akGray200)
     $0.font = UIFont.akFont(.gmarketMedium13)
@@ -54,7 +54,7 @@ class DetailGraphView: UIView {
   private func setupViews() {
     addSubview(graphView)
     addSubview(tickMarkView)
-    addSubview(averageLabel)
+    addSubview(titleLabel)
     addSubview(arrowImageView)
   }
   
@@ -75,9 +75,9 @@ class DetailGraphView: UIView {
       tickMarkView.heightAnchor.constraint(equalToConstant: 6),
       
       // Average label constraints
-      averageLabel.topAnchor.constraint(equalTo: tickMarkView.bottomAnchor, constant: 3),
-      averageLabel.centerXAnchor.constraint(equalTo: tickMarkView.centerXAnchor),
-      averageLabel.bottomAnchor.constraint(equalTo: bottomAnchor )
+      titleLabel.topAnchor.constraint(equalTo: tickMarkView.bottomAnchor, constant: 3),
+      titleLabel.centerXAnchor.constraint(equalTo: tickMarkView.centerXAnchor),
+      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor )
     ])
   }
   
@@ -86,13 +86,15 @@ class DetailGraphView: UIView {
     criteria: String,
     minValue: CGFloat,
     maxValue: CGFloat,
-    userAmount: CGFloat
+    userAmount: CGFloat,
+    buying: Bool
   ) {
-    self.averageLabel.text = criteria
+    self.titleLabel.text = criteria
     self.minValue = minValue
     self.maxValue = maxValue
     self.userAmount = userAmount
     
+    self.titleLabel.textColor = buying ? .akColor(.akGray300) : .akColor(.akGray200)
     layoutArrow()
   }
   
@@ -122,7 +124,8 @@ class DetailGraphView: UIView {
       criteria: "이전소비",
       minValue: 10,
       maxValue: 10000,
-      userAmount: 0
+      userAmount: 0, 
+      buying: false
     )
   return view
 }
