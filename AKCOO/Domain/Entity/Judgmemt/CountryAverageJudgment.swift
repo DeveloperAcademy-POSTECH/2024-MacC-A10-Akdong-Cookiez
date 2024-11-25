@@ -22,6 +22,23 @@ struct CountryAverageJudgment: Judgment {
 }
 
 extension CountryAverageJudgment {
+  // 값 기준 오름차순으로 정렬 (작은 값부터)
+  private var sortedItems: [Item] {
+    standards.sorted { $0.amount < $1.amount }
+  }
+  
+  // 기준값 중 가장 작은 값
+  var minimumAmountOfItems: Double? {
+    guard let minimumItem = sortedItems.first else { return nil }
+    return minimumItem.amount
+  }
+  
+  // 기준값 중 가장 큰 값
+  var maximumAmountOfItems: Double? {
+    guard let maximumItem = sortedItems.last else { return nil }
+    return maximumItem.amount
+  }
+  
   // 기준값 평균
   var averageOfItems: Double? {
     // 기준이 비어있다면 nil 반환
