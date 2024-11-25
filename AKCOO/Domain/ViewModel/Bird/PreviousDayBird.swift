@@ -15,6 +15,7 @@ struct PreviousDayBird: BirdModel {
     self.judgmentCriteria = judgment
   }
   
+  var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
 
   private var birdReaction: BirdReaction { return .mediumNo }

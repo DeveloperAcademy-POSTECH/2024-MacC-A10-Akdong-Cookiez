@@ -20,6 +20,7 @@ struct ForeignBird: BirdModel {
     self.judgmentCriteria = judgment
   }
   
+  var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
   
   var name: String { return "\(country.name) 10년차" }

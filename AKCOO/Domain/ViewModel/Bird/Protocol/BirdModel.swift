@@ -10,6 +10,7 @@ import Foundation
 /// 새가 되기 위한 조건
 protocol BirdModel {
   var name: String { get }
+  var criteriaName: String { get }
   var information: String { get }
   var opinion: String { get }
   var detail: String { get }
