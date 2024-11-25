@@ -27,7 +27,6 @@ class BirdReactionCollectionView: UIView {
   
   // MARK: - Properties
   private var birdModels: [BirdModel] = []
-  private var cellHeights: [IndexPath: CGFloat] = [:]
   
   // MARK: - Initializers
   override init(frame: CGRect) {
@@ -98,9 +97,7 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
       buying: birdModel.judgment,
       birdImageType: birdImageType
     )
-    
-    let calculatedHeight = cell.cellHeight()
-    cellHeights[indexPath] = calculatedHeight
+
     collectionView.alpha = 1
     // 초기 상태 설정 (셀을 화면 위로 이동)
     cell.transform = CGAffineTransform(translationX: birdModel.judgment ? collectionView.frame.width*2 : -collectionView.frame.width*2, y: 0)
@@ -141,18 +138,10 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    if let height = cellHeights[indexPath] {
-      return CGSize(width: collectionView.bounds.width, height: height)
-    } else {
-      // 셀을 직접 생성하여 높이 계산
-      if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BirdReactionCell.identifier, for: indexPath) as? BirdReactionCell {
-        let calculatedHeight = cell.cellHeight()
-        cellHeights[indexPath] = calculatedHeight
-        return CGSize(width: collectionView.bounds.width, height: calculatedHeight)
-      }
-      // 기본 높이 값 반환
-      return CGSize(width: collectionView.bounds.width, height: 100)
-    }
+    // 가로 길이만 컬렉션뷰 크기로 설정
+    let width = collectionView.bounds.width
+    let height: CGFloat = 100 // 기본 높이 값
+    return CGSize(width: width, height: height)
   }
 }
 
