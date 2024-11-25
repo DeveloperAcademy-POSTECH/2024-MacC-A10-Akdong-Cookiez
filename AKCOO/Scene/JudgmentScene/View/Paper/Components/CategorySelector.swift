@@ -78,7 +78,6 @@ class CategorySelector: UIView {
     buttons.forEach { button in
       button.layer.cornerRadius = 15
       button.clipsToBounds = true
-      
     }
   }
   
@@ -107,6 +106,7 @@ class CategorySelector: UIView {
       
       button.layer.masksToBounds = true
       button.layer.cornerCurve = .continuous
+      button.layer.cornerRadius = 15
       
       button.setTitle(title, for: .normal)
       button.akFont(.gmarketMedium14)
