@@ -17,6 +17,7 @@ class JudgmentCompletedViewController: UIViewController {
   }
   
   private var userQuestion: UserQuestion
+  private var birds: [BirdModel]
   
   init(
     judgmentUseCase: JudgmentUseCase,
@@ -24,6 +25,14 @@ class JudgmentCompletedViewController: UIViewController {
   ) {
     self.judgmentUseCase = judgmentUseCase
     self.userQuestion = userQuestion
+    
+    switch judgmentUseCase.getBirdsJudgment(userQuestion: userQuestion) {
+    case .success(let birds):
+      self.birds = birds
+    case .failure:
+      self.birds = []
+      // TODO: - Error 처리
+    }
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -38,7 +47,12 @@ class JudgmentCompletedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupView()
+    setupViews()
+    
+    judgmentView.configure(
+      userQuesion: self.userQuestion,
+      birds: self.birds
+    )
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +61,7 @@ class JudgmentCompletedViewController: UIViewController {
     self.judgmentView.reactionStackView.collectionView.reloadData()
   }
   
-  private func setupView() {
+  private func setupViews() {
     view.backgroundColor = .clear
     judgmentView.paper.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
   }
@@ -58,12 +72,47 @@ class JudgmentCompletedViewController: UIViewController {
 }
 
 #Preview {
-  JudgmentCompletedViewController(
+  let userQuestionAmount: Double = 1000000
+  let items: [Item] = []
+  let country = CountryProfile.init(
+    name: "베트남",
+    currency: .init(unitTitle: "동", unit: 1)
+  )
+  
+  let forignJudgment = CountryAverageJudgment(
+    userAmount: userQuestionAmount,
+    standards: items
+  )
+  let localJudgment = CountryAverageJudgment(
+    userAmount: userQuestionAmount,
+    standards: items
+  )
+  
+  let previousJudgment = PreviousJudgment(
+    userAmount: userQuestionAmount,
+    standards: nil
+  )
+  
+  let birds: [BirdModel] = [
+    ForeignBird(
+      country: country,
+      judgment: forignJudgment
+    ),
+    LocalBird(
+      country: country,
+      judgment: localJudgment
+    ),
+    PreviousDayBird(
+      judgment: previousJudgment
+    )
+  ]
+  
+  return JudgmentCompletedViewController(
     judgmentUseCase: JudgmentUseCaseMock(),
     userQuestion: .init(
-      country: "베튼탐",
-      category: "카테고리",
-      amount: 10000
+      country: country,
+      category: "식당",
+      amount: 1000000
     )
   )
 }

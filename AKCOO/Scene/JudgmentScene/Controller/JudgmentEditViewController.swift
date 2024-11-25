@@ -25,17 +25,17 @@ class JudgmentEditViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    setupView()
-    setConstraints()
+    setupViews()
+    setupConstraints()
     setEventDelegate()
   }
   
-  private func setupView() {
+  private func setupViews() {
     view.backgroundColor = .clear
     view.addSubview(paper)
   }
   
-  private func setConstraints() {
+  private func setupConstraints() {
     let paperPadding: CGFloat = 16
     
     NSLayoutConstraint.activate([
@@ -46,7 +46,7 @@ class JudgmentEditViewController: UIViewController {
   }
   
   private func setEventDelegate() {
-    paper.tappedJudgmentButton = { [weak self] in
+    paper.onActionDoJudgmentButton = { [weak self] in
       guard let self else { return }
       self.coordinator?.completedEditPaper(editViewController: self)
     }

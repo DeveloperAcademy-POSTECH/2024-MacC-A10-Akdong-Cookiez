@@ -13,14 +13,14 @@ struct JudgmentRepositoryMock: JudgmentRepository {
     let vietnamProfile = CountryProfile.init(name: "베트남", currency: .init(unitTitle: "동", unit: 0.055))
     let swissProfile = CountryProfile.init(name: "스위스", currency: .init(unitTitle: "프랑", unit: 1575.64))
     let vietnamItems = [
-      Item(category: "카테고리1", name: "기준품목1", amount: 100000),
-      Item(category: "카테고리2", name: "기준품목2", amount: 200000),
-      Item(category: "카테고리3", name: "기준품목3", amount: 300000)
+      Item(category: "숙박베", name: "품목1", amount: 100000),
+      Item(category: "식당베", name: "품목2", amount: 200000),
+      Item(category: "카페베", name: "품목3", amount: 300000)
     ]
     let swissItems = [
-      Item(category: "카테고리1", name: "기준품목1", amount: 100000),
-      Item(category: "카테고리2", name: "기준품목2", amount: 200000),
-      Item(category: "카테고리3", name: "기준품목3", amount: 300000)
+      Item(category: "숙박스", name: "품목1", amount: 100000),
+      Item(category: "식당스", name: "품목2", amount: 200000),
+      Item(category: "카페스", name: "품목3", amount: 300000)
     ]
     
     let vetnam = CountryDetail(
