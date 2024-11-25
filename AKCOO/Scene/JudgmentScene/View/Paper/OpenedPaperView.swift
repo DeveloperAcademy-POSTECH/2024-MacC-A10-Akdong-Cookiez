@@ -156,7 +156,8 @@ class OpenedPaperView: UIView {
   
   func configure(
     paperModel: PaperModel,
-    selected selectedCategory: String = ""
+    selected selectedCategory: String = "",
+    userAmount: String = "0"
   ) {
     countrySelector.configure(
       countries: paperModel.countries.map { $0 },
@@ -169,8 +170,11 @@ class OpenedPaperView: UIView {
     )
     
     amountTextField.configure(
-      currency: paperModel.selectedCountryProfile.currency
+      currency: paperModel.selectedCountryProfile.currency,
+      amount: userAmount
     )
+    
+    updateButtonState(isEnabled: userAmount != "0")
     
     amountTextField.onActionValidInput = { [weak self] validInput in
       guard let self else { return }

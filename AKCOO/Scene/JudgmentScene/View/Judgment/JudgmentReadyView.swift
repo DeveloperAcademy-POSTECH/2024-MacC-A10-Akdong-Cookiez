@@ -8,7 +8,7 @@
 import UIKit
 
 class JudgmentReadyView: UIView {
-  lazy var paper = OpenedPaperView().set()
+  var paper = OpenedPaperView().set()
   var paperBottomConstraint: NSLayoutConstraint?
   var paperCenterYConstraint: NSLayoutConstraint?
   
