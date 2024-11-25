@@ -11,11 +11,8 @@ extension GradientStyle {
   static var bottomShade: GradientStyle {
     return GradientStyle(
       colors: [
-        GradientColor(location: 0, color: UIColor.white.withAlphaComponent(0)),
-        GradientColor(location: 1, color: .white), //
-        GradientColor(location: 1, color: .white), //
-        GradientColor(location: 1, color: .white), //
-        GradientColor(location: 1, color: .white.withAlphaComponent(1)) // blue로 변경
+        GradientColor(location: 0, color: .akColor(.akBlue400).withAlphaComponent(0)),
+        GradientColor(location: 0.1, color: .akColor(.akBlue400))
       ],
       direction: .vertical
     )
