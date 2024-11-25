@@ -16,6 +16,8 @@ class BirdReactionCell: UICollectionViewCell {
   private let textContainerView: BirdReactionTextView = BirdReactionTextView().set()
   private let characterImageView: BirdReactionCharacterView = BirdReactionCharacterView().set()
   
+  let detailGraph = DetailGraphView().set()
+  
   // MARK: - Properties
   private var characterLeadingConstraint: NSLayoutConstraint?
   private var characterTrailingConstraint: NSLayoutConstraint?
@@ -117,24 +119,6 @@ class BirdReactionCell: UICollectionViewCell {
   func tappedCell() {
     textContainerView.tappedView()
   }
-  
-  func cellHeight() -> CGFloat {
-    return textContainerView.calculateHeightUsingSuperview()
-  }
-  
-  func calculateSize(width: CGFloat) -> CGSize {
-    layoutIfNeeded() // 레이아웃 갱신
-    
-    let targetSize = CGSize(
-      width: width,
-      height: UIView.layoutFittingCompressedSize.height
-    )
-    return contentView.systemLayoutSizeFitting(
-      targetSize,
-      withHorizontalFittingPriority: .required,
-      verticalFittingPriority: .fittingSizeLevel
-    )
-  }
 }
 
 #Preview {
@@ -143,14 +127,14 @@ class BirdReactionCell: UICollectionViewCell {
   birdCell.configure(
     name: "베트남 10년차",
     opinion: "어쩌구저쩌구",
-    detail: "상세정보",
+    detail: "일반적인 베트남의 식당 가격보다\n약 40,000동 비싸요!\n하지만 캐쥬얼다이닝의 가격과 비교하면\n약 50,000동 저렴한 편이에요.",
     buying: true,
     birdImageType: .foriegn
   )
-  
-  let size = birdCell.cellHeight()
-  birdCell.heightAnchor.constraint(equalToConstant: size).isActive = true
+
   birdCell.tappedCell()
-  
+  birdCell.widthAnchor.constraint(equalToConstant: 380).isActive = true
+  birdCell.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
   return birdCell
 }
