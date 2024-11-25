@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		512579B72CDD16DD00649D3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 512579B62CDD16DD00649D3F /* .swiftlint.yml */; };
 		512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512579B92CDE43EB00649D3F /* UIView+Setter.swift */; };
+		5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2512CF48A1F00CA7500 /* BirdJudgmentGenerator.swift */; };
+		5149A2552CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */; };
+		5149A2572CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */; };
+		5149A2592CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */; };
+		5149A25B2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -152,6 +157,11 @@
 /* Begin PBXFileReference section */
 		512579B62CDD16DD00649D3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		512579B92CDE43EB00649D3F /* UIView+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Setter.swift"; sourceTree = "<group>"; };
+		5149A2512CF48A1F00CA7500 /* BirdJudgmentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator.swift; sourceTree = "<group>"; };
+		5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignBirdJudgmentGenerator.swift; sourceTree = "<group>"; };
+		5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getOpinion.swift"; sourceTree = "<group>"; };
+		5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
+		5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForeignBirdJudgmentGenerator+getReaction.swift"; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -304,6 +314,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5149A2532CF48A3D00CA7500 /* BirdGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */,
+				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
+				5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */,
+				5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */,
+			);
+			path = BirdGenerator;
+			sourceTree = "<group>";
+		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +811,7 @@
 			isa = PBXGroup;
 			children = (
 				F3ED93482CEB68B400CF5238 /* Protocol */,
+				5149A2532CF48A3D00CA7500 /* BirdGenerator */,
 				F3ED934B2CEB6BAC00CF5238 /* ForeignBird.swift */,
 				F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */,
 				F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */,
@@ -925,6 +947,7 @@
 			isa = PBXGroup;
 			children = (
 				F3ED92D32CE72FE400CF5238 /* BirdModel.swift */,
+				5149A2512CF48A1F00CA7500 /* BirdJudgmentGenerator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1133,12 +1156,14 @@
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
 				515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
+				5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
 				F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */,
 				515E408E2CF2307B00AE4A2F /* UserRecord+toEntity.swift in Sources */,
 				F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
+				5149A2572CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift in Sources */,
 				F3ED92CD2CE7194B00CF5238 /* JudgmentUseCase.swift in Sources */,
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
@@ -1153,6 +1178,7 @@
 				F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */,
 				F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */,
 				F3ED93152CE7DD4700CF5238 /* PaperModel.swift in Sources */,
+				5149A25B2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift in Sources */,
 				F3ED92A62CE6281400CF5238 /* JudgementReadyFactoryImp.swift in Sources */,
 				F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */,
 				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
@@ -1168,6 +1194,7 @@
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
+				5149A2552CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift in Sources */,
 				F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */,
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
 				F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */,
@@ -1212,6 +1239,7 @@
 				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
 				F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */,
+				5149A2592CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
 				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,

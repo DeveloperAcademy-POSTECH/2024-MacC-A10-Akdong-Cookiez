@@ -33,6 +33,7 @@ struct RecordRepositoryImp: RecordRepository {
   }
   
   /// 사용자의 직전 소비 기록을 반환
+  //FIXME: category, country를 반영한 최근 소비 기록 가져오기;;;;;; 이걸 잊어버리다니;;;
   func fetchPreviousDaySpending(country: String, category: String) -> Result<UserRecord?, any Error> {
     switch coreData.getLatestUserRecord() {
     case .success(let success):
