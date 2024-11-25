@@ -1,13 +1,13 @@
 //
-//  ForeignBirdJudgmentGenerator+getReaction.swift
+//  BirdJudgmentGenerator+getReaction.swift
 //  AKCOO
 //
-//  Created by Anjin on 11/25/24.
+//  Created by Anjin on 11/26/24.
 //
 
 import Foundation
 
-extension ForeignBirdJudgmentGenerator {
+extension BirdJudgmentGenerator {
   func getReaction(judgmentCriteria: CountryAverageJudgment) -> BirdReaction {
     // 판단 정보
     let input = judgmentCriteria.userAmount
@@ -178,4 +178,5 @@ extension ForeignBirdJudgmentGenerator {
       return .mediumYes
     }
   }
+
 }
