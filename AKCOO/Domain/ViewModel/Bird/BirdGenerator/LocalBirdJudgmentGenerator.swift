@@ -26,7 +26,11 @@ struct LocalBirdJudgmentGenerator: BirdJudgmentGenerator {
       
     case .mediumNo:
       if let category {
-        return "차라리 한국에서 \(category) 어때?"
+        if category == "숙박" {
+          return "차라리 한국에서 호캉스 어때?"
+        } else {
+          return "차라리 한국에서 \(category) 어때?"
+        }
       } else {
         return "차라리 한국에서 소비해"
       }
