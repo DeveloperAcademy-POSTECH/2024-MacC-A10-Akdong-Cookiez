@@ -40,7 +40,7 @@ struct ForeignBird: BirdModel {
   var detail: String {
     // TODO: - 미정
     switch birdReaction {
-    default: return "너무 비싼데..? 정말 필요해?"
+    default: return "일반적인 베트남의 식당 가격보다\n약 40,000동 비싸요!\n하지만 캐쥬얼다이닝의 가격과 비교하면\n약 50,000동 저렴한 편이에요."
     }
   }
 }
