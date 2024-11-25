@@ -36,7 +36,7 @@ extension ForeignBirdJudgmentGenerator {
     
     // 평균과의 차이
     let differenceWithAverage = judgmentCriteria.userAmount - (judgmentCriteria.averageOfItems ?? 0.0)
-    let absoluteDifference = abs(differenceWithAverage)
+    let absoluteDifference = abs(differenceWithAverage).formattedWithCommas()
     
     // 평균 가격에 대한 상세 내용
     var result = "일반적인 \(countryName)의 \(category) 가격"
@@ -47,7 +47,7 @@ extension ForeignBirdJudgmentGenerator {
     case 0:    // 입력 금액 == 평균
       result += "과 같아요!"
     case 0...: // 입력 금액 > 평균
-      result += "보다\n약 \(absoluteDifference)\(countryUnitTitle) 저렴해요!"
+      result += "보다\n약 \(absoluteDifference)\(countryUnitTitle) 비싸요!"
     default:   // 기본
       result += "은\n약 \(judgmentCriteria.averageOfItems ?? 0.0)\(countryUnitTitle) 입니다."
     }
@@ -73,7 +73,7 @@ extension ForeignBirdJudgmentGenerator {
     let differenceWithClosestItem = judgmentCriteria.userAmount - (closestItem?.amount ?? 0.0)
     
     // 입력 금액과 가장 가까운 기준 가격에 대한 상세 내용
-    var result = ""
+    var result = "\n"
     if isJudgmentBuying ? differenceWithClosestItem <= 0 : differenceWithClosestItem > 0 {
       // (입력 금액 <= 평균) && (입력 금액 <= 가까운 기준값)
       // (입력 금액 > 평균) && (입력 금액 > 가까운 기준값)
@@ -84,7 +84,8 @@ extension ForeignBirdJudgmentGenerator {
     
     result += "\(closestItem?.name ?? "")의 "
     
-    let absoluteDifferenceWithClosest = abs(differenceWithClosestItem)
+    let absoluteDifferenceWithClosest = abs(differenceWithClosestItem).formattedWithCommas()
+    
     switch differenceWithClosestItem {
     case ..<0: // 입력 금액 < 가까운 값
       result += "가격과 비교하면\n약 \(absoluteDifferenceWithClosest)\(countryUnitTitle) 저렴한 편이에요."
@@ -97,5 +98,15 @@ extension ForeignBirdJudgmentGenerator {
     }
     
     return result
+  }
+}
+
+extension Double {
+  func formattedWithCommas(maxDecimalPlaces: Int = 2) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = maxDecimalPlaces
+    return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
   }
 }

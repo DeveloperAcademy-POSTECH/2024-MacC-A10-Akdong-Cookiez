@@ -312,9 +312,9 @@
 			isa = PBXGroup;
 			children = (
 				5149A2542CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift */,
+				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
 				5149A2562CF48A7A00CA7500 /* ForeignBirdJudgmentGenerator+getOpinion.swift */,
 				5149A2582CF48A9D00CA7500 /* ForeignBirdJudgmentGenerator+getDetail.swift */,
-				5149A25A2CF496BA00CA7500 /* ForeignBirdJudgmentGenerator+getReaction.swift */,
 			);
 			path = BirdGenerator;
 			sourceTree = "<group>";
