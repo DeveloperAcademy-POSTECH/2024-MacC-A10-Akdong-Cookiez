@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum OpenedPaperType {
+  case ready
+  case edit
+}
+
 class OpenedPaperView: UIView {
   let paperStackView = UIStackView().set {
     $0.axis = .vertical
@@ -37,38 +42,48 @@ class OpenedPaperView: UIView {
     }
   }()
   
-  private let greenBirdImageView = UIImageView().set {
+  private lazy var greenBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.foriegn.basic
     $0.contentMode = .scaleAspectFit
-    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.isHidden = type == .edit
   }
   
-  private let redBirdImageView = UIImageView().set {
+  private lazy var redBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.local.basic
     $0.contentMode = .scaleAspectFit
-    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.isHidden = type == .edit
   }
   
-  private let yellowBirdImageView = UIImageView().set {
+  private lazy var yellowBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.previous.basic
     $0.contentMode = .scaleAspectFit
-    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.isHidden = type == .edit
   }
   
   var onActionDoJudgmentButton: (() -> Void)?
+  private let type: OpenedPaperType
+  
+  init(type: OpenedPaperType, frame: CGRect = .zero) {
+    self.type = type
+    super.init(frame: frame)
+    setupViews()
+    setupConstraints()
+  }
   
   override init(frame: CGRect) {
+    self.type = .ready
     super.init(frame: frame)
     setupViews()
     setupConstraints()
   }
   
   required init?(coder: NSCoder) {
+    self.type = .ready
     super.init(coder: coder)
     setupViews()
     setupConstraints()
   }
-  
+
   override func layoutSubviews() {
     super.layoutSubviews()
     setupLayout()
@@ -107,14 +122,14 @@ class OpenedPaperView: UIView {
       readyButton.bottomAnchor.constraint(equalTo: paperView.bottomAnchor, constant: -20)
     ])
     
-    setupConstraintsBirds()
+    if type == .ready { setupConstraintsBirds() }
   }
   
   private func setupConstraintsBirds() {
     let widthConstant: CGFloat = 94
     let heightConstant: CGFloat = 78
     let overlappingConstant: CGFloat = 9
-
+    
     NSLayoutConstraint.activate([
       greenBirdImageView.widthAnchor.constraint(equalToConstant: widthConstant),
       greenBirdImageView.heightAnchor.constraint(equalToConstant: heightConstant),
@@ -192,7 +207,7 @@ class OpenedPaperView: UIView {
 }
 
 #Preview {
-  let view = OpenedPaperView()
+  let view = OpenedPaperView(type: .edit)
   view.configure(
     paperModel: .init(
       selectedCountryProfile: .init(
