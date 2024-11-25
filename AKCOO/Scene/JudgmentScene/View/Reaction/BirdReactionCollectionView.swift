@@ -14,7 +14,7 @@ class BirdReactionCollectionView: UIView {
     layout.scrollDirection = .vertical
     layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     layout.minimumLineSpacing = 30
-    layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 60, right: 0)
+    layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 80, right: 0)
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,6 @@ class BirdReactionCollectionView: UIView {
   private func setupViews() {
     addSubview(collectionView)
     collectionView.backgroundColor = .clear
-    collectionView.clipsToBounds = false
   }
   
   private func setupConstraints() {
