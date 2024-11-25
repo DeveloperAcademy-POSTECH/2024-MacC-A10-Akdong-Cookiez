@@ -9,6 +9,7 @@ import Foundation
 
 protocol Judgment {
   associatedtype Standards
+  var name: String { get }
   var userAmount: Double { get set }
   var standards: Standards { get set }
   var result: JudgmentType { get }
