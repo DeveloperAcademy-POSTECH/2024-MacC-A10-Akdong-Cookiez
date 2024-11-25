@@ -1,14 +1,14 @@
 //
-//  ForeignBirdJudgmentGenerator+getDetail.swift
+//  BirdJudgmentGenerator+getDetail.swift
 //  AKCOO
 //
-//  Created by Anjin on 11/25/24.
+//  Created by Anjin on 11/26/24.
 //
 
 import Foundation
 
 /// 판단에 대한 상세 내용
-extension ForeignBirdJudgmentGenerator {
+extension BirdJudgmentGenerator {
   func getDetail(country: CountryProfile, judgmentCriteria: CountryAverageJudgment) -> String {
     var result = ""
     
@@ -98,15 +98,5 @@ extension ForeignBirdJudgmentGenerator {
     }
     
     return result
-  }
-}
-
-extension Double {
-  func formattedWithCommas(maxDecimalPlaces: Int = 2) -> String {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.minimumFractionDigits = 0
-    formatter.maximumFractionDigits = maxDecimalPlaces
-    return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
   }
 }
