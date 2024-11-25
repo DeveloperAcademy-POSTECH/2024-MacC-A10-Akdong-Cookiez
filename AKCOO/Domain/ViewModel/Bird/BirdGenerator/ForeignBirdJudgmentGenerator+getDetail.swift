@@ -1,5 +1,5 @@
 //
-//  ForeignBird+Detail.swift
+//  ForeignBirdJudgmentGenerator+getDetail.swift
 //  AKCOO
 //
 //  Created by Anjin on 11/25/24.
@@ -8,16 +8,25 @@
 import Foundation
 
 /// 판단에 대한 상세 내용
-extension ForignBird {
-  var detail: String {
+extension ForeignBirdJudgmentGenerator {
+  func getDetail(country: CountryProfile, judgmentCriteria: CountryAverageJudgment) -> String {
     var result = ""
-    result += getDetailAboutAverage()
-    result += getDetailAboutExtraStandard()
+    
+    result += getDetailAboutAverage(
+      country: country,
+      judgmentCriteria: judgmentCriteria
+    )
+    
+    result += getDetailAboutExtraStandard(
+      country: country,
+      judgmentCriteria: judgmentCriteria
+    )
+    
     return result
   }
   
   /// 평균 가격에 대한 상세 내용
-  private func getDetailAboutAverage() -> String {
+  private func getDetailAboutAverage(country: CountryProfile, judgmentCriteria: CountryAverageJudgment) -> String {
     // 나라 정보
     let countryName = country.name
     let countryUnitTitle = country.currency.unitTitle
@@ -47,7 +56,7 @@ extension ForignBird {
   }
   
   /// 입력 금액과 가장 가까운 기준에 대한 상세 내용
-  private func getDetailAboutExtraStandard() -> String {
+  private func getDetailAboutExtraStandard(country: CountryProfile, judgmentCriteria: CountryAverageJudgment) -> String {
     // 나라 정보
     let countryUnitTitle = country.currency.unitTitle
     

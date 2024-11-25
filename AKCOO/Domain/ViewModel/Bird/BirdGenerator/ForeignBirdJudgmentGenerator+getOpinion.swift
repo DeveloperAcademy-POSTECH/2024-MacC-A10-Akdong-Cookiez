@@ -1,5 +1,5 @@
 //
-//  ForeignBird+Opinion.swift
+//  ForeignBirdJudgmentGenerator+getOpinion.swift
 //  AKCOO
 //
 //  Created by Anjin on 11/25/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct BirdOpinionGenerator {
-  private func getOpinion(judgmentCriteria: CountryAverageJudgment, reaction: BirdReaction) -> String {
+extension ForeignBirdJudgmentGenerator {
+  func getOpinion(judgmentCriteria: CountryAverageJudgment, reaction: BirdReaction) -> String {
     let category = judgmentCriteria.standards.first?.category
     
     switch reaction {
