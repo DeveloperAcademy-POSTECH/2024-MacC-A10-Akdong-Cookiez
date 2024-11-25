@@ -89,7 +89,7 @@ extension ForeignBirdJudgmentGenerator {
   ) -> BirdReaction {
     if input == average {
       // 입력금액 == 평균
-      return .mediumYes
+      return .weakYes
     } else if input < average {
       // 입력금액 < 평균
       return getReactionWithMultipleCriteriaForBelowAverage(
@@ -134,7 +134,7 @@ extension ForeignBirdJudgmentGenerator {
     case 2...:
       if input <= minimum {
         return .strongYes
-      } else if input <= maximumOfLowerItems {
+      } else if input < maximumOfLowerItems {
         return .mediumYes
       } else {
         return .weakYes
@@ -168,7 +168,7 @@ extension ForeignBirdJudgmentGenerator {
     case 2...:
       if input >= maximum {
         return .strongNo
-      } else if input >= minimumOfLargerItems {
+      } else if input > minimumOfLargerItems {
         return .mediumNo
       } else {
         return .weakNo
