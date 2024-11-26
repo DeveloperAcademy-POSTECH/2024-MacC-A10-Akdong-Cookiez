@@ -102,7 +102,7 @@ class JudgmentCompletedViewController: UIViewController {
       country: country,
       judgment: localJudgment
     ),
-    PreviousDayBird(
+    PreviousBird(
       judgment: previousJudgment
     )
   ]
