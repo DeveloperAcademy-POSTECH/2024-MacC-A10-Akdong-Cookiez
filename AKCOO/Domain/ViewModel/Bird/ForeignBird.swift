@@ -53,35 +53,32 @@ struct ForeignBird: BirdModel {
 }
 
 extension ForeignBird {
-  private var minimumValue: Double? {
-    guard
-      let minAmount = judgmentCriteria.minimumAmountOfItems,
-      let maxAmount = judgmentCriteria.maximumAmountOfItems
-    else {
-      return nil
-    }
-    
-    let average = (maxAmount - minAmount) / 2.0
-    return average - (2 * minAmount)
-  }
-  
-  private var maximumValue: Double? {
-    guard
-      let minAmount = judgmentCriteria.minimumAmountOfItems,
-      let maxAmount = judgmentCriteria.maximumAmountOfItems
-    else {
-      return nil
-    }
-    
-    let average = (maxAmount - minAmount) / 2.0
-    return average + (2 * minAmount)
-  }
-  
   var graphInfos: BirdReactionGraphInfo {
+    guard
+      let minAmount = judgmentCriteria.minimumAmountOfItems,
+      let maxAmount = judgmentCriteria.maximumAmountOfItems
+    else {
+      return .init(
+        criteriaTitle: judgmentCriteria.name,
+        minimum: nil,
+        maximum: nil,
+        userAmount: judgmentCriteria.userAmount
+      )
+    }
+    
+    // 평균, 차이
+    let average = (maxAmount + minAmount) / 2
+    let difference = maxAmount - minAmount
+    
+    // 최소, 최대
+    let minimum: Double? = average - difference
+    let maximum: Double? = average + difference
+    
+    // 결과
     return .init(
       criteriaTitle: judgmentCriteria.name,
-      minimum: minimumValue,
-      maximum: maximumValue,
+      minimum: minimum,
+      maximum: maximum,
       userAmount: judgmentCriteria.userAmount
     )
   }

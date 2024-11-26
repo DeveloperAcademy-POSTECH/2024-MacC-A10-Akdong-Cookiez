@@ -76,21 +76,25 @@ struct PreviousBird: BirdModel {
 
 extension PreviousBird {
   var graphInfos: BirdReactionGraphInfo {
-    var difference: Double? {
-      guard let previousAmount = previousUserRecord?.amount else { return nil }
-      return abs(previousAmount - userQuestion.amount)
+    // 직전소비값
+    guard
+      let previousAmount = previousUserRecord?.amount
+    else {
+      return .init(
+        criteriaTitle: judgmentCriteria.name,
+        minimum: nil,
+        maximum: nil,
+        userAmount: userQuestion.amount)
     }
     
-    var minimum: Double? {
-      guard let difference else { return nil }
-      return userQuestion.amount - 2 * difference
-    }
+    // 차이
+    let difference = abs(previousAmount - userQuestion.amount)
     
-    var maximum: Double? {
-      guard let difference else { return nil }
-      return userQuestion.amount + 2 * difference
-    }
+    // 최소, 최대
+    let minimum: Double? = previousAmount - (2 * difference)
+    let maximum: Double? = previousAmount + (2 * difference)
     
+    // 결과
     return .init(
       criteriaTitle: judgmentCriteria.name,
       minimum: minimum,
