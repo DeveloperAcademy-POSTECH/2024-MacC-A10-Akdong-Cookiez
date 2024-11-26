@@ -170,7 +170,6 @@ class BirdReactionTextView: UIView {
     nameLabel.text = bird.name
     detailLabel.text = bird.detail
     
-    // TODO: - BirdModel 수정
     detailGraphView.configure(
       graphInfos: bird.graphInfos,
       buying: bird.judgment
