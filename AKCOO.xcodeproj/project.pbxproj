@@ -34,6 +34,7 @@
 		516E08092CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E08082CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift */; };
 		516E080B2CF4CE80006F3D54 /* Double+formattedWithCommas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */; };
 		516E080D2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */; };
+		516E08102CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */; };
 		F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */; };
 		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
 		F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */; };
@@ -133,7 +134,7 @@
 		F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93492CEB694300CF5238 /* BirdReaction.swift */; };
 		F3ED934C2CEB6BAC00CF5238 /* ForeignBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934B2CEB6BAC00CF5238 /* ForeignBird.swift */; };
 		F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */; };
-		F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */; };
+		F3ED93502CEB6BE400CF5238 /* PreviousBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */; };
 		F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */; };
 		F3ED93572CEBA41200CF5238 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93562CEBA41200CF5238 /* NetworkError.swift */; };
 		F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED93592CEE2E1600CF5238 /* BirdCharacterImageType.swift */; };
@@ -182,6 +183,7 @@
 		516E08082CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdJudgmentGenerator+getReaction.swift"; sourceTree = "<group>"; };
 		516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+formattedWithCommas.swift"; sourceTree = "<group>"; };
 		516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
+		516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toCompactKoreanDateString.swift"; sourceTree = "<group>"; };
 		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
 		F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
@@ -285,7 +287,7 @@
 		F3ED93492CEB694300CF5238 /* BirdReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReaction.swift; sourceTree = "<group>"; };
 		F3ED934B2CEB6BAC00CF5238 /* ForeignBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignBird.swift; sourceTree = "<group>"; };
 		F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBird.swift; sourceTree = "<group>"; };
-		F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDayBird.swift; sourceTree = "<group>"; };
+		F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousBird.swift; sourceTree = "<group>"; };
 		F3ED93522CEB6F8700CF5238 /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
 		F3ED93562CEBA41200CF5238 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F3ED93592CEE2E1600CF5238 /* BirdCharacterImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCharacterImageType.swift; sourceTree = "<group>"; };
@@ -818,7 +820,7 @@
 				5149A2532CF48A3D00CA7500 /* BirdGenerator */,
 				F3ED934B2CEB6BAC00CF5238 /* ForeignBird.swift */,
 				F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */,
-				F3ED934F2CEB6BE400CF5238 /* PreviousDayBird.swift */,
+				F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */,
 				F3ED93492CEB694300CF5238 /* BirdReaction.swift */,
 			);
 			path = Bird;
@@ -857,6 +859,7 @@
 			children = (
 				F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */,
 				516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */,
+				516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1165,7 +1168,7 @@
 				5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
-				F3ED93502CEB6BE400CF5238 /* PreviousDayBird.swift in Sources */,
+				F3ED93502CEB6BE400CF5238 /* PreviousBird.swift in Sources */,
 				515E408E2CF2307B00AE4A2F /* UserRecord+toEntity.swift in Sources */,
 				516E080B2CF4CE80006F3D54 /* Double+formattedWithCommas.swift in Sources */,
 				F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */,
@@ -1237,6 +1240,7 @@
 				F3ED934C2CEB6BAC00CF5238 /* ForeignBird.swift in Sources */,
 				515E40942CF2310E00AE4A2F /* CountryProfile+fromEntity.swift in Sources */,
 				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,
+				516E08102CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift in Sources */,
 				F3ED933B2CEB5E7900CF5238 /* CountryAverageJudgment.swift in Sources */,
 				515E40902CF230BD00AE4A2F /* UserRecord+fromEntity.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
