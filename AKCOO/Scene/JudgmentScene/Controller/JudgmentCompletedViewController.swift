@@ -78,6 +78,11 @@ class JudgmentCompletedViewController: UIViewController {
     name: "베트남",
     currency: .init(unitTitle: "동", unit: 1)
   )
+  let userQuestion = UserQuestion(
+    country: country,
+    category: "숙박",
+    amount: userQuestionAmount
+  )
   
   let forignJudgment = CountryAverageJudgment(
     userAmount: userQuestionAmount,
@@ -103,6 +108,7 @@ class JudgmentCompletedViewController: UIViewController {
       judgment: localJudgment
     ),
     PreviousBird(
+      userQuestion: userQuestion,
       judgment: previousJudgment
     )
   ]
