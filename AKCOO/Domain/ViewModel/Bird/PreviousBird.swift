@@ -29,4 +29,27 @@ struct PreviousBird: BirdModel {
     return judgmentCriteria.standards
   }
   
+  var opinion: String {
+    if let previousUserRecord {
+      if judgment == true {
+        // 사!
+        if userQuestion.amount == previousUserRecord.amount {
+          return "오! 지난 번과 같은 금액이야"
+        } else  {
+          return previousUserRecord.userJudgment == .buying
+          ? "뭘 고민해! 지난 번보다 저렴해!"
+          : "이번에 놓치면 아까운 가격인데"
+        }
+      } else {
+        // 사지마!
+        return previousUserRecord.userJudgment == .buying
+          ? "음.. 지난 구매보다 비싸"
+          : "정말 필요해? 한 번 더 고민해봐"
+      }
+    } else {
+      // 직전 소비 판단이 없을 때
+      return "아직 비교할 금액이 없어요"
+    }
+  }
+  
 }
