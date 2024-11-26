@@ -75,7 +75,7 @@ struct LocalBird: BirdModel {
 }
 
 extension LocalBird {
-  var graphInfo: BirdReactionGraphInfo {
+  var graphInfos: BirdReactionGraphInfo {
     return .init(
       criteriaTitle: judgmentCriteria.name,
       minimum: judgmentCriteria.minimumAmountOfItems,

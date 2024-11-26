@@ -75,7 +75,7 @@ struct PreviousBird: BirdModel {
 }
 
 extension PreviousBird {
-  var graphInfo: BirdReactionGraphInfo {
+  var graphInfos: BirdReactionGraphInfo {
     var difference: Double? {
       guard let previousAmount = previousUserRecord?.amount else { return nil }
       return abs(previousAmount - userQuestion.amount)

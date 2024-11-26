@@ -176,6 +176,7 @@ class BirdReactionTextView: UIView {
       minValue: 0,
       maxValue: 1000000,
       userAmount: 5000, 
+      graphInfos: bird.graphInfos,
       buying: bird.judgment
     )
     

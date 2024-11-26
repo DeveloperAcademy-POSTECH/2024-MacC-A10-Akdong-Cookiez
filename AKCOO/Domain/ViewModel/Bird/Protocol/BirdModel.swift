@@ -15,7 +15,7 @@ protocol BirdModel {
   var detail: String { get }
   var judgment: Bool { get }
   
-  var graphInfo: BirdReactionGraphInfo { get }
+  var graphInfos: BirdReactionGraphInfo { get }
 }
 
 struct BirdReactionGraphInfo {
