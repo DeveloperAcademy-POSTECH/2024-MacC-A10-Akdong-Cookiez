@@ -10,6 +10,7 @@ import Foundation
 struct CountryAverageJudgment: Judgment {
   var userAmount: Double
   var standards: [Item]
+  var userQuestion: UserQuestion?
   
   var name: String { return "평균" }
   var result: JudgmentType {

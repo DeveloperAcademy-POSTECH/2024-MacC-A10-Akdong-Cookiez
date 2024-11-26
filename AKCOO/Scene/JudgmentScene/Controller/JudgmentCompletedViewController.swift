@@ -129,6 +129,7 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
       judgment: forignJudgment
     ),
     LocalBird(
+      userQuestion: userQuestion,
       country: country,
       judgment: localJudgment
     ),

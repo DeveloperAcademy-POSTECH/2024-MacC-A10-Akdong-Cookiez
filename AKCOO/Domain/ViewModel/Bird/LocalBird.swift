@@ -14,11 +14,13 @@ struct LocalBird: BirdModel {
   private let judgmentGenerator: BirdJudgmentGenerator
   
   init(
+    userQuestion: UserQuestion,
     country: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
     self.country = country
     self.judgmentCriteria = judgment
+    self.judgmentCriteria.userQuestion = userQuestion
     self.judgmentGenerator = LocalBirdJudgmentGenerator()
   }
   
@@ -44,6 +46,9 @@ struct LocalBird: BirdModel {
   }
   
   var opinion: String {
+    
+    print(convertedToKRWJudgmentCriteria)
+    
     return judgmentGenerator
       .getOpinion(
         judgmentCriteria: self.convertedToKRWJudgmentCriteria,

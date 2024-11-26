@@ -114,6 +114,7 @@ class JudgmentUseCaseMock: JudgmentUseCase {
         judgment: forignJudgment
       ),
       LocalBird(
+        userQuestion: userQuestion,
         country: country,
         judgment: localJudgment
       ),

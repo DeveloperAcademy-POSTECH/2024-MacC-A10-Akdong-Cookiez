@@ -107,6 +107,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
         judgment: forignJudgment
       ),
       LocalBird(
+        userQuestion: userQuestion,
         country: country,
         judgment: localJudgment
       ),
