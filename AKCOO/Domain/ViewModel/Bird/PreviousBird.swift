@@ -10,24 +10,19 @@ import Foundation
 /// 직전 소비를 기준하는 새
 struct PreviousBird: BirdModel {
   private let judgmentCriteria: PreviousJudgment
-  private let userQuestion: UserQuestion
   
-  init(userQuestion: UserQuestion, judgment: PreviousJudgment) {
-    self.userQuestion = userQuestion
+  init(judgment: PreviousJudgment) {
     self.judgmentCriteria = judgment
   }
   
   var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
-
-  private var birdReaction: BirdReaction { return .mediumNo }
   
   var name: String { "지난 날의 나" }
   var information: String { return "직전 소비로만 판단해!" }
   
-  private var previousUserRecord: UserRecord? {
-    return judgmentCriteria.standards
-  }
+  private var userQuestion: UserQuestion { return judgmentCriteria.userQuestion }
+  private var previousUserRecord: UserRecord? { return judgmentCriteria.standards }
   
   var opinion: String {
     if let previousUserRecord {
@@ -57,12 +52,14 @@ struct PreviousBird: BirdModel {
   
   var detail: String {
     if let previousUserRecord {
-      let unitTitle = userQuestion.country.currency.unitTitle
+      let unitTitle = userQuestion.country.currency.unitTitle  // 요청한 통화 (ouput: "원")
+      let category = userQuestion.category                     // 요청한 카테고리 (ouput: "숙소")
       
-      let dateString = previousUserRecord.date.toCompactKoreanDateString()
-      let previousAmount = previousUserRecord.amount.formattedWithCommas()
-      let difference = previousUserRecord.amount - userQuestion.amount
-      let absoluteDifference = abs(difference).formattedWithCommas()
+      let dateString = previousUserRecord.date.toCompactKoreanDateString()  // 직전 소비 날짜 (output: "24년 11월 11일")
+      
+      let previousAmount = previousUserRecord.amount.formattedWithCommas()  // 직전 소비 값
+      let difference = previousUserRecord.amount - userQuestion.amount      // 직전 소비와 입력 값의 차이
+      let absoluteDifference = abs(difference).formattedWithCommas()        // 차이의 절댓값
       
       if difference < 0 {
         return "\(dateString)에 '\(previousUserRecord.userJudgment.rawValue)' 버튼을 누른\n<\(userQuestion.category)> \(previousAmount)\(unitTitle)보다\n약 \(absoluteDifference)\(unitTitle) 저렴해요!\n다음에도 비교해서 알려드릴게요."

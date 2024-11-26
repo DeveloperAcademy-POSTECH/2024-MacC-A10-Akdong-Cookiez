@@ -9,21 +9,18 @@ import Foundation
 
 /// 한국 물가를 기준하는 새
 struct LocalBird: BirdModel {
-  private let country: CountryProfile
-  var judgmentCriteria: CountryAverageJudgment
+  private let birdCountry: CountryProfile
+  private var judgmentCriteria: CountryAverageJudgment
+  
   private let judgmentGenerator: BirdJudgmentGenerator
   
   init(
-    /// 사용자가 입력한  판단 요청 정보
-    userQuestion: UserQuestion,
-    /// 새의 국적
-    country: CountryProfile,
-    /// 판단을 위한 정보
-    judgment: CountryAverageJudgment
+    birdCountry: CountryProfile,     // 새의 국적
+    judgment: CountryAverageJudgment // 판단을 위한 정보
   ) {
-    self.country = country
+    self.birdCountry = birdCountry
     self.judgmentCriteria = judgment
-    self.judgmentCriteria.userQuestion = userQuestion
+    
     self.judgmentGenerator = LocalBirdJudgmentGenerator()
   }
   
@@ -33,12 +30,21 @@ struct LocalBird: BirdModel {
   var name: String { return "한국 토박이" }
   var information: String { return "나는 한국 토박이야!" }
   
+  private var userQuestion: UserQuestion {
+    return judgmentCriteria.userQuestion
+  }
+  
   private var convertedToKRWJudgmentCriteria: CountryAverageJudgment {
-    var judgmentCriteria = self.judgmentCriteria
-    if let unit = judgmentCriteria.userQuestion?.country.currency.unit {
-      judgmentCriteria.userAmount *= unit
-    }
-    return judgmentCriteria
+    let crieteria: CountryAverageJudgment = .init(
+      userQuestion: .init(
+        country: userQuestion.country,
+        category: userQuestion.category,
+        amount: userQuestion.amount * userQuestion.country.currency.unit
+      ),
+      standards: judgmentCriteria.standards
+    )
+    
+    return crieteria
   }
   
   private var birdReaction: BirdReaction {
@@ -62,7 +68,7 @@ struct LocalBird: BirdModel {
   var detail: String {
     return judgmentGenerator
       .getDetail(
-        country: self.country,
+        country: self.birdCountry,
         judgmentCriteria: self.convertedToKRWJudgmentCriteria
       )
   }
