@@ -88,17 +88,17 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     let userQuestionAmount = userQuestion.amount
     
     let forignJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
+      userQuestion: userQuestion,
       standards: selectedCountryDetail.items
     )
     let localJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
+      userQuestion: userQuestion,
       standards: localCountryDetail.items
     )
     
     let previousJudgment = PreviousJudgment(
-      userAmount: userQuestionAmount,
-      standards: previousRecord
+      userQuestion: userQuestion,
+      standards: nil
     )
     
     let birds: [BirdModel] = [
@@ -107,13 +107,10 @@ class JudgmentUseCaseImp: JudgmentUseCase {
         judgment: forignJudgment
       ),
       LocalBird(
-        userQuestion: userQuestion,
-        country: country,
+        birdCountry: country,
         judgment: localJudgment
       ),
-      
       PreviousBird(
-        userQuestion: userQuestion,
         judgment: previousJudgment
       )
     ]

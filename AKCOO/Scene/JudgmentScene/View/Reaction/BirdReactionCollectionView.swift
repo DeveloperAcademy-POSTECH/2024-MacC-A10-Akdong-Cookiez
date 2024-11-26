@@ -153,26 +153,26 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
   preview.configure(
     with: [
       LocalBird(
-        userQuestion: UserQuestion(
-          country: CountryProfile(
-            name: "베트남",
-            currency: Currency(
-              unitTitle: "동",
-              unit: 0.055
-            )
-          ),
-          category: "숙소",
-          amount: 1000000
-        ),
-        country: .init(
-          name: "대한민국",
-          currency: .init(
+        birdCountry: .init(
+          name: "한국",
+          currency: Currency(
             unitTitle: "원",
             unit: 1
           )
         ),
         judgment: .init(
-          userAmount: 30000, standards: [ ]
+          userQuestion: .init(
+            country: .init(
+              name: "베트남",
+              currency: .init(
+                unitTitle: "동",
+                unit: 0.055
+              )
+            ),
+            category: "숙소",
+            amount: 300000
+          ),
+          standards: [ ]
         )
       )
     ], 

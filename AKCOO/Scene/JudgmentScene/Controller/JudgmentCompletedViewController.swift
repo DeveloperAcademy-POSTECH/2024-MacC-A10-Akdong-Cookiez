@@ -110,16 +110,16 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
   )
   
   let forignJudgment = CountryAverageJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: items
   )
   let localJudgment = CountryAverageJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: items
   )
   
   let previousJudgment = PreviousJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: nil
   )
   
@@ -129,12 +129,10 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
       judgment: forignJudgment
     ),
     LocalBird(
-      userQuestion: userQuestion,
-      country: country,
+      birdCountry: country,
       judgment: localJudgment
     ),
     PreviousBird(
-      userQuestion: userQuestion,
       judgment: previousJudgment
     )
   ]
