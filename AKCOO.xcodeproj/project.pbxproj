@@ -35,6 +35,7 @@
 		516E080B2CF4CE80006F3D54 /* Double+formattedWithCommas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */; };
 		516E080D2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */; };
 		516E08102CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */; };
+		516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */; };
 		F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */; };
 		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
 		F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */; };
@@ -185,6 +186,7 @@
 		516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+formattedWithCommas.swift"; sourceTree = "<group>"; };
 		516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
 		516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toCompactKoreanDateString.swift"; sourceTree = "<group>"; };
+		516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionGraphInfo.swift; sourceTree = "<group>"; };
 		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
 		F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
@@ -825,6 +827,7 @@
 				F3ED934D2CEB6BD500CF5238 /* LocalBird.swift */,
 				F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */,
 				F3ED93492CEB694300CF5238 /* BirdReaction.swift */,
+				516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */,
 			);
 			path = Bird;
 			sourceTree = "<group>";
@@ -1206,6 +1209,7 @@
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
+				516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */,
 				5149A2552CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift in Sources */,
 				F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */,
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,

@@ -17,10 +17,3 @@ protocol BirdModel {
   
   var graphInfos: BirdReactionGraphInfo { get }
 }
-
-struct BirdReactionGraphInfo {
-  let criteriaTitle: String
-  let minimum: Double?
-  let maximum: Double?
-  let userAmount: Double
-}
