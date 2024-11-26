@@ -111,7 +111,8 @@ class JudgmentUseCaseImp: JudgmentUseCase {
         judgment: localJudgment
       ),
       
-      PreviousDayBird(
+      PreviousBird(
+        userQuestion: userQuestion,
         judgment: previousJudgment
       )
     ]

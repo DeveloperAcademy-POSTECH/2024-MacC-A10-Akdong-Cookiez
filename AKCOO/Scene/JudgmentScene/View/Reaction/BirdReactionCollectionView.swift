@@ -90,7 +90,7 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
       switch birdModel {
       case is ForeignBird: return .foriegn
       case is LocalBird: return .local
-      case is PreviousDayBird: return .previous
+      case is PreviousBird: return .previous
       default: fatalError("Unknown BirdModel type")
       }
     }()

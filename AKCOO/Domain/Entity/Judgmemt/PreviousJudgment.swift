@@ -13,7 +13,13 @@ struct PreviousJudgment: Judgment {
   
   var name: String { return "직전 소비" }
   var result: JudgmentType {
-    // TODO: - 조건 만들기
-    return .notBuying
+    guard
+      let userRecordAmount = standards?.amount
+    else {
+      print("직전 소비가 없어요")
+      return .buying
+    }
+    
+    return userAmount <= userRecordAmount ? .buying : .notBuying
   }
 }

@@ -118,7 +118,8 @@ class JudgmentUseCaseMock: JudgmentUseCase {
         judgment: localJudgment
       ),
       
-      PreviousDayBird(
+      PreviousBird(
+        userQuestion: userQuestion,
         judgment: previousJudgment
       )
     ]
