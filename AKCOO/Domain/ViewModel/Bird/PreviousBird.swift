@@ -31,18 +31,21 @@ struct PreviousBird: BirdModel {
   
   var opinion: String {
     if let previousUserRecord {
+      let isSameAmount = userQuestion.amount == previousUserRecord.amount
+      let wasPreviousJudgmentBuying = previousUserRecord.userJudgment == .buying
+      
       if judgment == true {
         // 사!
-        if userQuestion.amount == previousUserRecord.amount {
+        if isSameAmount {
           return "오! 지난 번과 같은 금액이야"
-        } else  {
-          return previousUserRecord.userJudgment == .buying
-          ? "뭘 고민해! 지난 번보다 저렴해!"
-          : "이번에 놓치면 아까운 가격인데"
+        } else {
+          return wasPreviousJudgmentBuying
+            ? "뭘 고민해! 지난 번보다 저렴해!"
+            : "이번에 놓치면 아까운 가격인데"
         }
       } else {
         // 사지마!
-        return previousUserRecord.userJudgment == .buying
+        return wasPreviousJudgmentBuying
           ? "음.. 지난 구매보다 비싸"
           : "정말 필요해? 한 번 더 고민해봐"
       }
