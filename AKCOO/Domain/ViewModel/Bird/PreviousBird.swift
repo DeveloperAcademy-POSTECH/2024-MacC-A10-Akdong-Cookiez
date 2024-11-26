@@ -88,7 +88,7 @@ extension PreviousBird {
     
     var maximum: Double? {
       guard let difference else { return nil }
-      return userQuestion.amount - 2 * difference
+      return userQuestion.amount + 2 * difference
     }
     
     return .init(

@@ -75,11 +75,35 @@ struct LocalBird: BirdModel {
 }
 
 extension LocalBird {
+  private var minimumValue: Double? {
+    guard
+      let minAmount = judgmentCriteria.minimumAmountOfItems,
+      let maxAmount = judgmentCriteria.maximumAmountOfItems
+    else {
+      return nil
+    }
+    
+    let average = (maxAmount - minAmount) / 2.0
+    return average - (2 * minAmount)
+  }
+  
+  private var maximumValue: Double? {
+    guard
+      let minAmount = judgmentCriteria.minimumAmountOfItems,
+      let maxAmount = judgmentCriteria.maximumAmountOfItems
+    else {
+      return nil
+    }
+    
+    let average = (maxAmount - minAmount) / 2.0
+    return average + (2 * minAmount)
+  }
+  
   var graphInfos: BirdReactionGraphInfo {
     return .init(
       criteriaTitle: judgmentCriteria.name,
-      minimum: judgmentCriteria.minimumAmountOfItems,
-      maximum: judgmentCriteria.maximumAmountOfItems,
+      minimum: minimumValue,
+      maximum: maximumValue,
       userAmount: judgmentCriteria.userAmount
     )
   }
