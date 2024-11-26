@@ -109,17 +109,12 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     )
     
     let birds: [BirdModel] = [
-      ForeignBird(
-        birdCountry: country,
-        judgment: forignJudgment
-      ),
+      ForeignBird(judgment: forignJudgment),
       LocalBird(
         birdCountry: country,
         judgment: localJudgment
       ),
-      PreviousBird(
-        judgment: previousJudgment
-      )
+      PreviousBird(judgment: previousJudgment)
     ]
     
     return .success(birds)

@@ -119,13 +119,6 @@ class BirdReactionCell: UICollectionViewCell {
 
   birdCell.configure(
     bird: ForeignBird.init(
-      birdCountry: .init(
-        name: "베트남",
-        currency: .init(
-          unitTitle: "동",
-          unit: 0.0589
-        )
-      ),
       judgment: .init(
         userQuestion: .init(
           country: .init(
