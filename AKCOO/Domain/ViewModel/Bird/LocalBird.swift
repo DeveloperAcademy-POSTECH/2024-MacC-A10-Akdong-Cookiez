@@ -28,17 +28,25 @@ struct LocalBird: BirdModel {
   var name: String { return "한국 토박이" }
   var information: String { return "나는 한국 토박이야!" }
   
+  private var convertedToKRWJudgmentCriteria: CountryAverageJudgment {
+    var judgmentCriteria = self.judgmentCriteria
+    if let unit = judgmentCriteria.userQuestion?.country.currency.unit {
+      judgmentCriteria.userAmount *= unit
+    }
+    return judgmentCriteria
+  }
+  
   private var birdReaction: BirdReaction {
     return judgmentGenerator
       .getReaction(
-        judgmentCriteria: self.judgmentCriteria
+        judgmentCriteria: self.convertedToKRWJudgmentCriteria
       )
   }
   
   var opinion: String {
     return judgmentGenerator
       .getOpinion(
-        judgmentCriteria: self.judgmentCriteria,
+        judgmentCriteria: self.convertedToKRWJudgmentCriteria,
         reaction: self.birdReaction
       )
   }
@@ -47,7 +55,7 @@ struct LocalBird: BirdModel {
     return judgmentGenerator
       .getDetail(
         country: self.country,
-        judgmentCriteria: self.judgmentCriteria
+        judgmentCriteria: self.convertedToKRWJudgmentCriteria
       )
   }
 }
