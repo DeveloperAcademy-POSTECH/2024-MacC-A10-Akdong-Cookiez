@@ -25,7 +25,7 @@ struct ForeignBirdJudgmentGenerator: BirdJudgmentGenerator {
       return "이 가격이면 나쁘지 않아"
       
     case .weakYes:
-      return "현지에서도 저렴한 금액이야"
+      return "현지에서도 저렴한 가격이야"
       
     case .weakNo:
       return "음.. 조금 비싼데!?"
