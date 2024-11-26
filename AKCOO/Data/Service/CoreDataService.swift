@@ -59,12 +59,18 @@ extension CoreDataService {
   }
   
   /// READ - 가장 최신의 UserRecord 불러오기
-  func getLatestUserRecord() -> Result<UserRecord?, Error> {
+  func getLatestUserRecord(country: String, category: String) -> Result<UserRecord?, Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
     
     // 정렬 조건 추가: date 기준 내림차순 -> 데이터 1개만 가져오기
     request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
     request.fetchLimit = 1
+    
+    // 나라와 카테고리 조건 추가
+    request.predicate = NSPredicate(
+      format: "userQuestion.country.name == %@ AND userQuestion.category == %@",
+      country, category
+    )
     
     do {
       guard let latestEntity = try context.fetch(request).first else {
