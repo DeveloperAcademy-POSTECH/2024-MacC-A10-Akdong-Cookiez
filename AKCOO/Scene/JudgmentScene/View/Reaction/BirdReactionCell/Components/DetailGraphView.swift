@@ -86,10 +86,11 @@ class DetailGraphView: UIView {
     graphInfos: BirdReactionGraphInfo,
     buying: Bool
   ) {
+    
     self.titleLabel.text = graphInfos.criteriaTitle
     // FIXME: min, max가 nil일 때 어떻게 처리할까..?
-    self.minValue = CGFloat(graphInfos.minimum ?? 0.0)
-    self.maxValue = CGFloat(graphInfos.minimum ?? CGFloat(graphInfos.userAmount) * 2)
+    self.minValue = CGFloat(graphInfos.minimum ?? 10.0)
+    self.maxValue = CGFloat(graphInfos.maximum ?? CGFloat(graphInfos.userAmount) * 2)
     self.userAmount = graphInfos.userAmount
     
     self.titleLabel.textColor = buying ? .akColor(.akGray300) : .akColor(.akGray200)
