@@ -51,7 +51,7 @@ struct PreviousBird: BirdModel {
       }
     } else {
       // 직전 소비 판단이 없을 때
-      return "아직 비교할 금액이 없어요"
+      return "아직 비교할 금액이 없어"
     }
   }
   
