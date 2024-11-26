@@ -23,7 +23,6 @@ struct ForeignBird: BirdModel {
     return judgmentCriteria.userQuestion.country
   }
   
-  var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
   
   var name: String { return "\(country.name) 10년차" }
@@ -50,5 +49,16 @@ struct ForeignBird: BirdModel {
         country: self.country,
         judgmentCriteria: self.judgmentCriteria
       )
+  }
+}
+
+extension ForeignBird {
+  var graphInfo: BirdReactionGraphInfo {
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: judgmentCriteria.minimumAmountOfItems,
+      maximum: judgmentCriteria.maximumAmountOfItems,
+      userAmount: judgmentCriteria.userAmount
+    )
   }
 }

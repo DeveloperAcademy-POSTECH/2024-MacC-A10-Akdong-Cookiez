@@ -73,3 +73,29 @@ struct PreviousBird: BirdModel {
     }
   }
 }
+
+extension PreviousBird {
+  var graphInfo: BirdReactionGraphInfo {
+    var difference: Double? {
+      guard let previousAmount = previousUserRecord?.amount else { return nil }
+      return abs(previousAmount - userQuestion.amount)
+    }
+    
+    var minimum: Double? {
+      guard let difference else { return nil }
+      return userQuestion.amount - 2 * difference
+    }
+    
+    var maximum: Double? {
+      guard let difference else { return nil }
+      return userQuestion.amount - 2 * difference
+    }
+    
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: minimum,
+      maximum: maximum,
+      userAmount: userQuestion.amount
+    )
+  }
+}

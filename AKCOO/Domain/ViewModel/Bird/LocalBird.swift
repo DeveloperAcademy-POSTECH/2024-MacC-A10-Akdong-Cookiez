@@ -73,3 +73,14 @@ struct LocalBird: BirdModel {
       )
   }
 }
+
+extension LocalBird {
+  var graphInfo: BirdReactionGraphInfo {
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: judgmentCriteria.minimumAmountOfItems,
+      maximum: judgmentCriteria.maximumAmountOfItems,
+      userAmount: judgmentCriteria.userAmount
+    )
+  }
+}
