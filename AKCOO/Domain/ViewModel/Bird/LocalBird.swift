@@ -73,3 +73,35 @@ struct LocalBird: BirdModel {
       )
   }
 }
+
+extension LocalBird {
+  var graphInfos: BirdReactionGraphInfo {
+    guard
+      let minAmount = judgmentCriteria.minimumAmountOfItems,
+      let maxAmount = judgmentCriteria.maximumAmountOfItems
+    else {
+      return .init(
+        criteriaTitle: judgmentCriteria.name,
+        minimum: nil,
+        maximum: nil,
+        userAmount: judgmentCriteria.userAmount
+      )
+    }
+    
+    // 평균, 차이
+    let average = (maxAmount + minAmount) / 2
+    let difference = maxAmount - minAmount
+    
+    // 최소, 최대
+    let minimum: Double? = average - difference
+    let maximum: Double? = average + difference
+    
+    // 결과
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: minimum,
+      maximum: maximum,
+      userAmount: judgmentCriteria.userAmount
+    )
+  }
+}

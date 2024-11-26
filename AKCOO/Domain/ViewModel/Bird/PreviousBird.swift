@@ -73,3 +73,33 @@ struct PreviousBird: BirdModel {
     }
   }
 }
+
+extension PreviousBird {
+  var graphInfos: BirdReactionGraphInfo {
+    // 직전소비값
+    guard
+      let previousAmount = previousUserRecord?.amount
+    else {
+      return .init(
+        criteriaTitle: judgmentCriteria.name,
+        minimum: nil,
+        maximum: nil,
+        userAmount: userQuestion.amount)
+    }
+    
+    // 차이
+    let difference = abs(previousAmount - userQuestion.amount)
+    
+    // 최소, 최대
+    let minimum: Double? = previousAmount - (2 * difference)
+    let maximum: Double? = previousAmount + (2 * difference)
+    
+    // 결과
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: minimum,
+      maximum: maximum,
+      userAmount: userQuestion.amount
+    )
+  }
+}
