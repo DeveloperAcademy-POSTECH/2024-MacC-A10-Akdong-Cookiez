@@ -9,17 +9,18 @@ import Foundation
 
 /// 물가를 기준하는 새
 struct ForeignBird: BirdModel {
-  private let country: CountryProfile
   private let judgmentCriteria: CountryAverageJudgment
   private let judgmentGenerator: BirdJudgmentGenerator
 
   init(
-    country: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
-    self.country = country
     self.judgmentCriteria = judgment
     self.judgmentGenerator = ForeignBirdJudgmentGenerator()
+  }
+  
+  private var country: CountryProfile {
+    return judgmentCriteria.userQuestion.country
   }
   
   var criteriaName: String { return judgmentCriteria.name }

@@ -13,8 +13,8 @@ struct ForeignBirdJudgmentGenerator: BirdJudgmentGenerator {
     
     switch reaction {
     case .strongYes:
-      if let category, ["숙박", "식당", "카페"].contains(category) {
-        // 카테고리가 숙박, 식당, 카페인 경우
+      if let category, ["숙소", "식당", "카페"].contains(category) {
+        // 카테고리가 숙소, 식당, 카페인 경우
         return "뭘 고민해! 무조건 가야지"
       } else {
         // 카테고리가 기타이거나 없는 경우
@@ -25,7 +25,7 @@ struct ForeignBirdJudgmentGenerator: BirdJudgmentGenerator {
       return "이 가격이면 나쁘지 않아"
       
     case .weakYes:
-      return "현지에서도 저렴한 금액이야"
+      return "현지에서도 저렴한 가격이야"
       
     case .weakNo:
       return "음.. 조금 비싼데!?"

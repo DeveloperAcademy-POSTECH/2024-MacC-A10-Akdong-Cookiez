@@ -19,14 +19,14 @@ struct LocalBirdJudgmentGenerator: BirdJudgmentGenerator {
       return "한국에서도 저렴한 가격이야"
       
     case .weakYes:
-      return "안 사면 한국 가서 후회할걸?"
+      return "한국이랑 비슷한 편이야"
       
     case .weakNo:
       return "한국보다 조금 비싼 편이야"
       
     case .mediumNo:
       if let category {
-        if category == "숙박" {
+        if category == "숙소" {
           return "차라리 한국에서 호캉스 어때?"
         } else {
           return "차라리 한국에서 \(category) 어때?"

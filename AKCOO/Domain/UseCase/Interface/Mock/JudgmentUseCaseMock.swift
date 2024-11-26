@@ -95,33 +95,26 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     let userQuestionAmount = userQuestion.amount
     
     let forignJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
+      userQuestion: userQuestion,
       standards: selectedCountryDetail.items
     )
     let localJudgment = CountryAverageJudgment(
-      userAmount: userQuestionAmount,
+      userQuestion: userQuestion,
       standards: localCountryDetail.items
     )
     
     let previousJudgment = PreviousJudgment(
-      userAmount: userQuestionAmount,
-      standards: previousRecord
+      userQuestion: userQuestion,
+      standards: nil
     )
     
     let birds: [BirdModel] = [
-      ForeignBird(
-        country: country,
-        judgment: forignJudgment
-      ),
+      ForeignBird(judgment: forignJudgment),
       LocalBird(
-        country: country,
+        birdCountry: country,
         judgment: localJudgment
       ),
-      
-      PreviousBird(
-        userQuestion: userQuestion,
-        judgment: previousJudgment
-      )
+      PreviousBird(judgment: previousJudgment)
     ]
     
     return .success(birds)
