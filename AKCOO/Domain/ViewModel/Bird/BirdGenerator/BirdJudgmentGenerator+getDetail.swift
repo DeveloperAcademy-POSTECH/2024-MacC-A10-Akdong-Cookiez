@@ -12,6 +12,10 @@ extension BirdJudgmentGenerator {
   func getDetail(country: CountryProfile, judgmentCriteria: CountryAverageJudgment) -> String {
     var result = ""
     
+    if let category = judgmentCriteria.standards.first?.category, category == "카페" {
+      result += "아메리카노 기준,\n"
+    }
+    
     result += getDetailAboutAverage(
       country: country,
       judgmentCriteria: judgmentCriteria
