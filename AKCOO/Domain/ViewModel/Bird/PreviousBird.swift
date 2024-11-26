@@ -52,4 +52,24 @@ struct PreviousBird: BirdModel {
     }
   }
   
+  var detail: String {
+    if let previousUserRecord {
+      let unitTitle = userQuestion.country.currency.unitTitle
+      
+      let dateString = previousUserRecord.date.toCompactKoreanDateString()
+      let previousAmount = previousUserRecord.amount.formattedWithCommas()
+      let difference = previousUserRecord.amount - userQuestion.amount
+      let absoluteDifference = abs(difference).formattedWithCommas()
+      
+      if difference < 0 {
+        return "\(dateString)에 '\(previousUserRecord.userJudgment.rawValue)' 버튼을 누른\n<\(userQuestion.category)> \(previousAmount)\(unitTitle)보다\n약 \(absoluteDifference)\(unitTitle) 저렴해요!\n다음에도 비교해서 알려드릴게요."
+      } else if difference == 0 {
+        return "\(dateString)에 '\(previousUserRecord.userJudgment.rawValue)' 버튼을 누른\n<\(userQuestion.category)> \(previousAmount)\(unitTitle)과\n같은 금액이에요!\n다음에도 비교해서 알려드릴게요."
+      } else {
+        return "\(dateString)에 '\(previousUserRecord.userJudgment.rawValue)' 버튼을 누른\n<\(userQuestion.category)> \(previousAmount)\(unitTitle)보다\n약 \(absoluteDifference)\(unitTitle) 비싸요!\n다음에도 비교해서 알려드릴게요."
+      }
+    } else {
+      return "<\(userQuestion.category)>의 첫 지출이네요!\n살래요, 안 살래요 버튼을 눌러\n지출 판단 기록을 저장하세요.\n다음부터 비교해서 알려드릴게요!"
+    }
+  }
 }
