@@ -239,7 +239,7 @@ class BirdReactionTextView: UIView {
   let preview = BirdReactionTextView()
   preview.configure(
     bird: ForeignBird.init(
-      country: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0.0589)),
+      birdCountry: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0.0589)),
       judgment: .init(userAmount: 5000, standards: [])
     )
   )

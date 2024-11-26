@@ -103,7 +103,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     
     let birds: [BirdModel] = [
       ForeignBird(
-        country: country,
+        birdCountry: country,
         judgment: forignJudgment
       ),
       LocalBird(

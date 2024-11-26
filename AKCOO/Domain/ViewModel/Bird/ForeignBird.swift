@@ -14,10 +14,10 @@ struct ForeignBird: BirdModel {
   private let judgmentGenerator: BirdJudgmentGenerator
 
   init(
-    country: CountryProfile,
+    birdCountry: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
-    self.country = country
+    self.country = birdCountry
     self.judgmentCriteria = judgment
     self.judgmentGenerator = ForeignBirdJudgmentGenerator()
   }

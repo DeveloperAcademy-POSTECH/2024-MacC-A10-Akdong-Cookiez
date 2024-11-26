@@ -14,8 +14,11 @@ struct LocalBird: BirdModel {
   private let judgmentGenerator: BirdJudgmentGenerator
   
   init(
+    /// 사용자가 입력한  판단 요청 정보
     userQuestion: UserQuestion,
+    /// 새의 국적
     country: CountryProfile,
+    /// 판단을 위한 정보
     judgment: CountryAverageJudgment
   ) {
     self.country = country

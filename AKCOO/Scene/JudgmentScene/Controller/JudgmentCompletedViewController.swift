@@ -125,7 +125,7 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
   
   let birds: [BirdModel] = [
     ForeignBird(
-      country: country,
+      birdCountry: country,
       judgment: forignJudgment
     ),
     LocalBird(

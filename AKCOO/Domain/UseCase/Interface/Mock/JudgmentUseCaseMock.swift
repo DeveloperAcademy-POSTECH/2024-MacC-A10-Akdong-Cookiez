@@ -110,7 +110,7 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     
     let birds: [BirdModel] = [
       ForeignBird(
-        country: country,
+        birdCountry: country,
         judgment: forignJudgment
       ),
       LocalBird(
