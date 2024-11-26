@@ -8,7 +8,7 @@
 import Foundation
 
 struct PreviousJudgment: Judgment {
-  var userAmount: Double
+  var userQuestion: UserQuestion
   var standards: UserRecord?
   
   var name: String { return "직전 소비" }
@@ -20,6 +20,6 @@ struct PreviousJudgment: Judgment {
       return .buying
     }
     
-    return userAmount <= userRecordAmount ? .buying : .notBuying
+    return userQuestion.amount <= userRecordAmount ? .buying : .notBuying
   }
 }
