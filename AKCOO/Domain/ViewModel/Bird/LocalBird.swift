@@ -19,7 +19,17 @@ struct LocalBird: BirdModel {
     judgment: CountryAverageJudgment // 판단을 위한 정보
   ) {
     self.birdCountry = birdCountry
-    self.judgmentCriteria = judgment
+    
+    let userQuestion = judgment.userQuestion
+    let convertedCrieteria: CountryAverageJudgment = .init(
+      userQuestion: .init(
+        country: userQuestion.country,
+        category: userQuestion.category,
+        amount: userQuestion.amount * userQuestion.country.currency.unit
+      ),
+      standards: judgment.standards
+    )
+    self.judgmentCriteria = convertedCrieteria
     
     self.judgmentGenerator = LocalBirdJudgmentGenerator()
   }
@@ -34,33 +44,15 @@ struct LocalBird: BirdModel {
     return judgmentCriteria.userQuestion
   }
   
-  private var convertedToKRWJudgmentCriteria: CountryAverageJudgment {
-    let crieteria: CountryAverageJudgment = .init(
-      userQuestion: .init(
-        country: userQuestion.country,
-        category: userQuestion.category,
-        amount: userQuestion.amount * userQuestion.country.currency.unit
-      ),
-      standards: judgmentCriteria.standards
-    )
-    
-    return crieteria
-  }
-  
   private var birdReaction: BirdReaction {
     return judgmentGenerator
-      .getReaction(
-        judgmentCriteria: self.convertedToKRWJudgmentCriteria
-      )
+      .getReaction(judgmentCriteria: judgmentCriteria)
   }
   
   var opinion: String {
-    
-    print(convertedToKRWJudgmentCriteria)
-    
     return judgmentGenerator
       .getOpinion(
-        judgmentCriteria: self.convertedToKRWJudgmentCriteria,
+        judgmentCriteria: judgmentCriteria,
         reaction: self.birdReaction
       )
   }
@@ -69,7 +61,7 @@ struct LocalBird: BirdModel {
     return judgmentGenerator
       .getDetail(
         country: self.birdCountry,
-        judgmentCriteria: self.convertedToKRWJudgmentCriteria
+        judgmentCriteria: judgmentCriteria
       )
   }
 }

@@ -187,8 +187,8 @@ class BirdReactionTextView: UIView {
     )
     
     setupConstraints(buying: bird.judgment)
-    applyParagraphStyleToDetailLabel()
-    self.buying = bird.judgment
+    applyParagraphStyleToDetailLabel(text: bird.detail)
+    self.buying = bird.judgment    
     
     self.backgroundView.backgroundColor = bird.judgment ? .akColor(.akYellow) : .akColor(.akRed)
   }
@@ -231,16 +231,69 @@ class BirdReactionTextView: UIView {
       }
     )
   }
-
-  private func applyParagraphStyleToDetailLabel() {
+  
+  private func applyParagraphStyleToDetailLabel(text: String) {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = 10
-    if let text = detailLabel.text {
-      detailLabel.attributedText = NSAttributedString(
-        string: text,
-        attributes: [.paragraphStyle: paragraphStyle]
-      )
+    
+    let attributedString = NSMutableAttributedString(
+      string: text,
+      attributes: [.paragraphStyle: paragraphStyle]
+    )
+    
+    // 하이라이트 문자열
+    //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
+    let highlightPattern = "(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)"
+    let highlightRegex = try? NSRegularExpression(pattern: highlightPattern)
+    
+    highlightRegex?.enumerateMatches(
+      in: text,
+      options: [],
+      range: NSRange(location: 0, length: text.utf16.count)
+    ) { match, _, _ in
+      if let matchRange = match?.range {
+        // 배경색 스타일 추가
+        attributedString
+          .addAttribute(
+            .backgroundColor,
+            value: UIColor.akColor(.akOrange),
+            range: matchRange
+          )
+      }
     }
+    
+    // bold 문자열
+    //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
+    let boldPatterns = ["(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)(\\s?)(저렴|비싼|비싸|같아)", "같아요"]
+    let boldRegexes = boldPatterns.map { try? NSRegularExpression(pattern: $0) }
+    
+    boldRegexes.forEach { regex in
+      regex?.enumerateMatches(
+        in: text,
+        options: [],
+        range: NSRange(location: 0, length: text.utf16.count)
+      ) { match, _, _ in
+        if let matchRange = match?.range {
+          // "약 000프랑" 뒤에 "저렴", "비싼" 등의 텍스트 스타일링
+          let extendedRange = NSRange(
+            location: matchRange.location,
+            length: min(matchRange.length, text.utf16.count - matchRange.location)
+          )
+          
+          // "저렴" 포함
+          if extendedRange.upperBound <= text.utf16.count {
+            attributedString
+              .addAttribute(
+                .font,
+                value: UIFont.akFont(.gmarketBold13),
+                range: extendedRange
+              )
+          }
+        }
+      }
+    }
+    
+    detailLabel.attributedText = attributedString
   }
   
   private func setupLayout() {
