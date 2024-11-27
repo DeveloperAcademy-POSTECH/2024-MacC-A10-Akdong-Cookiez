@@ -165,7 +165,7 @@ class BirdReactionTextView: UIView {
   func configure(
     bird: BirdModel
   ) {
-    opinionLabel.text = bird.opinion
+    opinionLabel.text = "\"\(bird.opinion)\""
     nameLabel.text = bird.name
     detailLabel.text = bird.detail
     
