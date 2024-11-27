@@ -9,6 +9,10 @@ import UIKit
 
 class JudgmentView: UIView {
   
+  var blueBackgroundView = UIView().set {
+    $0.backgroundColor = .akColor(.akBlue400)
+  }
+  
   let paperTitleLabel = UILabel().set {
     $0.text = "입력정보"
     $0.font = .akFont(.gmarketMedium14)
@@ -23,7 +27,7 @@ class JudgmentView: UIView {
     $0.textColor = .akColor(.white)
   }
   
-  let reactionStackView = BirdReactionCollectionView().set()
+  let reactionCollectionView = BirdReactionCollectionView().set()
   
   let judgmentKRW = BirdReactionTextView().set()
   let judgmentLocals = BirdReactionTextView().set()
@@ -46,8 +50,9 @@ class JudgmentView: UIView {
   }
   
   lazy var buyButton: UIButton = self.createCustomButton(title: "살래요")
-  
   lazy var notBuyButton: UIButton = self.createCustomButton(title: "안 살래요")
+  
+  var onActionCompletedDecision: ((Bool) -> Void)?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -62,19 +67,21 @@ class JudgmentView: UIView {
   }
   
   private func setupViews() {
-    addSubview(reactionStackView)
+    addSubview(blueBackgroundView)
+    addSubview(reactionCollectionView)
     addSubview(paperTitleLabel)
     addSubview(paper)
-    
+    addSubview(gradientView)
     addSubview(birdsReactionTitleLabel)
     
-    reactionStackView.addSubview(gradientView)
-    gradientView.addSubview(decisionStack)
-    
-    gradientView.addSubview(decisionLabel)
+    addSubview(decisionLabel)
+    addSubview(decisionStack)
     
     decisionStack.addArrangedSubview(notBuyButton)
     decisionStack.addArrangedSubview(buyButton)
+    
+    buyButton.addTarget(self, action: #selector(tappedDecisionButton(_:)), for: .touchUpInside)
+    notBuyButton.addTarget(self, action: #selector(tappedDecisionButton(_:)), for: .touchUpInside)
   }
   
   private func setupConstraints() {
@@ -84,6 +91,11 @@ class JudgmentView: UIView {
     let buttonHorizentalPadding: CGFloat = 33
     
     NSLayoutConstraint.activate([
+      blueBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+      blueBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      blueBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      blueBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
       paperTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       paperTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
@@ -94,10 +106,10 @@ class JudgmentView: UIView {
       birdsReactionTitleLabel.topAnchor.constraint(equalTo: paper.bottomAnchor, constant: birdStackHorizentalPadding),
       birdsReactionTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titleLeading),
       
-      reactionStackView.topAnchor.constraint(equalTo: birdsReactionTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
-      reactionStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      reactionStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      reactionStackView.bottomAnchor.constraint(equalTo: decisionStack.topAnchor),
+      reactionCollectionView.topAnchor.constraint(equalTo: birdsReactionTitleLabel.bottomAnchor, constant: infoTitleTopPadding),
+      reactionCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      reactionCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      reactionCollectionView.bottomAnchor.constraint(equalTo: decisionStack.topAnchor),
       
       gradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
       gradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -122,7 +134,7 @@ class JudgmentView: UIView {
       userQuestion: userQuesion
     )
     
-    reactionStackView.configure(
+    reactionCollectionView.configure(
       with: birds,
       userAmount: userQuesion.amount
     )
@@ -140,6 +152,10 @@ class JudgmentView: UIView {
       $0.layer.cornerRadius = 20
       $0.layer.masksToBounds = true // 라운드 처리를 위한 마스크
     }
+  }
+  
+  @objc private func tappedDecisionButton(_ sender: UIButton) {
+    onActionCompletedDecision?(sender == buyButton)
   }
 }
 

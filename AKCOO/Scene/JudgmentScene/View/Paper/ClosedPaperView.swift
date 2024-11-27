@@ -9,7 +9,11 @@ import UIKit
 
 class ClosedPaperView: UIView {
   // MARK: - Views
-  let paperBackgroundView = UIView().set {
+  let paperView = UIView().set {
+    $0.backgroundColor = .white
+  }
+  
+  let paper = UIView().set {
     $0.backgroundColor = .white
   }
   
@@ -43,8 +47,19 @@ class ClosedPaperView: UIView {
     $0.textColor = .akColor(.white)
   }
   
-  let moneyAmountLabel = UILabel().set {
-    $0.text = "200,000 동"
+  let amountView = UIView().set {
+    $0.backgroundColor = .clear
+  }
+  
+  let amountLabel = UILabel().set {
+    $0.text = "200,000"
+    $0.font = .akFont(.gmarketBold14)
+    $0.textColor = .black
+    $0.textAlignment = .right
+  }
+  
+  let unitTitleLabel = UILabel().set {
+    $0.text = "동"
     $0.font = .akFont(.gmarketBold14)
     $0.textColor = .black
     $0.textAlignment = .right
@@ -96,15 +111,19 @@ class ClosedPaperView: UIView {
   }
   
   func setupViews() {
-    addSubview(paperBackgroundView)
+    addSubview(paperView)
+    addSubview(paper)
     
-    paperBackgroundView.addSubview(upperStack)
-    paperBackgroundView.addSubview(separatorLine)
-    paperBackgroundView.addSubview(convertKRWLabel)
-    paperBackgroundView.addSubview(reInputTextView)
+    paper.addSubview(upperStack)
+    paper.addSubview(separatorLine)
+    paper.addSubview(convertKRWLabel)
+    paper.addSubview(reInputTextView)
     
     upperStack.addArrangedSubview(countyCategoryStack)
-    upperStack.addArrangedSubview(moneyAmountLabel)
+    upperStack.addArrangedSubview(amountView)
+    
+    amountView.addSubview(amountLabel)
+    amountView.addSubview(unitTitleLabel)
     
     countyCategoryStack.addArrangedSubview(countryLabel)
     countyCategoryStack.addArrangedSubview(category)
@@ -122,14 +141,25 @@ class ClosedPaperView: UIView {
     let innerPadding: CGFloat = 6
     
     NSLayoutConstraint.activate([
-      paperBackgroundView.topAnchor.constraint(equalTo: topAnchor),
-      paperBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      paperBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      paperBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      paperView.topAnchor.constraint(equalTo: topAnchor),
+      paperView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      paperView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      paperView.bottomAnchor.constraint(equalTo: bottomAnchor),
       
-      upperStack.topAnchor.constraint(equalTo: paperBackgroundView.topAnchor, constant: topPadding),
-      upperStack.leadingAnchor.constraint(equalTo: paperBackgroundView.leadingAnchor, constant: horizontalPadding),
-      upperStack.trailingAnchor.constraint(equalTo: paperBackgroundView.trailingAnchor, constant: -horizontalPadding),
+      paper.topAnchor.constraint(equalTo: topAnchor),
+      paper.leadingAnchor.constraint(equalTo: leadingAnchor),
+      paper.trailingAnchor.constraint(equalTo: trailingAnchor),
+      paper.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      upperStack.topAnchor.constraint(equalTo: paper.topAnchor, constant: topPadding),
+      upperStack.leadingAnchor.constraint(equalTo: paper.leadingAnchor, constant: horizontalPadding),
+      upperStack.trailingAnchor.constraint(equalTo: paper.trailingAnchor, constant: -horizontalPadding),
+      
+      amountView.topAnchor.constraint(equalTo: amountLabel.topAnchor),
+      amountView.leadingAnchor.constraint(equalTo: separatorLine.leadingAnchor),
+      amountView.trailingAnchor.constraint(equalTo: unitTitleLabel.trailingAnchor),
+      amountView.bottomAnchor.constraint(equalTo: amountLabel.bottomAnchor),
+      unitTitleLabel.leadingAnchor.constraint(equalTo: amountLabel.trailingAnchor, constant: 4),
       
       categoryLabel.topAnchor.constraint(equalTo: category.topAnchor, constant: 5),
       categoryLabel.leadingAnchor.constraint(equalTo: category.leadingAnchor, constant: 8),
@@ -137,17 +167,17 @@ class ClosedPaperView: UIView {
       categoryLabel.trailingAnchor.constraint(equalTo: category.trailingAnchor, constant: -8),
       
       separatorLine.topAnchor.constraint(equalTo: upperStack.bottomAnchor, constant: innerPadding),
-      separatorLine.leadingAnchor.constraint(equalTo: paperBackgroundView.leadingAnchor, constant: horizontalPadding),
-      separatorLine.trailingAnchor.constraint(equalTo: paperBackgroundView.trailingAnchor, constant: -horizontalPadding),
+      separatorLine.leadingAnchor.constraint(equalTo: paper.leadingAnchor, constant: horizontalPadding),
+      separatorLine.trailingAnchor.constraint(equalTo: paper.trailingAnchor, constant: -horizontalPadding),
       separatorLine.heightAnchor.constraint(equalToConstant: 1),
       
       convertKRWLabel.topAnchor.constraint(equalTo: separatorLine.bottomAnchor, constant: innerPadding),
       convertKRWLabel.trailingAnchor.constraint(equalTo: separatorLine.trailingAnchor),
       convertKRWLabel.bottomAnchor.constraint(equalTo: reInputTextView.topAnchor, constant: -7),
       
-      reInputTextView.centerXAnchor.constraint(equalTo: paperBackgroundView.centerXAnchor),
+      reInputTextView.centerXAnchor.constraint(equalTo: paper.centerXAnchor),
       reInputTextView.heightAnchor.constraint(equalTo: reInputLabel.heightAnchor),
-      reInputTextView.bottomAnchor.constraint(equalTo: paperBackgroundView.bottomAnchor, constant: -bottomPadding),
+      reInputTextView.bottomAnchor.constraint(equalTo: paper.bottomAnchor, constant: -bottomPadding),
       downImageView.leadingAnchor.constraint(equalTo: reInputTextView.leadingAnchor),
       downImageView.heightAnchor.constraint(equalTo: reInputLabel.heightAnchor),
       downImageView.trailingAnchor.constraint(equalTo: reInputLabel.leadingAnchor, constant: -4),
@@ -157,8 +187,10 @@ class ClosedPaperView: UIView {
   }
   
   private func setupLayout() {
-    paperBackgroundView.layer.cornerRadius = 30
-    paperBackgroundView.layer.masksToBounds = true
+    paper.layer.cornerRadius = 30
+    paper.layer.masksToBounds = true
+    paperView.layer.cornerRadius = 30
+    paperView.layer.masksToBounds = true
   }
   
   func configure(userQuestion: UserQuestion) {
@@ -170,8 +202,9 @@ class ClosedPaperView: UIView {
     
     let amount = String(userQuestion.amount).formatWithComma() ?? "0"
     let convertAmount = String(userQuestion.amount * unit).formatWithComma() ?? "0"
-    moneyAmountLabel.text = "\(amount) \(unitTitle)"
-    convertKRWLabel.text = "\(convertAmount) 원"
+    amountLabel.text = "\(amount)"
+    unitTitleLabel.text = "\(unitTitle)"
+    convertKRWLabel.text = "약 \(convertAmount) 원"
   }
 }
 

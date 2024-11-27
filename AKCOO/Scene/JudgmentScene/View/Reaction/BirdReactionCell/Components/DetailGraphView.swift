@@ -11,12 +11,14 @@ class DetailGraphView: UIView {
   
   // MARK: - Views
   private let graphView = UIView().set {
+    $0.accessibilityIdentifier = "GraphView"
     $0.backgroundColor = .white
     $0.layer.cornerRadius = 3
     $0.layer.masksToBounds = true
   }
   
   private let tickMarkView = UIView().set {
+    $0.accessibilityIdentifier = "TickMarkView"
     $0.backgroundColor = UIColor.akColor(.akGray300)
   }
   
@@ -28,6 +30,7 @@ class DetailGraphView: UIView {
   }
   
   private let arrowImageView = UIImageView().set {
+    $0.accessibilityIdentifier = "ArrowImageView"
     $0.image = UIImage(named: "arrow") // Replace with the actual arrow image
     $0.contentMode = .scaleAspectFit
   }
@@ -99,11 +102,16 @@ class DetailGraphView: UIView {
   private func layoutArrow() {
     let spacing: CGFloat = 8
     
+    guard maxValue > minValue else {
+      arrowImageView.frame.origin.x = graphView.frame.minX + graphView.bounds.width / 2 - arrowImageView.bounds.width / 2
+      return
+    }
+    
     let normalizedAmount = max(min(userAmount, maxValue), minValue)
     let range = maxValue - minValue
     let percentage = (normalizedAmount - minValue) / range
     
-    let availableWidth = graphView.bounds.width - spacing*2
+    let availableWidth = graphView.bounds.width - spacing * 2
     let arrowPosition = spacing + percentage * availableWidth
     
     arrowImageView.frame.origin.x = graphView.frame.minX + arrowPosition - arrowImageView.bounds.width / 2

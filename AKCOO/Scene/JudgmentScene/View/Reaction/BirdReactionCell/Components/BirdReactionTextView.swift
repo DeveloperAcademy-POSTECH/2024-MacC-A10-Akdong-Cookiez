@@ -21,6 +21,7 @@ class BirdReactionTextView: UIView {
   }
   
   let nameTextView = UIView().set {
+    $0.accessibilityIdentifier = "NameTextView"
     $0.backgroundColor = .clear
   }
   
@@ -40,6 +41,7 @@ class BirdReactionTextView: UIView {
     $0.accessibilityIdentifier = "VerticalLineView"
     $0.backgroundColor = .akColor(.black)
     $0.layer.cornerRadius = 2
+    $0.alpha = 0
   }
   
   private let detailLabel = UILabel().set {
@@ -56,36 +58,39 @@ class BirdReactionTextView: UIView {
     $0.alpha = 0
   }
   
-  private let detailGraphView: DetailGraphView = DetailGraphView().set()
+  private let detailGraphView: DetailGraphView = DetailGraphView().set {
+    $0.accessibilityIdentifier = "DetailGraphView"
+    $0.alpha = 0
+  }
   
   private var isExpanded = false
+  private var buying = false
   private var backgroundBottomClosedConstraint: NSLayoutConstraint?
+  
   private var opinionLeadingConstraint: NSLayoutConstraint?
   
-  private var detailGraphVetricalOpenedConstraint: [NSLayoutConstraint]?
-  private var detailVetricalOpenedConstraint: [NSLayoutConstraint]?
+  private var openedConstraint: [NSLayoutConstraint]?
+  private var closedConstraint: [NSLayoutConstraint]?
   
-  private let horizentalPadding: CGFloat = 30
+  private let horizentalPadding: CGFloat = 35
   private let largeHorizentalPadding: CGFloat = 50
+  private let bottomPadding: CGFloat = 20
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
     setupConstraints()
-    setupConstraints(isExpanded: false)
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     setupViews()
     setupConstraints()
-    setupConstraints(isExpanded: false)
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     setupLayout()
-    print("layoutSubviews 실행 후 BirdReactionTextView frame: \(self.frame)")
   }
   
   private func setupViews() {
@@ -98,75 +103,81 @@ class BirdReactionTextView: UIView {
     
     nameTextView.addSubview(nameLabel)
     nameTextView.addSubview(downImageView)
-
   }
   
   private func setupConstraints() {
-    let verticalPadding: CGFloat = 20
-    let horizentalPadding: CGFloat = 30
+    let graphHorizentalPadding: CGFloat = 33
     
-    let trailingConstraint = opinionLabel.trailingAnchor.constraint(lessThanOrEqualTo: backgroundView.trailingAnchor, constant: -horizentalPadding)
-    trailingConstraint.priority = .defaultHigh // 우선순위 낮추기
-    
-    let backgroundBottomClosedConstraint = backgroundView.bottomAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: verticalPadding)
-    opinionLeadingConstraint = opinionLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: horizentalPadding)
+    let opinionLeadingConstraint = opinionLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: horizentalPadding)
+    let opinionTrailingConstraint = opinionLabel.trailingAnchor.constraint(lessThanOrEqualTo: backgroundView.trailingAnchor, constant: -horizentalPadding+10)
+    let detailTrailingConstraint = detailLabel.trailingAnchor.constraint(lessThanOrEqualTo: backgroundView.trailingAnchor, constant: -horizentalPadding+10)
+    opinionTrailingConstraint.priority = .defaultHigh // 우선순위 낮추기
+    detailTrailingConstraint.priority = .defaultHigh
     
     NSLayoutConstraint.activate([
       backgroundView.topAnchor.constraint(equalTo: topAnchor),
       backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
       backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
       backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      backgroundBottomClosedConstraint,
       
-      opinionLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: verticalPadding),
-      opinionLeadingConstraint!,
-      trailingConstraint,
+      opinionLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20),
+      opinionLeadingConstraint,
+      opinionTrailingConstraint,
       
-      nameTextView.topAnchor.constraint(equalTo: nameLabel.topAnchor),
-      nameTextView.topAnchor.constraint(equalTo: opinionLabel.bottomAnchor, constant: 8),
-      nameTextView.leadingAnchor.constraint(equalTo: opinionLabel.leadingAnchor, constant: 7),
-      nameTextView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-      nameTextView.trailingAnchor.constraint(equalTo: downImageView.trailingAnchor),
+      nameLabel.topAnchor.constraint(equalTo: nameTextView.topAnchor),
+      nameLabel.leadingAnchor.constraint(equalTo: nameTextView.leadingAnchor),
+      nameLabel.bottomAnchor.constraint(equalTo: nameTextView.bottomAnchor),
+      
       nameLabel.trailingAnchor.constraint(equalTo: downImageView.leadingAnchor, constant: -4),
-      nameTextView.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+      
+      downImageView.trailingAnchor.constraint(equalTo: nameTextView.trailingAnchor),
       downImageView.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
       
+      nameTextView.leadingAnchor.constraint(equalTo: opinionLabel.leadingAnchor, constant: 7),
+      
+      nameTextView.topAnchor.constraint(equalTo: opinionLabel.bottomAnchor, constant: 8),
+      
+      verticalLineView.topAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: 13),
       verticalLineView.widthAnchor.constraint(equalToConstant: 2),
+      verticalLineView.leadingAnchor.constraint(equalTo: nameTextView.leadingAnchor),
       verticalLineView.topAnchor.constraint(equalTo: detailLabel.topAnchor),
       verticalLineView.bottomAnchor.constraint(equalTo: detailLabel.bottomAnchor),
-      verticalLineView.leadingAnchor.constraint(equalTo: detailLabel.leadingAnchor, constant: -8),
       
-      detailLabel.topAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: 10),
-      detailGraphView.topAnchor.constraint(equalTo: detailLabel.bottomAnchor, constant: 6),
-      detailGraphView.leadingAnchor.constraint(equalTo: opinionLabel.leadingAnchor), // 임시
-      detailGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33) // 임시
+      detailLabel.leadingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: 8),
+      detailTrailingConstraint,
+
+      detailGraphView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: graphHorizentalPadding),
+      detailGraphView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -graphHorizentalPadding) // 임시
     ])
     
-    self.backgroundBottomClosedConstraint = backgroundBottomClosedConstraint
+    self.opinionLeadingConstraint = opinionLeadingConstraint
     opinionLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
     opinionLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     detailLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
     detailLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     
-    setupClosedConstraints()
+    setupConstraintsVertical()
   }
   
-  func setupClosedConstraints() {
-    let verticalPadding: CGFloat = 20
-    
-    let detailTrailingConstraint = detailLabel.trailingAnchor.constraint(lessThanOrEqualToSystemSpacingAfter: backgroundView.trailingAnchor, multiplier: -verticalPadding)
-    detailTrailingConstraint.priority = .defaultHigh
-    
-    self.detailVetricalOpenedConstraint = [
-      detailLabel.leadingAnchor.constraint(equalTo: nameTextView.leadingAnchor, constant: 9),
-      detailTrailingConstraint
+  private func setupConstraintsVertical() {
+    let closedConstraint = [
+      nameTextView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -bottomPadding)
     ]
+    let openedConstraint = [
+      detailGraphView.topAnchor.constraint(equalTo: detailLabel.bottomAnchor, constant: 9),
+      detailGraphView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -bottomPadding)
+    ]
+    
+    closedConstraint.forEach { $0.isActive = true }
+    
+    self.closedConstraint = closedConstraint
+    self.openedConstraint = openedConstraint
   }
   
   func configure(
     bird: BirdModel
   ) {
-    opinionLabel.text = bird.opinion
+    opinionLabel.text = "\"\(bird.opinion)\""
     nameLabel.text = bird.name
     detailLabel.text = bird.detail
     
@@ -177,6 +188,7 @@ class BirdReactionTextView: UIView {
     
     setupConstraints(buying: bird.judgment)
     applyParagraphStyleToDetailLabel()
+    self.buying = bird.judgment
     
     self.backgroundView.backgroundColor = bird.judgment ? .akColor(.akYellow) : .akColor(.akRed)
   }
@@ -194,11 +206,16 @@ class BirdReactionTextView: UIView {
   }
   
   private func setupConstraints(isExpanded: Bool) {
-    backgroundBottomClosedConstraint?.isActive = false
-    self.detailVetricalOpenedConstraint?.forEach { $0.isActive = false }
-    backgroundBottomClosedConstraint =  backgroundView.bottomAnchor.constraint(equalTo: isExpanded ? detailGraphView.bottomAnchor : nameTextView.bottomAnchor, constant: 20)
-    self.detailVetricalOpenedConstraint?.forEach { $0.isActive = isExpanded }
-    backgroundBottomClosedConstraint?.isActive = true
+    openedConstraint?.forEach { $0.isActive = false }
+    closedConstraint?.forEach { $0.isActive = false }
+    openedConstraint?.forEach { $0.isActive = isExpanded }
+    closedConstraint?.forEach { $0.isActive = !isExpanded }
+
+    if !buying {
+      opinionLeadingConstraint?.isActive = false
+      opinionLeadingConstraint?.constant = isExpanded ? horizentalPadding : largeHorizentalPadding
+      opinionLeadingConstraint?.isActive = true
+    }
   }
   
   private func animateExpansion() {
@@ -208,6 +225,8 @@ class BirdReactionTextView: UIView {
       options: [.allowUserInteraction],
       animations: {
         self.detailLabel.alpha = self.isExpanded ? 1 : 0
+        self.verticalLineView.alpha = self.isExpanded ? 1 : 0
+        self.detailGraphView.alpha = self.isExpanded ? 1 : 0
         self.layoutIfNeeded()
       }
     )

@@ -40,6 +40,8 @@
 		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
 		F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */; };
 		F365F4FD2CF4C335002C1171 /* JudgmentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */; };
+		F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FE2CF50D0F002C1171 /* Double+String.swift */; };
+		F365F5012CF62A19002C1171 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F5002CF62A19002C1171 /* ChatBubbleView.swift */; };
 		F37975372CF09567006E8DC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F37975362CF09567006E8DC0 /* GoogleService-Info.plist */; };
 		F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
@@ -98,11 +100,11 @@
 		F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92AE2CE6362000CF5238 /* GradientView.swift */; };
 		F3ED92B12CE6364700CF5238 /* GradientStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B02CE6364700CF5238 /* GradientStyle.swift */; };
 		F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B22CE636B000CF5238 /* GradientStyle+bottomShade.swift */; };
-		F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B52CE645EA00CF5238 /* StartTransition.swift */; };
+		F3ED92B62CE645EA00CF5238 /* JudgmentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B52CE645EA00CF5238 /* JudgmentTransition.swift */; };
 		F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92B82CE64BEA00CF5238 /* SnapshotTransition.swift */; };
 		F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92BB2CE64C3F00CF5238 /* LayerShadow.swift */; };
 		F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92BE2CE65D1F00CF5238 /* JudgmentView.swift */; };
-		F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */; };
+		F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C02CE66D9700CF5238 /* JudgmentTransitionaler.swift */; };
 		F3ED92C32CE68B1700CF5238 /* EditTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C22CE68B1700CF5238 /* EditTransition.swift */; };
 		F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C42CE68ED800CF5238 /* JudgmentReadyView.swift */; };
 		F3ED92C72CE6942A00CF5238 /* EditTransitionaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */; };
@@ -191,6 +193,8 @@
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
 		F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
 		F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditView.swift; sourceTree = "<group>"; };
+		F365F4FE2CF50D0F002C1171 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
+		F365F5002CF62A19002C1171 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		F37975362CF09567006E8DC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+PaperLabel.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,11 +257,11 @@
 		F3ED92AE2CE6362000CF5238 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F3ED92B02CE6364700CF5238 /* GradientStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientStyle.swift; sourceTree = "<group>"; };
 		F3ED92B22CE636B000CF5238 /* GradientStyle+bottomShade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GradientStyle+bottomShade.swift"; sourceTree = "<group>"; };
-		F3ED92B52CE645EA00CF5238 /* StartTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTransition.swift; sourceTree = "<group>"; };
+		F3ED92B52CE645EA00CF5238 /* JudgmentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentTransition.swift; sourceTree = "<group>"; };
 		F3ED92B82CE64BEA00CF5238 /* SnapshotTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTransition.swift; sourceTree = "<group>"; };
 		F3ED92BB2CE64C3F00CF5238 /* LayerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerShadow.swift; sourceTree = "<group>"; };
 		F3ED92BE2CE65D1F00CF5238 /* JudgmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentView.swift; sourceTree = "<group>"; };
-		F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTransitionaler.swift; sourceTree = "<group>"; };
+		F3ED92C02CE66D9700CF5238 /* JudgmentTransitionaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentTransitionaler.swift; sourceTree = "<group>"; };
 		F3ED92C22CE68B1700CF5238 /* EditTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransition.swift; sourceTree = "<group>"; };
 		F3ED92C42CE68ED800CF5238 /* JudgmentReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentReadyView.swift; sourceTree = "<group>"; };
 		F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransitionaler.swift; sourceTree = "<group>"; };
@@ -410,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */,
+				F365F4FE2CF50D0F002C1171 /* Double+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				F3ED92882CE506D100CF5238 /* CountrySelector.swift */,
 				F3ED930E2CE7C54300CF5238 /* CategorySelector.swift */,
 				F3ED927A2CE4AD8600CF5238 /* AmountMoneyTextField.swift */,
+				F365F5002CF62A19002C1171 /* ChatBubbleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -747,9 +753,9 @@
 		F3ED92B42CE645CE00CF5238 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED92B52CE645EA00CF5238 /* StartTransition.swift */,
+				F3ED92B52CE645EA00CF5238 /* JudgmentTransition.swift */,
+				F3ED92C02CE66D9700CF5238 /* JudgmentTransitionaler.swift */,
 				F3ED92C22CE68B1700CF5238 /* EditTransition.swift */,
-				F3ED92C02CE66D9700CF5238 /* StartTransitionaler.swift */,
 				F3ED92C62CE6942A00CF5238 /* EditTransitionaler.swift */,
 			);
 			path = Presenter;
@@ -1197,7 +1203,7 @@
 				F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */,
 				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
 				F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */,
-				F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */,
+				F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */,
 				515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
 				516E08092CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift in Sources */,
@@ -1207,12 +1213,13 @@
 				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
 				515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */,
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
-				F3ED92B62CE645EA00CF5238 /* StartTransition.swift in Sources */,
+				F3ED92B62CE645EA00CF5238 /* JudgmentTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
 				516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */,
 				5149A2552CF48A5500CA7500 /* ForeignBirdJudgmentGenerator.swift in Sources */,
 				F3ED93442CEB672700CF5238 /* CountryProfile.swift in Sources */,
 				F3EB76B32CDDFD850054D4E1 /* UIColor+Hex.swift in Sources */,
+				F365F5012CF62A19002C1171 /* ChatBubbleView.swift in Sources */,
 				F3ED92C52CE68ED800CF5238 /* JudgmentReadyView.swift in Sources */,
 				F3ED929C2CE519B000CF5238 /* ClosedPaperView.swift in Sources */,
 				516E08012CF4C680006F3D54 /* LocalBirdJudgmentGenerator.swift in Sources */,
@@ -1256,6 +1263,7 @@
 				F3ED92E92CE78D9000CF5238 /* JudgmentRepository.swift in Sources */,
 				F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */,
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
+				F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
 				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
