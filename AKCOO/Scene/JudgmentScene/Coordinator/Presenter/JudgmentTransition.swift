@@ -31,6 +31,7 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     let duration = transitionDuration(using: transitionContext)
+    
     let transition: SnapshotTransition
     switch direction {
     case .present:
@@ -85,8 +86,7 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
         to: judgmentReadyView,
         in: transitionContext.containerView,
         childTransitions: [
-          (from: judgmentView.blueBackgroundView, to: judgmentReadyView.blueBackgroundView, action: .move),
-          (from: judgmentView.paper.paperView, to: judgmentReadyView.paper.paperView, action: .move)
+          (from: judgmentView.blueBackgroundView, to: judgmentReadyView.blueBackgroundView, action: .move)
         ]
       )
     }
@@ -94,7 +94,7 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
     transition.prepare()
     animate {
       UIView.animateKeyframes(
-        withDuration: duration,
+        withDuration: self.direction == .present ? duration : 0.0,
         delay: 0,
         options: [],
         animations: {
