@@ -107,7 +107,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     
     let previousJudgment = PreviousJudgment(
       userQuestion: userQuestion,
-      standards: nil
+      standards: previousRecord
     )
     
     let birds: [BirdModel] = [
