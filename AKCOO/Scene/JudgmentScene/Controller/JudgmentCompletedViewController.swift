@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol JudgmentCompletedViewControllerDelegate: AnyObject, UIViewController {
+  func onActionCompletedDecision() -> Void
+}
+
 class JudgmentCompletedViewController: UIViewController {
   weak var coordinator: JudgmentCoordinator?
   private let judgmentUseCase: JudgmentUseCase
@@ -18,6 +22,8 @@ class JudgmentCompletedViewController: UIViewController {
   
   private var userQuestion: UserQuestion
   private var birds: [BirdModel]
+  
+  weak var delegate: JudgmentCompletedViewControllerDelegate?
   
   init(
     judgmentUseCase: JudgmentUseCase,
@@ -53,17 +59,39 @@ class JudgmentCompletedViewController: UIViewController {
       userQuesion: self.userQuestion,
       birds: self.birds
     )
+    
+    onAction()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    self.judgmentView.reactionStackView.collectionView.reloadData()
+    self.judgmentView.reactionCollectionView.collectionView.reloadData()
   }
   
   private func setupViews() {
-    view.backgroundColor = .clear
     judgmentView.paper.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
+  }
+  
+  private func onAction() {
+    judgmentView.onActionCompletedDecision = { [weak self] buying in
+      guard let self else { return }
+
+      let birdJudgmentDictionary: [String: JudgmentType] = Dictionary(
+        uniqueKeysWithValues: birds.map { ($0.name, $0.judgment ? .buying : .notBuying) }
+      )
+      
+      let newRecord = UserRecord.init(
+        userQuestion: userQuestion,
+        userJudgment: buying ? .buying : .notBuying,
+        externalJudgment: birdJudgmentDictionary
+      )
+      
+      // TODO: - 분기처리
+      _ = judgmentUseCase.save(record: newRecord)
+      self.delegate?.onActionCompletedDecision()
+      coordinator?.completedJudgment(judgmentViewController: self)
+    }
   }
   
   @objc func tappedPaper() {
@@ -72,7 +100,7 @@ class JudgmentCompletedViewController: UIViewController {
       presenting: self,
       paperModel: paperModel,
       selectedCategory: userQuestion.category,
-      userAmount: String(userQuestion.amount)
+      userAmount: userQuestion.amount.changeToStringNonZeroDot
     )
   }
 }

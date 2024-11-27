@@ -10,9 +10,10 @@ import UIKit
 struct JudgmentCompletedFactoryImp: JudgmentCompletedFactory {
   let useCase: JudgmentUseCase
   
-  func create(coordinator: JudgmentCoordinator, userQuestion: UserQuestion) -> UIViewController {
+  func create(coordinator: JudgmentCoordinator, delegate: any JudgmentCompletedViewControllerDelegate,userQuestion: UserQuestion) -> UIViewController {
     let judgmentCompletedViewController = JudgmentCompletedViewController(judgmentUseCase: useCase, userQuestion: userQuestion)
     judgmentCompletedViewController.coordinator = coordinator
+    judgmentCompletedViewController.delegate = delegate
     return judgmentCompletedViewController
   }
   

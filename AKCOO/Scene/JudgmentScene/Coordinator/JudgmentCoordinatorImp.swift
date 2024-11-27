@@ -17,7 +17,7 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   private let judgmentCompletedFactory: any JudgmentCompletedFactory
   private let judgmentEditFactory: any JudgmentEditFactory
   
-  private let startTransitionaler = StartTransitionaler()
+  private let judgmentTransitionaler = JudgmentTransitionaler()
   private let editTransitionaler = EditTransitionaler()
   
   required init(
@@ -34,27 +34,32 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   
   func start() {
     let newViewController = judgmentReadyFactory.create(coordinator: self)
+    newViewController.view.backgroundColor = .akColor(.akBlue400)
     self.navigationController.viewControllers = [newViewController]
   }
   
-  func startJudgment(presenting: UIViewController, userQuestion: UserQuestion) { // 데이터 받아와서 진행
-    let judgmentCompletedViewController = judgmentCompletedFactory.create(coordinator: self, userQuestion: userQuestion)
-    judgmentCompletedViewController.modalPresentationStyle = .custom
-    judgmentCompletedViewController.transitioningDelegate = self.startTransitionaler
+  func startJudgment(presenting: JudgmentCompletedViewControllerDelegate, userQuestion: UserQuestion) { // 데이터 받아와서 진행
+    let judgmentCompletedViewController = judgmentCompletedFactory.create(coordinator: self, delegate: presenting, userQuestion: userQuestion)
+    judgmentCompletedViewController.modalPresentationStyle = .overFullScreen
+    judgmentCompletedViewController.transitioningDelegate = self.judgmentTransitionaler
     judgmentCompletedViewController.view.backgroundColor = .akColor(.akBlue400)
     presenting.present(judgmentCompletedViewController, animated: true)
   }
   
-  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) { // 데이터 받아와서 진행
-    // TODO: - judgmentEditFactory로 변경 후 Transition 연결
-    let readyViewController = judgmentEditFactory.create(coordinator: self, paperModel: paperModel, selectedCategory: selectedCategory, userAmount: userAmount, delegate: presenting)
-//    readyViewController.modalPresentationStyle = .custom
-//    readyViewController.transitioningDelegate = self.editTransitionaler
-    presenting.present(readyViewController, animated: true)
+  func completedJudgment(judgmentViewController: UIViewController) {
+    judgmentViewController.presentingViewController?.dismiss(animated: true)
   }
   
-  func completedEditPaper(editViewController: JudgmentEditViewController) {  // 데이터 받아와서 진행
-    editViewController.dismiss(animated: true)
-//    editViewController.presentingViewController?.dismiss(animated: true)
+  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) { // 데이터 받아와서 진행
+    let editViewController = judgmentEditFactory.create(coordinator: self, paperModel: paperModel, selectedCategory: selectedCategory, userAmount: userAmount, delegate: presenting)
+    editViewController.modalPresentationStyle = .overFullScreen
+    editViewController.transitioningDelegate = self.editTransitionaler
+    editViewController.view.backgroundColor = .akColor(.akBlue400)
+    presenting.present(editViewController, animated: true)
+  }
+  
+  func completedEditPaper(editViewController: UIViewController) {  // 데이터 받아와서 진행
+//    editViewController.dismiss(animated: true)
+    editViewController.presentingViewController?.dismiss(animated: true)
   }
 }

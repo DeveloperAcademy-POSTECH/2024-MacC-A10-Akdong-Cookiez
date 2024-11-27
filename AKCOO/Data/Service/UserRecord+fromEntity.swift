@@ -46,8 +46,6 @@ extension UserRecord {
       }
       
       let userRecord = UserRecord(
-        id: id,
-        date: date,
         userQuestion: userQuestion,
         userJudgment: userJudgment,
         externalJudgment: externalJudgments

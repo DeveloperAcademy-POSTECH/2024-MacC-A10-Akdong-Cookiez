@@ -16,8 +16,8 @@ class EditTransitionaler: NSObject, UIViewControllerTransitioningDelegate {
     source: UIViewController
   ) -> UIViewControllerAnimatedTransitioning? {
     transition.direction = .present
-    transition.judgmentReadyView = (presented as? JudgmentReadyViewController)?.view as? JudgmentReadyView
     transition.judgmentView = (source as? JudgmentCompletedViewController)?.view as? JudgmentView
+    transition.judgmentEditView = (presented as? JudgmentEditViewController)?.view as? JudgmentEditView
     return transition
   }
   

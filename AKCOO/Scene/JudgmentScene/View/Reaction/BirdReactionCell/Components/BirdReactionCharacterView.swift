@@ -10,11 +10,13 @@ class BirdReactionCharacterView: UIView {
   // MARK: - Properties
   
   private let birdImageView = UIImageView().set {
+    $0.accessibilityIdentifier = "BirdImageView"
     $0.contentMode = .scaleAspectFit
     $0.isHidden = true
   }
   
   private let markImageView = UIImageView().set {
+    $0.accessibilityIdentifier = "MarkImageView"
     $0.contentMode = .scaleAspectFit
     $0.isHidden = true
   }

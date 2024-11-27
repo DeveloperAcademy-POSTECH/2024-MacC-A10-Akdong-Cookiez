@@ -68,7 +68,6 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     return .success(paperModel)
   }
   
-  // TODO: - 이오 확인
   func getNewPaperModel(newCountryName selectedCountryName: String) -> Result<PaperModel, any Error> {
     guard let countriesDetails,
           let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
@@ -76,6 +75,14 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     selectedCountryDetail = newSelectedCountryDetail
     
     return getPaperModel()
+  }
+  
+  func isPreviousRecordExists(for country: String, category: String) -> Bool {
+    var result = false
+    if case .success(let previousRecord) = recordRepository.fetchPreviousDaySpending(country: country, category: category) {
+      result = previousRecord != nil
+    }
+    return result
   }
   
   func getBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {

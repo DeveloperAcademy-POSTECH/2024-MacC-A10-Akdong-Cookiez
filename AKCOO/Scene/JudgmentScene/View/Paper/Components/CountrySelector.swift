@@ -71,9 +71,10 @@ class CountrySelector: UIView {
   // MARK: - Configuration
   func configure(countries: [String], selectedCountry: String) {
     self.selectedCountry = selectedCountry
-    setupMenu(countries)
     self.countryButton.setTitle(selectedCountry, for: .normal)
     self.countryButton.akFont(.gmarketBold16)
+    
+    setupMenu(countries)
   }
   
   private func setupMenu(_ countries: [String]) {
