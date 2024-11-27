@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Xmark.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
