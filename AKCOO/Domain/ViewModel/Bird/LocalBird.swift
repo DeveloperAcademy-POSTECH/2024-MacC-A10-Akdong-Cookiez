@@ -27,7 +27,7 @@ struct LocalBird: BirdModel {
         category: userQuestion.category,
         amount: userQuestion.amount * userQuestion.country.currency.unit
       ),
-      standards: judgment.standards
+      standards: judgment.standards.filter { $0.category == userQuestion.category }
     )
     self.judgmentCriteria = convertedCrieteria
     

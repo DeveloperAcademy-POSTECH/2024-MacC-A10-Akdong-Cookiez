@@ -5,8 +5,8 @@
 //  Created by 박혜운 on 11/15/24.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 class JudgmentView: UIView {
   

@@ -29,7 +29,9 @@ struct CountryAverageJudgment: Judgment {
 extension CountryAverageJudgment {
   // 값 기준 오름차순으로 정렬 (작은 값부터)
   var sortedItems: [Item] {
-    standards.sorted { $0.amount < $1.amount }
+    standards
+      .filter { $0.category == userQuestion.category }
+      .sorted { $0.amount < $1.amount }
   }
   
   // 기준값 중 가장 작은 값
@@ -47,13 +49,13 @@ extension CountryAverageJudgment {
   // 기준값 평균
   var averageOfItems: Double? {
     // 기준이 비어있다면 nil 반환
-    guard standards.isEmpty == false else { return nil }
+    guard sortedItems.isEmpty == false else { return nil }
     // 기준값들의 합
-    let total = standards.reduce(0.0) { (sum, item) in
+    let total = sortedItems.reduce(0.0) { (sum, item) in
       sum + item.amount
     }
     
-    let average = total / Double(standards.count)
+    let average = total / Double(sortedItems.count)
     return average
   }
 }

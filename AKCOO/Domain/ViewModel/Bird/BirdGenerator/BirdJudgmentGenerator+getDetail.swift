@@ -40,7 +40,8 @@ extension BirdJudgmentGenerator {
     
     // 평균과의 차이
     let differenceWithAverage = judgmentCriteria.userAmount - (judgmentCriteria.averageOfItems ?? 0.0)
-    let absoluteDifference = abs(differenceWithAverage).formattedWithCommas()
+    let absoluteDifference = abs(differenceWithAverage)
+      .formattedWithCommas(maxDecimalPlaces: ["동", "원"].contains(countryUnitTitle) ? 0 : 2)
     
     // 평균 가격에 대한 상세 내용
     var result = "일반적인 \(countryName)의 \(category) 가격"
@@ -88,7 +89,8 @@ extension BirdJudgmentGenerator {
     
     result += "\(closestItem?.name ?? "")의 "
     
-    let absoluteDifferenceWithClosest = abs(differenceWithClosestItem).formattedWithCommas()
+    let absoluteDifferenceWithClosest = abs(differenceWithClosestItem)
+      .formattedWithCommas(maxDecimalPlaces: ["동", "원"].contains(countryUnitTitle) ? 0 : 2)
     
     switch differenceWithClosestItem {
     case ..<0: // 입력 금액 < 가까운 값

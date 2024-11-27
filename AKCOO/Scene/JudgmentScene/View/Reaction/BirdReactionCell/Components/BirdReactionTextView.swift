@@ -242,7 +242,7 @@ class BirdReactionTextView: UIView {
     )
     
     // 하이라이트 문자열
-    //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
+    // FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
     let highlightPattern = "(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)"
     let highlightRegex = try? NSRegularExpression(pattern: highlightPattern)
     
@@ -264,7 +264,7 @@ class BirdReactionTextView: UIView {
     
     // bold 문자열
     //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
-    let boldPatterns = ["(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)(\\s?)(저렴|비싼|비싸|같아)", "같아요"]
+    let boldPatterns = ["(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)(\\s?)(저렴|비싼|비싸|같아)", "같아요", "[\\d,]+(\\.\\d+)?(프랑|동|원)"]
     let boldRegexes = boldPatterns.map { try? NSRegularExpression(pattern: $0) }
     
     boldRegexes.forEach { regex in

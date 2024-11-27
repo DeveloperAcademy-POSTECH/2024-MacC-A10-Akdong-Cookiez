@@ -154,6 +154,7 @@ class SnapshotTransition {
 //        transitionView.frame = toView.convert(toView.bounds, to: transitionView.superview)
 //        transitionView.layer.apply(LayerShadow.from(toView.layer))
 //      }
+      
     }
     
     if case .disappear = action {

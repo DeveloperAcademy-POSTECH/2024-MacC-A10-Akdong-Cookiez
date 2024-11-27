@@ -9,7 +9,7 @@ import Foundation
 
 extension Double {
   var changeToStringNonZeroDot: String {
-    if Double(Int(self)) == self  {
+    if Double(Int(self)) == self {
       return String(Int(self))
     } else {
       return String(self)

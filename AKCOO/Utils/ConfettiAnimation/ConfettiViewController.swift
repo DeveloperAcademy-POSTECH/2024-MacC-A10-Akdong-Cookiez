@@ -5,8 +5,8 @@
 //  Created by 박혜운 on 11/28/24.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 // MARK: - 테스트를 위한 예시 코드입니다
 class ConfettiViewController: UIViewController {
