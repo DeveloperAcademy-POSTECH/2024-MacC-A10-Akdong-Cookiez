@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-// MARK: - 테스트를 위한 예시 코드입니다
+// MARK: - 테스트를 위한 예시 코드입니다 
 class ConfettiViewController: UIViewController {
   private var viewModel = CounterViewModel() // Shared ViewModel
   private var hostingController: UIHostingController<ConfettiView>?

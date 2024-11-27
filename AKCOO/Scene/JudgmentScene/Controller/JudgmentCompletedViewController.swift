@@ -86,7 +86,7 @@ class JudgmentCompletedViewController: UIViewController {
         userJudgment: buying ? .buying : .notBuying,
         externalJudgment: birdJudgmentDictionary
       )
-
+      
       // TODO: - 분기처리
       _ = judgmentUseCase.save(record: newRecord)
       self.delegate?.onActionCompletedDecision()
