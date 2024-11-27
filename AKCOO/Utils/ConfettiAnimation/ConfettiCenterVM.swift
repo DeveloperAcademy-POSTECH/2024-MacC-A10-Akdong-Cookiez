@@ -110,7 +110,3 @@ class ConfettiCenterVM: ObservableObject {
     return explosionAnimationDuration + dropAnimationDuration
   }
 }
-
-#Preview {
-  TestConfettiView()
-}

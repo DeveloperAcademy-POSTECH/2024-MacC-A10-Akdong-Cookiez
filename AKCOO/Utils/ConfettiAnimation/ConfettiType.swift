@@ -56,7 +56,3 @@ enum ConfettiType: CaseIterable, Hashable {
     ]
   }
 }
-
-#Preview {
-  TestConfettiView()
-}

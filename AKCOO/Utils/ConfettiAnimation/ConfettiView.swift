@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct ConfettiView: View {
-  @State var counter: Int = 0
+  @ObservedObject var viewModel: CounterViewModel
   @StateObject var confettiVM = ConfettiCenterVM()
   @State var animate = 0
   @State var finishedAnimationCounter = 0
   @State var firstAppear = false
   
-  init(imageName: String?) {
-//    self._counter = counter
-    
+  init(viewModel: CounterViewModel, isLeft: Bool, imageName: String?) {
+    self.viewModel = viewModel
     self._confettiVM = StateObject(wrappedValue: ConfettiCenterVM(
-      confettiNumber: 20,
+      confettiNumber: 70,
       confettiTypes: [ConfettiType.image(imageName: imageName ?? "greenbird")],
-      confettiSize: 15.0,
+      confettiSize: 23.0,
       dropHeight: 600.0,
       fireworkEffect: false,
-      openingAngle: .degrees(20),
-      closingAngle: .degrees(160),
-      radius: 140,
+      openingAngle: .degrees(isLeft ? 60 : 40),
+      closingAngle: .degrees(isLeft ? 140 : 120),
+      radius: 600,
       repetitions: 0,
       repetitionInterval: 1.0,
-      explosionAnimDuration: 0.2,
-      dropAnimationDuration: 3.5
+      explosionAnimDuration: 0.6,
+      dropAnimationDuration: 2.0
     ))
   }
   
@@ -44,12 +43,8 @@ struct ConfettiView: View {
     }
     .onAppear {
       firstAppear = true
-      
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-        animate += 1
-      }
     }
-    .onChange(of: counter) { _, _ in
+    .onChange(of: viewModel.counter) { _, _ in
       if firstAppear {
         for index in 0...confettiVM.repetitions {
           DispatchQueue.main.asyncAfter(deadline: .now() + confettiVM.repetitionInterval * Double(index)) {
@@ -57,12 +52,6 @@ struct ConfettiView: View {
           }
         }
       }
-      
-      print("aaa")
     }
   }
-}
-
-#Preview {
-  TestConfettiView()
 }

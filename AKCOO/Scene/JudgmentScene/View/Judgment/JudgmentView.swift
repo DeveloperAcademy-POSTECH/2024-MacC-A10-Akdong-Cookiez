@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class JudgmentView: UIView {
   
@@ -52,6 +53,12 @@ class JudgmentView: UIView {
   lazy var buyButton: UIButton = self.createCustomButton(title: "살래요")
   lazy var notBuyButton: UIButton = self.createCustomButton(title: "안 살래요")
   
+  private var buyConfettiHostingController: UIHostingController<ConfettiView>?
+  private var notBuyConfettiHostingController: UIHostingController<ConfettiView>?
+  
+  private let buyingConfettiViewModel = CounterViewModel()
+  private let notbuyingConfettiViewModel = CounterViewModel()
+  
   var onActionCompletedDecision: ((Bool) -> Void)?
   
   override init(frame: CGRect) {
@@ -80,8 +87,11 @@ class JudgmentView: UIView {
     decisionStack.addArrangedSubview(notBuyButton)
     decisionStack.addArrangedSubview(buyButton)
     
-    buyButton.addTarget(self, action: #selector(tappedDecisionButton(_:)), for: .touchUpInside)
-    notBuyButton.addTarget(self, action: #selector(tappedDecisionButton(_:)), for: .touchUpInside)
+    addConfettiView(for: buyButton, imageName: "confettiOmark", isLeft: false, confettiHostingController: &buyConfettiHostingController, viewModel: buyingConfettiViewModel)
+    addConfettiView(for: notBuyButton, imageName: "confettiXmark", isLeft: true, confettiHostingController: &notBuyConfettiHostingController, viewModel: notbuyingConfettiViewModel)
+    
+    buyButton.addTarget(self, action: #selector(tappedBuyingDecisionButton(_:)), for: .touchUpInside)
+    notBuyButton.addTarget(self, action: #selector(tappedBuyingDecisionButton(_:)), for: .touchUpInside)
   }
   
   private func setupConstraints() {
@@ -126,6 +136,26 @@ class JudgmentView: UIView {
     ])
   }
   
+  private func addConfettiView(for button: UIButton, imageName: String, isLeft: Bool, confettiHostingController: inout UIHostingController<ConfettiView>?, viewModel: CounterViewModel) {
+    // ConfettiView 생성
+    let confettiView = ConfettiView(viewModel: viewModel, isLeft: isLeft, imageName: imageName)
+    confettiHostingController = UIHostingController(rootView: confettiView)
+    
+    if let confettiHostingView = confettiHostingController?.view {
+      confettiHostingView.translatesAutoresizingMaskIntoConstraints = false
+      confettiHostingView.isUserInteractionEnabled = false // 터치 이벤트 방해 금지
+      confettiHostingView.backgroundColor = .clear
+      addSubview(confettiHostingView)
+      
+      NSLayoutConstraint.activate([
+        confettiHostingView.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+        confettiHostingView.trailingAnchor.constraint(equalTo: button.trailingAnchor),
+        confettiHostingView.topAnchor.constraint(equalTo: button.topAnchor),
+        confettiHostingView.bottomAnchor.constraint(equalTo: button.bottomAnchor)
+      ])
+    }
+  }
+  
   func configure(
     userQuesion: UserQuestion,
     birds: [BirdModel]
@@ -154,8 +184,44 @@ class JudgmentView: UIView {
     }
   }
   
-  @objc private func tappedDecisionButton(_ sender: UIButton) {
-    onActionCompletedDecision?(sender == buyButton)
+  @objc private func tappedBuyingDecisionButton(_ sender: UIButton) {
+//    self.isUserInteractionEnabled = false
+    let confettiViewModelToUse = (sender == buyButton) ? buyingConfettiViewModel : notbuyingConfettiViewModel
+    
+    // 첫 번째 counter 증가
+    DispatchQueue.main.async {
+      confettiViewModelToUse.counter += 1
+    }
+
+    // 0.2초 후 두 번째 counter 증가
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+      guard let self else { return }
+      confettiViewModelToUse.counter += 1
+      self.fadeOutAndTransition()
+    }
+
+    // 1.3초 후 화면 이동
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { [weak self] in
+      guard let self else { return }
+      self.onActionCompletedDecision?(sender == self.buyButton)
+    }
+  }
+  
+  private func fadeOutAndTransition() {
+    UIView.animate(withDuration: 1.3, animations: {
+          // 뷰의 투명도를 0으로 설정 (페이드 아웃 효과)
+        self.paper.alpha = 0.0
+        self.birdsReactionTitleLabel.alpha = 0.0
+        self.paperTitleLabel.alpha = 0.0
+        self.reactionCollectionView.alpha = 0.0
+        self.decisionLabel.alpha = 0.0
+        self.decisionStack.alpha = 0.0
+        self.gradientView.alpha = 0.0
+        
+      }, completion: { _ in
+          // 애니메이션 완료 후 화면 전환 처리
+          self.onActionCompletedDecision?(true) // 화면 전환 로직
+      })
   }
 }
 

@@ -59,7 +59,6 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   }
   
   func completedEditPaper(editViewController: UIViewController) {  // 데이터 받아와서 진행
-//    editViewController.dismiss(animated: true)
     editViewController.presentingViewController?.dismiss(animated: true)
   }
 }

@@ -28,7 +28,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
       case .success(let countriesDetails):
         self.countriesDetails = countriesDetails
         tmpCountriesDetails = countriesDetails
-      case .failure: return // 실패 시 처리
+      case .failure: return
       }
       
       switch await judgmentRepository.fetchLocalDetails() {
