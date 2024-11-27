@@ -73,6 +73,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
       let countriesDetails,
       let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
     // TODO: - RecordRepository를 통해 선택된 국가를 변경하는 로직 추가
+    _ = recordRepository.saveSelectedCountry(selectedCountryName)
     selectedCountryDetail = newSelectedCountryDetail
     
     return getPaperModel()
