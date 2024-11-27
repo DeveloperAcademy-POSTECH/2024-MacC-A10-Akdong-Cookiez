@@ -9,8 +9,8 @@ import Foundation
 
 /// 사용자 지출 판단 기록 
 struct UserRecord {
-  let id: UUID
-  let date: Date
+  let id: UUID = .init()
+  let date: Date = .now
   var userQuestion: UserQuestion
   var userJudgment: JudgmentType
   var externalJudgment: [String: JudgmentType]
