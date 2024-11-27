@@ -207,13 +207,13 @@
 		516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
 		516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toCompactKoreanDateString.swift"; sourceTree = "<group>"; };
 		516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionGraphInfo.swift; sourceTree = "<group>"; };
+		95CE7F672CF75D9400EE54FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
 		F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
 		F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditView.swift; sourceTree = "<group>"; };
 		F365F4FE2CF50D0F002C1171 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		F365F5002CF62A19002C1171 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
-		F37975362CF09567006E8DC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+PaperLabel.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -641,7 +641,7 @@
 				F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */,
 				F3EB760E2CDD14B20054D4E1 /* LaunchScreen.storyboard */,
 				F3EB76112CDD14B20054D4E1 /* Info.plist */,
-				F37975362CF09567006E8DC0 /* GoogleService-Info.plist */,
+				95CE7F672CF75D9400EE54FF /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1155,7 +1155,7 @@
 				F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */,
 				F3EB76D02CDE406D0054D4E1 /* SFMonoLightItalic.otf in Resources */,
 				F3EB76DA2CDE406D0054D4E1 /* SFMonoHeavyItalic.otf in Resources */,
-				F37975372CF09567006E8DC0 /* GoogleService-Info.plist in Resources */,
+				95CE7F682CF75D9400EE54FF /* GoogleService-Info.plist in Resources */,
 				F3EB76102CDD14B20054D4E1 /* Base in Resources */,
 				F3EB76D22CDE406D0054D4E1 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
@@ -1240,7 +1240,7 @@
 				F3ED934A2CEB694300CF5238 /* BirdReaction.swift in Sources */,
 				F3ED93332CEB57A300CF5238 /* Judgment.swift in Sources */,
 				F3ED931B2CE861B000CF5238 /* JudgmentRepositoryImp.swift in Sources */,
-				F3ED92C12CE66D9700CF5238 /* StartTransitionaler.swift in Sources */,
+				F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */,
 				515A5B4C2CF7179B003E032A /* ConfettiCenterVM.swift in Sources */,
 				F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */,
 				515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */,
@@ -1496,8 +1496,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99KH3TLG9V;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = L72ZFX76S7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1529,8 +1529,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99KH3TLG9V;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = L72ZFX76S7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
