@@ -16,7 +16,6 @@ struct PreviousJudgment: Judgment {
     guard
       let userRecordAmount = standards?.amount
     else {
-      print("직전 소비가 없어요")
       return .buying
     }
     

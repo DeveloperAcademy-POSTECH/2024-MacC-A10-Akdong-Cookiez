@@ -18,7 +18,7 @@ struct PreviousBird: BirdModel {
   var criteriaName: String { return judgmentCriteria.name }
   var judgment: Bool { return judgmentCriteria.result == .buying }
   
-  var name: String { "지난 날의 나" }
+  var name: String { "과거의 나" }
   var information: String { return "직전 소비로만 판단해!" }
   
   private var userQuestion: UserQuestion { return judgmentCriteria.userQuestion }
