@@ -34,7 +34,7 @@ class JudgmentEditView: UIView {
     userAmount: String
   ) {
     paper.configure(
-      paperModel: paperModel,
+      paperModel: paperModel, 
       selected: selectedCategory,
       userAmount: userAmount
     )

@@ -8,7 +8,8 @@
 import UIKit
 
 protocol JudgmentCoordinator: Coordinator {
-  func startJudgment(presenting: UIViewController, userQuestion: UserQuestion)
+  func startJudgment(presenting: JudgmentCompletedViewControllerDelegate, userQuestion: UserQuestion)
+  func completedJudgment(judgmentViewController: UIViewController)
   func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String)
-  func completedEditPaper(editViewController: JudgmentEditViewController)
+  func completedEditPaper(editViewController: UIViewController)
 }

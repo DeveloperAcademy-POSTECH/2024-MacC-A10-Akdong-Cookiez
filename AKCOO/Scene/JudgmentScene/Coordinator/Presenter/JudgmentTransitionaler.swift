@@ -7,8 +7,8 @@
 
 import UIKit
 
-class StartTransitionaler: NSObject, UIViewControllerTransitioningDelegate {
-  let transition = StartTransition()
+class JudgmentTransitionaler: NSObject, UIViewControllerTransitioningDelegate {
+  let transition = JudgmentTransition()
   
   func animationController(
     forPresented presented: UIViewController,

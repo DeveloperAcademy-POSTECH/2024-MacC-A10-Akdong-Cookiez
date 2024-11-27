@@ -37,6 +37,9 @@ class CategorySelector: UIView {
   
   // MARK: - OnAction
   var onActionChangeCategory: ((String?) -> Void)?
+  var selectedButton: UIButton? {
+    return buttons.first(where: { $0.isSelected })
+  }
   
   // MARK: - Initializers
   override init(frame: CGRect) {
@@ -89,11 +92,23 @@ class CategorySelector: UIView {
     self.categories = categoryList
     
     // 이전 버튼들 제거 및 새로운 버튼들 생성
+    configureSelectedButton(selected: selectedCategory)
+    
+    // 선택된 카테고리가 있을 경우 선택, 없을 경우 첫 번째를 선택
+    if let selectedIndex = categories.firstIndex(of: selectedCategory), selectedCategory != "" {
+      setSelectedButton(at: selectedIndex)
+    } else {
+      setSelectedButton(at: 0)
+    }
+  }
+  
+  // MARK: - Private Methods
+  private func configureSelectedButton(selected selectedCategory: String = "") {
+    // 이전 버튼들 제거 및 새로운 버튼들 생성
     buttons.forEach { button in
       buttonStackView.removeArrangedSubview(button)
       button.removeFromSuperview()
     }
-    
     buttons = categories.map { title in
       var configuration = UIButton.Configuration.filled()
       configuration.contentInsets = NSDirectionalEdgeInsets(top: 7, leading: 12, bottom: 7, trailing: 12)
@@ -137,16 +152,8 @@ class CategorySelector: UIView {
       button.tag = index
       buttonStackView.addArrangedSubview(button)
     }
-    
-    // 선택된 카테고리가 있을 경우 선택, 없을 경우 첫 번째를 선택
-    if let selectedIndex = categories.firstIndex(of: selectedCategory), selectedCategory != "" {
-      setSelectedButton(at: selectedIndex)
-    } else {
-      setSelectedButton(at: 0)
-    }
   }
   
-  // MARK: - Private Methods
   private func setSelectedButton(at index: Int) {
     guard !buttons.isEmpty else { return }
     

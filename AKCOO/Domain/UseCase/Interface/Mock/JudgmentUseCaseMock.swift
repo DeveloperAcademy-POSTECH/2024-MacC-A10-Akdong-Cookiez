@@ -85,6 +85,10 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     return .success(paperModel)
   }
   
+  func isPreviousRecordExists(for country: String, category: String) -> Bool {
+    return false 
+  }
+  
   func getBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
     guard let selectedCountryDetail else { return .failure(NetworkError()) }
     guard let localCountryDetail else { return .failure(NetworkError()) }
