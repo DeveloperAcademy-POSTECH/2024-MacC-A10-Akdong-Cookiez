@@ -101,11 +101,16 @@ class DetailGraphView: UIView {
   private func layoutArrow() {
     let spacing: CGFloat = 8
     
+    guard maxValue > minValue else {
+      arrowImageView.frame.origin.x = graphView.frame.minX + graphView.bounds.width / 2 - arrowImageView.bounds.width / 2
+      return
+    }
+    
     let normalizedAmount = max(min(userAmount, maxValue), minValue)
     let range = maxValue - minValue
     let percentage = (normalizedAmount - minValue) / range
     
-    let availableWidth = graphView.bounds.width - spacing*2
+    let availableWidth = graphView.bounds.width - spacing * 2
     let arrowPosition = spacing + percentage * availableWidth
     
     arrowImageView.frame.origin.x = graphView.frame.minX + arrowPosition - arrowImageView.bounds.width / 2
@@ -122,9 +127,9 @@ class DetailGraphView: UIView {
   view
     .configure(
       criteria: "이전소비",
-      minValue: 10,
+      minValue: 100,
       maxValue: 10000,
-      userAmount: 0, 
+      userAmount: 3000, 
       buying: false
     )
   return view
