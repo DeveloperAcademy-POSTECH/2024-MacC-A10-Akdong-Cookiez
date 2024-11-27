@@ -131,7 +131,6 @@ class CategorySelector: UIView {
       button.configurationUpdateHandler = { [weak self] button in
         guard let self else { return }
         if button.isSelected {
-          print("카테고리 선택됨")
           button.configuration?.background.backgroundColor = self.selectedButtonColor
           button.configuration?.baseForegroundColor = .white
           self.onActionChangeCategory?(button.titleLabel?.text)

@@ -19,7 +19,7 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
   weak var judgmentEditView: JudgmentEditView?
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 5.3 // 전환 애니메이션 시간
+    return 0.3 // 전환 애니메이션 시간
   }
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -36,38 +36,38 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
     let transition: SnapshotTransition
     switch direction {
     case .present:
-      
-      let textField = createTextSnapshot(from: judgmentEditView.paper.amountTextField.textField)
-      
       transition = SnapshotTransition(
         from: judgmentView,
         to: judgmentEditView,
         in: transitionContext.containerView,
         childTransitions: [
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.paperView, action: .move),
-          (from: judgmentView.paper.convertKRWLabel, to: judgmentEditView.paper.amountTextField.infoLabel, action: .move),
-          (from: judgmentView.paper.amountLabel, to: textField, action: .move),
-          (from: judgmentView.paper.unitTitleLabel, to: judgmentEditView.paper.amountTextField.unitLabel, action: .move),
-          (from: judgmentView.paper.separatorLine, to: judgmentEditView.paper.amountTextField.separatorLine, action: .move),
-          (from: judgmentView.paper.countryLabel, to: judgmentEditView.paper.countrySelector.countryButton.titleLabel ?? .paperLabel(with: ""), action: .move),
-          (from: judgmentView.paper.category, to: judgmentEditView.paper.categorySelector.selectedButton ?? .init(), action: .move),
-          (from: judgmentView.paper.reInputTextView, to: judgmentView.paper.reInputTextView, action: .disappear),
-          (from: judgmentView.paperTitleLabel, to: judgmentView.paperTitleLabel, action: .disappear),
-          (from: judgmentView.birdsReactionTitleLabel, to: judgmentView.birdsReactionTitleLabel, action: .disappear),
-          
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.countrySelector.titleLabel, action: .appear),
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.categorySelector.titleLabel, action: .appear),
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.amountTextField.titleLabel, action: .appear),
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.readyButton, action: .appear)
+          (from: judgmentView.blueBackgroundView, to: judgmentEditView.blueBackgroundView, action: .move),
+          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.paperView, action: .move)
         ]
       )
     case .dismiss:
+      let textField = createTextSnapshot(from: judgmentEditView.paper.amountTextField.textField)
+      
       transition = SnapshotTransition(
         from: judgmentEditView,
         to: judgmentView,
         in: transitionContext.containerView,
         childTransitions: [
-          (from: judgmentEditView.paper.paperView, to: judgmentView.paper.paperView, action: .move)
+          (from: judgmentEditView.blueBackgroundView, to: judgmentView.blueBackgroundView, action: .move),
+          (from: judgmentEditView.paper.paperView, to: judgmentView.paper.paperView, action: .move),
+          (from: judgmentEditView.paper.amountTextField.infoLabel, to: judgmentView.paper.convertKRWLabel, action: .move),
+          (from: textField, to: judgmentView.paper.amountLabel, action: .move),
+          (from: judgmentEditView.paper.amountTextField.unitLabel, to: judgmentView.paper.unitTitleLabel, action: .move),
+          (from: judgmentEditView.paper.amountTextField.separatorLine, to: judgmentView.paper.separatorLine, action: .move),
+          (from: judgmentEditView.paper.countrySelector.countryButton.titleLabel ?? .paperLabel(with: ""), to: judgmentView.paper.countryLabel, action: .move),
+          (from: judgmentEditView.paper.categorySelector.selectedButton ?? .init(), to: judgmentView.paper.category, action: .move),
+          (from: judgmentView.paper.reInputTextView, to: judgmentView.paper.reInputTextView, action: .appear),
+          (from: judgmentView.paperTitleLabel, to: judgmentView.paperTitleLabel, action: .appear),
+          (from: judgmentView.birdsReactionTitleLabel, to: judgmentView.birdsReactionTitleLabel, action: .appear),
+          (from: judgmentEditView.paper.countrySelector.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
+          (from: judgmentEditView.paper.categorySelector.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
+          (from: judgmentEditView.paper.amountTextField.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
+          (from: judgmentEditView.paper.readyButton, to: judgmentView.paper.paperView, action: .disappear)
         ]
       )
     }

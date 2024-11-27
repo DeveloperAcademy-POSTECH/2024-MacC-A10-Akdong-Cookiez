@@ -251,7 +251,6 @@ class OpenedPaperView: UIView {
   }
   private func configurationBubbleText() {
     guard let countryName, let selectedCategory else { return }
-    print("\(countryName) \(selectedCategory)")
     greenBirdChatBubbleView.textLabel.text = "\(countryName) \(selectedCategory) 기준으로 알려줄게"
     redBirdChatBubbleView.textLabel.text = "한국 \(selectedCategory) 기준으로 알려줄게"
     yellowBirdChatBubbleView.textLabel.text = previousRecordExists ? "직전 기록과 비교해 줄게" : "\(selectedCategory) 첫 기록이다!"

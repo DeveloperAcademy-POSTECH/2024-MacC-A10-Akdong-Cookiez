@@ -17,7 +17,7 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
   weak var judgmentView: JudgmentView?
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 5.5 // 전환 애니메이션 시간
+    return 0.3 // 전환 애니메이션 시간
   }
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -65,14 +65,21 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
           (from: judgmentReadyView.paper.categorySelector.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
           (from: judgmentReadyView.paper.amountTextField.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
           (from: judgmentReadyView.paper.readyButton, to: judgmentView.paper.paperView, action: .disappear),
-          (from: greenBird, to: greenBird, action: .moveTo(dx: -100, dy: -300)),
+          (from: greenBird, to: greenBird, action: .moveTo(dx: -300, dy: -300)),
           (from: redBird, to: redBird, action: .moveTo(dx: 0, dy: -300)),
-          (from: yellowBird, to: yellowBird, action: .moveTo(dx: 100, dy: -300))
+          (from: yellowBird, to: yellowBird, action: .moveTo(dx: 300, dy: -300))
         ]
       )
       
     case .dismiss:
-      print("여기까지는 왔나?")
+      let greenBird = judgmentReadyView.paper.greenBirdImageView
+      let redBird = judgmentReadyView.paper.redBirdImageView
+      let yellowBird = judgmentReadyView.paper.yellowBirdImageView
+      
+      greenBird.image = BirdCharacterImageType.foriegn.basic
+      redBird.image = BirdCharacterImageType.local.basic
+      yellowBird.image = BirdCharacterImageType.previous.basic
+      
       transition = SnapshotTransition(
         from: judgmentView,
         to: judgmentReadyView,
@@ -91,11 +98,9 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
         delay: 0,
         options: [],
         animations: {
-          print("전환실행!!")
           transition.addKeyframes()
         },
         completion: { finished in
-          print("전환완료!!")
           transition.cleanUp()
           let completed = finished && !transitionContext.transitionWasCancelled
           transitionContext.completeTransition(completed)

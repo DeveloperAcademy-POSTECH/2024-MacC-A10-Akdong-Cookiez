@@ -83,7 +83,6 @@ class JudgmentEditViewController: UIViewController {
       category: { [weak self] changedCategory in
         guard let self else { return }
         selectedCategory = changedCategory ?? ""
-        print("\(changedCategory ?? "")로 카테고리 변경 되었으므로 저장해두기")
       },
       amount: { [weak self] changedAmount in
         guard let self else { return }

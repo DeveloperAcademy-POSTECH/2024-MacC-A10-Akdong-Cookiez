@@ -78,10 +78,6 @@ class JudgmentUseCaseImp: JudgmentUseCase {
   }
   
   func isPreviousRecordExists(for country: String, category: String) -> Bool {
-    if category == "식당베" {
-      print("테스트용")
-      return true
-    }
     var result = false
     if case .success(let previousRecord) = recordRepository.fetchPreviousDaySpending(country: country, category: category) {
       result = previousRecord != nil

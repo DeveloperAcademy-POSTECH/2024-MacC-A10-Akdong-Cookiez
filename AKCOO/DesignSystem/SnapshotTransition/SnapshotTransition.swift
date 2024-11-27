@@ -110,7 +110,7 @@ class SnapshotTransition {
     transitionView.layer.apply(LayerShadow.from(fromView.layer))
     if case .moveTextField = action {
     } else if case .appear = action {
-      transitionView.frame = fromView.convert(toView.bounds, to: containerView)
+      transitionView.frame = toView.convert(toView.bounds, to: containerView)
     } else {
       transitionView.frame = fromView.convert(fromView.bounds, to: containerView)
     }
@@ -145,15 +145,15 @@ class SnapshotTransition {
     }
     
     if case .appear = action {
-      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 1) { [toSnapshot] in
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) { [toSnapshot] in
         toSnapshot?.alpha = 1
       }
       
-      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1) { [transitionView, toView] in
-        transitionView.layer.cornerRadius = toView.layer.cornerRadius
-        transitionView.frame = toView.convert(toView.bounds, to: transitionView.superview)
-        transitionView.layer.apply(LayerShadow.from(toView.layer))
-      }
+//      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) { [transitionView, toView] in
+//        transitionView.layer.cornerRadius = toView.layer.cornerRadius
+//        transitionView.frame = toView.convert(toView.bounds, to: transitionView.superview)
+//        transitionView.layer.apply(LayerShadow.from(toView.layer))
+//      }
     }
     
     if case .disappear = action {

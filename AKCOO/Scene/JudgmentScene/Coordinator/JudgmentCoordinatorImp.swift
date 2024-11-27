@@ -34,6 +34,7 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   
   func start() {
     let newViewController = judgmentReadyFactory.create(coordinator: self)
+    newViewController.view.backgroundColor = .akColor(.akBlue400)
     self.navigationController.viewControllers = [newViewController]
   }
   
@@ -50,10 +51,10 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   }
   
   func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) { // 데이터 받아와서 진행
-    // TODO: - judgmentEditFactory로 변경 후 Transition 연결
     let editViewController = judgmentEditFactory.create(coordinator: self, paperModel: paperModel, selectedCategory: selectedCategory, userAmount: userAmount, delegate: presenting)
     editViewController.modalPresentationStyle = .overFullScreen
     editViewController.transitioningDelegate = self.editTransitionaler
+    editViewController.view.backgroundColor = .akColor(.akBlue400)
     presenting.present(editViewController, animated: true)
   }
   

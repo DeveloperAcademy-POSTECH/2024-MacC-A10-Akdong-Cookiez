@@ -156,7 +156,6 @@ class JudgmentView: UIView {
   
   @objc private func tappedDecisionButton(_ sender: UIButton) {
     onActionCompletedDecision?(sender == buyButton)
-    print("?????")
   }
 }
 

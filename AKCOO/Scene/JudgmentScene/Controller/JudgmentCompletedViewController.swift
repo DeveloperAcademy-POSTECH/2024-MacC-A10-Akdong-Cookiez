@@ -70,7 +70,6 @@ class JudgmentCompletedViewController: UIViewController {
   }
   
   private func setupViews() {
-    view.backgroundColor = .clear
     judgmentView.paper.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
   }
   
