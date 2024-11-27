@@ -90,7 +90,7 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
       switch birdModel {
       case is ForeignBird: return .foriegn
       case is LocalBird: return .local
-      case is PreviousDayBird: return .previous
+      case is PreviousBird: return .previous
       default: fatalError("Unknown BirdModel type")
       }
     }()
@@ -153,15 +153,26 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
   preview.configure(
     with: [
       LocalBird(
-        country: .init(
-          name: "대한민국",
-          currency: .init(
+        birdCountry: .init(
+          name: "한국",
+          currency: Currency(
             unitTitle: "원",
             unit: 1
           )
         ),
         judgment: .init(
-          userAmount: 30000, standards: [ ]
+          userQuestion: .init(
+            country: .init(
+              name: "베트남",
+              currency: .init(
+                unitTitle: "동",
+                unit: 0.055
+              )
+            ),
+            category: "숙소",
+            amount: 300000
+          ),
+          standards: [ ]
         )
       )
     ], 

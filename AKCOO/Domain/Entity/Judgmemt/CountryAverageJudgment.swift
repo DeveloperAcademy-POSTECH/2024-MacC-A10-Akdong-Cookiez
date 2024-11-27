@@ -8,9 +8,8 @@
 import Foundation
 
 struct CountryAverageJudgment: Judgment {
-  var userAmount: Double
+  var userQuestion: UserQuestion
   var standards: [Item]
-  
   var name: String { return "평균" }
   var result: JudgmentType {
     guard let average = averageOfItems else { return .notBuying }
@@ -20,6 +19,10 @@ struct CountryAverageJudgment: Judgment {
     } else {
       return .notBuying
     }
+  }
+  
+  var userAmount: Double {
+    return userQuestion.amount
   }
 }
 

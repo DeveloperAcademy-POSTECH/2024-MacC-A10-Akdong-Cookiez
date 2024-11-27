@@ -181,12 +181,8 @@ class BirdReactionTextView: UIView {
     nameLabel.text = bird.name
     detailLabel.text = bird.detail
     
-    // TODO: - BirdModel 수정
     detailGraphView.configure(
-      criteria: bird.criteriaName,
-      minValue: 300000.0,
-      maxValue: 300000.0,
-      userAmount: 66.0,
+      graphInfos: bird.graphInfos,
       buying: bird.judgment
     )
     
@@ -258,8 +254,22 @@ class BirdReactionTextView: UIView {
   let preview = BirdReactionTextView()
   preview.configure(
     bird: ForeignBird.init(
-      country: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0.0589)),
-      judgment: .init(userAmount: 5000, standards: [])
+      judgment: .init(
+        userQuestion: .init(
+          country: .init(
+            name: "베트남",
+            currency: .init(
+              unitTitle: "동",
+              unit: 0.0589
+            )
+          ),
+          category: "숙소",
+          amount: 5000
+        ),
+        standards: [
+          .init(category: "숙소", name: "3성급", amount: 3000)
+        ]
+      )
     )
   )
   

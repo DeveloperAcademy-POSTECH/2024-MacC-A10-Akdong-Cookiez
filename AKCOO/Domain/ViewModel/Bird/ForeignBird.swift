@@ -9,20 +9,20 @@ import Foundation
 
 /// 물가를 기준하는 새
 struct ForeignBird: BirdModel {
-  private let country: CountryProfile
   private let judgmentCriteria: CountryAverageJudgment
   private let judgmentGenerator: BirdJudgmentGenerator
 
   init(
-    country: CountryProfile,
     judgment: CountryAverageJudgment
   ) {
-    self.country = country
     self.judgmentCriteria = judgment
     self.judgmentGenerator = ForeignBirdJudgmentGenerator()
   }
   
-  var criteriaName: String { return judgmentCriteria.name }
+  private var country: CountryProfile {
+    return judgmentCriteria.userQuestion.country
+  }
+  
   var judgment: Bool { return judgmentCriteria.result == .buying }
   
   var name: String { return "\(country.name) 10년차" }
@@ -49,5 +49,37 @@ struct ForeignBird: BirdModel {
         country: self.country,
         judgmentCriteria: self.judgmentCriteria
       )
+  }
+}
+
+extension ForeignBird {
+  var graphInfos: BirdReactionGraphInfo {
+    guard
+      let minAmount = judgmentCriteria.minimumAmountOfItems,
+      let maxAmount = judgmentCriteria.maximumAmountOfItems
+    else {
+      return .init(
+        criteriaTitle: judgmentCriteria.name,
+        minimum: nil,
+        maximum: nil,
+        userAmount: judgmentCriteria.userAmount
+      )
+    }
+    
+    // 평균, 차이
+    let average = (maxAmount + minAmount) / 2
+    let difference = maxAmount - minAmount
+    
+    // 최소, 최대
+    let minimum: Double? = average - difference
+    let maximum: Double? = average + difference
+    
+    // 결과
+    return .init(
+      criteriaTitle: judgmentCriteria.name,
+      minimum: minimum,
+      maximum: maximum,
+      userAmount: judgmentCriteria.userAmount
+    )
   }
 }

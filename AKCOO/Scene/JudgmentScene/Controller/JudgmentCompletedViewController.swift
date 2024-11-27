@@ -131,33 +131,33 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
     name: "베트남",
     currency: .init(unitTitle: "동", unit: 1)
   )
+  let userQuestion = UserQuestion(
+    country: country,
+    category: "숙박",
+    amount: userQuestionAmount
+  )
   
   let forignJudgment = CountryAverageJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: items
   )
   let localJudgment = CountryAverageJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: items
   )
   
   let previousJudgment = PreviousJudgment(
-    userAmount: userQuestionAmount,
+    userQuestion: userQuestion,
     standards: nil
   )
   
   let birds: [BirdModel] = [
-    ForeignBird(
-      country: country,
-      judgment: forignJudgment
-    ),
+    ForeignBird(judgment: forignJudgment),
     LocalBird(
-      country: country,
+      birdCountry: country,
       judgment: localJudgment
     ),
-    PreviousDayBird(
-      judgment: previousJudgment
-    )
+    PreviousBird(judgment: previousJudgment)
   ]
   
   return JudgmentCompletedViewController(

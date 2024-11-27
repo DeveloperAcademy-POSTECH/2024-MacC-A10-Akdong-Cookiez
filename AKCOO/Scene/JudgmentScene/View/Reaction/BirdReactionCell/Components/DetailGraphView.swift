@@ -86,16 +86,14 @@ class DetailGraphView: UIView {
   
   // MARK: - Configure
   func configure(
-    criteria: String,
-    minValue: CGFloat,
-    maxValue: CGFloat,
-    userAmount: CGFloat,
+    graphInfos: BirdReactionGraphInfo,
     buying: Bool
   ) {
-    self.titleLabel.text = criteria
-    self.minValue = minValue
-    self.maxValue = maxValue
-    self.userAmount = userAmount
+    
+    self.titleLabel.text = graphInfos.criteriaTitle
+    self.minValue = CGFloat(graphInfos.minimum ?? 0.0)
+    self.maxValue = CGFloat(graphInfos.maximum ?? CGFloat(graphInfos.userAmount) * 2)
+    self.userAmount = graphInfos.userAmount
     
     self.titleLabel.textColor = buying ? .akColor(.akGray300) : .akColor(.akGray200)
     layoutArrow()
@@ -129,10 +127,12 @@ class DetailGraphView: UIView {
   let view = DetailGraphView()
   view
     .configure(
-      criteria: "이전소비",
-      minValue: 100,
-      maxValue: 10000,
-      userAmount: 3000,
+      graphInfos: .init(
+        criteriaTitle: "이전소비",
+        minimum: 10,
+        maximum: 10000,
+        userAmount: 0.0
+      ),
       buying: false
     )
   return view
