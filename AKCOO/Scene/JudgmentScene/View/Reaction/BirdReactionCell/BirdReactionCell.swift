@@ -12,9 +12,15 @@ class BirdReactionCell: UICollectionViewCell {
   static let identifier = "ReactionResultsCell"
   
   // MARK: - Views
-  private let containerView = UIView().set()
-  private let textContainerView: BirdReactionTextView = BirdReactionTextView().set()
-  private let characterImageView: BirdReactionCharacterView = BirdReactionCharacterView().set()
+  private let containerView = UIView().set {
+    $0.accessibilityIdentifier = "BirdReactionCell"
+  }
+  private let textContainerView: BirdReactionTextView = BirdReactionTextView().set {
+    $0.accessibilityIdentifier = "BirdReactionTextView"
+  }
+  private let characterImageView: BirdReactionCharacterView = BirdReactionCharacterView().set {
+    $0.accessibilityIdentifier = "BirdReactionCharacterView"
+  }
   
   // MARK: - Properties
   private var characterLeadingConstraint: NSLayoutConstraint?
