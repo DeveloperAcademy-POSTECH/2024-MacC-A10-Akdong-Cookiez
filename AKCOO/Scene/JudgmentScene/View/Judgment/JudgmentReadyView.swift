@@ -8,7 +8,11 @@
 import UIKit
 
 class JudgmentReadyView: UIView {
+  var blueBackgroundView = UIView().set {
+    $0.backgroundColor = .akColor(.akBlue400)
+  }
   var paper = OpenedPaperView().set()
+  
   var paperBottomConstraint: NSLayoutConstraint?
   var paperCenterYConstraint: NSLayoutConstraint?
   
@@ -25,12 +29,29 @@ class JudgmentReadyView: UIView {
   }
   
   func configure(
-    paperModel: PaperModel
+    paperModel: PaperModel,
+    previousRecordExists: Bool
   ) {
-    paper.configure(paperModel: paperModel)
+    paper.configure(
+      paperModel: paperModel,
+      previousRecordExists: previousRecordExists
+    )
+    
+    configurePreviousRecordExists(previousRecordExists)
+  }
+  
+  func configurePreviousRecordExists(
+    _ previousRecordExists: Bool = true,
+    selectedCategory: String = ""
+  ) {
+    paper.configureBirdsChat(
+      previousRecordExists: previousRecordExists,
+      selected: selectedCategory
+    )
   }
   
   private func setupViews() {
+    addSubview(blueBackgroundView)
     addSubview(paper)
   }
   
@@ -38,6 +59,11 @@ class JudgmentReadyView: UIView {
     let paperPadding: CGFloat = 16
     
     NSLayoutConstraint.activate([
+      blueBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+      blueBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      blueBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      blueBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
       paper.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paperPadding),
       paper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paperPadding)
     ])
@@ -79,7 +105,8 @@ class JudgmentReadyView: UIView {
       ), 
       countries: ["베트남", "스위스"],
       categories: ["가", "나", "다"]
-    )
+    ), 
+    previousRecordExists: false
   )
   return readyView
 }
