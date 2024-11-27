@@ -83,10 +83,11 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     guard let localCountryDetail else { return .failure(NetworkError()) }
     let previousResult = recordRepository.fetchPreviousDaySpending(country: userQuestion.country.name, category: userQuestion.category)
     guard case .success(let previousRecord) = previousResult else { return .failure(NetworkError()) }
-
-    let country = CountryProfile(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency)
-    let userQuestionAmount = userQuestion.amount
     
+    let localCountry = CountryProfile(
+      name: localCountryDetail.name,
+      currency: localCountryDetail.currency
+    )
     let forignJudgment = CountryAverageJudgment(
       userQuestion: userQuestion,
       standards: selectedCountryDetail.items
@@ -104,7 +105,7 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     let birds: [BirdModel] = [
       ForeignBird(judgment: forignJudgment),
       LocalBird(
-        birdCountry: country,
+        birdCountry: localCountry,
         judgment: localJudgment
       ),
       PreviousBird(judgment: previousJudgment)
