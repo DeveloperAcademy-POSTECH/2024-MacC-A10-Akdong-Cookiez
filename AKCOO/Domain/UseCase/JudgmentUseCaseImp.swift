@@ -69,8 +69,9 @@ class JudgmentUseCaseImp: JudgmentUseCase {
   }
   
   func getNewPaperModel(newCountryName selectedCountryName: String) -> Result<PaperModel, any Error> {
-    guard let countriesDetails,
-          let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
+    guard
+      let countriesDetails,
+      let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
     // TODO: - RecordRepository를 통해 선택된 국가를 변경하는 로직 추가
     selectedCountryDetail = newSelectedCountryDetail
     
