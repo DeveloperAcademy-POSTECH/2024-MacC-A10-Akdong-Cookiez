@@ -222,29 +222,43 @@ class BirdReactionTextView: UIView {
       attributes: [.paragraphStyle: paragraphStyle]
     )
     
-    // 정규식을 사용하여 특정 패턴 찾기
-    //    let pattern = "약 [\\d,]+(\\.\\d+)?(프랑|동|원)(\\s?)(저렴|비싼|같아요)"
-    let highlightPattern = "약 [\\d,]+(\\.\\d+)?(프랑|동|원)"
+    // 하이라이트 문자열
+    //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
+    let highlightPattern = "(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)"
     let highlightRegex = try? NSRegularExpression(pattern: highlightPattern)
     
-    // 정규식으로 매칭되는 부분에 스타일 적용
     highlightRegex?.enumerateMatches(
       in: text,
       options: [],
-      range: NSRange(location: 0, length: text.utf16.count)) { match, _, _ in
+      range: NSRange(location: 0, length: text.utf16.count)
+    ) { match, _, _ in
+      if let matchRange = match?.range {
+        // 배경색 스타일 추가
+        attributedString
+          .addAttribute(
+            .backgroundColor,
+            value: UIColor.akColor(.akOrange),
+            range: matchRange
+          )
+      }
+    }
+    
+    // bold 문자열
+    //FIXME: 함수 분리 + 화폐 단위 직접 말고 불러와서 사용하기
+    let boldPatterns = ["(약\\s)?[\\d,]+(\\.\\d+)?(프랑|동|원)(\\s?)(저렴|비싼|비싸|같아)", "같아요"]
+    let boldRegexes = boldPatterns.map { try? NSRegularExpression(pattern: $0) }
+    
+    boldRegexes.forEach { regex in
+      regex?.enumerateMatches(
+        in: text,
+        options: [],
+        range: NSRange(location: 0, length: text.utf16.count)
+      ) { match, _, _ in
         if let matchRange = match?.range {
-          // 배경색 스타일 추가
-          attributedString
-            .addAttribute(
-              .backgroundColor,
-              value: UIColor.akColor(.akOrange),
-              range: matchRange
-            )
-          
           // "약 000프랑" 뒤에 "저렴", "비싼" 등의 텍스트 스타일링
           let extendedRange = NSRange(
             location: matchRange.location,
-            length: min(matchRange.length + 3, text.utf16.count - matchRange.location)
+            length: min(matchRange.length, text.utf16.count - matchRange.location)
           )
           
           // "저렴" 포함
@@ -258,6 +272,7 @@ class BirdReactionTextView: UIView {
           }
         }
       }
+    }
     
     detailLabel.attributedText = attributedString
   }
