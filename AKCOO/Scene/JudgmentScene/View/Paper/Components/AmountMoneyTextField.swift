@@ -32,7 +32,7 @@ class AmountMoneyTextField: UIView {
     $0.spacing = 4
   }
   
-  private lazy var titleLabel: UILabel = .paperLabel(with: "금액").set()
+  lazy var titleLabel: UILabel = .paperLabel(with: "금액").set()
   
   let textField = UITextField().set {
     $0.accessibilityIdentifier = "AmountMoneyTextField"
@@ -45,7 +45,7 @@ class AmountMoneyTextField: UIView {
     $0.text = "0"
   }
   
-  private let unitLabel = UILabel().set {
+  let unitLabel = UILabel().set {
     $0.accessibilityIdentifier = "AmountMoneyUnitLabel"
     $0.text = "동"
     $0.font = UIFont.akFont(.gmarketBold20)
@@ -53,7 +53,7 @@ class AmountMoneyTextField: UIView {
     $0.adjustsFontForContentSizeCategory = true
   }
   
-  private let separatorLine = UIView().set {
+  let separatorLine = UIView().set {
     $0.accessibilityIdentifier = "AmountMoneySeparatorLine"
     $0.backgroundColor = UIColor.akColor(.black)
   }

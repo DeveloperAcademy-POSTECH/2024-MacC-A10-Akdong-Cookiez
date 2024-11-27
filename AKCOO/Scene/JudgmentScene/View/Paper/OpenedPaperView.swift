@@ -22,6 +22,7 @@ class OpenedPaperView: UIView {
   
   let paperView = UIView(frame: .zero).set {
     $0.backgroundColor = .akColor(.white)
+    $0.layer.cornerRadius = 20
   }
   
   let countrySelector = CountrySelector().set()
@@ -42,32 +43,48 @@ class OpenedPaperView: UIView {
     }
   }()
   
-  private lazy var greenBirdImageView = UIImageView().set {
+  lazy var greenBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.foriegn.basic
     $0.contentMode = .scaleAspectFit
     $0.isHidden = type == .edit
   }
   
-  private lazy var redBirdImageView = UIImageView().set {
+  lazy var redBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.local.basic
     $0.contentMode = .scaleAspectFit
     $0.isHidden = type == .edit
   }
   
-  private lazy var yellowBirdImageView = UIImageView().set {
+  lazy var yellowBirdImageView = UIImageView().set {
     $0.image = BirdCharacterImageType.previous.basic
     $0.contentMode = .scaleAspectFit
     $0.isHidden = type == .edit
   }
   
-  var onActionDoJudgmentButton: (() -> Void)?
+  var greenBirdChatBubbleView = ChatBubbleView(type: .left, frame: .zero).set {
+    $0.alpha = 0
+  }
+  var redBirdChatBubbleView = ChatBubbleView(type: .middle, frame: .zero).set {
+    $0.alpha = 0
+  }
+  var yellowBirdChatBubbleView = ChatBubbleView(type: .right, frame: .zero).set {
+    $0.alpha = 0
+  }
+  
+  private var countryName: String?
+  private var selectedCategory: String?
+  private var previousRecordExists: Bool = true
+  
   private let type: OpenedPaperType
+  
+  var onActionDoJudgmentButton: (() -> Void)?
   
   init(type: OpenedPaperType, frame: CGRect = .zero) {
     self.type = type
     super.init(frame: frame)
     setupViews()
     setupConstraints()
+    if type == .ready { setupConstraintsBirds() }
   }
   
   override init(frame: CGRect) {
@@ -75,6 +92,7 @@ class OpenedPaperView: UIView {
     super.init(frame: frame)
     setupViews()
     setupConstraints()
+    if type == .ready { setupConstraintsBirds() }
   }
   
   required init?(coder: NSCoder) {
@@ -82,8 +100,9 @@ class OpenedPaperView: UIView {
     super.init(coder: coder)
     setupViews()
     setupConstraints()
+    if type == .ready { setupConstraintsBirds() }
   }
-
+  
   override func layoutSubviews() {
     super.layoutSubviews()
     setupLayout()
@@ -93,13 +112,18 @@ class OpenedPaperView: UIView {
     addSubview(paperView)
     addSubview(paperStackView)
     addSubview(readyButton)
-    [greenBirdImageView, redBirdImageView, yellowBirdImageView].forEach { addSubview($0) }
     
     [countrySelector, categorySelector, amountTextField].forEach {
       paperStackView.addArrangedSubview($0)
     }
     
     readyButton.addTarget(self, action: #selector(actionJudgmentButton), for: .touchUpInside)
+    
+    if type == .ready {
+      [redBirdImageView, greenBirdImageView, yellowBirdImageView].forEach { addSubview($0) }
+      
+      [greenBirdChatBubbleView, redBirdChatBubbleView, yellowBirdChatBubbleView].forEach { addSubview($0) }
+    }
   }
   
   private func setupConstraints() {
@@ -121,8 +145,6 @@ class OpenedPaperView: UIView {
       readyButton.trailingAnchor.constraint(equalTo: paperView.trailingAnchor, constant: -horizentalPadding),
       readyButton.bottomAnchor.constraint(equalTo: paperView.bottomAnchor, constant: -20)
     ])
-    
-    if type == .ready { setupConstraintsBirds() }
   }
   
   private func setupConstraintsBirds() {
@@ -143,7 +165,17 @@ class OpenedPaperView: UIView {
       redBirdImageView.centerXAnchor.constraint(equalTo: paperView.centerXAnchor),
       redBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor),
       yellowBirdImageView.leadingAnchor.constraint(equalTo: redBirdImageView.trailingAnchor, constant: -overlappingConstant),
-      yellowBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor)
+      yellowBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor),
+      
+      greenBirdChatBubbleView.bottomAnchor.constraint(equalTo: greenBirdImageView.topAnchor, constant: 12),
+      greenBirdChatBubbleView.centerXAnchor.constraint(equalTo: greenBirdImageView.centerXAnchor, constant: 4),
+      
+      redBirdChatBubbleView.bottomAnchor.constraint(equalTo: redBirdImageView.topAnchor, constant: -30),
+      redBirdChatBubbleView.centerXAnchor.constraint(equalTo: redBirdImageView.centerXAnchor, constant: 11),
+      
+      yellowBirdChatBubbleView.bottomAnchor.constraint(equalTo: yellowBirdImageView.topAnchor, constant: 12),
+      yellowBirdChatBubbleView.centerXAnchor.constraint(equalTo: yellowBirdImageView.centerXAnchor, constant: 22)
+      
     ])
   }
   
@@ -156,9 +188,13 @@ class OpenedPaperView: UIView {
   
   func configure(
     paperModel: PaperModel,
+    previousRecordExists: Bool = true,
     selected selectedCategory: String = "",
     userAmount: String = "0"
   ) {
+    self.countryName = paperModel.selectedCountryProfile.name
+    self.selectedCategory = selectedCategory
+
     countrySelector.configure(
       countries: paperModel.countries.map { $0 },
       selectedCountry: paperModel.selectedCountryProfile.name
@@ -180,6 +216,15 @@ class OpenedPaperView: UIView {
       guard let self else { return }
       self.updateButtonState(isEnabled: validInput)
     }
+  }
+  
+  func configureBirdsChat(
+    previousRecordExists: Bool = true,
+    selected selectedCategory: String = ""
+  ) {
+    self.selectedCategory = selectedCategory
+    self.previousRecordExists = previousRecordExists
+    configurationBubbleText()
   }
   
   func onActionChange(
@@ -204,6 +249,16 @@ class OpenedPaperView: UIView {
       readyButton.configuration?.baseForegroundColor = .black
     }
   }
+  private func configurationBubbleText() {
+    guard let countryName, let selectedCategory else { return }
+    print("\(countryName) \(selectedCategory)")
+    greenBirdChatBubbleView.textLabel.text = "\(countryName) \(selectedCategory) 기준으로 알려줄게"
+    redBirdChatBubbleView.textLabel.text = "한국 \(selectedCategory) 기준으로 알려줄게"
+    yellowBirdChatBubbleView.textLabel.text = previousRecordExists ? "직전 기록과 비교해 줄게" : "\(selectedCategory) 첫 기록이다!"
+    greenBirdChatBubbleView.alpha = 1
+    redBirdChatBubbleView.alpha = 1
+    yellowBirdChatBubbleView.alpha = 1
+  }
   
   @objc private func actionJudgmentButton() {
     onActionDoJudgmentButton?()
@@ -211,7 +266,7 @@ class OpenedPaperView: UIView {
 }
 
 #Preview {
-  let view = OpenedPaperView(type: .edit)
+  let view = OpenedPaperView(type: .ready)
   view.configure(
     paperModel: .init(
       selectedCountryProfile: .init(
@@ -220,8 +275,11 @@ class OpenedPaperView: UIView {
       ),
       countries: ["베트남", "스위스"],
       categories: ["가나", "나", "다"]
-    )
+    ),
+    previousRecordExists: false
   )
+  
+  view.backgroundColor = .blue
   
   return view
 }

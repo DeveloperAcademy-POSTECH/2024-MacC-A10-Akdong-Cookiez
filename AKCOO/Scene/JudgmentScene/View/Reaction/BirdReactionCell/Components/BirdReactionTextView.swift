@@ -85,7 +85,6 @@ class BirdReactionTextView: UIView {
   override func layoutSubviews() {
     super.layoutSubviews()
     setupLayout()
-    print("layoutSubviews 실행 후 BirdReactionTextView frame: \(self.frame)")
   }
   
   private func setupViews() {
@@ -173,9 +172,9 @@ class BirdReactionTextView: UIView {
     // TODO: - BirdModel 수정
     detailGraphView.configure(
       criteria: bird.criteriaName,
-      minValue: 0,
-      maxValue: 1000000,
-      userAmount: 5000, 
+      minValue: 300000.0,
+      maxValue: 300000.0,
+      userAmount: 66.0,
       buying: bird.judgment
     )
     
