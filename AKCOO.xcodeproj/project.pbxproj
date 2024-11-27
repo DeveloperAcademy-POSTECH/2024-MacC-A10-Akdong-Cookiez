@@ -18,8 +18,7 @@
 		515A5B522CF718C4003E032A /* ConfettiFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B512CF718C4003E032A /* ConfettiFrame.swift */; };
 		515A5B542CF71927003E032A /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B532CF71927003E032A /* Shapes.swift */; };
 		515A5B562CF71A5A003E032A /* ConfettiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B552CF71A5A003E032A /* ConfettiItem.swift */; };
-		515A5B582CF71AF6003E032A /* TestConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B572CF71AF6003E032A /* TestConfettiView.swift */; };
-		515A5B5A2CF74EC8003E032A /* ConfettiUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B592CF74EC8003E032A /* ConfettiUIView.swift */; };
+		515A5B582CF71AF6003E032A /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B572CF71AF6003E032A /* CounterViewModel.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -45,6 +44,7 @@
 		516E080D2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */; };
 		516E08102CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */; };
 		516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */; };
+		F31458CA2CF78529006C008A /* ConfettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31458C92CF78529006C008A /* ConfettiViewController.swift */; };
 		F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */; };
 		F365F4F92CF1FCF4002C1171 /* UIButton+AkFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */; };
 		F365F4FB2CF3B1B1002C1171 /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FA2CF3B1B1002C1171 /* DetailGraphView.swift */; };
@@ -182,8 +182,7 @@
 		515A5B512CF718C4003E032A /* ConfettiFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiFrame.swift; sourceTree = "<group>"; };
 		515A5B532CF71927003E032A /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		515A5B552CF71A5A003E032A /* ConfettiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiItem.swift; sourceTree = "<group>"; };
-		515A5B572CF71AF6003E032A /* TestConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfettiView.swift; sourceTree = "<group>"; };
-		515A5B592CF74EC8003E032A /* ConfettiUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiUIView.swift; sourceTree = "<group>"; };
+		515A5B572CF71AF6003E032A /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -207,6 +206,7 @@
 		516E080C2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdJudgmentGenerator+getDetail.swift"; sourceTree = "<group>"; };
 		516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toCompactKoreanDateString.swift"; sourceTree = "<group>"; };
 		516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdReactionGraphInfo.swift; sourceTree = "<group>"; };
+		F31458C92CF78529006C008A /* ConfettiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewController.swift; sourceTree = "<group>"; };
 		95CE7F672CF75D9400EE54FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F365F4F62CF11A49002C1171 /* String+FormatWithComma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormatWithComma.swift"; sourceTree = "<group>"; };
 		F365F4F82CF1FCF4002C1171 /* UIButton+AkFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AkFont.swift"; sourceTree = "<group>"; };
@@ -360,7 +360,6 @@
 		515A5B482CF716F4003E032A /* ConfettiAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				515A5B592CF74EC8003E032A /* ConfettiUIView.swift */,
 				515A5B492CF71723003E032A /* ConfettiView.swift */,
 				515A5B4B2CF7179B003E032A /* ConfettiCenterVM.swift */,
 				515A5B4D2CF71811003E032A /* ConfettiContainer.swift */,
@@ -368,7 +367,8 @@
 				515A5B512CF718C4003E032A /* ConfettiFrame.swift */,
 				515A5B532CF71927003E032A /* Shapes.swift */,
 				515A5B552CF71A5A003E032A /* ConfettiItem.swift */,
-				515A5B572CF71AF6003E032A /* TestConfettiView.swift */,
+				515A5B572CF71AF6003E032A /* CounterViewModel.swift */,
+				F31458C92CF78529006C008A /* ConfettiViewController.swift */,
 			);
 			path = ConfettiAnimation;
 			sourceTree = "<group>";
@@ -1225,7 +1225,6 @@
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
 				515A5B4E2CF71811003E032A /* ConfettiContainer.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
-				515A5B5A2CF74EC8003E032A /* ConfettiUIView.swift in Sources */,
 				515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */,
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
@@ -1244,6 +1243,7 @@
 				515A5B4C2CF7179B003E032A /* ConfettiCenterVM.swift in Sources */,
 				F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */,
 				515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */,
+				F31458CA2CF78529006C008A /* ConfettiViewController.swift in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
 				516E08092CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift in Sources */,
 				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
@@ -1299,7 +1299,7 @@
 				515E40942CF2310E00AE4A2F /* CountryProfile+fromEntity.swift in Sources */,
 				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,
 				516E08102CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift in Sources */,
-				515A5B582CF71AF6003E032A /* TestConfettiView.swift in Sources */,
+				515A5B582CF71AF6003E032A /* CounterViewModel.swift in Sources */,
 				F3ED933B2CEB5E7900CF5238 /* CountryAverageJudgment.swift in Sources */,
 				515E40902CF230BD00AE4A2F /* UserRecord+fromEntity.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
