@@ -20,6 +20,10 @@
 		515A5B562CF71A5A003E032A /* ConfettiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B552CF71A5A003E032A /* ConfettiItem.swift */; };
 		515A5B582CF71AF6003E032A /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B572CF71AF6003E032A /* CounterViewModel.swift */; };
 		515A5B5C2CF79154003E032A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 515A5B5B2CF79154003E032A /* GoogleService-Info.plist */; };
+		515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */; };
+		515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */; };
+		515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */; };
+		515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6C2CF9E514003E032A /* MockItem.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -184,6 +188,10 @@
 		515A5B552CF71A5A003E032A /* ConfettiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiItem.swift; sourceTree = "<group>"; };
 		515A5B572CF71AF6003E032A /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		515A5B5B2CF79154003E032A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetReactionTests.swift; sourceTree = "<group>"; };
+		515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryAverageJudgment.swift; sourceTree = "<group>"; };
+		515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryProfile.swift; sourceTree = "<group>"; };
+		515A5B6C2CF9E514003E032A /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -373,6 +381,40 @@
 			path = ConfettiAnimation;
 			sourceTree = "<group>";
 		};
+		515A5B642CF9E452003E032A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */,
+				515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */,
+				515A5B6C2CF9E514003E032A /* MockItem.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		515A5B672CF9E4BC003E032A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B682CF9E4C8003E032A /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		515A5B682CF9E4C8003E032A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B692CF9E4CF003E032A /* BirdJudgmentGenerator */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		515A5B692CF9E4CF003E032A /* BirdJudgmentGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */,
+			);
+			path = BirdJudgmentGenerator;
+			sourceTree = "<group>";
+		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +545,8 @@
 		F3EB76192CDD14B20054D4E1 /* AKCOOTests */ = {
 			isa = PBXGroup;
 			children = (
+				515A5B672CF9E4BC003E032A /* Domain */,
+				515A5B642CF9E452003E032A /* Mock */,
 				F3ED92812CE4C44000CF5238 /* Components */,
 			);
 			path = AKCOOTests;
@@ -1331,6 +1375,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */,
+				515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */,
+				515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */,
+				515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */,
 				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
