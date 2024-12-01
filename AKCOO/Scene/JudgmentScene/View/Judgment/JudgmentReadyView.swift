@@ -14,7 +14,6 @@ class JudgmentReadyView: UIView {
   
   var closedButton: UIButton = {
     var configuration = UIButton.Configuration.plain()
-    configuration.background.backgroundColor = .red
     configuration.imagePadding = 0 // 기본 이미지 패딩 제거
     configuration.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3)
     let button = UIButton(configuration: configuration)
