@@ -8,9 +8,13 @@
 import UIKit
 
 class UserInfoView: UIView {
-
-  let titleLabel = UILabel().set {
-    $0.text = "UserInfoView"
+  
+  let grayBackgroundView = UIView().set {
+    $0.backgroundColor = .akColor(.akGray100)
+  }
+  
+  let titleView = UserInfoTitleView().set {
+    $0.backgroundColor = .clear
   }
   
   override init(frame: CGRect) {
@@ -26,17 +30,33 @@ class UserInfoView: UIView {
   }
   
   private func setupViews() {
-    self.addSubview(titleLabel)
+    addSubview(grayBackgroundView)
+    addSubview(titleView)
   }
   
   private func setupConstraints() {
+    let titlePadding: CGFloat = 33
+    
     NSLayoutConstraint.activate([
-      titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+      grayBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+      grayBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      grayBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      grayBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      
+      titleView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
+      titleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titlePadding),
+      titleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -titlePadding)
     ])
+  }
+  
+  func configure(userRecords: [UserRecord]) {
+    titleView
+      .configure(
+        userJudgmentType: "스위스 10년차"
+      )
   }
 }
 
 #Preview {
-  UserInfoView()
+  UserInfoViewController(userInfoUseCase: UserInfoUseCaseMock())
 }

@@ -31,10 +31,18 @@ class UserInfoViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    setupUI()
   }
   
+  private func setupUI() {
+    switch userInfoUseCase.getUserRecords() {
+    case .success(let userRecords):
+      userInfoView.configure(userRecords: userRecords)
+    case .failure:
+      // TODO: 예외처리
+      return
+    }
+  }
   
   /*
    // MARK: - Navigation
