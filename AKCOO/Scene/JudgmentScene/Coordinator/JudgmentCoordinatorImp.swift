@@ -34,8 +34,8 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   
   func start() {
     let newViewController = judgmentReadyFactory.create(coordinator: self)
-    newViewController.view.backgroundColor = .akColor(.akBlue400)
-    self.navigationController.viewControllers = [newViewController]
+    newViewController.modalPresentationStyle = .fullScreen
+    self.navigationController.present(newViewController, animated: true)
   }
   
   func startJudgment(presenting: JudgmentCompletedViewControllerDelegate, userQuestion: UserQuestion) { // 데이터 받아와서 진행
@@ -60,5 +60,10 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
   
   func completedEditPaper(editViewController: UIViewController) {  // 데이터 받아와서 진행
     editViewController.presentingViewController?.dismiss(animated: true)
+  }
+  
+  func dismiss() {
+    self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    navigationController.popToRootViewController(animated: true)
   }
 }
