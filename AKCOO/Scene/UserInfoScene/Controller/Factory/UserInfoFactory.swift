@@ -5,7 +5,7 @@
 //  Created by 박혜운 on 12/1/24.
 //
 
-import Foundation
+import UIKit
 
 protocol UserInfoFactory {
   func create(coordinator: UserInfoCoordinator) -> UIViewController

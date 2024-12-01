@@ -8,6 +8,5 @@
 import UIKit
 
 protocol UserInfoCoordinator: Coordinator {
-  func startUserInfo(push: UIViewController)
   func completedUserInfo()
 }
