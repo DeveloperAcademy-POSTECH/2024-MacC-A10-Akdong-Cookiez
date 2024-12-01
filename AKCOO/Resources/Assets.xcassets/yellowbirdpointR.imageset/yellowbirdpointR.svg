@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 221.1 195.59">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: #fec366;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="88.67" y1="219.31" x2="155.6" y2="35.44" gradientTransform="translate(208.09) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".78" stop-color="#fff"/>
+      <stop offset=".81" stop-color="#fefbf6"/>
+      <stop offset=".85" stop-color="#fef1dd"/>
+      <stop offset=".91" stop-color="#fee2b6"/>
+      <stop offset=".97" stop-color="#fecd7f"/>
+      <stop offset="1" stop-color="#fec366"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-1" x="0" y="0" width="221.1" height="195.59" transform="translate(221.1 195.59) rotate(-180)"/>
+    <rect class="cls-1" x="0" y="36.85" width="198.43" height="158.74" transform="translate(198.43 232.44) rotate(-180)"/>
+    <g>
+      <path class="cls-3" d="M136.13,114.29c0,5.85,4.74,10.59,10.59,10.59h29.33c12.56,0,22.74-10.18,22.74-22.74v-.46s4.49,0,4.49,0c9.84,0,17.81-7.98,17.81-17.81s-7.98-17.81-17.81-17.81h-31.53c-16.9,0-34.05,10.77-34.7,27.55"/>
+      <path class="cls-2" d="M.54,175.32c.71-3.23,2.1-6.26,3.93-9.02l54.47-82.05,13.82-21.86s0-.01,0-.01c-.32-.05-.64-.11-.94-.17-5.83-1.23-10.3-5.89-11.78-11.67-3.34-13.02,6.64-18.84,6.64-18.85,0,0,0,0,0,0,11.39-6.36,20.29,2.78,20.48,2.99,0,0,0,0,0,0,14.35-31.38,38.71-14.95,38.72-14.94,0,0,0,0,0,0,15.71,12.14,9.85,25.04,6.8,29.8,0,0,0,0,0,.01,25.84,15.64,66.18,52.03,64.73,126.44,0,0,.03,19.6-15.71,19.6H17.29s0,0,0,0c0,0-20.89-1.37-16.75-20.27Z"/>
+      <rect x="135.31" y="69.78" width="5.16" height="11.14" rx="2.26" ry="2.26" transform="translate(275.78 150.7) rotate(180)"/>
+      <rect x="122.78" y="69.78" width="5.16" height="11.14" rx="2.26" ry="2.26" transform="translate(250.73 150.7) rotate(-180)"/>
+      <path d="M132.65,98.49c.21,0,.42-.04.62-.12l13.23-5.15c.68-.26,1.11-.93,1.09-1.65-.02-.73-.5-1.36-1.19-1.58l-13.23-4.19c-.9-.29-1.86.21-2.15,1.12-.29.9.21,1.86,1.12,2.15l8.59,2.72-8.7,3.38c-.88.34-1.32,1.34-.97,2.22.26.68.91,1.09,1.59,1.09Z"/>
+      <path class="cls-3" d="M56.24,110.78c0-5.85,4.74-10.59,10.59-10.59h29.33c12.56,0,22.74,10.18,22.74,22.74v.46s4.49,0,4.49,0c9.84,0,17.81,7.98,17.81,17.81s-7.98,17.81-17.81,17.81h-31.53c-16.9,0-34.05-10.77-34.7-27.55"/>
+    </g>
+  </g>
+</svg>

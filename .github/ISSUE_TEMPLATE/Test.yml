@@ -1,0 +1,25 @@
+name: 🧪 Test code 추가
+description: 테스트 코드를 추가하는 경우, 이 템플릿을 사용해 주세요!
+title: "🧪 Test: "
+labels: ["🧪 Test"]
+body:
+  - type: markdown
+    attributes:
+      value: "이슈를 작성하기 전, 다음 사항을 고려해 주세요.\n- [ ] Assignees에 담당자를 지정해 주세요. 아직 없는 경우에는 비워주세요.\n- [ ] Labels에 이슈의 종류와 담당자를 지정해 주세요. 아직 없는 경우에는 비워주세요"
+  - type: textarea
+    id: description
+    attributes:
+      label: 🏷️ Description
+      description: 작업할 Test에 대한 설명을 적어주세요.
+      placeholder: ex. BirdJudgmentGenerator의 getReaction에 대한 테스트 코드를 작성해요.
+    validations:
+      required: false
+  - type: textarea
+    id: todo
+    attributes:
+      label: 🍪 TODO
+      description: 이 이슈를 진행하기 위해 어떤 작업이 필요한가요?
+      placeholder: -[ ] 일해요~~~
+      value: "- [ ] "
+    validations:
+      required: false

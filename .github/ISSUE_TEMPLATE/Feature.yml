@@ -1,0 +1,25 @@
+name: ✨ Feature 기능 추가
+description: 새로운 기능을 추가하는 경우, 이 템플릿을 사용해 주세요!
+title: "✨ Feat: "
+labels: ["Feat ✨"]
+body:
+  - type: markdown
+    attributes:
+      value: "이슈를 작성하기 전, 다음 사항을 고려해 주세요.\n- [ ] Assignees에 담당자를 지정해 주세요. 아직 없는 경우에는 비워주세요.\n- [ ] Labels에 이슈의 종류와 담당자를 지정해 주세요. 아직 없는 경우에는 비워주세요"
+  - type: textarea
+    id: description
+    attributes:
+      label: 🏷️ Description
+      description: 작업할 Feature에 대한 설명을 적어주세요.
+      placeholder: ex. 지출 통계 화면의 카테고리별 지출 그래프를 그려요.
+    validations:
+      required: false
+  - type: textarea
+    id: todo
+    attributes:
+      label: 🍪 TODO
+      description: 이 이슈를 진행하기 위해 어떤 작업이 필요한가요?
+      placeholder: -[ ] 그래프 그려요
+      value: "- [ ] "
+    validations:
+      required: false
