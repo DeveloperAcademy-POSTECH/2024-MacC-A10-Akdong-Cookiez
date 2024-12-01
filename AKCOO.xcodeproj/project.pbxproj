@@ -52,6 +52,23 @@
 		F365F4FD2CF4C335002C1171 /* JudgmentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */; };
 		F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FE2CF50D0F002C1171 /* Double+String.swift */; };
 		F365F5012CF62A19002C1171 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F5002CF62A19002C1171 /* ChatBubbleView.swift */; };
+		F36F1A342CFCA3AE00DD59F8 /* GuideCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */; };
+		F36F1A362CFCA46700DD59F8 /* GuideCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */; };
+		F36F1A382CFCA4CF00DD59F8 /* GuideFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */; };
+		F36F1A3A2CFCA4D500DD59F8 /* GuideFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */; };
+		F36F1A3C2CFCA4E100DD59F8 /* UserInfoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */; };
+		F36F1A3E2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */; };
+		F36F1A402CFCA54200DD59F8 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */; };
+		F36F1A422CFCA54800DD59F8 /* UserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */; };
+		F36F1A442CFCA55E00DD59F8 /* GuideUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */; };
+		F36F1A462CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */; };
+		F36F1A492CFCA6C000DD59F8 /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */; };
+		F36F1A542CFCADF400DD59F8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A532CFCADF400DD59F8 /* GuideView.swift */; };
+		F36F1A562CFCB19A00DD59F8 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */; };
+		F36F1A582CFCB1AE00DD59F8 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */; };
+		F36F1A5A2CFCB8A800DD59F8 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */; };
+		F36F1A5C2CFCBCF600DD59F8 /* GuideUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */; };
+		F36F1A5E2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */; };
 		F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
@@ -214,6 +231,23 @@
 		F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditView.swift; sourceTree = "<group>"; };
 		F365F4FE2CF50D0F002C1171 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		F365F5002CF62A19002C1171 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
+		F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCoordinator.swift; sourceTree = "<group>"; };
+		F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCoordinatorImp.swift; sourceTree = "<group>"; };
+		F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFactory.swift; sourceTree = "<group>"; };
+		F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFactoryImp.swift; sourceTree = "<group>"; };
+		F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFactory.swift; sourceTree = "<group>"; };
+		F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFactoryImp.swift; sourceTree = "<group>"; };
+		F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
+		F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCase.swift; sourceTree = "<group>"; };
+		F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseImp.swift; sourceTree = "<group>"; };
+		F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseImp.swift; sourceTree = "<group>"; };
+		F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		F36F1A532CFCADF400DD59F8 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseMock.swift; sourceTree = "<group>"; };
+		F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseMock.swift; sourceTree = "<group>"; };
 		F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+PaperLabel.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -444,6 +478,95 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		F36F1A2C2CFC73E800DD59F8 /* GuideScene */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A2E2CFC73FA00DD59F8 /* Coordinator */,
+				F36F1A2F2CFC740100DD59F8 /* Controller */,
+				F36F1A302CFC741400DD59F8 /* View */,
+			);
+			path = GuideScene;
+			sourceTree = "<group>";
+		};
+		F36F1A2E2CFC73FA00DD59F8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */,
+				F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F36F1A2F2CFC740100DD59F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A322CFC743F00DD59F8 /* Factory */,
+				F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36F1A302CFC741400DD59F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A532CFCADF400DD59F8 /* GuideView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F36F1A322CFC743F00DD59F8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */,
+				F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A4C2CFCABB700DD59F8 /* Coordinator */,
+				F36F1A4E2CFCABCB00DD59F8 /* Controller */,
+				F36F1A502CFCABF400DD59F8 /* View */,
+			);
+			path = UserInfoScene;
+			sourceTree = "<group>";
+		};
+		F36F1A4C2CFCABB700DD59F8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F36F1A4E2CFCABCB00DD59F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A4F2CFCABD300DD59F8 /* Factory */,
+				F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36F1A4F2CFCABD300DD59F8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */,
+				F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F36F1A502CFCABF400DD59F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F37975382CF0AA19006E8DC0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +653,8 @@
 		F3EB763F2CDDDDAD0054D4E1 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */,
+				F36F1A2C2CFC73E800DD59F8 /* GuideScene */,
 				F3ED92742CE38B8800CF5238 /* JudgmentScene */,
 				F3EB76422CDDDDD10054D4E1 /* Common */,
 			);
@@ -571,6 +696,8 @@
 			children = (
 				F3EB76FC2CE09CB50054D4E1 /* Interface */,
 				F3ED92CE2CE71C8400CF5238 /* JudgmentUseCaseImp.swift */,
+				F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */,
+				F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -852,7 +979,8 @@
 		F3ED92F92CE7951D00CF5238 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED92F02CE7924000CF5238 /* VoidResponse.swift */,
+				F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */,
+				F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */,
 				F3ED92CC2CE7194B00CF5238 /* JudgmentUseCase.swift */,
 			);
 			path = UseCase;
@@ -887,6 +1015,9 @@
 				F3ED92F42CE792B600CF5238 /* JudgmentRepositoryMock.swift */,
 				F3ED92F62CE792C600CF5238 /* RecordRepositoryMock.swift */,
 				F3ED93122CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift */,
+				F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */,
+				F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */,
+				F3ED92F02CE7924000CF5238 /* VoidResponse.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1206,23 +1337,28 @@
 			files = (
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
 				F3ED92A22CE5C15D00CF5238 /* BirdReactionCollectionView.swift in Sources */,
+				F36F1A5C2CFCBCF600DD59F8 /* GuideUseCaseMock.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
 				515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */,
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
+				F36F1A542CFCADF400DD59F8 /* GuideView.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
 				515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
+				F36F1A3A2CFCA4D500DD59F8 /* GuideFactoryImp.swift in Sources */,
 				5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
 				F3ED93502CEB6BE400CF5238 /* PreviousBird.swift in Sources */,
 				515E408E2CF2307B00AE4A2F /* UserRecord+toEntity.swift in Sources */,
 				516E080B2CF4CE80006F3D54 /* Double+formattedWithCommas.swift in Sources */,
+				F36F1A362CFCA46700DD59F8 /* GuideCoordinatorImp.swift in Sources */,
 				F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
 				F3ED92CD2CE7194B00CF5238 /* JudgmentUseCase.swift in Sources */,
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
+				F36F1A582CFCB1AE00DD59F8 /* UserInfoViewController.swift in Sources */,
 				515A5B4E2CF71811003E032A /* ConfettiContainer.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
 				515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */,
@@ -1252,6 +1388,7 @@
 				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
 				515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */,
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
+				F36F1A562CFCB19A00DD59F8 /* GuideViewController.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* JudgmentTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
 				516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */,
@@ -1270,15 +1407,19 @@
 				515A5B502CF7184F003E032A /* ConfettiType.swift in Sources */,
 				F3ED92A02CE5271300CF5238 /* BirdReactionTextView.swift in Sources */,
 				F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */,
+				F36F1A422CFCA54800DD59F8 /* UserInfoUseCase.swift in Sources */,
 				515E40832CF0AA6000AE4A2F /* CoreDataError.swift in Sources */,
 				F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */,
 				F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */,
 				515A5B562CF71A5A003E032A /* ConfettiItem.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
+				F36F1A382CFCA4CF00DD59F8 /* GuideFactory.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
 				F3ED93002CE7C0C500CF5238 /* UserQuestion.swift in Sources */,
 				F3ED93192CE8617800CF5238 /* Array+RemovingDuplicates.swift in Sources */,
+				F36F1A492CFCA6C000DD59F8 /* UserInfoCoordinator.swift in Sources */,
 				515E40922CF230F000AE4A2F /* CountryProfile+toEntity.swift in Sources */,
+				F36F1A5A2CFCB8A800DD59F8 /* UserInfoView.swift in Sources */,
 				F3ED92EB2CE78E3500CF5238 /* UserRecord.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
 				516E080D2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift in Sources */,
@@ -1294,6 +1435,10 @@
 				515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */,
 				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
 				515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */,
+				F36F1A402CFCA54200DD59F8 /* GuideUseCase.swift in Sources */,
+				F36F1A5E2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift in Sources */,
+				F36F1A462CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift in Sources */,
+				F36F1A342CFCA3AE00DD59F8 /* GuideCoordinator.swift in Sources */,
 				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
 				F3ED934C2CEB6BAC00CF5238 /* ForeignBird.swift in Sources */,
 				515E40942CF2310E00AE4A2F /* CountryProfile+fromEntity.swift in Sources */,
@@ -1309,6 +1454,7 @@
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
 				F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
+				F36F1A3C2CFCA4E100DD59F8 /* UserInfoFactory.swift in Sources */,
 				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
 				F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */,
@@ -1316,6 +1462,8 @@
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
 				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,
 				F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */,
+				F36F1A3E2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift in Sources */,
+				F36F1A442CFCA55E00DD59F8 /* GuideUseCaseImp.swift in Sources */,
 				F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */,
 				F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */,
 				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
@@ -1497,7 +1645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = L72ZFX76S7;
+				DEVELOPMENT_TEAM = QVX6L7QGV2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1530,7 +1678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = L72ZFX76S7;
+				DEVELOPMENT_TEAM = QVX6L7QGV2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
