@@ -24,4 +24,21 @@ struct MockCountryAverageJudgment {
       standards: sortedItems
     )
   }
+  
+  static let onlyCategory: CountryAverageJudgment = CountryAverageJudgment(
+    userQuestion: UserQuestion(
+      country: CountryProfile(
+        name: "나라",
+        currency: Currency(
+          unitTitle: "통화",
+          unit: 1.0
+        )
+      ),
+      category: "카테고리1",
+      amount: 0.0
+    ),
+    standards: [
+      Item(category: "카테고리1", name: "품목1", amount: 0.0)
+    ]
+  )
 }
