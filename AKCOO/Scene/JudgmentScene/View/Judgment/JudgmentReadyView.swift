@@ -11,10 +11,25 @@ class JudgmentReadyView: UIView {
   var blueBackgroundView = UIView().set {
     $0.backgroundColor = .akColor(.akBlue400)
   }
-  var paper = OpenedPaperView().set()
   
+  var closedButton: UIButton = {
+    var configuration = UIButton.Configuration.plain()
+    configuration.background.backgroundColor = .red
+    configuration.imagePadding = 0 // 기본 이미지 패딩 제거
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3)
+    let button = UIButton(configuration: configuration)
+    return button.set {
+      $0.setImage(.init(systemName: "xmark"), for: .normal)
+      $0.frame = CGRect(x: 0, y: 0, width: 21, height: 21) // 터치 영역 확장
+      $0.tintColor = .black
+    }
+  }()
+  
+  var paper = OpenedPaperView().set()
   var paperBottomConstraint: NSLayoutConstraint?
   var paperCenterYConstraint: NSLayoutConstraint?
+  
+  var onActionTappedClosedButton: (() -> Void)?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -52,7 +67,10 @@ class JudgmentReadyView: UIView {
   
   private func setupViews() {
     addSubview(blueBackgroundView)
+    addSubview(closedButton)
     addSubview(paper)
+    
+    closedButton.addTarget(self, action: #selector(tappedClosedButton), for: .touchUpInside)
   }
   
   private func setupConstraints() {
@@ -63,6 +81,9 @@ class JudgmentReadyView: UIView {
       blueBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
       blueBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
       blueBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      closedButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      closedButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 13),
       
       paper.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paperPadding),
       paper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paperPadding)
@@ -90,6 +111,10 @@ class JudgmentReadyView: UIView {
     UIView.animate(withDuration: 0.3) {
       self.layoutIfNeeded()
     }
+  }
+  
+  @objc private func tappedClosedButton() {
+    onActionTappedClosedButton?()
   }
 }
 
