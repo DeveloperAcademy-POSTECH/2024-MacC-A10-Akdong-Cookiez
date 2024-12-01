@@ -15,10 +15,12 @@ class JudgmentReadyView: UIView {
   var closedButton: UIButton = {
     var configuration = UIButton.Configuration.plain()
     configuration.imagePadding = 0 // 기본 이미지 패딩 제거
-    configuration.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3)
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
+    let symbolConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .regular)
+    let image = UIImage(systemName: "xmark", withConfiguration: symbolConfig)
     let button = UIButton(configuration: configuration)
     return button.set {
-      $0.setImage(.init(systemName: "xmark"), for: .normal)
+      $0.setImage(image, for: .normal)
       $0.frame = CGRect(x: 0, y: 0, width: 21, height: 21) // 터치 영역 확장
       $0.tintColor = .black
     }
