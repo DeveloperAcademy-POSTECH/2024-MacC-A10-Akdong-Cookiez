@@ -24,7 +24,9 @@
 		515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */; };
 		515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */; };
 		515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6C2CF9E514003E032A /* MockItem.swift */; };
-		515A5B6F2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */; };
+		515A5B6F2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */; };
+		515A5B732CFC953F003E032A /* BirdConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B722CFC953F003E032A /* BirdConstants.swift */; };
+		515A5B752CFC9E82003E032A /* String+fillTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B742CFC9E82003E032A /* String+fillTemplate.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -193,7 +195,9 @@
 		515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryAverageJudgment.swift; sourceTree = "<group>"; };
 		515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryProfile.swift; sourceTree = "<group>"; };
 		515A5B6C2CF9E514003E032A /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
-		515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
+		515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignBirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
+		515A5B722CFC953F003E032A /* BirdConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdConstants.swift; sourceTree = "<group>"; };
+		515A5B742CFC9E82003E032A /* String+fillTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+fillTemplate.swift"; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -413,7 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */,
-				515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */,
+				515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */,
 			);
 			path = BirdJudgmentGenerator;
 			sourceTree = "<group>";
@@ -915,6 +919,7 @@
 				F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */,
 				F3ED93492CEB694300CF5238 /* BirdReaction.swift */,
 				516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */,
+				515A5B722CFC953F003E032A /* BirdConstants.swift */,
 			);
 			path = Bird;
 			sourceTree = "<group>";
@@ -954,6 +959,7 @@
 				F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */,
 				516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */,
 				516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */,
+				515A5B742CFC9E82003E032A /* String+fillTemplate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1276,6 +1282,7 @@
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
+				515A5B732CFC953F003E032A /* BirdConstants.swift in Sources */,
 				F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
@@ -1351,6 +1358,7 @@
 				515E40902CF230BD00AE4A2F /* UserRecord+fromEntity.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
 				F3ED928B2CE5162100CF5238 /* JudgmentCoordinator.swift in Sources */,
+				515A5B752CFC9E82003E032A /* String+fillTemplate.swift in Sources */,
 				F3ED92E92CE78D9000CF5238 /* JudgmentRepository.swift in Sources */,
 				F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */,
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
@@ -1380,7 +1388,7 @@
 			files = (
 				515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */,
 				515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */,
-				515A5B6F2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift in Sources */,
+				515A5B6F2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift in Sources */,
 				515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */,
 				515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */,
 				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
