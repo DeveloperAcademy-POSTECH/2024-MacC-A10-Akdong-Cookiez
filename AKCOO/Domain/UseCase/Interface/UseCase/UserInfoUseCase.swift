@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol UserInfoUseCase {
+  /// 나의 모든 지출 판단 기록을 가져오는 메서드
+  func getUserRecords() -> Result<[UserRecord], Error>
+}
