@@ -24,6 +24,7 @@
 		515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */; };
 		515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */; };
 		515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6C2CF9E514003E032A /* MockItem.swift */; };
+		515A5B6F2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -192,6 +193,7 @@
 		515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryAverageJudgment.swift; sourceTree = "<group>"; };
 		515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryProfile.swift; sourceTree = "<group>"; };
 		515A5B6C2CF9E514003E032A /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
+		515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */,
+				515A5B6E2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift */,
 			);
 			path = BirdJudgmentGenerator;
 			sourceTree = "<group>";
@@ -1377,6 +1380,7 @@
 			files = (
 				515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */,
 				515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */,
+				515A5B6F2CF9E812003E032A /* BirdJudgmentGenerator_GetOpinionTests.swift in Sources */,
 				515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */,
 				515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */,
 				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
