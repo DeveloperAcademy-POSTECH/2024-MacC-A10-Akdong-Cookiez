@@ -29,6 +29,9 @@
 		515A5B752CFC9E82003E032A /* String+fillTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B742CFC9E82003E032A /* String+fillTemplate.swift */; };
 		515A5B772CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */; };
 		515A5B792CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B782CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift */; };
+		515A5B802CFCCA20003E032A /* CoreData_EntityMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */; };
+		515A5B822CFCCA37003E032A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */; };
+		515A5B842CFCD335003E032A /* MockUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B832CFCD335003E032A /* MockUserRecord.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -202,6 +205,9 @@
 		515A5B742CFC9E82003E032A /* String+fillTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+fillTemplate.swift"; sourceTree = "<group>"; };
 		515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
 		515A5B782CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetDetailTests.swift; sourceTree = "<group>"; };
+		515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_EntityMappingTests.swift; sourceTree = "<group>"; };
+		515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
+		515A5B832CFCD335003E032A /* MockUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRecord.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -397,6 +403,8 @@
 				515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */,
 				515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */,
 				515A5B6C2CF9E514003E032A /* MockItem.swift */,
+				515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */,
+				515A5B832CFCD335003E032A /* MockUserRecord.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -426,6 +434,48 @@
 				515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */,
 			);
 			path = BirdJudgmentGenerator;
+			sourceTree = "<group>";
+		};
+		515A5B7A2CFCC962003E032A /* AKCOO */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7C2CFCC97F003E032A /* Scene */,
+				515A5B672CF9E4BC003E032A /* Domain */,
+				515A5B7B2CFCC96D003E032A /* Data */,
+			);
+			path = AKCOO;
+			sourceTree = "<group>";
+		};
+		515A5B7B2CFCC96D003E032A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7D2CFCC998003E032A /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		515A5B7C2CFCC97F003E032A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92812CE4C44000CF5238 /* Components */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		515A5B7D2CFCC998003E032A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7E2CFCC99D003E032A /* CoreData */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		515A5B7E2CFCC99D003E032A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
@@ -558,9 +608,8 @@
 		F3EB76192CDD14B20054D4E1 /* AKCOOTests */ = {
 			isa = PBXGroup;
 			children = (
-				515A5B672CF9E4BC003E032A /* Domain */,
+				515A5B7A2CFCC962003E032A /* AKCOO */,
 				515A5B642CF9E452003E032A /* Mock */,
-				F3ED92812CE4C44000CF5238 /* Components */,
 			);
 			path = AKCOOTests;
 			sourceTree = "<group>";
@@ -1392,6 +1441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515A5B802CFCCA20003E032A /* CoreData_EntityMappingTests.swift in Sources */,
 				515A5B792CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift in Sources */,
 				515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */,
 				515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */,
@@ -1400,6 +1450,8 @@
 				515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */,
 				515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */,
 				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
+				515A5B822CFCCA37003E032A /* MockCoreDataStack.swift in Sources */,
+				515A5B842CFCD335003E032A /* MockUserRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

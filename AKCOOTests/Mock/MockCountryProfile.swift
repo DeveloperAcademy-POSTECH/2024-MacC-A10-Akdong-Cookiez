@@ -22,4 +22,12 @@ struct MockCountryProfile {
       )
     )
   }
+  
+  static let korea = CountryProfile(
+    name: "대한민국",
+    currency: Currency(
+      unitTitle: "원",
+      unit: 1.0
+    )
+  )
 }
