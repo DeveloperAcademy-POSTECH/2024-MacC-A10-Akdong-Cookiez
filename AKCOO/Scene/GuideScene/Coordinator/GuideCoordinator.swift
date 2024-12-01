@@ -8,6 +8,6 @@
 import UIKit
 
 protocol GuideCoordinator: Coordinator {
-  func startGuide(presenting: UIViewController)
-  func startJudgment(presenting: UIViewController)
+  func startJudgmentReady(presenting: UIViewController)
+  func startUserInfo()
 }
