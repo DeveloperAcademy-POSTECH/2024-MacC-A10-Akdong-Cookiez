@@ -35,6 +35,10 @@
 		515A5B862CFCF84F003E032A /* UserInfoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */; };
 		515A5B892CFD8AA4003E032A /* UserInfoBirdChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */; };
 		515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */; };
+		515A5B8D2CFD9F60003E032A /* UserInfoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */; };
+		515A5B8F2CFDCACC003E032A /* UserInfoRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */; };
+		515A5B912CFDCB02003E032A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B902CFDCB02003E032A /* Line.swift */; };
+		515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -231,6 +235,10 @@
 		515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitleView.swift; sourceTree = "<group>"; };
 		515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdChatView.swift; sourceTree = "<group>"; };
 		515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdView.swift; sourceTree = "<group>"; };
+		515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDescriptionView.swift; sourceTree = "<group>"; };
+		515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRecordsView.swift; sourceTree = "<group>"; };
+		515A5B902CFDCB02003E032A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+fromUIFont.swift"; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -522,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */,
+				515A5B902CFDCB02003E032A /* Line.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -685,6 +694,8 @@
 				F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */,
 				515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */,
 				515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */,
+				515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */,
+				515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1163,6 +1174,7 @@
 				516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */,
 				516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */,
 				515A5B742CFC9E82003E032A /* String+fillTemplate.swift */,
+				515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1461,6 +1473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
+				515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */,
 				F3ED92A22CE5C15D00CF5238 /* BirdReactionCollectionView.swift in Sources */,
 				F36F1A5C2CFCBCF600DD59F8 /* GuideUseCaseMock.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
@@ -1472,6 +1485,7 @@
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
 				F36F1A3A2CFCA4D500DD59F8 /* GuideFactoryImp.swift in Sources */,
 				5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */,
+				515A5B8F2CFDCACC003E032A /* UserInfoRecordsView.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
 				F3ED93502CEB6BE400CF5238 /* PreviousBird.swift in Sources */,
@@ -1583,6 +1597,7 @@
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
 				F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
+				515A5B912CFDCB02003E032A /* Line.swift in Sources */,
 				F36F1A3C2CFCA4E100DD59F8 /* UserInfoFactory.swift in Sources */,
 				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
@@ -1597,6 +1612,7 @@
 				F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */,
 				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
 				515A5B4A2CF71723003E032A /* ConfettiView.swift in Sources */,
+				515A5B8D2CFD9F60003E032A /* UserInfoDescriptionView.swift in Sources */,
 				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
 				515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */,
 				F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */,

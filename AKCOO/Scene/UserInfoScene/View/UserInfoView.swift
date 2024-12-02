@@ -5,6 +5,7 @@
 //  Created by 박혜운 on 12/2/24.
 //
 
+import SwiftUI
 import UIKit
 
 class UserInfoView: UIView {
@@ -16,6 +17,11 @@ class UserInfoView: UIView {
   let titleView = UserInfoTitleView().set()
   let birdView = UserInfoBirdView().set()
   let descriptionView = UserInfoDescriptionView().set()
+  
+  private let userRecordViewModel = UserInfoRecordsViewModel()
+  lazy var userRecordsView = UIHostingController(rootView: UserInfoRecordsView(viewModel: userRecordViewModel)).view.set {
+    $0.backgroundColor = .clear
+  }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -34,6 +40,7 @@ class UserInfoView: UIView {
     addSubview(titleView)
     addSubview(birdView)
     addSubview(descriptionView)
+    addSubview(userRecordsView)
   }
   
   private func setupConstraints() {
@@ -57,11 +64,17 @@ class UserInfoView: UIView {
       
       descriptionView.topAnchor.constraint(equalTo: birdView.bottomAnchor, constant: 8),
       descriptionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-      descriptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+      descriptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      
+      userRecordsView.topAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: 18),
+      userRecordsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      userRecordsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
     ])
   }
   
   func configure(userRecords: [UserRecord]) {
+    userRecordViewModel.userRecords = userRecords
+    
     titleView
       .configure(
         userJudgmentType: "스위스 10년차"
@@ -85,9 +98,6 @@ class UserInfoView: UIView {
           자연과 다양한 문화 즐기기를 좋아해요
           """
       )
-  }
-}
-
   }
 }
 
