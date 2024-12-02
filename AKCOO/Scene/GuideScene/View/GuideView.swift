@@ -15,11 +15,19 @@ class GuideView: UIView {
     $0.backgroundColor = .blue
   }
   
-  let judgmentButton = UIButton().set {
-    $0.setTitle("판단화면으로 이동", for: .normal)
-    $0.tintColor = .red
-    $0.backgroundColor = .blue
-  }
+  let judgmentButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 22, leading: 0, bottom: 22, trailing: 0)
+    configuration.background.backgroundColor = .akColor(.akBlue500)
+    configuration.baseForegroundColor = .white
+    let button = UIButton(configuration: configuration)
+    return button.set {
+      $0.setTitle("여행 시작하기", for: .normal)
+      $0.akFont(.gmarketBold16)
+      $0.layer.cornerRadius = 20
+      $0.layer.masksToBounds = true
+    }
+  }()
   
   let countrySelectorTitle = CountrySelectorTitle().set()
   
@@ -53,11 +61,12 @@ class GuideView: UIView {
       countrySelectorTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
       countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 68),
       
-      userInfoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      userInfoButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 50),
+      judgmentButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
+      judgmentButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
+      judgmentButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
       
-      judgmentButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      judgmentButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 100)
+      userInfoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+      userInfoButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 100)
     ])
   }
   
