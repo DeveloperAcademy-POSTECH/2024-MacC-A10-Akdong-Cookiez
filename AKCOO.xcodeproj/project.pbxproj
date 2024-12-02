@@ -33,6 +33,8 @@
 		515A5B822CFCCA37003E032A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */; };
 		515A5B842CFCD335003E032A /* MockUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B832CFCD335003E032A /* MockUserRecord.swift */; };
 		515A5B862CFCF84F003E032A /* UserInfoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */; };
+		515A5B892CFD8AA4003E032A /* UserInfoBirdChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */; };
+		515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -227,6 +229,8 @@
 		515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		515A5B832CFCD335003E032A /* MockUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRecord.swift; sourceTree = "<group>"; };
 		515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitleView.swift; sourceTree = "<group>"; };
+		515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdChatView.swift; sourceTree = "<group>"; };
+		515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdView.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -514,6 +518,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		515A5B872CFD8A96003E032A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,8 +681,10 @@
 		F36F1A502CFCABF400DD59F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				515A5B872CFD8A96003E032A /* Components */,
 				F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */,
 				515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */,
+				515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1494,6 +1508,7 @@
 				F31458CA2CF78529006C008A /* ConfettiViewController.swift in Sources */,
 				515A5B862CFCF84F003E032A /* UserInfoTitleView.swift in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
+				515A5B892CFD8AA4003E032A /* UserInfoBirdChatView.swift in Sources */,
 				516E08092CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift in Sources */,
 				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
 				515E40982CF2315C00AE4A2F /* UserQuestion+fromEntity.swift in Sources */,
@@ -1583,6 +1598,7 @@
 				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
 				515A5B4A2CF71723003E032A /* ConfettiView.swift in Sources */,
 				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
+				515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */,
 				F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */,
 				F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */,
 				515E409A2CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift in Sources */,
