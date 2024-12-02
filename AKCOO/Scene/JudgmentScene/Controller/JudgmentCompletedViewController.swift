@@ -20,25 +20,21 @@ class JudgmentCompletedViewController: UIViewController {
     return view as? JudgmentView
   }
   
+  private var selectedCountryDetail: CountryDetail
   private var userQuestion: UserQuestion
-  private var birds: [BirdModel]
+  private var birds: [BirdModel]?
   
   weak var delegate: JudgmentCompletedViewControllerDelegate?
   
   init(
     judgmentUseCase: JudgmentUseCase,
+    selectedCountryDetail: CountryDetail,
     userQuestion: UserQuestion
   ) {
     self.judgmentUseCase = judgmentUseCase
+    self.selectedCountryDetail = selectedCountryDetail
     self.userQuestion = userQuestion
     
-    switch judgmentUseCase.getBirdsJudgment(userQuestion: userQuestion) {
-    case .success(let birds):
-      self.birds = birds
-    case .failure:
-      self.birds = []
-      // TODO: - Error 처리
-    }
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -52,15 +48,12 @@ class JudgmentCompletedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    setupViews()
     
-    judgmentView.configure(
-      userQuesion: self.userQuestion,
-      birds: self.birds
-    )
-    
-    onAction()
+    Task {
+      setupViews()
+      await configure()
+      onAction()
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -73,10 +66,28 @@ class JudgmentCompletedViewController: UIViewController {
     judgmentView.paper.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
   }
   
+  private func configure() async {
+    let birds: [BirdModel]
+    switch await judgmentUseCase.getBirdsJudgment(selectedCountryDetail: selectedCountryDetail, userQuestion: userQuestion) {
+    case .success(let birdsData):
+      birds = birdsData
+    case .failure:
+      birds = []
+      // TODO: - Error 처리
+    }
+    
+    judgmentView.configure(
+      userQuesion: self.userQuestion,
+      birds: birds
+    )
+    
+    self.birds = birds
+  }
+  
   private func onAction() {
     judgmentView.onActionCompletedDecision = { [weak self] buying in
-      guard let self else { return }
-
+      guard let self, let birds else { return }
+      
       let birdJudgmentDictionary: [String: JudgmentType] = Dictionary(
         uniqueKeysWithValues: birds.map { ($0.name, $0.judgment ? .buying : .notBuying) }
       )
@@ -86,7 +97,7 @@ class JudgmentCompletedViewController: UIViewController {
         userJudgment: buying ? .buying : .notBuying,
         externalJudgment: birdJudgmentDictionary
       )
-
+      
       // TODO: - 분기처리
       _ = judgmentUseCase.save(record: newRecord)
       self.delegate?.onActionCompletedDecision()
@@ -95,7 +106,7 @@ class JudgmentCompletedViewController: UIViewController {
   }
   
   @objc func tappedPaper() {
-    guard case .success(let paperModel) = judgmentUseCase.getPaperModel() else { return }
+    guard case .success(let paperModel) = judgmentUseCase.getPaperModel(selectedCountryDetail: selectedCountryDetail) else { return }
     coordinator?.startEditPaper(
       presenting: self,
       paperModel: paperModel,
@@ -107,20 +118,25 @@ class JudgmentCompletedViewController: UIViewController {
 
 extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
   func onActionChangingUserQuestion(_ userQuestion: UserQuestion) {
-    switch judgmentUseCase.getBirdsJudgment(userQuestion: userQuestion) {
-    case .success(let birds):
+    Task {
+      let birds: [BirdModel]
+      switch await judgmentUseCase.getBirdsJudgment(selectedCountryDetail: selectedCountryDetail, userQuestion: userQuestion) {
+      case .success(let birdsData):
+        birds = birdsData
+      case .failure:
+        birds = []
+        // TODO: - Error 처리
+      }
+      
+      self.userQuestion = userQuestion
+      
+      judgmentView.configure(
+        userQuesion: self.userQuestion,
+        birds: birds
+      )
+      
       self.birds = birds
-    case .failure:
-      self.birds = []
-      // TODO: - Error 처리
     }
-    
-    self.userQuestion = userQuestion
-    
-    judgmentView.configure(
-      userQuesion: self.userQuestion,
-      birds: self.birds
-    )
   }
 }
 
@@ -160,8 +176,8 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
     PreviousBird(judgment: previousJudgment)
   ]
   
-  return JudgmentCompletedViewController(
-    judgmentUseCase: JudgmentUseCaseMock(),
+  JudgmentCompletedViewController(
+    judgmentUseCase: JudgmentUseCaseMock(), selectedCountryDetail: .init(country: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0)), items: []),
     userQuestion: .init(
       country: country,
       category: "식당",

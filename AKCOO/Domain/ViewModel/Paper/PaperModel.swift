@@ -10,6 +10,5 @@ import Foundation
 /// 재판요청서를 보이기 위해 화면에 필요한 값
 struct PaperModel {
   var selectedCountryProfile: CountryProfile // 선택된 국가
-  var countries: [String]                    // 국가 리스트
   var categories: [String]                   // 선택된 국가 카테고리 정보
 }

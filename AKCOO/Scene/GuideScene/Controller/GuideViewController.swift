@@ -16,6 +16,8 @@ class GuideViewController: UIViewController {
     return view as? GuideView
   }
   
+  private var selectedCountryDetail: CountryDetail?
+  
   init(guideUseCase: GuideUseCase) {
     self.guideUseCase = guideUseCase
     super.init(nibName: nil, bundle: nil)
@@ -32,7 +34,15 @@ class GuideViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    Task { await configure() }
     onAction()
+  }
+  
+  private func configure() async {
+    guard case let .success((countriesName, selectedCountryDetail)) = await guideUseCase.getGuideInfo() else { return } // 예외처리
+    self.selectedCountryDetail = selectedCountryDetail
+    
+    guideView.configure(countries: countriesName, selectedCountry: selectedCountryDetail.name)
   }
   
   private func onAction() {
@@ -43,7 +53,22 @@ class GuideViewController: UIViewController {
     
     guideView.onActionJudgmentTapped = { [weak self] in
       guard let self else { return }
-      self.coordinator?.startJudgmentReady(presenting: self)
+      guard let selectedCountryDetail else { return }
+      self.coordinator?.startJudgmentReady(
+        presenting: self,
+        selectedCountryDetail: selectedCountryDetail
+      )
+    }
+    
+    guideView.countrySelectorTitle.onActionChangeCountry = { [weak self] newCountry in
+      guard let self else { return }
+      guard let selectedCountryDetail else { return }
+      Task {
+        guard case let .success((countriesName, selectedCountryDetail)) = await self.guideUseCase.getNewGuideInfo(newCountryName: newCountry) else { return }
+        
+        self.selectedCountryDetail = selectedCountryDetail
+        self.guideView.configure(countries: countriesName, selectedCountry: selectedCountryDetail.name)
+      }
     }
   }
 }
