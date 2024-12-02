@@ -35,25 +35,14 @@ class UserInfoViewController: UIViewController {
   }
   
   private func setupUI() {
-    switch userInfoUseCase.getUserRecords() {
-    case .success(let userRecords):
-      userInfoView.configure(userRecords: userRecords)
+    switch userInfoUseCase.getUserJudgmentTypeModel() {
+    case .success(let userJudgmentTypeModel):
+      userInfoView.configure(userJudgmentTypeModel: userJudgmentTypeModel)
     case .failure:
       // TODO: 예외처리
       return
     }
   }
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
 }
 
 #Preview {

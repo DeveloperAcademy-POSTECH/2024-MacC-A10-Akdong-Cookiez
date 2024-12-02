@@ -18,32 +18,11 @@ class UserInfoTitleView: UIView {
     var paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineHeightMultiple = 1.17
     $0.attributedText = NSMutableAttributedString(
-      string: "나의 판단 유형은",
+      string: "베트남에 왔으면,\n따라라 현지물가",
       attributes: [
         NSAttributedString.Key.paragraphStyle: paragraphStyle
       ]
     )
-  }
-  
-  let typeContentsLabel = UILabel().set {
-    $0.text = "베트남 10년차"
-    $0.font = .akFont(.gmarketBold30)
-    $0.textColor = .akColor(.black)
-    $0.numberOfLines = 0
-    $0.adjustsFontForContentSizeCategory = true
-    
-    var paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineHeightMultiple = 1.17
-    $0.attributedText = NSMutableAttributedString(
-      string: $0.text ?? "",
-      attributes: [
-        NSAttributedString.Key.paragraphStyle: paragraphStyle
-      ]
-    )
-  }
-  
-  let underlineView = UIView().set {
-    $0.backgroundColor = .akColor(.black)
   }
   
   override init(frame: CGRect) {
@@ -60,35 +39,51 @@ class UserInfoTitleView: UIView {
   
   private func setupViews() {
     addSubview(typeTitleLabel)
-    addSubview(typeContentsLabel)
-    addSubview(underlineView)
   }
   
   private func setupConstraints() {
-    let contentsLabelWidth = typeContentsLabel
-      .sizeThatFits(CGSize(
-        width: CGFloat.greatestFiniteMagnitude,
-        height: CGFloat.greatestFiniteMagnitude
-      )).width
-    
     NSLayoutConstraint.activate([
       typeTitleLabel.topAnchor.constraint(equalTo: topAnchor),
       typeTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
       typeTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-      
-      typeContentsLabel.topAnchor.constraint(equalTo: typeTitleLabel.bottomAnchor),
-      typeContentsLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-      typeContentsLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-      
-      underlineView.heightAnchor.constraint(equalToConstant: 1),
-      underlineView.widthAnchor.constraint(equalToConstant: contentsLabelWidth),
-      underlineView.topAnchor.constraint(equalTo: typeContentsLabel.bottomAnchor),
-      underlineView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      underlineView.bottomAnchor.constraint(equalTo: bottomAnchor)
+      typeTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
   
-  func configure(userJudgmentType: String) {
-    typeContentsLabel.text = userJudgmentType
+  func configure(title: String, boldTitle: String) {
+    typeTitleLabel.text = title
+    
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineHeightMultiple = 1.17
+    let attributedString = NSMutableAttributedString(
+      string: title,
+      attributes: [
+        NSAttributedString.Key.paragraphStyle: paragraphStyle
+      ]
+    )
+    
+    // 특정 문구의 범위 확인
+    if let range = title.range(of: boldTitle) {
+      let nsRange = NSRange(range, in: title)
+      
+      // 밑줄 속성 추가
+      attributedString
+        .addAttribute(
+          .underlineStyle,
+          value: NSUnderlineStyle.single.rawValue,
+          range: nsRange
+        )
+      
+      // 폰트 속성 추가
+      attributedString
+        .addAttribute(
+          .font,
+          value: UIFont.akFont(.gmarketBold30),
+          range: nsRange
+        )
+    }
+    
+    // UILabel에 적용
+    typeTitleLabel.attributedText = attributedString
   }
 }

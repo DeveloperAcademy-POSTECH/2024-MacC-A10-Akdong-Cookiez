@@ -74,12 +74,12 @@ class UserInfoBirdView: UIView {
   }
   
   func configure(
-    birdType: BirdCharacterImageType,
+    birdType: UserJudgmentType,
     leftChat: String,
     rightTopChat: String,
     rightBottomChat: String
   ) {
-    imageView.image = birdType.standing
+    applyBirdImageView(for: birdType)
     
     leftChatView
       .configure(
@@ -95,5 +95,20 @@ class UserInfoBirdView: UIView {
       .configure(
         chat: rightBottomChat
       )
+  }
+  
+  private func applyBirdImageView(for type: UserJudgmentType) {
+    switch type {
+    case .foreign:
+      imageView.image = BirdCharacterImageType.foriegn.standing
+    case .local:
+      imageView.image = BirdCharacterImageType.local.standing
+    case .previous:
+      imageView.image = BirdCharacterImageType.previous.standing
+    case .empty:
+      imageView.image = UIImage(resource: .emptyRecordBird)
+      // FIXME: 레이아웃 경고 뜨는거 처리하기!!
+      imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    }
   }
 }
