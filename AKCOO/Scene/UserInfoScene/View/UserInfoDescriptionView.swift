@@ -102,7 +102,7 @@ class UserInfoDescriptionView: UIView {
     )
     
     // 2. Bold 스타일 적용
-    let boldPatterns = ["\\s*.+짹짹이"]
+    let boldPatterns = ["\\s*.+짹짹이", "지출 판단을 시작하세요"]
     let boldRegexes = boldPatterns.map { try? NSRegularExpression(pattern: $0) }
     
     boldRegexes.forEach { regex in
