@@ -78,20 +78,19 @@ class UserInfoDescriptionView: UIView {
       dividerView.bottomAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
       
       descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-      descriptionLabel.leadingAnchor.constraint(equalTo: dividerView.trailingAnchor, constant: 8),
-      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -34),
+      descriptionLabel.leadingAnchor.constraint(equalTo: dividerView.trailingAnchor, constant: 6),
+      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
       descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
     ])
   }
   
-  func configure(userJudgmentType: String, description: String) {
-    applyBoldAttributedTextToDescriptionLabel(userJudgmentType: userJudgmentType)
+  func configure(title: String, description: String) {
+    applyBoldAttributedTextToDescriptionLabel(title)
     applyDescriptionText(description)
   }
   
-  private func applyBoldAttributedTextToDescriptionLabel(userJudgmentType: String) {
-    let text = "나는 \(userJudgmentType)와 비슷해요"
-    let boldPart = userJudgmentType // Bold 처리할 부분
+  private func applyBoldAttributedTextToDescriptionLabel(_ title: String) {
+    let text = title
     
     // 1. 기본 스타일 설정
     let attributedString = NSMutableAttributedString(
@@ -103,13 +102,31 @@ class UserInfoDescriptionView: UIView {
     )
     
     // 2. Bold 스타일 적용
-    if let boldRange = text.range(of: boldPart) {
-      let nsRange = NSRange(boldRange, in: text)
-      attributedString.addAttribute(
-        .font,
-        value: UIFont.akFont(.gmarketBold14),
-        range: nsRange
-      )
+    let boldPatterns = ["\\s*.+짹짹이"]
+    let boldRegexes = boldPatterns.map { try? NSRegularExpression(pattern: $0) }
+    
+    boldRegexes.forEach { regex in
+      regex?.enumerateMatches(
+        in: text,
+        options: [],
+        range: NSRange(location: 0, length: text.utf16.count)
+      ) { match, _, _ in
+        if let matchRange = match?.range {
+          let extendedRange = NSRange(
+            location: matchRange.location,
+            length: min(matchRange.length, text.utf16.count - matchRange.location)
+          )
+          
+          if extendedRange.upperBound <= text.utf16.count {
+            attributedString
+              .addAttribute(
+                .font,
+                value: UIFont.akFont(.gmarketBold14),
+                range: extendedRange
+              )
+          }
+        }
+      }
     }
     
     // 3. UILabel에 적용

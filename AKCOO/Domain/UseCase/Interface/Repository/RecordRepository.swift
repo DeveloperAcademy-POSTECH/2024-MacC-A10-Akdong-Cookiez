@@ -14,6 +14,8 @@ protocol RecordRepository {
   func saveSelectedCountry(_ country: String) -> Result<VoidResponse, Error>
   /// 직전 소비 기록을 반환하는 메서드
   func fetchPreviousDaySpending(country: String, category: String) -> Result<UserRecord?, Error>
+  /// 특정 나라의 모든 소비 기록을 반환하는 메서드
+  func fetchAllUserRecord(at country: String?) -> Result<[UserRecord?], Error>
   /// 소비 기록을 저장하는 메서드
   func saveRecord(record: UserRecord) -> Result<VoidResponse, Error>
 }

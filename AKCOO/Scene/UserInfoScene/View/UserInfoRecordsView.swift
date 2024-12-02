@@ -17,8 +17,16 @@ struct UserInfoRecordsView: View {
   
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
-      Text("지출 판단 기록")
-        .padding(.leading, 20)
+      HStack {
+        Text("지출 판단 기록")
+          .padding(.leading, 20)
+        Spacer()
+        Button {
+          CoreDataService().deleteAllUserRecords()
+        } label: {
+          Text("다 지우자")
+        }
+      }
       
       LazyVStack(spacing: 10) {
         if viewModel.userRecords.isEmpty {

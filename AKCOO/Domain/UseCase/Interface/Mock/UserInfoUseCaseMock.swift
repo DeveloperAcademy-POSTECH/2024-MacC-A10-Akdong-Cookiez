@@ -8,16 +8,12 @@
 import UIKit
 
 struct UserInfoUseCaseMock: UserInfoUseCase {
-  func getUserRecords() -> Result<[UserRecord], any Error> {
-    return .success([
-      UserRecord.dummy(),
-      UserRecord.dummy(),
-      UserRecord.dummy(),
-      UserRecord.dummy(),
+  func getUserJudgmentTypeModel() -> Result<UserJudgmentTypeModel, any Error> {
+    return .success(UserJudgmentTypeModel(userRecords: [
       UserRecord.dummy(),
       UserRecord.dummy(),
       UserRecord.dummy()
-    ])
+    ]))
   }
 }
 

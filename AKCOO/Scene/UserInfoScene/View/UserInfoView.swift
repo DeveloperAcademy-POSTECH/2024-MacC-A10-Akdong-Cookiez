@@ -53,12 +53,6 @@ class UserInfoView: UIView {
     contentView.addSubview(birdView)
     contentView.addSubview(descriptionView)
     contentView.addSubview(userRecordsView)
-    
-//    addSubview(grayBackgroundView)
-//    addSubview(titleView)
-//    addSubview(birdView)
-//    addSubview(descriptionView)
-//    addSubview(userRecordsView)
   }
   
   private func setupConstraints() {
@@ -75,7 +69,6 @@ class UserInfoView: UIView {
       
       // contentView
       contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-//      contentView.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor),
       contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
       contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
       contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
@@ -105,31 +98,29 @@ class UserInfoView: UIView {
     ])
   }
   
-  func configure(userRecords: [UserRecord]) {
-    userRecordViewModel.userRecords = userRecords
+  func configure(userJudgmentTypeModel: UserJudgmentTypeModel) {
+    let model = userJudgmentTypeModel
+    
+    userRecordViewModel.userRecords = model.userRecords
     
     titleView
       .configure(
-        userJudgmentType: "스위스 10년차"
+        title: model.title,
+        boldTitle: model.boldTitle
       )
     
     birdView
       .configure(
-        birdType: .previous,
-        leftChat: "비싸도 괜찮아",
-        rightTopChat: "몽땅 쓰자",
-        rightBottomChat: "🇨🇭"
+        birdType: model.userBirdType,
+        leftChat: model.getBirdChat(at: .left),
+        rightTopChat: model.getBirdChat(at: .rightTop),
+        rightBottomChat: model.getBirdChat(at: .rightBottom)
       )
     
     descriptionView
       .configure(
-        userJudgmentType: "스위스 10년차",
-        description: """
-          스위스 현지 물가를 기준으로
-          구매 여부를 결정해요
-          가끔은 벤치에 앉아 사색에 잠겨요
-          자연과 다양한 문화 즐기기를 좋아해요
-          """
+        title: model.descriptionTitle,
+        description: model.descriptionContents
       )
   }
 }

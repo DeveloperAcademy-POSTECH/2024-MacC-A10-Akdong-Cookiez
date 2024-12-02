@@ -7,10 +7,10 @@
 
 import UIKit
 
+enum UserInfoBirdChatLocation { case left, rightTop, rightBottom }
+
 class UserInfoBirdChatView: UIView {
-  
-  enum ChatLocation { case left, rightTop, rightBottom }
-  let chatLocation: ChatLocation
+  let chatLocation: UserInfoBirdChatLocation
   
   let blueBackgroundView = UIView().set {
     $0.backgroundColor = .akColor(.akBlue400)
@@ -31,7 +31,7 @@ class UserInfoBirdChatView: UIView {
     $0.contentMode = .scaleAspectFit
   }
   
-  init(location: ChatLocation, frame: CGRect = .zero) {
+  init(location: UserInfoBirdChatLocation, frame: CGRect = .zero) {
     self.chatLocation = location
     super.init(frame: frame)
     setupViews()
@@ -75,7 +75,6 @@ class UserInfoBirdChatView: UIView {
       chatLabel.leadingAnchor.constraint(equalTo: blueBackgroundView.leadingAnchor, constant: horizontal),
       chatLabel.trailingAnchor.constraint(equalTo: blueBackgroundView.trailingAnchor, constant: -horizontal),
       
-      tailImageView.widthAnchor.constraint(equalToConstant: 36),
       tailImageView.heightAnchor.constraint(equalToConstant: 16),
       tailImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
