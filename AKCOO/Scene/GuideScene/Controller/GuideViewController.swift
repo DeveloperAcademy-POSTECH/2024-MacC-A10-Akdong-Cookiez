@@ -55,6 +55,12 @@ class GuideViewController: UIViewController {
       guard let self else { return }
       self.coordinator?.startJudgmentReady(presenting: self)
     }
+    
+    guideView.countrySelectorTitle.onActionChangeCountry = { [weak self] newCountry in
+      guard let self else { return }
+      _ = self.guideUseCase.getNewCountryDetail(newCountryName: newCountry)
+      // selectedCountry 도 변경
+    }
   }
 }
 
