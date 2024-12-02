@@ -10,6 +10,15 @@ import UIKit
 
 class UserInfoView: UIView {
   
+  let scrollView = UIScrollView().set {
+    $0.backgroundColor = .akColor(.akGray100)
+    $0.isScrollEnabled = true
+  }
+  
+  let contentView = UIView().set {
+    $0.backgroundColor = .red
+  }
+  
   let grayBackgroundView = UIView().set {
     $0.backgroundColor = .akColor(.akGray100)
   }
@@ -36,11 +45,20 @@ class UserInfoView: UIView {
   }
   
   private func setupViews() {
-    addSubview(grayBackgroundView)
-    addSubview(titleView)
-    addSubview(birdView)
-    addSubview(descriptionView)
-    addSubview(userRecordsView)
+    addSubview(scrollView)
+    scrollView.addSubview(contentView)
+    
+    contentView.addSubview(grayBackgroundView)
+    contentView.addSubview(titleView)
+    contentView.addSubview(birdView)
+    contentView.addSubview(descriptionView)
+    contentView.addSubview(userRecordsView)
+    
+//    addSubview(grayBackgroundView)
+//    addSubview(titleView)
+//    addSubview(birdView)
+//    addSubview(descriptionView)
+//    addSubview(userRecordsView)
   }
   
   private func setupConstraints() {
@@ -49,26 +67,41 @@ class UserInfoView: UIView {
     let birdTrailingPadding: CGFloat = 34
     
     NSLayoutConstraint.activate([
-      grayBackgroundView.topAnchor.constraint(equalTo: topAnchor),
-      grayBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-      grayBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      grayBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      // scrollView
+      scrollView.topAnchor.constraint(equalTo: topAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
       
-      titleView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
-      titleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: titlePadding),
-      titleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -titlePadding),
+      // contentView
+      contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+//      contentView.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor),
+      contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+      contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+      
+      grayBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      grayBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+      grayBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      grayBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      
+      titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+      titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: titlePadding),
+      titleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -titlePadding),
       
       birdView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 50),
-      birdView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: birdLeadingPadding),
-      birdView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -birdTrailingPadding),
+      birdView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: birdLeadingPadding),
+      birdView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -birdTrailingPadding),
       
       descriptionView.topAnchor.constraint(equalTo: birdView.bottomAnchor, constant: 8),
-      descriptionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-      descriptionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      descriptionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+      descriptionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
       
       userRecordsView.topAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: 18),
-      userRecordsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-      userRecordsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+      userRecordsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+      userRecordsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+      userRecordsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
     ])
   }
   
