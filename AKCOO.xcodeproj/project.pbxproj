@@ -41,6 +41,7 @@
 		515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */; };
 		515A5B962CFDFEAF003E032A /* UserJudgmentTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */; };
 		515A5B982CFE1871003E032A /* UserJudgmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B972CFE1871003E032A /* UserJudgmentType.swift */; };
+		515A5B9A2CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -244,6 +245,7 @@
 		515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+fromUIFont.swift"; sourceTree = "<group>"; };
 		515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentTypeModel.swift; sourceTree = "<group>"; };
 		515A5B972CFE1871003E032A /* UserJudgmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentType.swift; sourceTree = "<group>"; };
+		515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePriceLevelByCountryView.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 			children = (
 				F36F1A532CFCADF400DD59F8 /* GuideView.swift */,
 				F36F1A5F2CFD30D800DD59F8 /* CountrySelectorTitle.swift */,
+				515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1601,6 +1604,7 @@
 				F36F1A462CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift in Sources */,
 				F36F1A342CFCA3AE00DD59F8 /* GuideCoordinator.swift in Sources */,
 				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
+				515A5B9A2CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift in Sources */,
 				F3ED934C2CEB6BAC00CF5238 /* ForeignBird.swift in Sources */,
 				515E40942CF2310E00AE4A2F /* CountryProfile+fromEntity.swift in Sources */,
 				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,

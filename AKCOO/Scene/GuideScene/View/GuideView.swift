@@ -5,9 +5,14 @@
 //  Created by 박혜운 on 12/1/24.
 //
 
+import SwiftUI
 import UIKit
 
 class GuideView: UIView {
+  
+  let grayBackgroundView = UIView().set {
+    $0.backgroundColor = .akColor(.akGray100)
+  }
   
   let userInfoButton = UIButton().set {
     $0.tintColor = .red
@@ -31,6 +36,11 @@ class GuideView: UIView {
   
   let countrySelectorTitle = CountrySelectorTitle().set()
   
+  private let priceLevelViewModel = GuidePriceLevelByCountryViewModel()
+  lazy var priceLevelView = UIHostingController(rootView: GuidePriceLevelByCountryView(viewModel: priceLevelViewModel)).view.set {
+    $0.backgroundColor = .clear
+  }
+  
   var onActionUserInfoTapped: (() -> Void)? // 임시 생성
   var onActionJudgmentTapped: (() -> Void)? // 임시 생성
   
@@ -47,9 +57,11 @@ class GuideView: UIView {
   }
   
   private func setupViews() {
+    self.addSubview(grayBackgroundView)
     self.addSubview(countrySelectorTitle)
     self.addSubview(userInfoButton)
     self.addSubview(judgmentButton)
+    self.addSubview(priceLevelView)
     
     userInfoButton.addTarget(self, action: #selector(tappedUserInfoBird), for: .touchUpInside)
     
@@ -58,6 +70,11 @@ class GuideView: UIView {
   
   private func setupConstraints() {
     NSLayoutConstraint.activate([
+      grayBackgroundView.topAnchor.constraint(equalTo: topAnchor),
+      grayBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      grayBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      grayBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      
       countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       countrySelectorTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
       countrySelectorTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
@@ -67,6 +84,10 @@ class GuideView: UIView {
       userInfoButton.widthAnchor.constraint(equalToConstant: 40),
       userInfoButton.heightAnchor.constraint(equalToConstant: 40),
       
+      priceLevelView.topAnchor.constraint(equalTo: countrySelectorTitle.bottomAnchor, constant: 80),
+      priceLevelView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      priceLevelView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      
       judgmentButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
       judgmentButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
       judgmentButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
@@ -74,6 +95,8 @@ class GuideView: UIView {
   }
   
   func configure(countries: [String], selectedCountryDetail: CountryDetail) {
+    priceLevelViewModel.countryDetail = selectedCountryDetail
+    
     countrySelectorTitle
       .configure(
         countries: countries,
