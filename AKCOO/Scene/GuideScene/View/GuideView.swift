@@ -73,8 +73,12 @@ class GuideView: UIView {
     ])
   }
   
-  func configure(countries: [String], selectedCountry: String) {
-    countrySelectorTitle.configure(countries: countries, selectedCountry: selectedCountry)
+  func configure(countries: [String], selectedCountryDetail: CountryDetail) {
+    countrySelectorTitle
+      .configure(
+        countries: countries,
+        selectedCountry: selectedCountryDetail.name
+      )
   }
   
   @objc func tappedUserInfoBird() {
@@ -87,11 +91,5 @@ class GuideView: UIView {
 }
 
 #Preview {
-  let view = GuideView()
-  view.configure(
-    countries: ["베트남", "스위스"],
-    selectedCountry: "스위스"
-  )
-  
-  return view
+  GuideViewController(guideUseCase: GuideUseCaseMock())
 }
