@@ -10,9 +10,9 @@ import UIKit
 class GuideView: UIView {
   
   let userInfoButton = UIButton().set {
-    $0.setTitle("UserInfo로 이동", for: .normal)
     $0.tintColor = .red
-    $0.backgroundColor = .blue
+    $0.setImage(UIImage(resource: .userInfoButton), for: .normal)
+    $0.imageView?.contentMode = .scaleAspectFit
   }
   
   let judgmentButton = {
@@ -58,15 +58,18 @@ class GuideView: UIView {
   
   private func setupConstraints() {
     NSLayoutConstraint.activate([
+      countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       countrySelectorTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
-      countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 68),
+      countrySelectorTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
+      
+      userInfoButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 2),
+      userInfoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
+      userInfoButton.widthAnchor.constraint(equalToConstant: 40),
+      userInfoButton.heightAnchor.constraint(equalToConstant: 40),
       
       judgmentButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
       judgmentButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
-      judgmentButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-      
-      userInfoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      userInfoButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 100)
+      judgmentButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
     ])
   }
   
