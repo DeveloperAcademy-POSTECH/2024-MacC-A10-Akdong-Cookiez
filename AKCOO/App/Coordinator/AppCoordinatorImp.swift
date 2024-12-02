@@ -33,7 +33,7 @@ final class AppCoordinatorImp: AppCoordinator {
       recordRepository: recordRepository
     )
     
-    let userInfoUseCase = UserInfoUseCaseImp()
+    let userInfoUseCase = UserInfoUseCaseImp(recordRepository: recordRepository)
     let guideFactory = GuideFactoryImp(useCase: guideUseCase)
     let userInfoFactory = UserInfoFactoryImp(useCase: userInfoUseCase)
     

@@ -39,6 +39,8 @@
 		515A5B8F2CFDCACC003E032A /* UserInfoRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */; };
 		515A5B912CFDCB02003E032A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B902CFDCB02003E032A /* Line.swift */; };
 		515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */; };
+		515A5B962CFDFEAF003E032A /* UserJudgmentTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */; };
+		515A5B982CFE1871003E032A /* UserJudgmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B972CFE1871003E032A /* UserJudgmentType.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -240,6 +242,8 @@
 		515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRecordsView.swift; sourceTree = "<group>"; };
 		515A5B902CFDCB02003E032A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+fromUIFont.swift"; sourceTree = "<group>"; };
+		515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentTypeModel.swift; sourceTree = "<group>"; };
+		515A5B972CFE1871003E032A /* UserJudgmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentType.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -535,6 +539,15 @@
 				515A5B902CFDCB02003E032A /* Line.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		515A5B942CFDFE96003E032A /* UserJudgmentType */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B972CFE1871003E032A /* UserJudgmentType.swift */,
+				515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */,
+			);
+			path = UserJudgmentType;
 			sourceTree = "<group>";
 		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
@@ -1212,6 +1225,7 @@
 		F3ED932F2CEB53E400CF5238 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				515A5B942CFDFE96003E032A /* UserJudgmentType */,
 				F3ED92FA2CE7BC7100CF5238 /* Bird */,
 				F3ED93472CEB68A200CF5238 /* Paper */,
 			);
@@ -1534,6 +1548,7 @@
 				515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */,
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
 				F36F1A562CFCB19A00DD59F8 /* GuideViewController.swift in Sources */,
+				515A5B982CFE1871003E032A /* UserJudgmentType.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* JudgmentTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
 				516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */,
@@ -1573,6 +1588,7 @@
 				F3ED92892CE506D100CF5238 /* CountrySelector.swift in Sources */,
 				515A5B542CF71927003E032A /* Shapes.swift in Sources */,
 				F3ED92A82CE62EAC00CF5238 /* JudgmentEditViewController.swift in Sources */,
+				515A5B962CFDFEAF003E032A /* UserJudgmentTypeModel.swift in Sources */,
 				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
 				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
