@@ -42,7 +42,11 @@ class GuideViewController: UIViewController {
     guard case let .success((countriesName, selectedCountryDetail)) = await guideUseCase.getGuideInfo() else { return } // 예외처리
     self.selectedCountryDetail = selectedCountryDetail
     
-    guideView.configure(countries: countriesName, selectedCountry: selectedCountryDetail.name)
+    guideView
+      .configure(
+        countries: countriesName,
+        selectedCountryDetail: selectedCountryDetail
+      )
   }
   
   private func onAction() {
@@ -67,7 +71,11 @@ class GuideViewController: UIViewController {
         guard case let .success((countriesName, selectedCountryDetail)) = await self.guideUseCase.getNewGuideInfo(newCountryName: newCountry) else { return }
         
         self.selectedCountryDetail = selectedCountryDetail
-        self.guideView.configure(countries: countriesName, selectedCountry: selectedCountryDetail.name)
+        self.guideView
+          .configure(
+            countries: countriesName,
+            selectedCountryDetail: selectedCountryDetail
+          )
       }
     }
   }
