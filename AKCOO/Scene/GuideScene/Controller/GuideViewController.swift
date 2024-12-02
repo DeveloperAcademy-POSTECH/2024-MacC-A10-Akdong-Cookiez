@@ -16,9 +16,13 @@ class GuideViewController: UIViewController {
     return view as? GuideView
   }
   
+  private var selectedCountry: String = ""
+  
   init(guideUseCase: GuideUseCase) {
     self.guideUseCase = guideUseCase
     super.init(nibName: nil, bundle: nil)
+    
+    selectedCountry = "스위스" // CountryDetail 받아올 때 초기화
   }
   
   required init?(coder: NSCoder) {
@@ -32,7 +36,13 @@ class GuideViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    configure()
     onAction()
+  }
+  
+  private func configure() {
+    guard case let .success(countries) = guideUseCase.getCountryNames() else { return } // 예외처리
+    guideView.configure(countries: countries, selectedCountry: selectedCountry)
   }
   
   private func onAction() {
