@@ -57,7 +57,7 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
           (from: textField, to: judgmentView.paper.amountLabel, action: .move),
           (from: judgmentReadyView.paper.amountTextField.unitLabel, to: judgmentView.paper.unitTitleLabel, action: .move),
           (from: judgmentReadyView.paper.amountTextField.separatorLine, to: judgmentView.paper.separatorLine, action: .move),
-          (from: judgmentReadyView.paper.countrySelector.countryButton.titleLabel ?? .paperLabel(with: ""), to: judgmentView.paper.countryLabel, action: .move),
+          (from: judgmentReadyView.paper.countrySelector.countryLabel, to: judgmentView.paper.countryLabel, action: .move),
           (from: judgmentReadyView.paper.categorySelector.selectedButton ?? .init(), to: judgmentView.paper.category, action: .move),
           (from: judgmentView.paper.reInputTextView, to: judgmentView.paper.reInputTextView, action: .appear),
           (from: judgmentView.paperTitleLabel, to: judgmentView.paperTitleLabel, action: .appear),

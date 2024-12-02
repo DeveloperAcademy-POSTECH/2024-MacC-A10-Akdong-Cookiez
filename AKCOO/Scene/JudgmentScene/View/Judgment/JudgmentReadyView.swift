@@ -121,15 +121,15 @@ class JudgmentReadyView: UIView {
 
 #Preview {
   let readyView = JudgmentReadyView()
-  readyView.configure(
+  readyView
+    .configure(
     paperModel: .init(
       selectedCountryProfile: .init(
         name: "베트남",
         currency: .init(
           unitTitle: "동", unit: 0.05539
         )
-      ), 
-      countries: ["베트남", "스위스"],
+      ),
       categories: ["가", "나", "다"]
     ), 
     previousRecordExists: false
