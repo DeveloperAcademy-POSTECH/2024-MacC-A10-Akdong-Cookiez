@@ -37,8 +37,9 @@ class GuideCoordinatorImp: GuideCoordinator, UserInfoCoordinator {
     self.navigationController.viewControllers = [guideViewController]
   }
   
-  func startJudgmentReady(presenting: UIViewController) {
+  func startJudgmentReady(presenting: UIViewController, selectedCountryDetail: CountryDetail) {
     judgmentCoordinator.finishDelegate = self
+    judgmentCoordinator.selectedCountryDetail = selectedCountryDetail
     childCoordinators.append(judgmentCoordinator)
     judgmentCoordinator.start()
   }
