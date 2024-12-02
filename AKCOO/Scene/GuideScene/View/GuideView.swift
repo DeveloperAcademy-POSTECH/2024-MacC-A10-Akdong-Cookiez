@@ -10,16 +10,24 @@ import UIKit
 class GuideView: UIView {
   
   let userInfoButton = UIButton().set {
-    $0.setTitle("UserInfo로 이동", for: .normal)
     $0.tintColor = .red
-    $0.backgroundColor = .blue
+    $0.setImage(UIImage(resource: .userInfoButton), for: .normal)
+    $0.imageView?.contentMode = .scaleAspectFit
   }
   
-  let judgmentButton = UIButton().set {
-    $0.setTitle("판단화면으로 이동", for: .normal)
-    $0.tintColor = .red
-    $0.backgroundColor = .blue
-  }
+  let judgmentButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 22, leading: 0, bottom: 22, trailing: 0)
+    configuration.background.backgroundColor = .akColor(.akBlue500)
+    configuration.baseForegroundColor = .white
+    let button = UIButton(configuration: configuration)
+    return button.set {
+      $0.setTitle("여행 시작하기", for: .normal)
+      $0.akFont(.gmarketBold16)
+      $0.layer.cornerRadius = 20
+      $0.layer.masksToBounds = true
+    }
+  }()
   
   let countrySelectorTitle = CountrySelectorTitle().set()
   
@@ -50,14 +58,18 @@ class GuideView: UIView {
   
   private func setupConstraints() {
     NSLayoutConstraint.activate([
+      countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
       countrySelectorTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
-      countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 68),
+      countrySelectorTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
       
-      userInfoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      userInfoButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 50),
+      userInfoButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 2),
+      userInfoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
+      userInfoButton.widthAnchor.constraint(equalToConstant: 40),
+      userInfoButton.heightAnchor.constraint(equalToConstant: 40),
       
-      judgmentButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      judgmentButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 100)
+      judgmentButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
+      judgmentButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -33),
+      judgmentButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
     ])
   }
   
