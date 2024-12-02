@@ -19,24 +19,29 @@ class CountrySelector: UIView {
   
   lazy var titleLabel: UILabel = .paperLabel(with: "국가").set()
   
-  let countryButton = {
-    var configuration = UIButton.Configuration.filled()
-    configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-    configuration.imagePadding = 5
-    configuration.baseForegroundColor = .black
-    configuration.baseBackgroundColor = .clear
-    
-    let button = UIButton(configuration: configuration)
-    return button.set {
-      $0.setImage(UIImage(systemName: "chevron.down")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 10)), for: .normal)
-      $0.semanticContentAttribute = .forceRightToLeft
-    }
-  }()
+  let countryLabel = UILabel().set {
+    $0.text = "베트남"
+    $0.font = .akFont(.gmarketBold16)
+  }
   
-  private var selectedCountry: String?
+//  let countryLabel = {
+//    var configuration = UIButton.Configuration.filled()
+//    configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+//    configuration.imagePadding = 5
+//    configuration.baseForegroundColor = .black
+//    configuration.baseBackgroundColor = .clear
+//    
+//    let button = UIButton(configuration: configuration)
+//    return button.set {
+//      $0.setImage(UIImage(systemName: "chevron.down")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 10)), for: .normal)
+//      $0.semanticContentAttribute = .forceRightToLeft
+//    }
+//  }()
+  
+//  private var selectedCountry: String?
   
   // MARK: - OnAction
-  var onActionChangeCountry: ((String) -> Void)?
+//  var onActionChangeCountry: ((String) -> Void)?
   
   // MARK: - Initializers
   override init(frame: CGRect) {
@@ -56,7 +61,7 @@ class CountrySelector: UIView {
     addSubview(contentStack)
     
     contentStack.addArrangedSubview(titleLabel)
-    contentStack.addArrangedSubview(countryButton)
+    contentStack.addArrangedSubview(countryLabel)
   }
   
   private func setupConstraints() {
@@ -69,42 +74,19 @@ class CountrySelector: UIView {
   }
   
   // MARK: - Configuration
-  func configure(countries: [String], selectedCountry: String) {
-    self.selectedCountry = selectedCountry
-    self.countryButton.setTitle(selectedCountry, for: .normal)
-    self.countryButton.akFont(.gmarketBold16)
-    
-    setupMenu(countries)
-  }
-  
-  private func setupMenu(_ countries: [String]) {
-    let menu = UIMenu(
-      title: "", 
-      children: countries.map { country in
-        UIAction(
-          title: country,
-          image: country == self.selectedCountry ? UIImage(systemName: "checkmark") : nil,
-          handler: { [weak self] _ in
-            guard let self else { return }
-            self.countryButton.setTitle(country, for: .normal)
-            self.countryButton.akFont(.gmarketBold16)
-            self.selectedCountry = country
-            self.setupMenu(countries)
-            self.onActionChangeCountry?(country)
-          }
-        )
-      }
-    )
-    
-    countryButton.menu = menu
-    countryButton.showsMenuAsPrimaryAction = true
+  func configure(selectedCountry: String) {
+//    self.selectedCountry = selectedCountry
+    self.countryLabel.text = selectedCountry
+//    self.countryLabel.setTitle(selectedCountry, for: .normal)
+//    self.countryLabel.akFont(.gmarketBold16)
+//    
+//    setupMenu(countries)
   }
 }
 
 #Preview {
   let countrySelector = CountrySelector()
   countrySelector.configure(
-    countries: ["베트남", "스위스"],
     selectedCountry: "베트남"
   )
   

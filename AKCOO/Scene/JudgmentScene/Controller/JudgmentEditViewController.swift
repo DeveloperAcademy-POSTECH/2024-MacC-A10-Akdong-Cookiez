@@ -69,17 +69,6 @@ class JudgmentEditViewController: UIViewController {
   
   private func onAction() {
     judgmentEditView.paper.onActionChange(
-      country: { [weak self] changedCountry in
-        guard let self else { return }
-        // PaperModel 변경
-        switch self.judgmentUseCase.getNewPaperModel(newCountryName: changedCountry) {
-        case .success(let newPaperModel):
-          self.paperModel = newPaperModel
-          self.setupUI()
-        case .failure: return
-            // TODO: - 예외처리
-        }
-      },
       category: { [weak self] changedCategory in
         guard let self else { return }
         selectedCategory = changedCategory ?? ""

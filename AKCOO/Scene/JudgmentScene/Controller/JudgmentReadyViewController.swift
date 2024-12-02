@@ -17,13 +17,18 @@ class JudgmentReadyViewController: UIViewController {
   }
   
   // MARK: Properties
+  private var selectedCountryDetail: CountryDetail
   private var paperModel: PaperModel?
   private var selectedCategory: String = ""
   private var userInputAmount: Double?
   private var previousRecordExists: Bool = false
   
-  init(judgmentUseCase: JudgmentUseCase) {
+  init(
+    judgmentUseCase: JudgmentUseCase,
+    selectedCountryDetail: CountryDetail
+  ) {
     self.judgmentUseCase = judgmentUseCase
+    self.selectedCountryDetail = selectedCountryDetail
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -57,16 +62,14 @@ class JudgmentReadyViewController: UIViewController {
   }
   
   private func setupUI() {
-    Task {
-      switch judgmentUseCase.getPaperModel() {
-      case .success(let model):
-        self.paperModel = model
-        self.previousRecordExists = judgmentUseCase.isPreviousRecordExists(for: model.selectedCountryProfile.name, category: self.selectedCategory)
-        judgmentReadyView.configure(paperModel: model, previousRecordExists: previousRecordExists)
-      case .failure:
-        // TODO: - 예외처리
-        return
-      }
+    switch judgmentUseCase.getPaperModel(selectedCountryDetail: self.selectedCountryDetail) {
+    case .success(let model):
+      self.paperModel = model
+      self.previousRecordExists = judgmentUseCase.isPreviousRecordExists(for: model.selectedCountryProfile.name, category: self.selectedCategory)
+      judgmentReadyView.configure(paperModel: model, previousRecordExists: previousRecordExists)
+    case .failure:
+      // TODO: - 예외처리
+      return
     }
   }
   
@@ -78,19 +81,6 @@ class JudgmentReadyViewController: UIViewController {
   
   private func onAction() {
     judgmentReadyView.paper.onActionChange(
-      country: { [weak self] changedCountry in
-        guard let self else { return }
-        // PaperModel 변경
-        Task {
-          switch self.judgmentUseCase.getNewPaperModel(newCountryName: changedCountry) {
-          case .success(let newPaperModel):
-            self.paperModel = newPaperModel
-            self.setupUI()
-          case .failure: return
-            // TODO: - 예외처리
-          }
-        }
-      },
       category: { [weak self] changedCategory in
         guard let self else { return }
         self.selectedCategory = changedCategory ?? ""
@@ -130,6 +120,7 @@ class JudgmentReadyViewController: UIViewController {
     
     coordinator?.startJudgment(
       presenting: self,
+      selectedCountryDetail: selectedCountryDetail,
       userQuestion: .init(
         country: paperModel.selectedCountryProfile,
         category: selectedCategory,

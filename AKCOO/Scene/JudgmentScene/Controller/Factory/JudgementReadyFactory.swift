@@ -8,5 +8,5 @@
 import UIKit
 
 protocol JudgmentReadyFactory {
-  func create(coordinator: JudgmentCoordinator) -> UIViewController
+  func create(coordinator: JudgmentCoordinator, selectedCountryDetail: CountryDetail) -> UIViewController
 }

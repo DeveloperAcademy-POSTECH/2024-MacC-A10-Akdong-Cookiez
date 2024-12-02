@@ -8,10 +8,6 @@
 import UIKit
 
 class GuideView: UIView {
-
-  let titleLabel = UILabel().set {
-    $0.text = "GuideView"
-  }
   
   let userInfoButton = UIButton().set {
     $0.setTitle("UserInfo로 이동", for: .normal)
@@ -24,6 +20,8 @@ class GuideView: UIView {
     $0.tintColor = .red
     $0.backgroundColor = .blue
   }
+  
+  let countrySelectorTitle = CountrySelectorTitle().set()
   
   var onActionUserInfoTapped: (() -> Void)? // 임시 생성
   var onActionJudgmentTapped: (() -> Void)? // 임시 생성
@@ -41,7 +39,7 @@ class GuideView: UIView {
   }
   
   private func setupViews() {
-    self.addSubview(titleLabel)
+    self.addSubview(countrySelectorTitle)
     self.addSubview(userInfoButton)
     self.addSubview(judgmentButton)
     
@@ -52,8 +50,8 @@ class GuideView: UIView {
   
   private func setupConstraints() {
     NSLayoutConstraint.activate([
-      titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+      countrySelectorTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 33),
+      countrySelectorTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 68),
       
       userInfoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
       userInfoButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 50),
@@ -63,17 +61,25 @@ class GuideView: UIView {
     ])
   }
   
+  func configure(countries: [String], selectedCountry: String) {
+    countrySelectorTitle.configure(countries: countries, selectedCountry: selectedCountry)
+  }
+  
   @objc func tappedUserInfoBird() {
-    print("UserInfoBird")
     onActionUserInfoTapped?()
   }
   
   @objc func tappedStartJudgment() {
-    print("Judgment")
     onActionJudgmentTapped?()
   }
 }
 
 #Preview {
-  GuideView()
+  let view = GuideView()
+  view.configure(
+    countries: ["베트남", "스위스"],
+    selectedCountry: "스위스"
+  )
+  
+  return view
 }
