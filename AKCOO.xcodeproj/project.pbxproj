@@ -759,8 +759,8 @@
 		F3EB763F2CDDDDAD0054D4E1 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */,
 				F36F1A2C2CFC73E800DD59F8 /* GuideScene */,
+				F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */,
 				F3ED92742CE38B8800CF5238 /* JudgmentScene */,
 				F3EB76422CDDDDD10054D4E1 /* Common */,
 			);

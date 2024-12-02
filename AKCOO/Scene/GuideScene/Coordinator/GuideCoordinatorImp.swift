@@ -31,6 +31,8 @@ class GuideCoordinatorImp: GuideCoordinator, UserInfoCoordinator {
   
   func start() {
     let guideViewController = guideFactory.create(coordinator: self)
+    guideViewController.navigationItem.backButtonTitle = ""
+    navigationController.navigationBar.tintColor = .black
     navigationController.view.backgroundColor = .akColor(.akGray100)
     self.navigationController.viewControllers = [guideViewController]
   }

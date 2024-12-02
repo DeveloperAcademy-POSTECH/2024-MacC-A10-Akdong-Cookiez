@@ -48,6 +48,10 @@ class JudgmentReadyViewController: UIViewController {
   }
   
   private func setupViews() {
+    judgmentReadyView.onActionTappedClosedButton = { [weak self] in
+      guard let self else { return }
+      coordinator?.completedJudgment(judgmentViewController: self)
+    }
     judgmentReadyView.paper.readyButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedReadyButton)))
     keyboardSetting()
   }
