@@ -42,6 +42,16 @@ struct RecordRepositoryImp: RecordRepository {
     }
   }
   
+  /// 특정 나라의 모든 소비 기록을 반환
+  func fetchAllUserRecord(at country: String?) -> Result<[UserRecord?], any Error> {
+    switch coreData.getUserRecord(at: country) {
+    case .success(let success):
+      return .success(success)
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
+  
   /// 사용자가 선택한 소비 기록을 저장
   func saveRecord(record: UserRecord) -> Result<VoidResponse, Error> {
     switch coreData.saveUserRecord(record) {

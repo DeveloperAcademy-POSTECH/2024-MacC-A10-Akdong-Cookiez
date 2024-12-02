@@ -20,6 +20,10 @@ struct RecordRepositoryMock: RecordRepository {
     .success(nil)
   }
   
+  func fetchAllUserRecord(at country: String?) -> Result<[UserRecord?], any Error> {
+    return .success([])
+  }
+  
   func saveRecord(record: UserRecord) -> Result<VoidResponse, Error> {
     return .success(VoidResponse())
   }
