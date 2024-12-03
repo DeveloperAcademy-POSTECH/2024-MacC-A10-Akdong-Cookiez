@@ -47,15 +47,15 @@ struct GuidePriceLevelByCountryView: View {
             
             VStack(alignment: .leading, spacing: 15) {
               Text("\(category) 평균 가격 정보")
-                .font(Font.from(uiFont: UIFont.akFont(.gmarketBold12)))
+                .font(Font.from(uiFont: UIFont.akFont(.gmarketBold14)))
               
               ForEach(items, id: \.self) { item in
                 VStack(alignment: .leading, spacing: 5) {
                   Text(item.name)
-                    .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium12)))
+                    .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium14)))
                   
                   Text("\(item.amount.formattedWithCommas())\(country.currency.unitTitle)")
-                    .font(Font.from(uiFont: UIFont.akFont(.gmarketBold14)))
+                    .font(Font.from(uiFont: UIFont.akFont(.gmarketBold16)))
                 }
               }
               
@@ -78,15 +78,15 @@ struct GuidePriceLevelByCountryView: View {
   private func currencyView() -> some View {
     VStack(alignment: .leading, spacing: 15) {
       Text("환율")
-        .font(Font.from(uiFont: UIFont.akFont(.gmarketBold12)))
+        .font(Font.from(uiFont: UIFont.akFont(.gmarketBold14)))
       
       Text(getExchangeDescription())
-        .font(Font.from(uiFont: UIFont.akFont(.gmarketBold14)))
+        .font(Font.from(uiFont: UIFont.akFont(.gmarketBold16)))
       
       Spacer()
       
       Text("한국 대비 \(country.name == "베트남" ? "저렴함" : "비쌈")")
-        .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium14)))
+        .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium16)))
         .background(Color(uiColor: .akColor(.akOrange)))
     }
   }

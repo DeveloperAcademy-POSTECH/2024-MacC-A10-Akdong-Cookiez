@@ -18,14 +18,16 @@ struct UserInfoRecordsView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
       HStack {
-        Text("지출 판단 기록")
-          .padding(.leading, 20)
-        Spacer()
         Button {
-          CoreDataService().deleteAllUserRecords()
+          CoreDataService()
+            .deleteAllUserRecords()
         } label: {
-          Text("다 지우자")
+          Text("지출 판단 기록")
+            .padding(.leading, 20)
+            .foregroundStyle(Color(uiColor: .akColor(.black)))
         }
+        
+        Spacer()
       }
       
       LazyVStack(spacing: 10) {
