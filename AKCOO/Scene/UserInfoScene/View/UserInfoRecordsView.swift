@@ -86,5 +86,8 @@ struct UserInfoRecordsView: View {
     }
     .background(Color.clear)
     .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium14)))
+    .onAppear {
+      print("이오링 userRecords\n\(try? CoreDataService().getUserRecord().get() ?? [])")
+    }
   }
 }
