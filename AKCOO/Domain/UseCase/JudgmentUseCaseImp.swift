@@ -8,12 +8,9 @@
 import Foundation
 
 class JudgmentUseCaseImp: JudgmentUseCase {
+  
   private let judgmentRepository: JudgmentRepository
   private let recordRepository: RecordRepository
-  
-  private var countriesDetails: [CountryDetail]?
-  private var localCountryDetail: CountryDetail?
-  private var selectedCountryDetail: CountryDetail?
   
   init(
     judgmentRepository: JudgmentRepository,
@@ -21,62 +18,16 @@ class JudgmentUseCaseImp: JudgmentUseCase {
   ) {
     self.judgmentRepository = judgmentRepository
     self.recordRepository = recordRepository
-    
-    Task {
-      let tmpCountriesDetails: [CountryDetail]
-      switch await judgmentRepository.fetchAllCountriesDetails() {
-      case .success(let countriesDetails):
-        self.countriesDetails = countriesDetails
-        tmpCountriesDetails = countriesDetails
-      case .failure: return
-      }
-      
-      switch await judgmentRepository.fetchLocalDetails() {
-      case .success(let localDetail):
-        self.localCountryDetail = localDetail
-      case .failure: return // 실패 시 처리
-      }
-      
-      switch recordRepository.fetchSelectedCountry() {
-      case .success(let selectedCountryName):
-        if let selectedCountryName {
-          self.selectedCountryDetail = tmpCountriesDetails.filter({ $0.name == selectedCountryName }).first
-        } else if let firstDetails = tmpCountriesDetails.first {
-          self.selectedCountryDetail = firstDetails
-        } else {
-          print("CountriesDetails이 없습니다")
-        }
-      case .failure: return
-      }
-    }
   }
   
-  func getPaperModel() -> Result<PaperModel, Error> {
-    // 선택된 국가를 RecordRepository에서 가져오기
-    guard let countriesDetails else { return .failure(NetworkError()) }
-    guard let selectedCountryDetail else { return .failure(NetworkError()) }
-
-    let countryProfiles = getCountryProfiles(to: countriesDetails)
-    let countryNames = countryProfiles.map { $0.name }
+  func getPaperModel(selectedCountryDetail: CountryDetail) -> Result<PaperModel, Error> {
     let selectedCategories = selectedCountryDetail.categories
     let paperModel = PaperModel(
       selectedCountryProfile: .init(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency),
-      countries: countryNames,
       categories: selectedCategories
     )
     
     return .success(paperModel)
-  }
-  
-  func getNewPaperModel(newCountryName selectedCountryName: String) -> Result<PaperModel, any Error> {
-    guard
-      let countriesDetails,
-      let newSelectedCountryDetail = countriesDetails.filter({ $0.name == selectedCountryName }).first else { return .failure(NetworkError()) }
-    // TODO: - RecordRepository를 통해 선택된 국가를 변경하는 로직 추가
-    _ = recordRepository.saveSelectedCountry(selectedCountryName)
-    selectedCountryDetail = newSelectedCountryDetail
-    
-    return getPaperModel()
   }
   
   func isPreviousRecordExists(for country: String, category: String) -> Bool {
@@ -87,11 +38,15 @@ class JudgmentUseCaseImp: JudgmentUseCase {
     return result
   }
   
-  func getBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
-    guard let selectedCountryDetail else { return .failure(NetworkError()) }
-    guard let localCountryDetail else { return .failure(NetworkError()) }
+  func getBirdsJudgment(selectedCountryDetail: CountryDetail, userQuestion: UserQuestion) async -> Result<[BirdModel], Error> {
     let previousResult = recordRepository.fetchPreviousDaySpending(country: userQuestion.country.name, category: userQuestion.category)
     guard case .success(let previousRecord) = previousResult else { return .failure(NetworkError()) }
+    
+    let localCountryDetail: CountryDetail
+    switch await judgmentRepository.fetchLocalDetails() {
+    case .success(let countryDetail): localCountryDetail = countryDetail
+    case .failure(let error): return .failure(error) // 실패 시 처리
+    }
     
     let localCountry = CountryProfile(
       name: localCountryDetail.name,
@@ -125,10 +80,5 @@ class JudgmentUseCaseImp: JudgmentUseCase {
   
   func save(record: UserRecord) -> Result<VoidResponse, any Error> {
     return recordRepository.saveRecord(record: record)
-  }
-  
-  // MARK: - Private Methods
-  private func getCountryProfiles(to countriesDetails: [CountryDetail]) -> [CountryProfile] {
-    return countriesDetails.map { CountryProfile(name: $0.name, currency: $0.currency) }
   }
 }

@@ -51,34 +51,13 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     }
   }
   
-  func getPaperModel() -> Result<PaperModel, Error> {
+  func getPaperModel(selectedCountryDetail: CountryDetail) -> Result<PaperModel, Error> {
     // 선택된 국가를 RecordRepository에서 가져오기
     guard let countriesDetails else { return .failure(NetworkError()) }
-    guard let selectedCountryDetail else { return .failure(NetworkError()) }
 
-    let countryProfiles = getCountryProfiles(to: countriesDetails)
-    let countryNames = countryProfiles.map { $0.name }
-    let selectedCategories = selectedCountryDetail.categories
-    let paperModel = PaperModel(
-      selectedCountryProfile: CountryProfile.init(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency), 
-      countries: countryNames,
-      categories: selectedCategories
-    )
-    
-    return .success(paperModel)
-  }
-  
-  func getNewPaperModel(newCountryName selectedCountryName: String) -> Result<PaperModel, any Error> {
-    // 선택된 국가를 RecordRepository에서 가져오기
-    guard let countriesDetails else { return .failure(NetworkError()) }
-    guard let selectedCountryDetail else { return .failure(NetworkError()) }
-    
-    let countryProfiles = getCountryProfiles(to: countriesDetails)
-    let countryNames = countryProfiles.map { $0.name }
     let selectedCategories = selectedCountryDetail.categories
     let paperModel = PaperModel(
       selectedCountryProfile: CountryProfile.init(name: selectedCountryDetail.name, currency: selectedCountryDetail.currency),
-      countries: countryNames,
       categories: selectedCategories
     )
     
@@ -89,8 +68,7 @@ class JudgmentUseCaseMock: JudgmentUseCase {
     return false 
   }
   
-  func getBirdsJudgment(userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
-    guard let selectedCountryDetail else { return .failure(NetworkError()) }
+  func getBirdsJudgment(selectedCountryDetail: CountryDetail, userQuestion: UserQuestion) -> Result<[BirdModel], Error> {
     guard let localCountryDetail else { return .failure(NetworkError()) }
     let previousResult = recordRepository.fetchPreviousDaySpending(country: userQuestion.country.name, category: userQuestion.category)
     guard case .success(let previousRecord) = previousResult else { return .failure(NetworkError()) }

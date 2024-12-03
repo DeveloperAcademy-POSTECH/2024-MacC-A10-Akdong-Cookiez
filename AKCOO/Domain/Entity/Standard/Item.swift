@@ -8,7 +8,7 @@
 import Foundation
 
 /// 기준 정보 - 품목 별 가격 
-struct Item: Standard {
+struct Item: Standard, Hashable {
   var category: String 
   var name: String
   var amount: Double   

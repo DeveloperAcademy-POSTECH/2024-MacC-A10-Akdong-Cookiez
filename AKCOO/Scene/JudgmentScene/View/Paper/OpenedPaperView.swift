@@ -196,7 +196,6 @@ class OpenedPaperView: UIView {
     self.selectedCategory = selectedCategory
 
     countrySelector.configure(
-      countries: paperModel.countries.map { $0 },
       selectedCountry: paperModel.selectedCountryProfile.name
     )
     
@@ -228,11 +227,9 @@ class OpenedPaperView: UIView {
   }
   
   func onActionChange(
-    country: @escaping ((String) -> Void),
     category: @escaping ((String?) -> Void),
     amount: @escaping ((String?) -> Void)
   ) {
-    countrySelector.onActionChangeCountry = country
     categorySelector.onActionChangeCategory = category
     amountTextField.onActionValidAmountInput = amount
   }
@@ -272,7 +269,6 @@ class OpenedPaperView: UIView {
         name: "베트남",
         currency: .init(unitTitle: "동", unit: 0.05539)
       ),
-      countries: ["베트남", "스위스"],
       categories: ["가나", "나", "다"]
     ),
     previousRecordExists: false

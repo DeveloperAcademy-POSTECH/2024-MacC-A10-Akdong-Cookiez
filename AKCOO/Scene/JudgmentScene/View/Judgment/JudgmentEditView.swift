@@ -93,7 +93,6 @@ class JudgmentEditView: UIView {
           unitTitle: "동", unit: 0.05539
         )
       ),
-      countries: ["베트남", "스위스"],
       categories: ["가", "나", "다"]
     ),
     selectedCategory: "다",

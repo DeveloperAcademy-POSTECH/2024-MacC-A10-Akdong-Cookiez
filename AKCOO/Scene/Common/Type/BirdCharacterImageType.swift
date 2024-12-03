@@ -51,4 +51,12 @@ enum BirdCharacterImageType {
     case .previous: return UIImage(resource: .yellowbirdwingR)
     }
   }
+  
+  var standing: UIImage {
+    switch self {
+    case .foriegn:  return UIImage(resource: .greenbirdstanding)
+    case .local:    return UIImage(resource: .redbirdstanding)
+    case .previous: return UIImage(resource: .yellowbirdstanding)
+    }
+  }
 }

@@ -20,6 +20,28 @@
 		515A5B562CF71A5A003E032A /* ConfettiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B552CF71A5A003E032A /* ConfettiItem.swift */; };
 		515A5B582CF71AF6003E032A /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B572CF71AF6003E032A /* CounterViewModel.swift */; };
 		515A5B5C2CF79154003E032A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 515A5B5B2CF79154003E032A /* GoogleService-Info.plist */; };
+		515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */; };
+		515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */; };
+		515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */; };
+		515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6C2CF9E514003E032A /* MockItem.swift */; };
+		515A5B6F2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */; };
+		515A5B732CFC953F003E032A /* BirdConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B722CFC953F003E032A /* BirdConstants.swift */; };
+		515A5B752CFC9E82003E032A /* String+fillTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B742CFC9E82003E032A /* String+fillTemplate.swift */; };
+		515A5B772CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */; };
+		515A5B792CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B782CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift */; };
+		515A5B802CFCCA20003E032A /* CoreData_EntityMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */; };
+		515A5B822CFCCA37003E032A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */; };
+		515A5B842CFCD335003E032A /* MockUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B832CFCD335003E032A /* MockUserRecord.swift */; };
+		515A5B862CFCF84F003E032A /* UserInfoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */; };
+		515A5B892CFD8AA4003E032A /* UserInfoBirdChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */; };
+		515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */; };
+		515A5B8D2CFD9F60003E032A /* UserInfoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */; };
+		515A5B8F2CFDCACC003E032A /* UserInfoRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */; };
+		515A5B912CFDCB02003E032A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B902CFDCB02003E032A /* Line.swift */; };
+		515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */; };
+		515A5B962CFDFEAF003E032A /* UserJudgmentTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */; };
+		515A5B982CFE1871003E032A /* UserJudgmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B972CFE1871003E032A /* UserJudgmentType.swift */; };
+		515A5B9A2CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */; };
 		515E40332CEC9E1200AE4A2F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40322CEC9E1200AE4A2F /* FirebaseCore */; };
 		515E40352CEC9E1200AE4A2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 515E40342CEC9E1200AE4A2F /* FirebaseFirestore */; };
 		515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E40392CEE08E600AE4A2F /* FirestoreService.swift */; };
@@ -52,6 +74,24 @@
 		F365F4FD2CF4C335002C1171 /* JudgmentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */; };
 		F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F4FE2CF50D0F002C1171 /* Double+String.swift */; };
 		F365F5012CF62A19002C1171 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F5002CF62A19002C1171 /* ChatBubbleView.swift */; };
+		F36F1A342CFCA3AE00DD59F8 /* GuideCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */; };
+		F36F1A362CFCA46700DD59F8 /* GuideCoordinatorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */; };
+		F36F1A382CFCA4CF00DD59F8 /* GuideFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */; };
+		F36F1A3A2CFCA4D500DD59F8 /* GuideFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */; };
+		F36F1A3C2CFCA4E100DD59F8 /* UserInfoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */; };
+		F36F1A3E2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */; };
+		F36F1A402CFCA54200DD59F8 /* GuideUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */; };
+		F36F1A422CFCA54800DD59F8 /* UserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */; };
+		F36F1A442CFCA55E00DD59F8 /* GuideUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */; };
+		F36F1A462CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */; };
+		F36F1A492CFCA6C000DD59F8 /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */; };
+		F36F1A542CFCADF400DD59F8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A532CFCADF400DD59F8 /* GuideView.swift */; };
+		F36F1A562CFCB19A00DD59F8 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */; };
+		F36F1A582CFCB1AE00DD59F8 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */; };
+		F36F1A5A2CFCB8A800DD59F8 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */; };
+		F36F1A5C2CFCBCF600DD59F8 /* GuideUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */; };
+		F36F1A5E2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */; };
+		F36F1A602CFD30D800DD59F8 /* CountrySelectorTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F1A5F2CFD30D800DD59F8 /* CountrySelectorTitle.swift */; };
 		F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */; };
 		F3EB760D2CDD14B20054D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */; };
 		F3EB76102CDD14B20054D4E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F3EB760F2CDD14B20054D4E1 /* Base */; };
@@ -184,6 +224,28 @@
 		515A5B552CF71A5A003E032A /* ConfettiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiItem.swift; sourceTree = "<group>"; };
 		515A5B572CF71AF6003E032A /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		515A5B5B2CF79154003E032A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetReactionTests.swift; sourceTree = "<group>"; };
+		515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryAverageJudgment.swift; sourceTree = "<group>"; };
+		515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryProfile.swift; sourceTree = "<group>"; };
+		515A5B6C2CF9E514003E032A /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
+		515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignBirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
+		515A5B722CFC953F003E032A /* BirdConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdConstants.swift; sourceTree = "<group>"; };
+		515A5B742CFC9E82003E032A /* String+fillTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+fillTemplate.swift"; sourceTree = "<group>"; };
+		515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBirdJudgmentGenerator_GetOpinionTests.swift; sourceTree = "<group>"; };
+		515A5B782CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdJudgmentGenerator_GetDetailTests.swift; sourceTree = "<group>"; };
+		515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_EntityMappingTests.swift; sourceTree = "<group>"; };
+		515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
+		515A5B832CFCD335003E032A /* MockUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRecord.swift; sourceTree = "<group>"; };
+		515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitleView.swift; sourceTree = "<group>"; };
+		515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdChatView.swift; sourceTree = "<group>"; };
+		515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBirdView.swift; sourceTree = "<group>"; };
+		515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDescriptionView.swift; sourceTree = "<group>"; };
+		515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRecordsView.swift; sourceTree = "<group>"; };
+		515A5B902CFDCB02003E032A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+fromUIFont.swift"; sourceTree = "<group>"; };
+		515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentTypeModel.swift; sourceTree = "<group>"; };
+		515A5B972CFE1871003E032A /* UserJudgmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJudgmentType.swift; sourceTree = "<group>"; };
+		515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePriceLevelByCountryView.swift; sourceTree = "<group>"; };
 		515E40392CEE08E600AE4A2F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		515E403C2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateResponseDTO.swift; sourceTree = "<group>"; };
 		515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
@@ -214,6 +276,24 @@
 		F365F4FC2CF4C335002C1171 /* JudgmentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentEditView.swift; sourceTree = "<group>"; };
 		F365F4FE2CF50D0F002C1171 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		F365F5002CF62A19002C1171 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
+		F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCoordinator.swift; sourceTree = "<group>"; };
+		F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCoordinatorImp.swift; sourceTree = "<group>"; };
+		F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFactory.swift; sourceTree = "<group>"; };
+		F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFactoryImp.swift; sourceTree = "<group>"; };
+		F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFactory.swift; sourceTree = "<group>"; };
+		F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFactoryImp.swift; sourceTree = "<group>"; };
+		F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCase.swift; sourceTree = "<group>"; };
+		F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCase.swift; sourceTree = "<group>"; };
+		F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseImp.swift; sourceTree = "<group>"; };
+		F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseImp.swift; sourceTree = "<group>"; };
+		F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		F36F1A532CFCADF400DD59F8 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideUseCaseMock.swift; sourceTree = "<group>"; };
+		F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseMock.swift; sourceTree = "<group>"; };
+		F36F1A5F2CFD30D800DD59F8 /* CountrySelectorTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectorTitle.swift; sourceTree = "<group>"; };
 		F37975392CF0AA24006E8DC0 /* UILabel+PaperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+PaperLabel.swift"; sourceTree = "<group>"; };
 		F3EB76002CDD14B00054D4E1 /* AKCOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKCOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EB760C2CDD14B20054D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -373,6 +453,105 @@
 			path = ConfettiAnimation;
 			sourceTree = "<group>";
 		};
+		515A5B642CF9E452003E032A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B652CF9E46B003E032A /* MockCountryAverageJudgment.swift */,
+				515A5B6A2CF9E4FA003E032A /* MockCountryProfile.swift */,
+				515A5B6C2CF9E514003E032A /* MockItem.swift */,
+				515A5B812CFCCA37003E032A /* MockCoreDataStack.swift */,
+				515A5B832CFCD335003E032A /* MockUserRecord.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		515A5B672CF9E4BC003E032A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B682CF9E4C8003E032A /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		515A5B682CF9E4C8003E032A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B692CF9E4CF003E032A /* BirdJudgmentGenerator */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		515A5B692CF9E4CF003E032A /* BirdJudgmentGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B602CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift */,
+				515A5B782CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift */,
+				515A5B6E2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift */,
+				515A5B762CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift */,
+			);
+			path = BirdJudgmentGenerator;
+			sourceTree = "<group>";
+		};
+		515A5B7A2CFCC962003E032A /* AKCOO */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7C2CFCC97F003E032A /* Scene */,
+				515A5B672CF9E4BC003E032A /* Domain */,
+				515A5B7B2CFCC96D003E032A /* Data */,
+			);
+			path = AKCOO;
+			sourceTree = "<group>";
+		};
+		515A5B7B2CFCC96D003E032A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7D2CFCC998003E032A /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		515A5B7C2CFCC97F003E032A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED92812CE4C44000CF5238 /* Components */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		515A5B7D2CFCC998003E032A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7E2CFCC99D003E032A /* CoreData */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		515A5B7E2CFCC99D003E032A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B7F2CFCCA20003E032A /* CoreData_EntityMappingTests.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		515A5B872CFD8A96003E032A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B882CFD8AA4003E032A /* UserInfoBirdChatView.swift */,
+				515A5B902CFDCB02003E032A /* Line.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		515A5B942CFDFE96003E032A /* UserJudgmentType */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B972CFE1871003E032A /* UserJudgmentType.swift */,
+				515A5B952CFDFEAF003E032A /* UserJudgmentTypeModel.swift */,
+			);
+			path = UserJudgmentType;
+			sourceTree = "<group>";
+		};
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +623,102 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		F36F1A2C2CFC73E800DD59F8 /* GuideScene */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A2E2CFC73FA00DD59F8 /* Coordinator */,
+				F36F1A2F2CFC740100DD59F8 /* Controller */,
+				F36F1A302CFC741400DD59F8 /* View */,
+			);
+			path = GuideScene;
+			sourceTree = "<group>";
+		};
+		F36F1A2E2CFC73FA00DD59F8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A332CFCA3AE00DD59F8 /* GuideCoordinator.swift */,
+				F36F1A352CFCA46700DD59F8 /* GuideCoordinatorImp.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F36F1A2F2CFC740100DD59F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A322CFC743F00DD59F8 /* Factory */,
+				F36F1A552CFCB19A00DD59F8 /* GuideViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36F1A302CFC741400DD59F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A532CFCADF400DD59F8 /* GuideView.swift */,
+				F36F1A5F2CFD30D800DD59F8 /* CountrySelectorTitle.swift */,
+				515A5B992CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F36F1A322CFC743F00DD59F8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A372CFCA4CF00DD59F8 /* GuideFactory.swift */,
+				F36F1A392CFCA4D500DD59F8 /* GuideFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A4C2CFCABB700DD59F8 /* Coordinator */,
+				F36F1A4E2CFCABCB00DD59F8 /* Controller */,
+				F36F1A502CFCABF400DD59F8 /* View */,
+			);
+			path = UserInfoScene;
+			sourceTree = "<group>";
+		};
+		F36F1A4C2CFCABB700DD59F8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A482CFCA6C000DD59F8 /* UserInfoCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F36F1A4E2CFCABCB00DD59F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A4F2CFCABD300DD59F8 /* Factory */,
+				F36F1A572CFCB1AE00DD59F8 /* UserInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F36F1A4F2CFCABD300DD59F8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F36F1A3B2CFCA4E100DD59F8 /* UserInfoFactory.swift */,
+				F36F1A3D2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F36F1A502CFCABF400DD59F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				515A5B872CFD8A96003E032A /* Components */,
+				F36F1A592CFCB8A800DD59F8 /* UserInfoView.swift */,
+				515A5B852CFCF84F003E032A /* UserInfoTitleView.swift */,
+				515A5B8A2CFD8B82003E032A /* UserInfoBirdView.swift */,
+				515A5B8C2CFD9F60003E032A /* UserInfoDescriptionView.swift */,
+				515A5B8E2CFDCACC003E032A /* UserInfoRecordsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F37975382CF0AA19006E8DC0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +778,8 @@
 		F3EB76192CDD14B20054D4E1 /* AKCOOTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED92812CE4C44000CF5238 /* Components */,
+				515A5B7A2CFCC962003E032A /* AKCOO */,
+				515A5B642CF9E452003E032A /* Mock */,
 			);
 			path = AKCOOTests;
 			sourceTree = "<group>";
@@ -530,6 +806,8 @@
 		F3EB763F2CDDDDAD0054D4E1 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F36F1A2C2CFC73E800DD59F8 /* GuideScene */,
+				F36F1A4B2CFCABAD00DD59F8 /* UserInfoScene */,
 				F3ED92742CE38B8800CF5238 /* JudgmentScene */,
 				F3EB76422CDDDDD10054D4E1 /* Common */,
 			);
@@ -571,6 +849,8 @@
 			children = (
 				F3EB76FC2CE09CB50054D4E1 /* Interface */,
 				F3ED92CE2CE71C8400CF5238 /* JudgmentUseCaseImp.swift */,
+				F36F1A432CFCA55E00DD59F8 /* GuideUseCaseImp.swift */,
+				F36F1A452CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -852,7 +1132,8 @@
 		F3ED92F92CE7951D00CF5238 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				F3ED92F02CE7924000CF5238 /* VoidResponse.swift */,
+				F36F1A3F2CFCA54200DD59F8 /* GuideUseCase.swift */,
+				F36F1A412CFCA54800DD59F8 /* UserInfoUseCase.swift */,
 				F3ED92CC2CE7194B00CF5238 /* JudgmentUseCase.swift */,
 			);
 			path = UseCase;
@@ -868,6 +1149,7 @@
 				F3ED934F2CEB6BE400CF5238 /* PreviousBird.swift */,
 				F3ED93492CEB694300CF5238 /* BirdReaction.swift */,
 				516E08112CF607AD006F3D54 /* BirdReactionGraphInfo.swift */,
+				515A5B722CFC953F003E032A /* BirdConstants.swift */,
 			);
 			path = Bird;
 			sourceTree = "<group>";
@@ -887,6 +1169,9 @@
 				F3ED92F42CE792B600CF5238 /* JudgmentRepositoryMock.swift */,
 				F3ED92F62CE792C600CF5238 /* RecordRepositoryMock.swift */,
 				F3ED93122CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift */,
+				F36F1A5B2CFCBCF600DD59F8 /* GuideUseCaseMock.swift */,
+				F36F1A5D2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift */,
+				F3ED92F02CE7924000CF5238 /* VoidResponse.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -907,6 +1192,8 @@
 				F3ED93182CE8617800CF5238 /* Array+RemovingDuplicates.swift */,
 				516E080A2CF4CE80006F3D54 /* Double+formattedWithCommas.swift */,
 				516E080F2CF5A05C006F3D54 /* Date+toCompactKoreanDateString.swift */,
+				515A5B742CFC9E82003E032A /* String+fillTemplate.swift */,
+				515A5B922CFDCB2B003E032A /* Font+fromUIFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -941,6 +1228,7 @@
 		F3ED932F2CEB53E400CF5238 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				515A5B942CFDFE96003E032A /* UserJudgmentType */,
 				F3ED92FA2CE7BC7100CF5238 /* Bird */,
 				F3ED93472CEB68A200CF5238 /* Paper */,
 			);
@@ -1205,30 +1493,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3ED92FE2CE7BEFD00CF5238 /* JudgmentType.swift in Sources */,
+				515A5B932CFDCB2B003E032A /* Font+fromUIFont.swift in Sources */,
 				F3ED92A22CE5C15D00CF5238 /* BirdReactionCollectionView.swift in Sources */,
+				F36F1A5C2CFCBCF600DD59F8 /* GuideUseCaseMock.swift in Sources */,
 				F3ED93532CEB6F8700CF5238 /* CountryDetail.swift in Sources */,
 				515E40402CEE0A3D00AE4A2F /* FirestoreConstants.swift in Sources */,
 				F3ED934E2CEB6BD500CF5238 /* LocalBird.swift in Sources */,
+				F36F1A542CFCADF400DD59F8 /* GuideView.swift in Sources */,
 				F3ED92A42CE6280E00CF5238 /* JudgementReadyFactory.swift in Sources */,
 				515E40492CEF11CA00AE4A2F /* UserDefaultsConstants.swift in Sources */,
 				F3ED929A2CE5193100CF5238 /* JudgmentCompletedViewController.swift in Sources */,
+				F36F1A3A2CFCA4D500DD59F8 /* GuideFactoryImp.swift in Sources */,
 				5149A2522CF48A1F00CA7500 /* BirdJudgmentGenerator.swift in Sources */,
+				515A5B8F2CFDCACC003E032A /* UserInfoRecordsView.swift in Sources */,
 				F3EB76492CDDDDFF0054D4E1 /* CoordinatorType.swift in Sources */,
 				F3ED92982CE5192500CF5238 /* JudgmentReadyViewController.swift in Sources */,
 				F3ED93502CEB6BE400CF5238 /* PreviousBird.swift in Sources */,
 				515E408E2CF2307B00AE4A2F /* UserRecord+toEntity.swift in Sources */,
 				516E080B2CF4CE80006F3D54 /* Double+formattedWithCommas.swift in Sources */,
+				F36F1A362CFCA46700DD59F8 /* GuideCoordinatorImp.swift in Sources */,
 				F3ED928D2CE5162C00CF5238 /* JudgmentCoordinatorImp.swift in Sources */,
 				512579BA2CDE43EB00649D3F /* UIView+Setter.swift in Sources */,
 				F3ED92CD2CE7194B00CF5238 /* JudgmentUseCase.swift in Sources */,
 				F3EB76B52CDE14E60054D4E1 /* UIViewController+HideKeyboard.swift in Sources */,
 				F3ED92AF2CE6362000CF5238 /* GradientView.swift in Sources */,
+				F36F1A582CFCB1AE00DD59F8 /* UserInfoViewController.swift in Sources */,
 				515A5B4E2CF71811003E032A /* ConfettiContainer.swift in Sources */,
 				F3EB763E2CDDDD9A0054D4E1 /* AppCoordinatorImp.swift in Sources */,
 				515E404E2CEF707300AE4A2F /* CoreDataService.swift in Sources */,
 				F3ED92B32CE636B000CF5238 /* GradientStyle+bottomShade.swift in Sources */,
 				F3ED92F12CE7924000CF5238 /* VoidResponse.swift in Sources */,
 				F3EB76B72CDE157B0054D4E1 /* SetWindowBackground.swift in Sources */,
+				515A5B732CFC953F003E032A /* BirdConstants.swift in Sources */,
 				F3ED92AA2CE62FEA00CF5238 /* JudgementEditFactory.swift in Sources */,
 				F3EB76482CDDDDFF0054D4E1 /* CoordinatorFinishDelegate.swift in Sources */,
 				F3EB76AE2CDDEEE80054D4E1 /* AKFontType.swift in Sources */,
@@ -1244,7 +1540,9 @@
 				F3ED92C12CE66D9700CF5238 /* JudgmentTransitionaler.swift in Sources */,
 				515E40512CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld in Sources */,
 				F31458CA2CF78529006C008A /* ConfettiViewController.swift in Sources */,
+				515A5B862CFCF84F003E032A /* UserInfoTitleView.swift in Sources */,
 				F3ED92F52CE792B600CF5238 /* JudgmentRepositoryMock.swift in Sources */,
+				515A5B892CFD8AA4003E032A /* UserInfoBirdChatView.swift in Sources */,
 				516E08092CF4CDE3006F3D54 /* BirdJudgmentGenerator+getReaction.swift in Sources */,
 				515E403D2CEE09CB00AE4A2F /* ExchangeRateResponseDTO.swift in Sources */,
 				515E40982CF2315C00AE4A2F /* UserQuestion+fromEntity.swift in Sources */,
@@ -1252,6 +1550,8 @@
 				F3ED927B2CE4AD8600CF5238 /* AmountMoneyTextField.swift in Sources */,
 				515E40442CEE178C00AE4A2F /* PriceResponseDTO.swift in Sources */,
 				515E40962CF2313E00AE4A2F /* UserQuestion+toEntity.swift in Sources */,
+				F36F1A562CFCB19A00DD59F8 /* GuideViewController.swift in Sources */,
+				515A5B982CFE1871003E032A /* UserJudgmentType.swift in Sources */,
 				F3ED92B62CE645EA00CF5238 /* JudgmentTransition.swift in Sources */,
 				F3ED92CF2CE71C8400CF5238 /* JudgmentUseCaseImp.swift in Sources */,
 				516E08122CF607AD006F3D54 /* BirdReactionGraphInfo.swift in Sources */,
@@ -1270,15 +1570,19 @@
 				515A5B502CF7184F003E032A /* ConfettiType.swift in Sources */,
 				F3ED92A02CE5271300CF5238 /* BirdReactionTextView.swift in Sources */,
 				F3ED92AC2CE62FF300CF5238 /* JudgementEditFactoryImp.swift in Sources */,
+				F36F1A422CFCA54800DD59F8 /* UserInfoUseCase.swift in Sources */,
 				515E40832CF0AA6000AE4A2F /* CoreDataError.swift in Sources */,
 				F3ED93132CE7CFBD00CF5238 /* JudgmentUseCaseMock.swift in Sources */,
 				F365F4F72CF11A49002C1171 /* String+FormatWithComma.swift in Sources */,
 				515A5B562CF71A5A003E032A /* ConfettiItem.swift in Sources */,
 				F3EB76BB2CDE1A2C0054D4E1 /* CGFloat+AkSpacing.swift in Sources */,
+				F36F1A382CFCA4CF00DD59F8 /* GuideFactory.swift in Sources */,
 				F3EB76B12CDDFD210054D4E1 /* UIColor+AKColor.swift in Sources */,
 				F3ED93002CE7C0C500CF5238 /* UserQuestion.swift in Sources */,
 				F3ED93192CE8617800CF5238 /* Array+RemovingDuplicates.swift in Sources */,
+				F36F1A492CFCA6C000DD59F8 /* UserInfoCoordinator.swift in Sources */,
 				515E40922CF230F000AE4A2F /* CountryProfile+toEntity.swift in Sources */,
+				F36F1A5A2CFCB8A800DD59F8 /* UserInfoView.swift in Sources */,
 				F3ED92EB2CE78E3500CF5238 /* UserRecord.swift in Sources */,
 				F3EB764B2CDDDE280054D4E1 /* AppCoordinator.swift in Sources */,
 				516E080D2CF4CEB0006F3D54 /* BirdJudgmentGenerator+getDetail.swift in Sources */,
@@ -1287,6 +1591,7 @@
 				F3ED92892CE506D100CF5238 /* CountrySelector.swift in Sources */,
 				515A5B542CF71927003E032A /* Shapes.swift in Sources */,
 				F3ED92A82CE62EAC00CF5238 /* JudgmentEditViewController.swift in Sources */,
+				515A5B962CFDFEAF003E032A /* UserJudgmentTypeModel.swift in Sources */,
 				F3ED92962CE517E300CF5238 /* JudgmentCompletedFactoryImp.swift in Sources */,
 				F3ED931D2CE861BC00CF5238 /* RecordRepositoryImp.swift in Sources */,
 				F3EB76AC2CDDEED10054D4E1 /* CustomFont.swift in Sources */,
@@ -1294,7 +1599,12 @@
 				515E403A2CEE08E600AE4A2F /* FirestoreService.swift in Sources */,
 				F3ED92942CE517DE00CF5238 /* JudgmentCompletedFactory.swift in Sources */,
 				515E40472CEF04E400AE4A2F /* UserDefaultsService.swift in Sources */,
+				F36F1A402CFCA54200DD59F8 /* GuideUseCase.swift in Sources */,
+				F36F1A5E2CFCBD0A00DD59F8 /* UserInfoUseCaseMock.swift in Sources */,
+				F36F1A462CFCA56C00DD59F8 /* UserInfoUseCaseImp.swift in Sources */,
+				F36F1A342CFCA3AE00DD59F8 /* GuideCoordinator.swift in Sources */,
 				F3ED93462CEB67F100CF5238 /* Currency.swift in Sources */,
+				515A5B9A2CFE3E9F003E032A /* GuidePriceLevelByCountryView.swift in Sources */,
 				F3ED934C2CEB6BAC00CF5238 /* ForeignBird.swift in Sources */,
 				515E40942CF2310E00AE4A2F /* CountryProfile+fromEntity.swift in Sources */,
 				F3ED933F2CEB5EB100CF5238 /* PreviousJudgment.swift in Sources */,
@@ -1304,23 +1614,31 @@
 				515E40902CF230BD00AE4A2F /* UserRecord+fromEntity.swift in Sources */,
 				F3EB76472CDDDDFF0054D4E1 /* Coordinator.swift in Sources */,
 				F3ED928B2CE5162100CF5238 /* JudgmentCoordinator.swift in Sources */,
+				515A5B752CFC9E82003E032A /* String+fillTemplate.swift in Sources */,
 				F3ED92E92CE78D9000CF5238 /* JudgmentRepository.swift in Sources */,
 				F3ED92872CE4F69500CF5238 /* OpenedPaperView.swift in Sources */,
 				F3ED92F72CE792C600CF5238 /* RecordRepositoryMock.swift in Sources */,
 				F365F4FF2CF50D0F002C1171 /* Double+String.swift in Sources */,
 				F3EB763B2CDDDC990054D4E1 /* AppDelegate.swift in Sources */,
+				515A5B912CFDCB02003E032A /* Line.swift in Sources */,
+				F36F1A3C2CFCA4E100DD59F8 /* UserInfoFactory.swift in Sources */,
 				F3ED93252CEB2E2A00CF5238 /* BirdReactionCell.swift in Sources */,
+				F36F1A602CFD30D800DD59F8 /* CountrySelectorTitle.swift in Sources */,
 				F3ED932A2CEB30B200CF5238 /* Standard.swift in Sources */,
 				F3ED92D42CE72FE400CF5238 /* BirdModel.swift in Sources */,
 				F3EB768C2CDDECFF0054D4E1 /* UIFont+AKFont.swift in Sources */,
 				F3EB763C2CDDDC990054D4E1 /* SceneDelegate.swift in Sources */,
 				F3ED92ED2CE7920B00CF5238 /* RecordRepository.swift in Sources */,
 				F3ED92B92CE64BEA00CF5238 /* SnapshotTransition.swift in Sources */,
+				F36F1A3E2CFCA4E700DD59F8 /* UserInfoFactoryImp.swift in Sources */,
+				F36F1A442CFCA55E00DD59F8 /* GuideUseCaseImp.swift in Sources */,
 				F3ED92BC2CE64C3F00CF5238 /* LayerShadow.swift in Sources */,
 				F3ED935A2CEE2E1600CF5238 /* BirdCharacterImageType.swift in Sources */,
 				F3ED93272CEB2EB100CF5238 /* BirdReactionCharacterView.swift in Sources */,
 				515A5B4A2CF71723003E032A /* ConfettiView.swift in Sources */,
+				515A5B8D2CFD9F60003E032A /* UserInfoDescriptionView.swift in Sources */,
 				F3ED93202CE8961400CF5238 /* BirdCharacterType.swift in Sources */,
+				515A5B8B2CFD8B82003E032A /* UserInfoBirdView.swift in Sources */,
 				F379753A2CF0AA24006E8DC0 /* UILabel+PaperLabel.swift in Sources */,
 				F3ED92BF2CE65D1F00CF5238 /* JudgmentView.swift in Sources */,
 				515E409A2CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift in Sources */,
@@ -1331,7 +1649,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515A5B802CFCCA20003E032A /* CoreData_EntityMappingTests.swift in Sources */,
+				515A5B792CFCB69D003E032A /* BirdJudgmentGenerator_GetDetailTests.swift in Sources */,
+				515A5B662CF9E46B003E032A /* MockCountryAverageJudgment.swift in Sources */,
+				515A5B6D2CF9E514003E032A /* MockItem.swift in Sources */,
+				515A5B772CFCA52A003E032A /* LocalBirdJudgmentGenerator_GetOpinionTests.swift in Sources */,
+				515A5B6F2CF9E812003E032A /* ForeignBirdJudgmentGenerator_GetOpinionTests.swift in Sources */,
+				515A5B612CF9BE54003E032A /* BirdJudgmentGenerator_GetReactionTests.swift in Sources */,
+				515A5B6B2CF9E4FA003E032A /* MockCountryProfile.swift in Sources */,
 				F3ED92802CE4C39900CF5238 /* AmountMoneyTextFieldTests.swift in Sources */,
+				515A5B822CFCCA37003E032A /* MockCoreDataStack.swift in Sources */,
+				515A5B842CFCD335003E032A /* MockUserRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1496,10 +1824,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L72ZFX76S7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "소비짹";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1510,7 +1840,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akcoo.AKCOO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1529,10 +1859,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L72ZFX76S7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AKCOO/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "소비짹";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1543,7 +1875,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akcoo.AKCOO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1565,7 +1897,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QVX6L7QGV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akcoo.AKCOOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1585,7 +1917,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QVX6L7QGV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.akcoo.AKCOOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

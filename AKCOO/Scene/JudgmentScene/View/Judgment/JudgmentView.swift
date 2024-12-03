@@ -209,19 +209,19 @@ class JudgmentView: UIView {
   
   private func fadeOutAndTransition() {
     UIView.animate(withDuration: 1.3, animations: {
-          // 뷰의 투명도를 0으로 설정 (페이드 아웃 효과)
-        self.paper.alpha = 0.0
-        self.birdsReactionTitleLabel.alpha = 0.0
-        self.paperTitleLabel.alpha = 0.0
-        self.reactionCollectionView.alpha = 0.0
-        self.decisionLabel.alpha = 0.0
-        self.decisionStack.alpha = 0.0
-        self.gradientView.alpha = 0.0
-        
-      }, completion: { _ in
-          // 애니메이션 완료 후 화면 전환 처리
-          self.onActionCompletedDecision?(true) // 화면 전환 로직
-      })
+      // 뷰의 투명도를 0으로 설정 (페이드 아웃 효과)
+      self.paper.alpha = 0.0
+      self.birdsReactionTitleLabel.alpha = 0.0
+      self.paperTitleLabel.alpha = 0.0
+      self.reactionCollectionView.alpha = 0.0
+      self.decisionLabel.alpha = 0.0
+      self.decisionStack.alpha = 0.0
+      self.gradientView.alpha = 0.0
+      
+    }, completion: { _ in
+      // 애니메이션 완료 후 화면 전환 처리
+//      self.onActionCompletedDecision?(true) // 화면 전환 로직
+    })
   }
 }
 

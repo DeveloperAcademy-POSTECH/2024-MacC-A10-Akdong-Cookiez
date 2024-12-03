@@ -9,5 +9,6 @@ import Foundation
 
 enum CoordinatorType {
   case app
+  case guide
   case judement
 }

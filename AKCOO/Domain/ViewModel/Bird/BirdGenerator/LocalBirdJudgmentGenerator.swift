@@ -13,33 +13,31 @@ struct LocalBirdJudgmentGenerator: BirdJudgmentGenerator {
     
     switch reaction {
     case .strongYes:
-      return "한국에서는 볼 수 없는 가격이야"
+      return BirdConstants.LocalBirdOpinion.strongYes
       
     case .mediumYes:
-      return "한국에서도 저렴한 가격이야"
+      return BirdConstants.LocalBirdOpinion.mediumYes
       
     case .weakYes:
-      return "한국이랑 비슷한 편이야"
+      return BirdConstants.LocalBirdOpinion.weakYes
       
     case .weakNo:
-      return "한국보다 조금 비싼 편이야"
+      return BirdConstants.LocalBirdOpinion.weakNo
       
     case .mediumNo:
       if let category {
-        if category == "숙소" {
-          return "차라리 한국에서 호캉스 어때?"
-        } else {
-          return "차라리 한국에서 \(category) 어때?"
-        }
+        return BirdConstants.LocalBirdOpinion.mediumNoWithCategory
+          .fillTemplate(with: category == "숙소" ? "호캉스": category)
       } else {
-        return "차라리 한국에서 소비해"
+        return BirdConstants.LocalBirdOpinion.mediumNo
       }
       
     case .strongNo:
       if let category {
-        return "너무 비싸! 다른 \(category) 찾아봐"
+        return BirdConstants.LocalBirdOpinion.strongNoWithCategory
+          .fillTemplate(with: category)
       } else {
-        return "너무 비싸! 다른 걸 찾아봐"
+        return BirdConstants.LocalBirdOpinion.strongNo
       }
     }
   }

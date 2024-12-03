@@ -20,7 +20,23 @@ final class AppCoordinatorImp: AppCoordinator {
   
   // App 폴더 내 최상위 Coordinator인 AppCoordinator이므로 직접 주입합니다
   func start() {
-    let judgmentUseCase = JudgmentUseCaseImp(judgmentRepository: JudgmentRepositoryMock(), recordRepository: RecordRepositoryImp())
+    let judgmentRepository = JudgmentRepositoryMock()
+    let recordRepository = RecordRepositoryImp()
+    
+    let judgmentUseCase = JudgmentUseCaseImp(
+      judgmentRepository: judgmentRepository,
+      recordRepository: recordRepository
+    )
+    
+    let guideUseCase = GuideUseCaseImp(
+      judgmentRepository: judgmentRepository,
+      recordRepository: recordRepository
+    )
+    
+    let userInfoUseCase = UserInfoUseCaseImp(recordRepository: recordRepository)
+    let guideFactory = GuideFactoryImp(useCase: guideUseCase)
+    let userInfoFactory = UserInfoFactoryImp(useCase: userInfoUseCase)
+    
     let judgmentReadyFactory = JudgmentReadyFactoryImp(useCase: judgmentUseCase)
     let judgmentCompletedFactory = JudgmentCompletedFactoryImp(useCase: judgmentUseCase)
     let judgmentEditFactory = JudgmentEditFactoryImp(useCase: judgmentUseCase)
@@ -32,7 +48,14 @@ final class AppCoordinatorImp: AppCoordinator {
       judgmentEditFactory: judgmentEditFactory
     )
     
-    childCoordinators.append(judgmentCoordinator)
-    judgmentCoordinator.start()
+    let guideCoordinator = GuideCoordinatorImp(
+      navigationController,
+      judgmentCoordinator: judgmentCoordinator,
+      guideFactory: guideFactory,
+      userInfoFactory: userInfoFactory
+    )
+    
+    childCoordinators.append(guideCoordinator)
+    guideCoordinator.start()
   }
 }
