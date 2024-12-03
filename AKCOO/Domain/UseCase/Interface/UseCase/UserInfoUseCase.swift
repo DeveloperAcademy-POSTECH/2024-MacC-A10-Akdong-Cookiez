@@ -8,6 +8,6 @@
 import Foundation
 
 protocol UserInfoUseCase {
-  /// 나의 모든 지출 판단 기록을 가져오는 메서드
-  func getUserRecords() -> Result<[UserRecord], Error>
+  /// 사용자의 판단 유형을 가져오는 메서드
+  func getUserJudgmentTypeModel() -> Result<UserJudgmentTypeModel, Error>
 }

@@ -58,6 +58,31 @@ extension CoreDataService {
     }
   }
   
+  /// READ - 특정 나라의 UserRecord 불러오기
+  func getUserRecord(at country: String?) -> Result<[UserRecord?], Error> {
+    guard let country else { return self.getUserRecord() }
+    
+    let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()
+    
+    // 정렬 조건 추가: date 기준 내림차순 -> 데이터 1개만 가져오기
+    request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+    
+    // 나라와 카테고리 조건 추가
+    request.predicate = NSPredicate(format: "userQuestion.country.name == %@", country)
+    
+    do {
+      let entities = try self.context.fetch(request)
+      let userRecords = try entities.map {
+        try UserRecord.fromEntity(entity: $0).get()
+      }
+      return .success(userRecords)
+    } catch {
+      // 실패
+      print("🚨 DEBUG(ERROR): Coredata에서 특정 나라의 UserRecords 가져오기 실패 \(error)")
+      return .failure(error)
+    }
+  }
+  
   /// READ - 가장 최신의 UserRecord 불러오기
   func getLatestUserRecord(country: String, category: String) -> Result<UserRecord?, Error> {
     let request: NSFetchRequest<UserRecordEntity> = UserRecordEntity.fetchRequest()

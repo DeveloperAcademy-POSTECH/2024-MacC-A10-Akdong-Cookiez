@@ -31,21 +31,18 @@ class UserInfoViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    setupUI()
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  private func setupUI() {
+    switch userInfoUseCase.getUserJudgmentTypeModel() {
+    case .success(let userJudgmentTypeModel):
+      userInfoView.configure(userJudgmentTypeModel: userJudgmentTypeModel)
+    case .failure:
+      // TODO: 예외처리
+      return
+    }
+  }
 }
 
 #Preview {
