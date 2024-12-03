@@ -201,11 +201,13 @@ class JudgmentView: UIView {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
       guard let self else { return }
       confettiViewModelToUse.counter += 1
-      self.fadeOutAndTransition()
+      self.fadeOutAndTransition {
+        self.onActionCompletedDecision?(sender == self.buyButton)
+      }
     }
   }
   
-  private func fadeOutAndTransition() {
+  private func fadeOutAndTransition(completion: @escaping () -> Void) {
     UIView.animate(
       withDuration: 1.3,
       animations: {
@@ -220,7 +222,7 @@ class JudgmentView: UIView {
         
       }, completion: { _ in
         // 애니메이션 완료 후 화면 전환 처리
-        self.onActionCompletedDecision?(true) // 화면 전환 로직
+        completion()
       }
     )
   }
