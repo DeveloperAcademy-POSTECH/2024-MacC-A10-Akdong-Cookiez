@@ -8,7 +8,7 @@
 import UIKit
 
 protocol JudgmentEditViewControllerDelegate: AnyObject, UIViewController {
-  func onActionChangingUserQuestion(_ userQuestion: UserQuestion) -> Void
+  func onActionChangingUserQuestion(_ userQuestion: UserQuestion)
 }
 
 class JudgmentEditViewController: UIViewController {
@@ -105,7 +105,8 @@ class JudgmentEditViewController: UIViewController {
       country: paperModel.selectedCountryProfile,
       category: selectedCategory,
       amount: Double(userAmount) ?? 0
-    ))
+      )
+    )
     
     coordinator?.completedEditPaper(editViewController: self)
   }
