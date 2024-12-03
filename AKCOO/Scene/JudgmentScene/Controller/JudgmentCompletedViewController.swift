@@ -8,7 +8,7 @@
 import UIKit
 
 protocol JudgmentCompletedViewControllerDelegate: AnyObject, UIViewController {
-  func onActionCompletedDecision() -> Void
+  func onActionCompletedDecision()
 }
 
 class JudgmentCompletedViewController: UIViewController {
