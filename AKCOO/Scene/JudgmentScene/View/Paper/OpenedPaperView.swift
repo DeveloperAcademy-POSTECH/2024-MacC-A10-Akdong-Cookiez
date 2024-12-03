@@ -13,16 +13,21 @@ enum OpenedPaperType {
 }
 
 class OpenedPaperView: UIView {
+  // MARK: - Views
+  let paperView = UIView().set {
+    $0.backgroundColor = .white
+  }
+  
+  let paper = UIView(frame: .zero).set {
+    $0.backgroundColor = .akColor(.white)
+    $0.layer.cornerRadius = 20
+  }
+  
   let paperStackView = UIStackView().set {
     $0.axis = .vertical
     $0.alignment = .fill
     $0.distribution = .fill
     $0.spacing = 23
-  }
-  
-  let paperView = UIView(frame: .zero).set {
-    $0.backgroundColor = .akColor(.white)
-    $0.layer.cornerRadius = 20
   }
   
   let countrySelector = CountrySelector().set()
@@ -110,8 +115,9 @@ class OpenedPaperView: UIView {
   
   private func setupViews() {
     addSubview(paperView)
-    addSubview(paperStackView)
-    addSubview(readyButton)
+    addSubview(paper)
+    paper.addSubview(paperStackView)
+    paper.addSubview(readyButton)
     
     [countrySelector, categorySelector, amountTextField].forEach {
       paperStackView.addArrangedSubview($0)
@@ -136,14 +142,19 @@ class OpenedPaperView: UIView {
       paperView.trailingAnchor.constraint(equalTo: trailingAnchor),
       paperView.bottomAnchor.constraint(equalTo: bottomAnchor),
       
-      paperStackView.topAnchor.constraint(equalTo: paperView.topAnchor, constant: topPadding),
-      paperStackView.leadingAnchor.constraint(equalTo: paperView.leadingAnchor, constant: horizentalPadding),
-      paperStackView.trailingAnchor.constraint(equalTo: paperView.trailingAnchor, constant: -horizentalPadding),
+      paper.topAnchor.constraint(equalTo: topAnchor),
+      paper.leadingAnchor.constraint(equalTo: leadingAnchor),
+      paper.trailingAnchor.constraint(equalTo: trailingAnchor),
+      paper.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      paperStackView.topAnchor.constraint(equalTo: paper.topAnchor, constant: topPadding),
+      paperStackView.leadingAnchor.constraint(equalTo: paper.leadingAnchor, constant: horizentalPadding),
+      paperStackView.trailingAnchor.constraint(equalTo: paper.trailingAnchor, constant: -horizentalPadding),
       
       readyButton.topAnchor.constraint(equalTo: paperStackView.bottomAnchor, constant: 28),
-      readyButton.leadingAnchor.constraint(equalTo: paperView.leadingAnchor, constant: horizentalPadding),
-      readyButton.trailingAnchor.constraint(equalTo: paperView.trailingAnchor, constant: -horizentalPadding),
-      readyButton.bottomAnchor.constraint(equalTo: paperView.bottomAnchor, constant: -20)
+      readyButton.leadingAnchor.constraint(equalTo: paper.leadingAnchor, constant: horizentalPadding),
+      readyButton.trailingAnchor.constraint(equalTo: paper.trailingAnchor, constant: -horizentalPadding),
+      readyButton.bottomAnchor.constraint(equalTo: paper.bottomAnchor, constant: -20)
     ])
   }
   
@@ -151,7 +162,6 @@ class OpenedPaperView: UIView {
     let widthConstant: CGFloat = 94
     let heightConstant: CGFloat = 78
     let overlappingConstant: CGFloat = 9
-    
     NSLayoutConstraint.activate([
       greenBirdImageView.widthAnchor.constraint(equalToConstant: widthConstant),
       greenBirdImageView.heightAnchor.constraint(equalToConstant: heightConstant),
@@ -161,11 +171,11 @@ class OpenedPaperView: UIView {
       yellowBirdImageView.heightAnchor.constraint(equalToConstant: heightConstant),
       
       greenBirdImageView.trailingAnchor.constraint(equalTo: redBirdImageView.leadingAnchor, constant: overlappingConstant),
-      greenBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor),
-      redBirdImageView.centerXAnchor.constraint(equalTo: paperView.centerXAnchor),
-      redBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor),
+      greenBirdImageView.bottomAnchor.constraint(equalTo: paper.topAnchor),
+      redBirdImageView.centerXAnchor.constraint(equalTo: paper.centerXAnchor),
+      redBirdImageView.bottomAnchor.constraint(equalTo: paper.topAnchor),
       yellowBirdImageView.leadingAnchor.constraint(equalTo: redBirdImageView.trailingAnchor, constant: -overlappingConstant),
-      yellowBirdImageView.bottomAnchor.constraint(equalTo: paperView.topAnchor),
+      yellowBirdImageView.bottomAnchor.constraint(equalTo: paper.topAnchor),
       
       greenBirdChatBubbleView.bottomAnchor.constraint(equalTo: greenBirdImageView.topAnchor, constant: 12),
       greenBirdChatBubbleView.centerXAnchor.constraint(equalTo: greenBirdImageView.centerXAnchor, constant: 4),
@@ -182,6 +192,8 @@ class OpenedPaperView: UIView {
   private func setupLayout() {
     paperView.layer.cornerRadius = 30
     paperView.layer.masksToBounds = true
+    paper.layer.cornerRadius = 30
+    paper.layer.masksToBounds = true
     readyButton.layer.cornerRadius = 20
     readyButton.layer.masksToBounds = true
   }
