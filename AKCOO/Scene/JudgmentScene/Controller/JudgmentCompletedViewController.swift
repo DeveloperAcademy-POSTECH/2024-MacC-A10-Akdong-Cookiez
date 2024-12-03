@@ -34,8 +34,9 @@ class JudgmentCompletedViewController: UIViewController {
     self.judgmentUseCase = judgmentUseCase
     self.selectedCountryDetail = selectedCountryDetail
     self.userQuestion = userQuestion
-    
     super.init(nibName: nil, bundle: nil)
+    
+    self.judgmentView.configurePaper(userQuesion: userQuestion)
   }
   
   required init?(coder: NSCoder) {
@@ -51,7 +52,7 @@ class JudgmentCompletedViewController: UIViewController {
     
     Task {
       setupViews()
-      await configure()
+      await configure(userQuestion: self.userQuestion)
       onAction()
     }
   }
@@ -59,21 +60,30 @@ class JudgmentCompletedViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    self.judgmentView.reactionCollectionView.collectionView.reloadData()
+//    self.judgmentView.reactionCollectionView.collectionView.reloadData()
   }
   
   private func setupViews() {
     judgmentView.paper.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedPaper)))
   }
   
-  private func configure() async {
+  private func configure(userQuestion: UserQuestion) async {
     let birds: [BirdModel]
+    let startTime = Date() // 작업 시작 시각 기록
     switch await judgmentUseCase.getBirdsJudgment(selectedCountryDetail: selectedCountryDetail, userQuestion: userQuestion) {
     case .success(let birdsData):
       birds = birdsData
     case .failure:
       birds = []
       // TODO: - Error 처리
+    }
+    
+    // 작업 종료 후 시간 계산
+    let elapsedTime = Date().timeIntervalSince(startTime)
+    let remainingTime = max(JudgmentTransition.duration+0.1 - elapsedTime, 0) // 남은 시간 계산 (0보다 작아질 수 없도록)
+    
+    if remainingTime > 0 {
+      try? await Task.sleep(nanoseconds: UInt64(remainingTime * 1_000_000_000))
     }
     
     judgmentView.configure(
@@ -107,6 +117,7 @@ class JudgmentCompletedViewController: UIViewController {
   
   @objc func tappedPaper() {
     guard case .success(let paperModel) = judgmentUseCase.getPaperModel(selectedCountryDetail: selectedCountryDetail) else { return }
+    
     coordinator?.startEditPaper(
       presenting: self,
       paperModel: paperModel,
@@ -118,24 +129,11 @@ class JudgmentCompletedViewController: UIViewController {
 
 extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
   func onActionChangingUserQuestion(_ userQuestion: UserQuestion) {
+    self.userQuestion = userQuestion
+    judgmentView.configurePaper(userQuesion: userQuestion)
+    
     Task {
-      let birds: [BirdModel]
-      switch await judgmentUseCase.getBirdsJudgment(selectedCountryDetail: selectedCountryDetail, userQuestion: userQuestion) {
-      case .success(let birdsData):
-        birds = birdsData
-      case .failure:
-        birds = []
-        // TODO: - Error 처리
-      }
-      
-      self.userQuestion = userQuestion
-      
-      judgmentView.configure(
-        userQuesion: self.userQuestion,
-        birds: birds
-      )
-      
-      self.birds = birds
+      await configure(userQuestion: userQuestion)
     }
   }
 }
