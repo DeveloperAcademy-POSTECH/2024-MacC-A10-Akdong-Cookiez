@@ -96,6 +96,7 @@ class DetailGraphView: UIView {
     self.userAmount = graphInfos.userAmount
     
     self.titleLabel.textColor = buying ? .akColor(.akGray300) : .akColor(.akGray200)
+    self.tickMarkView.backgroundColor = buying ? .akColor(.akGray300) : .akColor(.akGray200)
     layoutArrow()
   }
   
