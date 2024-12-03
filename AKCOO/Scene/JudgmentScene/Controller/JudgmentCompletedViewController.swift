@@ -174,7 +174,7 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
     PreviousBird(judgment: previousJudgment)
   ]
   
-  JudgmentCompletedViewController(
+  return JudgmentCompletedViewController(
     judgmentUseCase: JudgmentUseCaseMock(), selectedCountryDetail: .init(country: .init(name: "베트남", currency: .init(unitTitle: "동", unit: 0)), items: []),
     userQuestion: .init(
       country: country,
