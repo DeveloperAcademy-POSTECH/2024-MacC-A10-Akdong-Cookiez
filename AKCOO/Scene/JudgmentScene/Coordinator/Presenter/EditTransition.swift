@@ -19,7 +19,7 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
   weak var judgmentEditView: JudgmentEditView?
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 0.3 // 전환 애니메이션 시간
+    return JudgmentTransition.duration // 전환 애니메이션 시간
   }
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -34,6 +34,7 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     let duration = transitionDuration(using: transitionContext)
     let transition: SnapshotTransition
+    
     switch direction {
     case .present:
       transition = SnapshotTransition(
@@ -42,12 +43,11 @@ class EditTransition: NSObject, UIViewControllerAnimatedTransitioning {
         in: transitionContext.containerView,
         childTransitions: [
           (from: judgmentView.blueBackgroundView, to: judgmentEditView.blueBackgroundView, action: .move),
-          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.paperView, action: .move)
+          (from: judgmentView.paper.paperView, to: judgmentEditView.paper.paper, action: .move)
         ]
       )
     case .dismiss:
       let textField = createTextSnapshot(from: judgmentEditView.paper.amountTextField.textField)
-      
       transition = SnapshotTransition(
         from: judgmentEditView,
         to: judgmentView,

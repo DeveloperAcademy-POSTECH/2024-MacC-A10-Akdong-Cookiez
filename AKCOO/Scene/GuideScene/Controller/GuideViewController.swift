@@ -65,9 +65,9 @@ class GuideViewController: UIViewController {
     }
     
     guideView.countrySelectorTitle.onActionChangeCountry = { [weak self] newCountry in
-      guard let self else { return }
-      guard let selectedCountryDetail else { return }
       Task {
+        guard let self else { return }
+        guard let selectedCountryDetail = self.selectedCountryDetail else { return }
         guard case let .success((countriesName, selectedCountryDetail)) = await self.guideUseCase.getNewGuideInfo(newCountryName: newCountry) else { return }
         
         self.selectedCountryDetail = selectedCountryDetail

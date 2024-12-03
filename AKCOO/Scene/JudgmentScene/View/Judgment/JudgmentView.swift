@@ -136,6 +136,38 @@ class JudgmentView: UIView {
     ])
   }
   
+  func configure(
+    userQuesion: UserQuestion,
+    birds: [BirdModel]
+  ) {
+    paper.configure(
+      userQuestion: userQuesion
+    )
+    
+    reactionCollectionView.configure(
+      with: birds,
+      userAmount: userQuesion.amount
+    )
+  }
+  
+  func configurePaper(userQuesion: UserQuestion) {
+    paper.configure(userQuestion: userQuesion)
+  }
+  
+  private func createCustomButton(title: String) -> UIButton {
+    var configuration = UIButton.Configuration.filled()
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 37.5, bottom: 18, trailing: 37.5)
+    let button = UIButton(configuration: configuration)
+    return button.set {
+      $0.setTitle(title, for: .normal)
+      $0.configuration?.baseForegroundColor = .akColor(.akBlue500)
+      $0.akFont(.gmarketBold18)
+      $0.configuration?.background.backgroundColor = .akColor(.white)
+      $0.layer.cornerRadius = 20
+      $0.layer.masksToBounds = true // 라운드 처리를 위한 마스크
+    }
+  }
+  
   private func addConfettiView(for button: UIButton, imageName: String, isLeft: Bool, confettiHostingController: inout UIHostingController<ConfettiView>?, viewModel: CounterViewModel) {
     // ConfettiView 생성
     let confettiView = ConfettiView(viewModel: viewModel, isLeft: isLeft, imageName: imageName)
@@ -156,72 +188,41 @@ class JudgmentView: UIView {
     }
   }
   
-  func configure(
-    userQuesion: UserQuestion,
-    birds: [BirdModel]
-  ) {
-    paper.configure(
-      userQuestion: userQuesion
-    )
-    
-    reactionCollectionView.configure(
-      with: birds,
-      userAmount: userQuesion.amount
-    )
-  }
-  
-  private func createCustomButton(title: String) -> UIButton {
-    var configuration = UIButton.Configuration.filled()
-    configuration.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 37.5, bottom: 18, trailing: 37.5)
-    let button = UIButton(configuration: configuration)
-    return button.set {
-      $0.setTitle(title, for: .normal)
-      $0.configuration?.baseForegroundColor = .akColor(.akBlue500)
-      $0.akFont(.gmarketBold18)
-      $0.configuration?.background.backgroundColor = .akColor(.white)
-      $0.layer.cornerRadius = 20
-      $0.layer.masksToBounds = true // 라운드 처리를 위한 마스크
-    }
-  }
-  
   @objc private func tappedBuyingDecisionButton(_ sender: UIButton) {
-//    self.isUserInteractionEnabled = false
+    //    self.isUserInteractionEnabled = false
     let confettiViewModelToUse = (sender == buyButton) ? buyingConfettiViewModel : notbuyingConfettiViewModel
     
     // 첫 번째 counter 증가
     DispatchQueue.main.async {
       confettiViewModelToUse.counter += 1
     }
-
+    
     // 0.2초 후 두 번째 counter 증가
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
       guard let self else { return }
       confettiViewModelToUse.counter += 1
       self.fadeOutAndTransition()
     }
-
-    // 1.3초 후 화면 이동
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { [weak self] in
-      guard let self else { return }
-      self.onActionCompletedDecision?(sender == self.buyButton)
-    }
   }
   
   private func fadeOutAndTransition() {
-    UIView.animate(withDuration: 1.3, animations: {
-      // 뷰의 투명도를 0으로 설정 (페이드 아웃 효과)
-      self.paper.alpha = 0.0
-      self.birdsReactionTitleLabel.alpha = 0.0
-      self.paperTitleLabel.alpha = 0.0
-      self.reactionCollectionView.alpha = 0.0
-      self.decisionLabel.alpha = 0.0
-      self.decisionStack.alpha = 0.0
-      self.gradientView.alpha = 0.0
-      
-    }, completion: { _ in
-      // 애니메이션 완료 후 화면 전환 처리
-//      self.onActionCompletedDecision?(true) // 화면 전환 로직
-    })
+    UIView.animate(
+      withDuration: 1.3,
+      animations: {
+        // 뷰의 투명도를 0으로 설정 (페이드 아웃 효과)
+        self.paper.alpha = 0.0
+        self.birdsReactionTitleLabel.alpha = 0.0
+        self.paperTitleLabel.alpha = 0.0
+        self.reactionCollectionView.alpha = 0.0
+        self.decisionLabel.alpha = 0.0
+        self.decisionStack.alpha = 0.0
+        self.gradientView.alpha = 0.0
+        
+      }, completion: { _ in
+        // 애니메이션 완료 후 화면 전환 처리
+        self.onActionCompletedDecision?(true) // 화면 전환 로직
+      }
+    )
   }
 }
 

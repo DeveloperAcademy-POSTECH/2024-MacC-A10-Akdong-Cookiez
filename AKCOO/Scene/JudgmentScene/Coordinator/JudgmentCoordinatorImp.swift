@@ -62,15 +62,23 @@ class JudgmentCoordinatorImp: JudgmentCoordinator {
     judgmentViewController.presentingViewController?.dismiss(animated: true)
   }
   
-  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) { // 데이터 받아와서 진행
-    let editViewController = judgmentEditFactory.create(coordinator: self, paperModel: paperModel, selectedCategory: selectedCategory, userAmount: userAmount, delegate: presenting)
+  func startEditPaper(presenting: JudgmentEditViewControllerDelegate, paperModel: PaperModel, selectedCategory: String, userAmount: String) {
+    
+    let editViewController = judgmentEditFactory.create(
+      coordinator: self,
+      paperModel: paperModel,
+      selectedCategory: selectedCategory,
+      userAmount: userAmount,
+      delegate: presenting
+    )
+    
     editViewController.modalPresentationStyle = .overFullScreen
     editViewController.transitioningDelegate = self.editTransitionaler
     editViewController.view.backgroundColor = .akColor(.akBlue400)
     presenting.present(editViewController, animated: true)
   }
   
-  func completedEditPaper(editViewController: UIViewController) {  // 데이터 받아와서 진행
+  func completedEditPaper(editViewController: UIViewController) {
     editViewController.presentingViewController?.dismiss(animated: true)
   }
   
