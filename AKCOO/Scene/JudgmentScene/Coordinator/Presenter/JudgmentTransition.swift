@@ -6,6 +6,8 @@
 import UIKit
 
 class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
+  static let duration: TimeInterval = 0.5
+  
   enum Direction {
     case present
     case dismiss
@@ -17,10 +19,12 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
   weak var judgmentView: JudgmentView?
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 0.3 // 전환 애니메이션 시간
+    return Self.duration // 전환 애니메이션 시간
   }
   
-  func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+  func animateTransition(
+    using transitionContext: UIViewControllerContextTransitioning
+  ) {
     guard let judgmentReadyView, let judgmentView else {
       transitionContext.completeTransition(false)
       return
@@ -59,13 +63,16 @@ class JudgmentTransition: NSObject, UIViewControllerAnimatedTransitioning {
           (from: judgmentReadyView.paper.amountTextField.separatorLine, to: judgmentView.paper.separatorLine, action: .move),
           (from: judgmentReadyView.paper.countrySelector.countryLabel, to: judgmentView.paper.countryLabel, action: .move),
           (from: judgmentReadyView.paper.categorySelector.selectedButton ?? .init(), to: judgmentView.paper.category, action: .move),
+          
           (from: judgmentView.paper.reInputTextView, to: judgmentView.paper.reInputTextView, action: .appear),
           (from: judgmentView.paperTitleLabel, to: judgmentView.paperTitleLabel, action: .appear),
           (from: judgmentView.birdsReactionTitleLabel, to: judgmentView.birdsReactionTitleLabel, action: .appear),
+          
           (from: judgmentReadyView.paper.countrySelector.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
           (from: judgmentReadyView.paper.categorySelector.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
           (from: judgmentReadyView.paper.amountTextField.titleLabel, to: judgmentView.paper.paperView, action: .disappear),
           (from: judgmentReadyView.paper.readyButton, to: judgmentView.paper.paperView, action: .disappear),
+          
           (from: greenBird, to: greenBird, action: .moveTo(dx: -300, dy: -300)),
           (from: redBird, to: redBird, action: .moveTo(dx: 0, dy: -300)),
           (from: yellowBird, to: yellowBird, action: .moveTo(dx: 300, dy: -300))

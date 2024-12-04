@@ -148,13 +148,6 @@ class SnapshotTransition {
       UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) { [toSnapshot] in
         toSnapshot?.alpha = 1
       }
-      
-//      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) { [transitionView, toView] in
-//        transitionView.layer.cornerRadius = toView.layer.cornerRadius
-//        transitionView.frame = toView.convert(toView.bounds, to: transitionView.superview)
-//        transitionView.layer.apply(LayerShadow.from(toView.layer))
-//      }
-      
     }
     
     if case .disappear = action {
@@ -172,8 +165,8 @@ class SnapshotTransition {
   }
   
   func cleanUp() {
-    toView.alpha = toViewAlpha
-    fromView.alpha = fromViewAlpha
+    toView.alpha = 1
+    fromView.alpha = 1
     transitionView.removeFromSuperview()
     fromSnapshot?.removeFromSuperview()
     toSnapshot?.removeFromSuperview()

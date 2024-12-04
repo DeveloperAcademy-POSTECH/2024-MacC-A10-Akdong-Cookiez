@@ -18,14 +18,16 @@ struct UserInfoRecordsView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
       HStack {
-        Text("지출 판단 기록")
-          .padding(.leading, 20)
-        Spacer()
         Button {
-          CoreDataService().deleteAllUserRecords()
+          CoreDataService()
+            .deleteAllUserRecords()
         } label: {
-          Text("다 지우자")
+          Text("지출 판단 기록")
+            .padding(.leading, 20)
+            .foregroundStyle(Color(uiColor: .akColor(.black)))
         }
+        
+        Spacer()
       }
       
       LazyVStack(spacing: 10) {
@@ -54,8 +56,10 @@ struct UserInfoRecordsView: View {
               HStack(spacing: 8) {
                 Text(record.userQuestion.category)
                 Spacer()
-                Text("\(record.userQuestion.amount.formattedWithCommas(maxDecimalPlaces: 0))\(record.userQuestion.country.currency.unitTitle)")
-                Image(record.userJudgment == .buying ? .confettiOmark : .confettiXmark)
+                
+                let place: Int = record.userQuestion.country.name == "베트남" ? 0 : 2
+                Text("\(record.userQuestion.amount.formattedWithCommas(maxDecimalPlaces: place)) \(record.userQuestion.country.currency.unitTitle)")
+                Image(record.userJudgment == .buying ? .userRecordOmark : .confettiXmark)
                   .resizable()
                   .frame(width: 16, height: 16)
               }
@@ -82,5 +86,8 @@ struct UserInfoRecordsView: View {
     }
     .background(Color.clear)
     .font(Font.from(uiFont: UIFont.akFont(.gmarketMedium14)))
+    .onAppear {
+      print("이오링 userRecords\n\(try? CoreDataService().getUserRecord().get() ?? [])")
+    }
   }
 }
