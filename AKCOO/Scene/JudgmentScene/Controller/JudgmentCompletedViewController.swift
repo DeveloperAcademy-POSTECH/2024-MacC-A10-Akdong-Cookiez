@@ -118,6 +118,7 @@ class JudgmentCompletedViewController: UIViewController {
   @objc func tappedPaper() {
     guard case .success(let paperModel) = judgmentUseCase.getPaperModel(selectedCountryDetail: selectedCountryDetail) else { return }
     
+    judgmentView.reactionCollectionView.collectionView.alpha = 0
     coordinator?.startEditPaper(
       presenting: self,
       paperModel: paperModel,
@@ -134,6 +135,7 @@ extension JudgmentCompletedViewController: JudgmentEditViewControllerDelegate {
     
     Task {
       await configure(userQuestion: userQuestion)
+      judgmentView.reactionCollectionView.collectionView.alpha = 1
     }
   }
 }
