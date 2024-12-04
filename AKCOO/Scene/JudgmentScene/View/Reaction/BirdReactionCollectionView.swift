@@ -100,22 +100,8 @@ extension BirdReactionCollectionView: UICollectionViewDataSource {
       userAmount: userAmount,
       birdImageType: birdImageType
     )
-
-    collectionView.alpha = 1
-    // 초기 상태 설정 (셀을 화면 위로 이동)
-    cell.transform = CGAffineTransform(translationX: birdModel.judgment ? collectionView.frame.width*2 : -collectionView.frame.width*2, y: 0)
     
-    UIView.animate(
-      withDuration: 0.4, // 좀 더 오래 지속되는 애니메이션
-      delay: 0.3 * Double(indexPath.item), // 각 셀이 약간의 시간 차이를 두고 등장
-      usingSpringWithDamping: 0.9, // 0에 가까울수록 더 강한 스프링
-      initialSpringVelocity: 0.2, // 초기 스프링 속도
-      options: [.curveEaseInOut],
-      animations: {
-        cell.transform = .identity // 원래 위치로 이동
-      },
-      completion: nil
-    )
+    collectionView.alpha = 1
     
     return cell
   }
@@ -131,6 +117,24 @@ extension BirdReactionCollectionView: UICollectionViewDelegate {
     else { return }
     selectedCell.tappedCell()
     collectionView.performBatchUpdates(nil, completion: nil)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    guard let cell = cell as? BirdReactionCell else { return }
+    
+    cell.transform = CGAffineTransform(translationX: birdModels[indexPath.item].judgment ? collectionView.frame.width * 2 : -collectionView.frame.width * 2, y: 0)
+    
+    UIView.animate(
+      withDuration: 0.4,
+      delay: 0.3 * Double(indexPath.item),
+      usingSpringWithDamping: 0.9,
+      initialSpringVelocity: 0.2,
+      options: [.curveEaseInOut],
+      animations: {
+        cell.transform = .identity
+      },
+      completion: nil
+    )
   }
 }
 
@@ -175,7 +179,7 @@ extension BirdReactionCollectionView: UICollectionViewDelegateFlowLayout {
           standards: [ ]
         )
       )
-    ], 
+    ],
     userAmount: 30000
   )
   
