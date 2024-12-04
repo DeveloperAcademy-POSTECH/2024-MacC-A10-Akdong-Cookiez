@@ -11,10 +11,8 @@ import Foundation
 struct ForeignBird: BirdModel {
   private let judgmentCriteria: CountryAverageJudgment
   private let judgmentGenerator: BirdJudgmentGenerator
-
-  init(
-    judgment: CountryAverageJudgment
-  ) {
+  
+  init(judgment: CountryAverageJudgment) {
     let filteredJudgment = CountryAverageJudgment(
       userQuestion: judgment.userQuestion,
       standards: judgment.standards.filter { $0.category == judgment.userQuestion.category }
