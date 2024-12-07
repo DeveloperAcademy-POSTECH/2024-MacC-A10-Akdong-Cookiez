@@ -1,5 +1,26 @@
-## 악동쿠키들의 놀이터 🍪
+## 소비짹 
 
-<!-- Git Convention -->
 
- <!-- Code Convention -->
+![소비짹-개발-히스토리 001](https://github.com/user-attachments/assets/9f37f2bc-4a99-4861-afe7-0accdfc965c1)
+![소비짹-개발-히스토리 002](https://github.com/user-attachments/assets/94186b37-a88b-4133-88fc-cdec36988d5f)
+![소비짹-개발-히스토리 003](https://github.com/user-attachments/assets/10476877-1468-4764-85d8-e7662a3c1c80)
+![소비짹-개발-히스토리 004](https://github.com/user-attachments/assets/16a5ddcd-cbf1-4836-bc6d-fa7369367efa)
+![소비짹-개발-히스토리 005](https://github.com/user-attachments/assets/040a741e-5fde-4df4-ae7e-8003db2b585f)
+![소비짹-개발-히스토리 006](https://github.com/user-attachments/assets/21d1c5e4-335c-4692-89c1-ed55b9580691)
+![소비짹-개발-히스토리 007](https://github.com/user-attachments/assets/feee4566-2082-48bb-ac53-705e66bfe585)
+![소비짹-개발-히스토리 008](https://github.com/user-attachments/assets/a790c34e-7d25-47fc-b06a-99b89feee35f)
+![소비짹-개발-히스토리 009](https://github.com/user-attachments/assets/42af0181-bfc4-4a63-8903-39436c65d4fe)
+![소비짹-개발-히스토리 010](https://github.com/user-attachments/assets/f720427a-5327-4d1a-8564-6965a7721a8b)
+![소비짹-개발-히스토리 011](https://github.com/user-attachments/assets/cd40cf6a-1e65-4db9-9f15-f2326918bf79)
+![소비짹-개발-히스토리 012](https://github.com/user-attachments/assets/6b398bf7-6a9e-4e6f-9fb1-49166365fb18)
+![소비짹-개발-히스토리 013](https://github.com/user-attachments/assets/541b7d18-aa27-4029-8575-3a0165ac210c)
+![소비짹-개발-히스토리 014](https://github.com/user-attachments/assets/ae584b33-2f6d-4329-b54a-19e68f37be64)
+![소비짹-개발-히스토리 015](https://github.com/user-attachments/assets/4aa63f08-428d-4519-9b7a-4c8a3c30da19)
+![소비짹-개발-히스토리 016](https://github.com/user-attachments/assets/616f54ef-2ffd-46a2-853c-6269192191ca)
+![소비짹-개발-히스토리 017](https://github.com/user-attachments/assets/83604e24-2575-4199-a629-804621d937f0)
+![소비짹-개발-히스토리 018](https://github.com/user-attachments/assets/734af313-4a62-4b6b-aede-3842e1cb91de)
+![소비짹-개발-히스토리 019](https://github.com/user-attachments/assets/93358ad7-6818-466b-8fe1-74577dde51d6)
+![소비짹-개발-히스토리 020](https://github.com/user-attachments/assets/beca53cd-4d7f-45fb-ae20-d93a2adf82d7)
+![소비짹-개발-히스토리 021](https://github.com/user-attachments/assets/536f7ea9-95c4-4071-843e-615a14b36650)
+![소비짹-개발-히스토리 022](https://github.com/user-attachments/assets/f56a2446-f559-4231-bbf8-1f3ea5ea8030)
+![소비짹-개발-히스토리 023](https://github.com/user-attachments/assets/5e4e5b34-a1a1-49d4-8fe8-a90dd1d97fe4)
