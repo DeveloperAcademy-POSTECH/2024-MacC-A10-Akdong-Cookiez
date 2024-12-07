@@ -1,7 +1,5 @@
 ## 소비짹 
 
-
-![소비짹-개발-히스토리 001](https://github.com/user-attachments/assets/9f37f2bc-4a99-4861-afe7-0accdfc965c1)
 ![소비짹-개발-히스토리 002](https://github.com/user-attachments/assets/94186b37-a88b-4133-88fc-cdec36988d5f)
 ![소비짹-개발-히스토리 003](https://github.com/user-attachments/assets/10476877-1468-4764-85d8-e7662a3c1c80)
 ![소비짹-개발-히스토리 004](https://github.com/user-attachments/assets/16a5ddcd-cbf1-4836-bc6d-fa7369367efa)
