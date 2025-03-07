@@ -555,9 +555,9 @@
 		515E40362CEDF85C00AE4A2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				515E403E2CEE0A2900AE4A2F /* Firebase */,
-				515E40452CEF04D100AE4A2F /* UserDefaults */,
-				515E404C2CEF705A00AE4A2F /* CoreData */,
+				517FCAC62D7AB3FC00A250A3 /* Firebase */,
+				517FCAC72D7AB40B00A250A3 /* UserDefaults */,
+				517FCAC82D7AB42100A250A3 /* CoreData */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -571,37 +571,37 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		515E403E2CEE0A2900AE4A2F /* Firebase */ = {
+		517FCAC62D7AB3FC00A250A3 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				515E40392CEE08E600AE4A2F /* FirestoreService.swift */,
 				515E403F2CEE0A3D00AE4A2F /* FirestoreConstants.swift */,
 			);
-			name = Firebase;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
-		515E40452CEF04D100AE4A2F /* UserDefaults */ = {
+		517FCAC72D7AB40B00A250A3 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
 				515E40462CEF04E400AE4A2F /* UserDefaultsService.swift */,
 				515E40482CEF11CA00AE4A2F /* UserDefaultsConstants.swift */,
 				515E404A2CEF195B00AE4A2F /* UserDefaultsError.swift */,
 			);
-			name = UserDefaults;
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		515E404C2CEF705A00AE4A2F /* CoreData */ = {
+		517FCAC82D7AB42100A250A3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				515E40842CF0AA9100AE4A2F /* Extensions */,
+				517FCAC92D7AB42A00A250A3 /* Extensions */,
 				515E404D2CEF707300AE4A2F /* CoreDataService.swift */,
 				515E404F2CEF7C8800AE4A2F /* UserRecordModel.xcdatamodeld */,
 				515E40822CF0AA6000AE4A2F /* CoreDataError.swift */,
 			);
-			name = CoreData;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
-		515E40842CF0AA9100AE4A2F /* Extensions */ = {
+		517FCAC92D7AB42A00A250A3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				515E408D2CF2307B00AE4A2F /* UserRecord+toEntity.swift */,
@@ -612,7 +612,7 @@
 				515E40932CF2310E00AE4A2F /* CountryProfile+fromEntity.swift */,
 				515E40992CF2318700AE4A2F /* ExternalJudgmentEntity+toEntity.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F365F4F52CF11A39002C1171 /* String */ = {

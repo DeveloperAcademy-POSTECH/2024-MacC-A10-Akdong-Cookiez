@@ -29,7 +29,11 @@ struct CoreDataService {
 extension CoreDataService {
   /// CREATE - UserRecord 저장
   func saveUserRecord(_ userRecord: UserRecord) -> Result<VoidResponse, Error> {
-    _ = UserRecord.toEntity(context: self.context, record: userRecord)
+    _ = UserRecord
+      .toEntity(
+        context: self.context,
+        record: userRecord
+      )
     
     // context 저장
     do {

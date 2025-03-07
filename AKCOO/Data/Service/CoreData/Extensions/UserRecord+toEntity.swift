@@ -14,7 +14,7 @@ extension UserRecord {
     entity.date = record.date
     entity.userJudgment = record.userJudgment.rawValue
     
-    // Relationships
+    // UserQuestion
     entity.userQuestion = UserQuestion
       .toEntity(
         context: context,
