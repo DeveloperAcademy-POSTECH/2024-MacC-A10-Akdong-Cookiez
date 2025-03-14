@@ -2,21 +2,25 @@
 > 해외여행, 소비짹에게 물어보고 구매하세요 🛍️
 
 ## 📝 목차
-### 1. [화면 전환 애니메이션](#화면-전환-애니메이션)
-### 2. [개발 히스토리](#개발-히스토리)
 
-***** 
+**1. [화면 전환 애니메이션](#화면-전환-애니메이션)**
 
-## 화면 전환 애니메이션 
+**2. [개발 히스토리](#개발-히스토리)**
+
+<br><br>
+
+## 💫 화면 전환 애니메이션 
 
 | 지출 판단하기 선택                           | 살래요 선택                           | 안살래요 선택                           |
 |---------------------------------------|---------------------------------------|-----------------------------------------|
 | ![화면 전환](https://github.com/user-attachments/assets/164c5ca7-7765-4cb2-8918-dc6a73a343df) | ![살래요](https://github.com/user-attachments/assets/bded185a-668d-4b80-a014-d1724a610255) | ![안살래요](https://github.com/user-attachments/assets/3caeda6a-b9c9-4bf8-b607-ed0893cb7b15) |
 |         **present**                  | **dismiss**                  | **dismiss**                  |
 
+<br><br>
 
+## 💻 개발 히스토리
 
-## 개발 히스토리 
+[🔗 소비짹 개발 히스토리를 담은 문서입니다](https://drive.google.com/file/d/1Fkm3rCKMJVOB33z5RBOesDs1XwOtBwgr/view?usp=sharing)
 
 ![소비짹-개발-히스토리 002](https://github.com/user-attachments/assets/94186b37-a88b-4133-88fc-cdec36988d5f)
 ![소비짹-개발-히스토리 003](https://github.com/user-attachments/assets/10476877-1468-4764-85d8-e7662a3c1c80)
