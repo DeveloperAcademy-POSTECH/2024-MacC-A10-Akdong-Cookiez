@@ -34,7 +34,7 @@
 
 **4. [🍪 Team AKCOO](#-Team-AKCOO)**
 
-
+<br>
 
 ## 🌟 주요 기능
 - 여행지의 물가 정보 제공
@@ -101,7 +101,7 @@
 | 티나 \| 김서우 | 로셸 \| 이연정 | 보노 \| 박혜운 | 이오 \| 이안진 |
 |:-:|:-:|:-:|:-:|
 | <img src="https://github.com/user-attachments/assets/fe7bbb12-ebab-480d-acf8-02dc2665c41c" width="200"> | <img src="https://github.com/user-attachments/assets/1869ab39-5663-4c50-a8c5-6c767589c2bd" width="200"> | <img src="https://github.com/user-attachments/assets/126157b1-c98e-4e4c-becf-507501727670" width="200"> | <img src="https://github.com/user-attachments/assets/4ed31916-6131-4c56-99d7-f852432b6b33" width="200"> |
-| **기획, PM** | **Product Design** | **iOS 개발** | **iOS 개발** |
+| **Product Manager** | **Product Designer** | **iOS Developer** | **iOS Developer** |
 | [@gorgeouseowoo](https://github.com/gorgeouseowoo) | [@Rochelle0922](https://github.com/Rochelle0922) | [@shippingpark](https://github.com/shippingpark) | [@anjiniii](https://github.com/anjiniii) |
 
 ### Team Blog
