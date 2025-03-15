@@ -22,6 +22,16 @@
 - Cocoa MVC + Clean Architecture + Coordinator PAttern
 - Firebase - Firestore, Functions(TypeScript)
 
+### 📔 개발, 기획, 디자인 히스토리
+
+[🔗 소비짹 개발 히스토리를 담은 문서입니다](https://drive.google.com/file/d/1Fkm3rCKMJVOB33z5RBOesDs1XwOtBwgr/view?usp=sharing)
+(아래에 같은 내용의 개발 히스토리 이미지가 있어요!)
+
+[🔗 소비짹 기획 히스토리를 담은 문서입니다](https://drive.google.com/file/d/1OAmdYph5M9ytyvHW_MPmQMPBit1aOwGe/view?usp=sharing)
+
+[🔗 소비짹 디자인 히스토리를 담은 문서입니다](https://drive.google.com/file/d/1YMAQp29piQ5kV8zXAHqLWVneWon-_CZe/view?usp=sharing)
+
+
 <br><br>
 
 ## 📝 목차
@@ -56,6 +66,7 @@
 
 
 <br><br>
+
 
 ## 💻 개발 히스토리
 
