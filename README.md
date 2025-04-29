@@ -19,7 +19,7 @@
 
 ### ⚙️ 기술 스택
 - UIKit, CoreData, Unit Test
-- Cocoa MVC + Clean Architecture + Coordinator PAttern
+- Cocoa MVC + Clean Architecture + Coordinator Pattern
 - Firebase - Firestore, Functions(TypeScript)
 
 ### 📔 개발, 기획, 디자인 히스토리
